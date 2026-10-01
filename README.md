@@ -20,8 +20,8 @@
 
 ### 1. IBM Quantum Hello World（`qskit/`，后端 ibm_fez，156 比特）
 
-- **2 比特 Bell 态**（Job `dau6k2hcrkc73dv36kg` 系列）：⟨ZZ⟩=0.940、⟨XX⟩=1.040，单比特期望值≈0，纠缠特征明确
-- **100 比特 GHZ 态**（XY4 动力学解耦）：⟨Z₀Zᵢ⟩ 随距离从 1.0 衰减至 ~0，直观展示噪声对大规模纠缠的破坏
+- **2 比特 Bell 态**（Job `dau66k2hcrkc73dv36kg`）：⟨ZZ⟩=0.940、⟨XX⟩=1.040，单比特期望值≈0，纠缠特征明确
+- **100 比特 GHZ 态**（Job `dau66qlvr3kc73emd8s0`，XY4 动力学解耦）：⟨Z₀Zᵢ⟩ 随距离从 1.0 衰减至 ~0，直观展示噪声对大规模纠缠的破坏
 
 ### 2. 2×2 JSP 真机实验（`code/jsp_qiskit_hardware/`）
 
