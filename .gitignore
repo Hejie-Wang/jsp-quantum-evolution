@@ -1,4 +1,8 @@
+# 敏感凭证
+import.py
+# 缓存与冗余归档
 __pycache__/
 *.pyc
 *.zip
-import.py
+# 原始基准数据集（未纳入远程仓库，如需可用 git add -f 手动添加）
+task_data/
