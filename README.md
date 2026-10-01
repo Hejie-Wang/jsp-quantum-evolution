@@ -67,3 +67,14 @@ python qjsp_parallel.py                         # 并行化离线验证（不消
 ## 安全说明
 
 IBM Quantum API 凭证文件（`import.py`）已按 `.gitignore` 排除，请勿上传含明文令牌。真机作业 ID 保留在结果 JSON 中，可在 IBM Quantum Platform 上核验。
+
+## 机器候选量子搜索设计（2026-10-01）
+
+基于机器候选编码、跨机器环/路径投影与联合混合器的新路线：
+
+- [数学设计与理论边界](docs/quantum_candidate_design.md)
+- [本地 Codex 实现任务与验收条件](docs/quantum_candidate_codex_tasks.md)
+- [最小可运行 demo 与验证结果](code/candidate_quantum_demo/README.md)
+
+Demo 验证候选池内基态能量与最优工期对应，并给出约束生成和理想演化示例；尚未实现 CUDA、门级编译或大规模量子求解，未声称量子优势。
+
