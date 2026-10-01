@@ -1,0 +1,171 @@
+{
+  "method": "parity edge-colored swap-network parallelization",
+  "numpy_checks": [
+    {
+      "instance": "demo_2x2.json",
+      "num_swaps": 2,
+      "serial_stages": 2,
+      "parallel_stages": 1,
+      "fidelity_L1": 0.9999999999999996,
+      "tv_L1": 0.0,
+      "fidelity_L2": 1.0,
+      "tv_L2": 0.0,
+      "fidelity_L5": 1.0000000000000004,
+      "tv_L5": 0.0,
+      "fidelity_L10": 0.9999999999999993,
+      "tv_L10": 0.0,
+      "fidelity_L2000": 0.9999999999999902,
+      "tv_L2000": 0.0
+    },
+    {
+      "instance": "demo_3x3.json",
+      "num_swaps": 6,
+      "serial_stages": 6,
+      "parallel_stages": 2,
+      "fidelity_L1": 1.0,
+      "tv_L1": 8.304988641238964e-17,
+      "fidelity_L2": 0.9999999999999996,
+      "tv_L2": 1.575549044528779e-16,
+      "fidelity_L5": 0.9999999999999993,
+      "tv_L5": 2.862700311176414e-16,
+      "fidelity_L10": 0.9999999999999993,
+      "tv_L10": 4.0308603893937645e-16,
+      "fidelity_L2000": 1.0000000000000138,
+      "tv_L2000": 5.522099162484639e-15
+    },
+    {
+      "instance": "demo_4x3.json",
+      "num_swaps": 9,
+      "serial_stages": 9,
+      "parallel_stages": 2,
+      "fidelity_L2000": 0.9999998936723612,
+      "tv_L2000": 0.00015478536620785568
+    }
+  ],
+  "stage_scaling": [
+    {
+      "J": 2,
+      "M": 2,
+      "serial_swap_stages": 2,
+      "parallel_swap_stages": 1,
+      "depth_reduction": 2.0
+    },
+    {
+      "J": 3,
+      "M": 3,
+      "serial_swap_stages": 6,
+      "parallel_swap_stages": 2,
+      "depth_reduction": 3.0
+    },
+    {
+      "J": 4,
+      "M": 3,
+      "serial_swap_stages": 9,
+      "parallel_swap_stages": 2,
+      "depth_reduction": 4.5
+    },
+    {
+      "J": 5,
+      "M": 5,
+      "serial_swap_stages": 20,
+      "parallel_swap_stages": 2,
+      "depth_reduction": 10.0
+    },
+    {
+      "J": 8,
+      "M": 8,
+      "serial_swap_stages": 56,
+      "parallel_swap_stages": 2,
+      "depth_reduction": 28.0
+    },
+    {
+      "J": 50,
+      "M": 20,
+      "serial_swap_stages": 980,
+      "parallel_swap_stages": 2,
+      "depth_reduction": 490.0
+    }
+  ],
+  "runs_2x2": [
+    {
+      "layers": 1,
+      "tv_ideal_aer": 0.03834966710753289,
+      "tv_fakefez": 0.026062906140468814,
+      "fakefez_freq_numpy_order": [
+        0.2900390625,
+        0.037109375,
+        0.3974609375,
+        0.275390625
+      ],
+      "ideal_probs_numpy_order": [
+        0.2800097078924669,
+        0.021075823467064072,
+        0.41890476074800154,
+        0.28000970789246704
+      ],
+      "fakefez_depth": 18,
+      "tv_real_ibm_fez": 0.08953946864046881,
+      "real_job_id": "dau6f5rg95ks73ehra7g"
+    },
+    {
+      "layers": 2,
+      "tv_ideal_aer": 0.020211247943859548,
+      "tv_fakefez": 0.024748798821319737,
+      "fakefez_freq_numpy_order": [
+        0.1796875,
+        0.45703125,
+        0.1875,
+        0.17578125
+      ],
+      "ideal_probs_numpy_order": [
+        0.1673374491225398,
+        0.4817800488213195,
+        0.18354505293360038,
+        0.1673374491225398
+      ],
+      "fakefez_depth": 33,
+      "tv_real_ibm_fez": 0.1773891133774601,
+      "real_job_id": "dau6fcihcrkc73dv3kug"
+    },
+    {
+      "layers": 5,
+      "tv_ideal_aer": 0.012681035303870698,
+      "tv_fakefez": 0.046084556486035946,
+      "fakefez_freq_numpy_order": [
+        0.1533203125,
+        0.62890625,
+        0.0595703125,
+        0.158203125
+      ],
+      "ideal_probs_numpy_order": [
+        0.1489186426519352,
+        0.6749908064860358,
+        0.027171908210093357,
+        0.14891864265193538
+      ],
+      "fakefez_depth": 78,
+      "tv_real_ibm_fez": 0.4137531991379714,
+      "real_job_id": "dau6fjihcrkc73dv3l90"
+    },
+    {
+      "layers": 10,
+      "tv_ideal_aer": 0.010128020776286939,
+      "tv_fakefez": 0.14191123470264794,
+      "fakefez_freq_numpy_order": [
+        0.080078125,
+        0.26953125,
+        0.580078125,
+        0.0703125
+      ],
+      "ideal_probs_numpy_order": [
+        0.004239695148675679,
+        0.29813228407503667,
+        0.6933883256276105,
+        0.004239695148675678
+      ],
+      "fakefez_depth": 153,
+      "tv_real_ibm_fez": 0.14679404720264866,
+      "real_job_id": "dau6frjojkfs738rkb9g"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "instance": {
+    "name": "demo_2x2_seed7",
+    "durations": [
+      [
+        9,
+        6
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "machines_1_based": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "orders_zero_based": [
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      3
+    ]
+  ],
+  "moves": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "costs": [
+    31,
+    18,
+    32,
+    31
+  ],
+  "angles": [
+    [
+      1.4390770863470488,
+      0.8682238536674313
+    ],
+    [
+      2.1820419659517416,
+      0.505943367649279
+    ]
+  ],
+  "budgets": {
+    "bits": 2,
+    "layers": 2,
+    "max_two_qubit": 200,
+    "max_depth": 600,
+    "max_duration_us": 30.0,
+    "max_cost_evaluations": 320,
+    "max_rounds": 20,
+    "shots": 1024,
+    "train_evaluations": 256
+  }
+}

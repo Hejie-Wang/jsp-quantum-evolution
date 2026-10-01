@@ -1,0 +1,237 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "visible_logical_cpus": 9,
+    "blas_thread_env": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": null
+    }
+  },
+  "configuration": {
+    "tau": 20.0,
+    "layers": 2000,
+    "s_final": 0.95,
+    "shots": 1000,
+    "seed": 7,
+    "repeats": 3
+  },
+  "small_instances": [
+    {
+      "name": "demo_2x2_seed7",
+      "jobs": 2,
+      "machines": 2,
+      "states": 4,
+      "timing_median_seconds": {
+        "basis_and_cost_table": 5.281099993226235e-05,
+        "unitary_evolution": 0.02439664000007724,
+        "sampling_and_decode": 0.0002853909999203097,
+        "total": 0.024706216999902608
+      },
+      "timing_all_runs_seconds": [
+        {
+          "basis_and_cost_table": 0.00010667499998362473,
+          "unitary_evolution": 0.023727966000024026,
+          "sampling_and_decode": 0.00047973699997783115,
+          "total": 0.02431437799998548
+        },
+        {
+          "basis_and_cost_table": 5.281099993226235e-05,
+          "unitary_evolution": 0.02439664000007724,
+          "sampling_and_decode": 0.0002567659998931049,
+          "total": 0.024706216999902608
+        },
+        {
+          "basis_and_cost_table": 4.412499993122765e-05,
+          "unitary_evolution": 0.027852321000068514,
+          "sampling_and_decode": 0.0002853909999203097,
+          "total": 0.02818183699992005
+        }
+      ],
+      "final_diagnostics": {
+        "norm_squared": 0.9999999999999956,
+        "feasible_probability": 0.9998096325101296,
+        "optimal_probability_diagnostic": 0.8282388230790829,
+        "enumerated_optimum_diagnostic": 18,
+        "optimum_degeneracy_diagnostic": 1,
+        "uniform_optimal_probability_diagnostic": 0.25,
+        "expected_cost_including_cycle_penalty": 20.233085667461793,
+        "conditional_feasible_mean_makespan": 20.23084520300519
+      },
+      "best_measured_makespan": 18,
+      "optimal_shots": 821,
+      "norm_squared_error": 8.326672684688674e-15
+    },
+    {
+      "name": "demo_3x3",
+      "jobs": 3,
+      "machines": 3,
+      "states": 216,
+      "timing_median_seconds": {
+        "basis_and_cost_table": 0.0008307190000778064,
+        "unitary_evolution": 0.07592160100000456,
+        "sampling_and_decode": 0.00032117899991135346,
+        "total": 0.07707349899999372
+      },
+      "timing_all_runs_seconds": [
+        {
+          "basis_and_cost_table": 0.0008307190000778064,
+          "unitary_evolution": 0.07592160100000456,
+          "sampling_and_decode": 0.00032117899991135346,
+          "total": 0.07707349899999372
+        },
+        {
+          "basis_and_cost_table": 0.0008200420001003295,
+          "unitary_evolution": 0.07900438899991968,
+          "sampling_and_decode": 0.00041976600005000364,
+          "total": 0.08024419700007002
+        },
+        {
+          "basis_and_cost_table": 0.0008451969999896392,
+          "unitary_evolution": 0.0750950390000753,
+          "sampling_and_decode": 0.0003000639999299892,
+          "total": 0.07624029999999493
+        }
+      ],
+      "final_diagnostics": {
+        "norm_squared": 1.0000000000000089,
+        "feasible_probability": 0.5741294157389847,
+        "optimal_probability_diagnostic": 0.14786850662137846,
+        "enumerated_optimum_diagnostic": 11,
+        "optimum_degeneracy_diagnostic": 2,
+        "uniform_optimal_probability_diagnostic": 0.009259259259259259,
+        "expected_cost_including_cycle_penalty": 18.421635421829606,
+        "conditional_feasible_mean_makespan": 15.025553032712313
+      },
+      "best_measured_makespan": 11,
+      "optimal_shots": 134,
+      "norm_squared_error": 1.8207657603852567e-14
+    },
+    {
+      "name": "demo_4x3_seed7",
+      "jobs": 4,
+      "machines": 3,
+      "states": 13824,
+      "timing_median_seconds": {
+        "basis_and_cost_table": 0.05443068499994297,
+        "unitary_evolution": 2.1122308459999886,
+        "sampling_and_decode": 0.0006555050000542906,
+        "total": 2.1658462600000803
+      },
+      "timing_all_runs_seconds": [
+        {
+          "basis_and_cost_table": 0.0529780850000634,
+          "unitary_evolution": 2.1122308459999886,
+          "sampling_and_decode": 0.0006373290000283305,
+          "total": 2.1658462600000803
+        },
+        {
+          "basis_and_cost_table": 0.05443068499994297,
+          "unitary_evolution": 2.1420101080000222,
+          "sampling_and_decode": 0.0009024050000334682,
+          "total": 2.1973431979999987
+        },
+        {
+          "basis_and_cost_table": 0.05444679000004271,
+          "unitary_evolution": 1.6567666259999214,
+          "sampling_and_decode": 0.0006555050000542906,
+          "total": 1.7118689210000184
+        }
+      ],
+      "final_diagnostics": {
+        "norm_squared": 1.0000000000000044,
+        "feasible_probability": 0.24849473082170642,
+        "optimal_probability_diagnostic": 0.0011779534781684016,
+        "enumerated_optimum_diagnostic": 30,
+        "optimum_degeneracy_diagnostic": 1,
+        "uniform_optimal_probability_diagnostic": 7.233796296296296e-05,
+        "expected_cost_including_cycle_penalty": 65.90147915012608,
+        "conditional_feasible_mean_makespan": 50.48237842704167
+      },
+      "best_measured_makespan": 31,
+      "optimal_shots": 0,
+      "norm_squared_error": 2.1649348980190553e-14
+    }
+  ],
+  "user_instances_estimates_only": [
+    {
+      "name": "tai50_20_01",
+      "jobs": 50,
+      "machines": 20,
+      "operations": 1000,
+      "basis_states_exact": null,
+      "log10_basis_states": 1289.6614974494407,
+      "log10_complex128_state_bytes": 1290.8656174320965,
+      "simulator_planned_peak_bytes": null,
+      "log10_simulator_planned_peak_bytes": 1291.7687074190885,
+      "compact_per_machine_rank_qubits": 4300,
+      "position_list_qubits": 6000,
+      "cost_bits": 16,
+      "adjacent_swap_generators": 980,
+      "total_duration": 50964,
+      "cycle_penalty": 50965,
+      "simple_lower_bound": 2868,
+      "layers": 2000,
+      "log10_amplitude_swap_updates": 1295.9537535207974,
+      "logical_qubits_exclude_oracle_and_error_correction": true,
+      "wall_time_estimate": null,
+      "wall_time_note": "Use measured small-instance benchmarks; quantum hardware time is not specified.",
+      "parse_and_estimate_seconds": 0.007324164000010569,
+      "input_sha256": "b52a3ed7200b22e90e6ec86563f593a5706f272c0cdffd2146f65dcea8429dfc"
+    },
+    {
+      "name": "tai50_20_02",
+      "jobs": 50,
+      "machines": 20,
+      "operations": 1000,
+      "basis_states_exact": null,
+      "log10_basis_states": 1289.6614974494407,
+      "log10_complex128_state_bytes": 1290.8656174320965,
+      "simulator_planned_peak_bytes": null,
+      "log10_simulator_planned_peak_bytes": 1291.7687074190885,
+      "compact_per_machine_rank_qubits": 4300,
+      "position_list_qubits": 6000,
+      "cost_bits": 16,
+      "adjacent_swap_generators": 980,
+      "total_duration": 51598,
+      "cycle_penalty": 51599,
+      "simple_lower_bound": 2848,
+      "layers": 2000,
+      "log10_amplitude_swap_updates": 1295.9537535207974,
+      "logical_qubits_exclude_oracle_and_error_correction": true,
+      "wall_time_estimate": null,
+      "wall_time_note": "Use measured small-instance benchmarks; quantum hardware time is not specified.",
+      "parse_and_estimate_seconds": 0.005539794000014808,
+      "input_sha256": "82e1b91f7f895f81567e4ecba1c077424f949481455e8d0981a3c25066435eea"
+    },
+    {
+      "name": "tai50_20_03",
+      "jobs": 50,
+      "machines": 20,
+      "operations": 1000,
+      "basis_states_exact": null,
+      "log10_basis_states": 1289.6614974494407,
+      "log10_complex128_state_bytes": 1290.8656174320965,
+      "simulator_planned_peak_bytes": null,
+      "log10_simulator_planned_peak_bytes": 1291.7687074190885,
+      "compact_per_machine_rank_qubits": 4300,
+      "position_list_qubits": 6000,
+      "cost_bits": 16,
+      "adjacent_swap_generators": 980,
+      "total_duration": 49121,
+      "cycle_penalty": 49122,
+      "simple_lower_bound": 2755,
+      "layers": 2000,
+      "log10_amplitude_swap_updates": 1295.9537535207974,
+      "logical_qubits_exclude_oracle_and_error_correction": true,
+      "wall_time_estimate": null,
+      "wall_time_note": "Use measured small-instance benchmarks; quantum hardware time is not specified.",
+      "parse_and_estimate_seconds": 0.005451842999946166,
+      "input_sha256": "4f6831099dc2d3abc0ba38e679daf345db054bbd7d1953d40526e7b1b903e600"
+    }
+  ],
+  "interpretation": "CPU simulation timings; no hardware execution and no claimed quantum speedup."
+}

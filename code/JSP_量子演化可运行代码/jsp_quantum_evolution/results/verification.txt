@@ -1,0 +1,13 @@
+test_capacity_check_precedes_permutation_enumeration (test_qjsp.EvolutionTests.test_capacity_check_precedes_permutation_enumeration) ... ok
+test_end_to_end_reproducible_and_valid (test_qjsp.EvolutionTests.test_end_to_end_reproducible_and_valid) ... ok
+test_fixed_orders_and_known_optimum (test_qjsp.EvolutionTests.test_fixed_orders_and_known_optimum) ... ok
+test_full_evolution_converges_to_schrodinger_ode (test_qjsp.EvolutionTests.test_full_evolution_converges_to_schrodinger_ode) ... ok
+test_one_job_and_bad_inputs (test_qjsp.EvolutionTests.test_one_job_and_bad_inputs) ... ok
+test_product_layer_against_exact_matrix_exponential (test_qjsp.EvolutionTests.test_product_layer_against_exact_matrix_exponential) ... ok
+test_sampling_does_not_return_unmeasured_optimum (test_qjsp.EvolutionTests.test_sampling_does_not_return_unmeasured_optimum) ... ok
+test_swap_involutions_and_ground_state (test_qjsp.EvolutionTests.test_swap_involutions_and_ground_state) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.159s
+
+OK

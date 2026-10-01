@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "layers": 1,
+      "tau": 20.0,
+      "shots": 1024,
+      "ideal_p_optimal": 0.4189047607480017,
+      "hardware_p_optimal": 0.361328125,
+      "hardware_p_optimal_wilson95": [
+        0.332473795758585,
+        0.3912189998931385
+      ],
+      "two_qubit_gates": 2,
+      "reported_circuit_seconds": 1.94e-06,
+      "tv_recomputed": 0.08953946864046881,
+      "tv_under_ideal_multinomial_99_percentile": 0.044249593859531186,
+      "monte_carlo_tail_estimate_plus_one": 4.999750012499375e-05,
+      "ideal_numpy_vs_qiskit_difference": 1.6653345369377348e-16
+    },
+    {
+      "layers": 2,
+      "tau": 20.0,
+      "shots": 1024,
+      "ideal_p_optimal": 0.18354505293360054,
+      "hardware_p_optimal": 0.072265625,
+      "hardware_p_optimal_wilson95": [
+        0.05795438604112664,
+        0.08977409632123202
+      ],
+      "two_qubit_gates": 4,
+      "reported_circuit_seconds": 2.1960000000000002e-06,
+      "tv_recomputed": 0.1773891133774601,
+      "tv_under_ideal_multinomial_99_percentile": 0.04521843955614045,
+      "monte_carlo_tail_estimate_plus_one": 4.999750012499375e-05,
+      "ideal_numpy_vs_qiskit_difference": 1.3877787807814457e-16
+    },
+    {
+      "layers": 5,
+      "tau": 20.0,
+      "shots": 1024,
+      "ideal_p_optimal": 0.02717190821009342,
+      "hardware_p_optimal": 0.25390625,
+      "hardware_p_optimal_wilson95": [
+        0.2282017310842873,
+        0.2814502724666588
+      ],
+      "two_qubit_gates": 10,
+      "reported_circuit_seconds": 2.9640000000000003e-06,
+      "tv_recomputed": 0.4137531991379714,
+      "tv_under_ideal_multinomial_99_percentile": 0.039048222803870554,
+      "monte_carlo_tail_estimate_plus_one": 4.999750012499375e-05,
+      "ideal_numpy_vs_qiskit_difference": 2.220446049250313e-16
+    },
+    {
+      "layers": 10,
+      "tau": 20.0,
+      "shots": 1024,
+      "ideal_p_optimal": 0.6933883256276113,
+      "hardware_p_optimal": 0.6220703125,
+      "hardware_p_optimal_wilson95": [
+        0.5919683870330799,
+        0.6512597858087128
+      ],
+      "two_qubit_gates": 20,
+      "reported_circuit_seconds": 4.244e-06,
+      "tv_recomputed": 0.14679404720264866,
+      "tv_under_ideal_multinomial_99_percentile": 0.03805698687238867,
+      "monte_carlo_tail_estimate_plus_one": 4.999750012499375e-05,
+      "ideal_numpy_vs_qiskit_difference": 7.771561172376096e-16
+    }
+  ],
+  "null_hypothesis": "independent ideal-distribution shots; reference only",
+  "diagnosis": "Differences exceed shot noise under this null; archived data cannot isolate transpilation, calibration, readout or other execution errors.",
+  "missing_evidence": [
+    "executed QPY",
+    "physical layout",
+    "calibration snapshot",
+    "resolved runtime options",
+    "actual usage"
+  ]
+}

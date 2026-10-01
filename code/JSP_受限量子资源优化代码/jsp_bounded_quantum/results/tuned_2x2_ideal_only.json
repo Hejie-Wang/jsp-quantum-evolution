@@ -1,0 +1,75 @@
+[
+  {
+    "layers": 1,
+    "angles": [
+      [
+        -2.0962975284941656,
+        -0.6582810372474108
+      ]
+    ],
+    "ideal_p_optimal": 0.7345402690757721,
+    "ideal_probabilities_qiskit_order": [
+      0.026636575013319404,
+      0.7345402690757721,
+      0.21218658089758805,
+      0.026636575013319713
+    ],
+    "mean_cost": 21.663163082912526,
+    "training": {
+      "ideal_training_evaluations": 101,
+      "mean_normalized_cost": 0.2616545059223247,
+      "max_probability_event_error_from_phase_truncation_bound": 0.0
+    },
+    "abstract_all_to_all_compilation": {
+      "two_qubit_gates": 2,
+      "depth_excluding_delays": 11,
+      "active_instruction_qubits": 2,
+      "scheduled_duration_seconds": null,
+      "gate_counts": {
+        "rz": 11,
+        "sx": 6,
+        "cx": 2,
+        "x": 1
+      }
+    },
+    "hardware_run": false
+  },
+  {
+    "layers": 2,
+    "angles": [
+      [
+        1.4390770863470488,
+        0.8682238536674313
+      ],
+      [
+        2.1820419659517416,
+        0.505943367649279
+      ]
+    ],
+    "ideal_p_optimal": 0.9999999887802344,
+    "ideal_probabilities_qiskit_order": [
+      1.2559794640561335e-11,
+      0.9999999887802344,
+      1.1194645551290526e-08,
+      1.2559794638654012e-11
+    ],
+    "mean_cost": 18.000000157051584,
+    "training": {
+      "ideal_training_evaluations": 256,
+      "mean_normalized_cost": 1.1217970884121853e-08,
+      "max_probability_event_error_from_phase_truncation_bound": 0.0
+    },
+    "abstract_all_to_all_compilation": {
+      "two_qubit_gates": 2,
+      "depth_excluding_delays": 15,
+      "active_instruction_qubits": 2,
+      "scheduled_duration_seconds": null,
+      "gate_counts": {
+        "rz": 14,
+        "sx": 10,
+        "cx": 2
+      }
+    },
+    "hardware_run": false
+  }
+]

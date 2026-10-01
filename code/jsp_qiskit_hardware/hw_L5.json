@@ -1,0 +1,163 @@
+{
+  "instance": {
+    "name": "demo_2x2_seed7",
+    "durations": [
+      [
+        9,
+        6
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "machines_1_based": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "tau": 20.0,
+  "layers": 5,
+  "s_final": 0.95,
+  "shots": 1024,
+  "cost_offset_LB": 18,
+  "enumerated_optimum_diagnostic": 18,
+  "cost_table_numpy_index_order": [
+    31,
+    32,
+    18,
+    31
+  ],
+  "ideal_probabilities_numpy_index_order": [
+    0.14891864265193522,
+    0.674990806486036,
+    0.02717190821009342,
+    0.14891864265193536
+  ],
+  "ideal_p_optimal": 0.02717190821009342,
+  "ideal_p_feasible": 0.32500919351396396,
+  "circuit": {
+    "qubits": 2,
+    "depth": 16,
+    "gate_counts": {
+      "rz": 10,
+      "rx": 10,
+      "barrier": 6,
+      "rzz": 5,
+      "h": 2
+    }
+  },
+  "statevector_vs_numpy_max_prob_diff": 2.220446049250313e-16,
+  "backend": "ibm_fez",
+  "transpiled": {
+    "depth": 79,
+    "gate_counts": {
+      "delay": 169,
+      "rz": 59,
+      "sx": 32,
+      "cz": 10,
+      "barrier": 7,
+      "measure": 2
+    },
+    "two_qubit_gates": 10,
+    "scheduled_duration_seconds": 2.9640000000000003e-06
+  },
+  "job_id": "dau6fjihcrkc73dv3l90",
+  "hardware": {
+    "counts": {
+      "10": 343,
+      "00": 344,
+      "11": 77,
+      "01": 260
+    },
+    "tv_distance_vs_ideal": 0.4137531991379714,
+    "shots": 1024,
+    "outcomes": [
+      {
+        "bitstring": "00",
+        "shots": 344,
+        "frequency": 0.3359375,
+        "numpy_basis_index": 0,
+        "orders_zero_based": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "cost": 31,
+        "feasible": true
+      },
+      {
+        "bitstring": "01",
+        "shots": 260,
+        "frequency": 0.25390625,
+        "numpy_basis_index": 2,
+        "orders_zero_based": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "cost": 18,
+        "feasible": true
+      },
+      {
+        "bitstring": "10",
+        "shots": 343,
+        "frequency": 0.3349609375,
+        "numpy_basis_index": 1,
+        "orders_zero_based": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "cost": 32,
+        "feasible": false
+      },
+      {
+        "bitstring": "11",
+        "shots": 77,
+        "frequency": 0.0751953125,
+        "numpy_basis_index": 3,
+        "orders_zero_based": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "cost": 31,
+        "feasible": true
+      }
+    ],
+    "p_feasible": 0.6650390625,
+    "p_optimal": 0.25390625,
+    "best_measured_cost": 18
+  },
+  "limitations": [
+    "Few-layer circuit: validates the hardware implementation, does not reproduce the 2000-layer classical solution quality.",
+    "Every hardware shot reprepares and re-evolves the state; unlike the CPU sampler."
+  ]
+}

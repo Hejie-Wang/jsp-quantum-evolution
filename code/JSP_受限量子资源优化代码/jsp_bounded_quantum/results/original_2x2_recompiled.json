@@ -1,0 +1,67 @@
+[
+  {
+    "layers": 1,
+    "same_algorithm_ideal_p_optimal": 0.418904760748002,
+    "ideal_probability_difference": 4.996003610813204e-16,
+    "compiled_without_barriers_synthetic": {
+      "two_qubit_gates": 2,
+      "depth_excluding_delays": 11,
+      "active_instruction_qubits": 2,
+      "scheduled_duration_seconds": null,
+      "gate_counts": {
+        "rz": 11,
+        "sx": 6,
+        "cx": 2,
+        "x": 1
+      }
+    }
+  },
+  {
+    "layers": 2,
+    "same_algorithm_ideal_p_optimal": 0.1835450529336006,
+    "ideal_probability_difference": 7.771561172376096e-16,
+    "compiled_without_barriers_synthetic": {
+      "two_qubit_gates": 2,
+      "depth_excluding_delays": 15,
+      "active_instruction_qubits": 2,
+      "scheduled_duration_seconds": null,
+      "gate_counts": {
+        "rz": 14,
+        "sx": 10,
+        "cx": 2
+      }
+    }
+  },
+  {
+    "layers": 5,
+    "same_algorithm_ideal_p_optimal": 0.02717190821009363,
+    "ideal_probability_difference": 1.2212453270876722e-15,
+    "compiled_without_barriers_synthetic": {
+      "two_qubit_gates": 3,
+      "depth_excluding_delays": 16,
+      "active_instruction_qubits": 2,
+      "scheduled_duration_seconds": null,
+      "gate_counts": {
+        "rz": 15,
+        "sx": 10,
+        "cx": 3
+      }
+    }
+  },
+  {
+    "layers": 10,
+    "same_algorithm_ideal_p_optimal": 0.6933883256276123,
+    "ideal_probability_difference": 9.992007221626409e-16,
+    "compiled_without_barriers_synthetic": {
+      "two_qubit_gates": 3,
+      "depth_excluding_delays": 16,
+      "active_instruction_qubits": 2,
+      "scheduled_duration_seconds": null,
+      "gate_counts": {
+        "rz": 15,
+        "sx": 10,
+        "cx": 3
+      }
+    }
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "instance": {
+    "name": "demo_2x2_seed7",
+    "durations": [
+      [
+        9,
+        6
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "machines_1_based": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "tau": 20.0,
+  "layers": 1,
+  "s_final": 0.95,
+  "shots": 1024,
+  "cost_offset_LB": 18,
+  "enumerated_optimum_diagnostic": 18,
+  "cost_table_numpy_index_order": [
+    31,
+    32,
+    18,
+    31
+  ],
+  "ideal_probabilities_numpy_index_order": [
+    0.28000970789246715,
+    0.02107582346706408,
+    0.4189047607480017,
+    0.28000970789246715
+  ],
+  "ideal_p_optimal": 0.4189047607480017,
+  "ideal_p_feasible": 0.9789241765329361,
+  "circuit": {
+    "qubits": 2,
+    "depth": 4,
+    "gate_counts": {
+      "h": 2,
+      "barrier": 2,
+      "rz": 2,
+      "rx": 2,
+      "rzz": 1
+    }
+  },
+  "statevector_vs_numpy_max_prob_diff": 1.6653345369377348e-16
+}

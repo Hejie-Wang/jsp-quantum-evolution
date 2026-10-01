@@ -1,0 +1,30 @@
+[
+  {
+    "layers": 1,
+    "ideal_p_optimal": 0.41890476074800154,
+    "compiled_cx": 2,
+    "depth": 11,
+    "probability_max_error": 4.440892098500626e-16
+  },
+  {
+    "layers": 2,
+    "ideal_p_optimal": 0.1835450529336004,
+    "compiled_cx": 2,
+    "depth": 15,
+    "probability_max_error": 7.771561172376096e-16
+  },
+  {
+    "layers": 5,
+    "ideal_p_optimal": 0.02717190821009389,
+    "compiled_cx": 3,
+    "depth": 16,
+    "probability_max_error": 1.4155343563970746e-15
+  },
+  {
+    "layers": 10,
+    "ideal_p_optimal": 0.6933883256276118,
+    "compiled_cx": 3,
+    "depth": 16,
+    "probability_max_error": 5.551115123125783e-16
+  }
+]

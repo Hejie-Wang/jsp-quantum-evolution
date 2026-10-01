@@ -1,0 +1,221 @@
+{
+  "instance": {
+    "p": [
+      [
+        3,
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        4
+      ],
+      [
+        4,
+        3,
+        1
+      ]
+    ],
+    "machine_zero_based": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ]
+    ]
+  },
+  "enumerated_machine_order_combinations": 216,
+  "optimum": 11,
+  "globally_feasible_combinations": 64,
+  "cut_validity_checks": 32,
+  "qubo_permutation_minimum_checks": 18,
+  "cycle_cut_validity_checks": 9728,
+  "cross_machine_cycle_counterexample_verified": true,
+  "horizon_results": [
+    {
+      "T": 7,
+      "status": "INFEASIBLE",
+      "rounds": 11,
+      "cuts": {
+        "path": 11
+      },
+      "lagrangian_value_at_test_multipliers": -9.0,
+      "coordinated_integer_certificate": {
+        "certified": true,
+        "integer_dual_value": 1,
+        "integer_multipliers": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "exact_machine_minima": [
+          2,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "T": 8,
+      "status": "INFEASIBLE",
+      "rounds": 11,
+      "cuts": {
+        "path": 11
+      },
+      "lagrangian_value_at_test_multipliers": -9.0,
+      "coordinated_integer_certificate": {
+        "certified": true,
+        "integer_dual_value": 1,
+        "integer_multipliers": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "exact_machine_minima": [
+          2,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "T": 9,
+      "status": "INFEASIBLE",
+      "rounds": 11,
+      "cuts": {
+        "path": 11
+      },
+      "lagrangian_value_at_test_multipliers": -9.0,
+      "coordinated_integer_certificate": {
+        "certified": true,
+        "integer_dual_value": 1,
+        "integer_multipliers": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "exact_machine_minima": [
+          2,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "T": 10,
+      "status": "INFEASIBLE",
+      "rounds": 11,
+      "cuts": {
+        "path": 11
+      },
+      "lagrangian_value_at_test_multipliers": -9.0,
+      "coordinated_integer_certificate": {
+        "certified": true,
+        "integer_dual_value": 1,
+        "integer_multipliers": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "exact_machine_minima": [
+          2,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "T": 11,
+      "status": "FEASIBLE",
+      "makespan": 11,
+      "rounds": 5,
+      "cuts": {
+        "path": 4
+      },
+      "lagrangian_value_at_test_multipliers": -7.0,
+      "coordinated_integer_certificate": {
+        "certified": false,
+        "integer_dual_value": 0,
+        "integer_multipliers": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "exact_machine_minima": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "T": 12,
+      "status": "FEASIBLE",
+      "makespan": 11,
+      "rounds": 5,
+      "cuts": {
+        "path": 4
+      },
+      "lagrangian_value_at_test_multipliers": -7.0,
+      "coordinated_integer_certificate": {
+        "certified": false,
+        "integer_dual_value": 0,
+        "integer_multipliers": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "exact_machine_minima": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

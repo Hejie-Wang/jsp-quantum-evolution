@@ -1,0 +1,283 @@
+{
+  "instance": "demo_3x3",
+  "mode": "uniform",
+  "seed": 7,
+  "requested_budget": {
+    "bits": 4,
+    "layers": 2,
+    "max_two_qubit": 200,
+    "max_depth": 600,
+    "max_duration_us": 30.0,
+    "max_cost_evaluations": 320,
+    "max_rounds": 20,
+    "shots": 1024,
+    "train_evaluations": 96
+  },
+  "chosen_bits": 4,
+  "initial_classical_makespan": 15,
+  "final_makespan": 11,
+  "final_orders_zero_based": [
+    [
+      0,
+      7,
+      5
+    ],
+    [
+      3,
+      1,
+      8
+    ],
+    [
+      6,
+      4,
+      2
+    ]
+  ],
+  "schedule": {
+    "feasible": true,
+    "cost": 11,
+    "makespan": 11,
+    "starts": [
+      0,
+      3,
+      5,
+      0,
+      4,
+      7,
+      0,
+      4,
+      7
+    ]
+  },
+  "local_table_cost_evaluations": 160,
+  "ideal_parameter_objective_evaluations": 0,
+  "seconds": 0.00538850300017657,
+  "hardware_jobs_submitted": 0,
+  "trace": [
+    {
+      "round": 1,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 15,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.25,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 8
+    },
+    {
+      "round": 2,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 16
+    },
+    {
+      "round": 3,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 8,
+      "cost_evaluations_cumulative": 24
+    },
+    {
+      "round": 4,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 4,
+      "cost_evaluations_cumulative": 32
+    },
+    {
+      "round": 5,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 8,
+      "cost_evaluations_cumulative": 40
+    },
+    {
+      "round": 6,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 0,
+      "cost_evaluations_cumulative": 48
+    },
+    {
+      "round": 7,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 4,
+      "cost_evaluations_cumulative": 56
+    },
+    {
+      "round": 8,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 64
+    },
+    {
+      "round": 9,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 72
+    },
+    {
+      "round": 10,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 80
+    },
+    {
+      "round": 11,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 8,
+      "cost_evaluations_cumulative": 88
+    },
+    {
+      "round": 12,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 96
+    },
+    {
+      "round": 13,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 8,
+      "cost_evaluations_cumulative": 104
+    },
+    {
+      "round": 14,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 8,
+      "cost_evaluations_cumulative": 112
+    },
+    {
+      "round": 15,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 120
+    },
+    {
+      "round": 16,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 128
+    },
+    {
+      "round": 17,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 136
+    },
+    {
+      "round": 18,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 144
+    },
+    {
+      "round": 19,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 152
+    },
+    {
+      "round": 20,
+      "bits": 3,
+      "states": 8,
+      "incumbent_before": 11,
+      "incumbent_after": 11,
+      "exact_local_best_diagnostic": 11,
+      "ideal_probability_of_strict_improvement": 0.0,
+      "cx_before_routing": 20,
+      "cost_evaluations_cumulative": 160
+    }
+  ],
+  "limitations": [
+    "Local-search heuristic; no global-optimum guarantee.",
+    "All local costs were already evaluated classically; exact_local is the necessary baseline.",
+    "An ideal sampled search is not a quantum-hardware performance measurement."
+  ]
+}

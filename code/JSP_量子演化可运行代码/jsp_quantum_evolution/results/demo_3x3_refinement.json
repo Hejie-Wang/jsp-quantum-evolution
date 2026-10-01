@@ -1,0 +1,18 @@
+{
+  "configuration": {
+    "tau": 20,
+    "layers": [
+      2000,
+      4000
+    ],
+    "s_final": 0.95
+  },
+  "norm_of_state_difference": 0.0013759553946628789,
+  "total_variation_between_measurement_distributions": 0.00012414527117546266,
+  "optimal_probabilities": [
+    0.14786850662137846,
+    0.14784227881292905
+  ],
+  "4000_layer_evolution_seconds": 0.15150719500002197,
+  "note": "A refinement diagnostic, not a rigorous continuous-time error certificate."
+}

@@ -1,0 +1,286 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "qiskit": "2.5.2"
+  },
+  "budget": {
+    "bits": 4,
+    "layers": 2,
+    "max_two_qubit": 200,
+    "max_depth": 600,
+    "max_duration_us": 30.0,
+    "max_cost_evaluations": 320,
+    "max_rounds": 20,
+    "shots": 1024,
+    "train_evaluations": 96
+  },
+  "runs": [
+    {
+      "instance": "demo_3x3",
+      "mode": "ideal_quantum",
+      "initial_classical_makespan": 15,
+      "final_makespan": 11,
+      "seconds": 0.13045946700003697,
+      "local_table_cost_evaluations": 160,
+      "ideal_parameter_objective_evaluations": 1868,
+      "maximum_local_bits": 3,
+      "compiled_last_block": {
+        "two_qubit_gates": 0,
+        "depth_excluding_delays": 6,
+        "active_instruction_qubits": 3,
+        "scheduled_duration_seconds": null,
+        "gate_counts": {
+          "rz": 9,
+          "sx": 6,
+          "measure": 3,
+          "barrier": 1
+        }
+      }
+    },
+    {
+      "instance": "demo_3x3",
+      "mode": "uniform",
+      "initial_classical_makespan": 15,
+      "final_makespan": 11,
+      "seconds": 0.00538850300017657,
+      "local_table_cost_evaluations": 160,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 3
+    },
+    {
+      "instance": "demo_3x3",
+      "mode": "exact_local",
+      "initial_classical_makespan": 15,
+      "final_makespan": 11,
+      "seconds": 0.004921959000057541,
+      "local_table_cost_evaluations": 160,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 3
+    },
+    {
+      "instance": "demo_5x5_seed7",
+      "mode": "ideal_quantum",
+      "initial_classical_makespan": 64,
+      "final_makespan": 56,
+      "seconds": 0.1704955079994761,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 1893,
+      "maximum_local_bits": 4,
+      "compiled_last_block": {
+        "two_qubit_gates": 21,
+        "depth_excluding_delays": 52,
+        "active_instruction_qubits": 4,
+        "scheduled_duration_seconds": null,
+        "gate_counts": {
+          "rz": 42,
+          "sx": 23,
+          "cx": 21,
+          "measure": 4,
+          "x": 1,
+          "barrier": 1
+        }
+      }
+    },
+    {
+      "instance": "demo_5x5_seed7",
+      "mode": "uniform",
+      "initial_classical_makespan": 64,
+      "final_makespan": 56,
+      "seconds": 0.012249681999492168,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "demo_5x5_seed7",
+      "mode": "exact_local",
+      "initial_classical_makespan": 64,
+      "final_makespan": 54,
+      "seconds": 0.013360005000322417,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "demo_10x5_seed7",
+      "mode": "ideal_quantum",
+      "initial_classical_makespan": 98,
+      "final_makespan": 85,
+      "seconds": 0.17176307699992321,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 1920,
+      "maximum_local_bits": 4,
+      "compiled_last_block": {
+        "two_qubit_gates": 21,
+        "depth_excluding_delays": 50,
+        "active_instruction_qubits": 4,
+        "scheduled_duration_seconds": null,
+        "gate_counts": {
+          "rz": 41,
+          "sx": 23,
+          "cx": 21,
+          "measure": 4,
+          "barrier": 1
+        }
+      }
+    },
+    {
+      "instance": "demo_10x5_seed7",
+      "mode": "uniform",
+      "initial_classical_makespan": 98,
+      "final_makespan": 85,
+      "seconds": 0.01547144100004516,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "demo_10x5_seed7",
+      "mode": "exact_local",
+      "initial_classical_makespan": 98,
+      "final_makespan": 87,
+      "seconds": 0.018401483000161534,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "tai50_20_01",
+      "mode": "ideal_quantum",
+      "initial_classical_makespan": 3937,
+      "final_makespan": 3903,
+      "seconds": 0.48006432199963456,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 1920,
+      "maximum_local_bits": 4,
+      "compiled_last_block": {
+        "two_qubit_gates": 0,
+        "depth_excluding_delays": 6,
+        "active_instruction_qubits": 4,
+        "scheduled_duration_seconds": null,
+        "gate_counts": {
+          "rz": 12,
+          "sx": 8,
+          "measure": 4,
+          "barrier": 1
+        }
+      }
+    },
+    {
+      "instance": "tai50_20_01",
+      "mode": "uniform",
+      "initial_classical_makespan": 3937,
+      "final_makespan": 3907,
+      "seconds": 0.33891589999984717,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "tai50_20_01",
+      "mode": "exact_local",
+      "initial_classical_makespan": 3937,
+      "final_makespan": 3931,
+      "seconds": 0.32355775099949824,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "tai50_20_02",
+      "mode": "ideal_quantum",
+      "initial_classical_makespan": 4152,
+      "final_makespan": 4048,
+      "seconds": 0.4892256230004932,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 1920,
+      "maximum_local_bits": 4,
+      "compiled_last_block": {
+        "two_qubit_gates": 21,
+        "depth_excluding_delays": 50,
+        "active_instruction_qubits": 4,
+        "scheduled_duration_seconds": null,
+        "gate_counts": {
+          "rz": 40,
+          "sx": 22,
+          "cx": 21,
+          "measure": 4,
+          "barrier": 1
+        }
+      }
+    },
+    {
+      "instance": "tai50_20_02",
+      "mode": "uniform",
+      "initial_classical_makespan": 4152,
+      "final_makespan": 4096,
+      "seconds": 0.3586488040000404,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "tai50_20_02",
+      "mode": "exact_local",
+      "initial_classical_makespan": 4152,
+      "final_makespan": 4074,
+      "seconds": 0.33008718700057216,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "tai50_20_03",
+      "mode": "ideal_quantum",
+      "initial_classical_makespan": 4057,
+      "final_makespan": 4015,
+      "seconds": 0.4741620140002851,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 1887,
+      "maximum_local_bits": 4,
+      "compiled_last_block": {
+        "two_qubit_gates": 21,
+        "depth_excluding_delays": 52,
+        "active_instruction_qubits": 4,
+        "scheduled_duration_seconds": null,
+        "gate_counts": {
+          "rz": 42,
+          "sx": 23,
+          "cx": 21,
+          "measure": 4,
+          "x": 1,
+          "barrier": 1
+        }
+      }
+    },
+    {
+      "instance": "tai50_20_03",
+      "mode": "uniform",
+      "initial_classical_makespan": 4057,
+      "final_makespan": 4015,
+      "seconds": 0.3217567199999394,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    },
+    {
+      "instance": "tai50_20_03",
+      "mode": "exact_local",
+      "initial_classical_makespan": 4057,
+      "final_makespan": 4004,
+      "seconds": 0.3181212539993794,
+      "local_table_cost_evaluations": 320,
+      "ideal_parameter_objective_evaluations": 0,
+      "maximum_local_bits": 4
+    }
+  ],
+  "hardware_jobs_submitted": 0,
+  "notes": [
+    "single fixed-seed run per case; not a speedup benchmark",
+    "quantum and uniform engines sample the explicitly enumerated local table",
+    "exact_local already knows the best local option, and is an essential baseline",
+    "compiled counts target a synthetic line, NOT calibrated ibm_fez"
+  ]
+}

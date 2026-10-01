@@ -1,0 +1,20 @@
+[
+  {
+    "instance": "tai50_20_01.txt",
+    "elapsed_with_process_start_seconds": 0.22753182999997534,
+    "exit_code": 2,
+    "message": "CapacityError: Full simulation needs about 10^1289.661 states; max_states=200000. Use 'estimate' or 'decode'."
+  },
+  {
+    "instance": "tai50_20_02.txt",
+    "elapsed_with_process_start_seconds": 0.20692444300004809,
+    "exit_code": 2,
+    "message": "CapacityError: Full simulation needs about 10^1289.661 states; max_states=200000. Use 'estimate' or 'decode'."
+  },
+  {
+    "instance": "tai50_20_03.txt",
+    "elapsed_with_process_start_seconds": 0.18940899900007935,
+    "exit_code": 2,
+    "message": "CapacityError: Full simulation needs about 10^1289.661 states; max_states=200000. Use 'estimate' or 'decode'."
+  }
+]

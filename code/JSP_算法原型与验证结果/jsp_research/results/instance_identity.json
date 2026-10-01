@@ -1,0 +1,20 @@
+[
+  {
+    "file": "tai50_20_01.txt",
+    "benchmark": "ta61",
+    "exact_numeric_match": true,
+    "official_url": "https://mistic.iict-heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/tai50_20.txt"
+  },
+  {
+    "file": "tai50_20_02.txt",
+    "benchmark": "ta62",
+    "exact_numeric_match": true,
+    "official_url": "https://mistic.iict-heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/tai50_20.txt"
+  },
+  {
+    "file": "tai50_20_03.txt",
+    "benchmark": "ta63",
+    "exact_numeric_match": true,
+    "official_url": "https://mistic.iict-heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/jobshop.dir/tai50_20.txt"
+  }
+]

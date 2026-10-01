@@ -1,0 +1,224 @@
+{
+  "implementation": "classical full-state simulation of permutation-space quantum evolution",
+  "instance": {
+    "name": "demo_4x3_seed7",
+    "durations": [
+      [
+        9,
+        6,
+        7
+      ],
+      [
+        9,
+        6,
+        7
+      ],
+      [
+        8,
+        3,
+        1
+      ],
+      [
+        3,
+        3,
+        8
+      ]
+    ],
+    "machines_1_based": [
+      [
+        2,
+        3,
+        1
+      ],
+      [
+        1,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        3,
+        2
+      ]
+    ]
+  },
+  "resources": {
+    "name": "demo_4x3_seed7",
+    "jobs": 4,
+    "machines": 3,
+    "operations": 12,
+    "basis_states_exact": "13824",
+    "log10_basis_states": 4.140633725134818,
+    "log10_complex128_state_bytes": 5.344753707790743,
+    "simulator_planned_peak_bytes": 1798848,
+    "log10_simulator_planned_peak_bytes": 6.254994467653411,
+    "compact_per_machine_rank_qubits": 15,
+    "position_list_qubits": 24,
+    "cost_bits": 7,
+    "adjacent_swap_generators": 9,
+    "total_duration": 70,
+    "cycle_penalty": 71,
+    "simple_lower_bound": 27,
+    "layers": 2000,
+    "log10_amplitude_swap_updates": 8.395906230238124,
+    "logical_qubits_exclude_oracle_and_error_correction": true,
+    "wall_time_estimate": null,
+    "wall_time_note": "Use measured small-instance benchmarks; quantum hardware time is not specified."
+  },
+  "cost_offset": 27,
+  "evolution": {
+    "tau_dimensionless": 20.0,
+    "layers": 2000,
+    "s_final": 0.95,
+    "step_size": 0.01,
+    "method": "midpoint schedule + first-order cost-then-swap product",
+    "max_recorded_norm_squared_error": 2.1649348980190553e-14,
+    "trace": [
+      {
+        "completed_layers": 200,
+        "s_boundary": 0.095,
+        "feasible_probability": 0.20841238530071793,
+        "optimal_probability_diagnostic": 0.00013860616195581502,
+        "norm_squared": 0.9999999999999873
+      },
+      {
+        "completed_layers": 400,
+        "s_boundary": 0.19,
+        "feasible_probability": 0.24089392358865103,
+        "optimal_probability_diagnostic": 0.0005572396708668799,
+        "norm_squared": 0.9999999999999784
+      },
+      {
+        "completed_layers": 600,
+        "s_boundary": 0.285,
+        "feasible_probability": 0.24387348305705175,
+        "optimal_probability_diagnostic": 0.0009518759581211626,
+        "norm_squared": 0.9999999999999813
+      },
+      {
+        "completed_layers": 800,
+        "s_boundary": 0.38,
+        "feasible_probability": 0.24626741127969498,
+        "optimal_probability_diagnostic": 0.0011129983335087872,
+        "norm_squared": 0.9999999999999789
+      },
+      {
+        "completed_layers": 1000,
+        "s_boundary": 0.475,
+        "feasible_probability": 0.24596478580352174,
+        "optimal_probability_diagnostic": 0.0011407511705899057,
+        "norm_squared": 0.999999999999982
+      },
+      {
+        "completed_layers": 1200,
+        "s_boundary": 0.57,
+        "feasible_probability": 0.24727416953549855,
+        "optimal_probability_diagnostic": 0.0012146752785904384,
+        "norm_squared": 0.9999999999999853
+      },
+      {
+        "completed_layers": 1400,
+        "s_boundary": 0.665,
+        "feasible_probability": 0.24745152067405107,
+        "optimal_probability_diagnostic": 0.0012345432994442288,
+        "norm_squared": 0.9999999999999838
+      },
+      {
+        "completed_layers": 1600,
+        "s_boundary": 0.76,
+        "feasible_probability": 0.24862338348477023,
+        "optimal_probability_diagnostic": 0.001172849694007149,
+        "norm_squared": 0.9999999999999925
+      },
+      {
+        "completed_layers": 1800,
+        "s_boundary": 0.855,
+        "feasible_probability": 0.24879493564623079,
+        "optimal_probability_diagnostic": 0.001166835224529057,
+        "norm_squared": 0.9999999999999906
+      },
+      {
+        "completed_layers": 2000,
+        "s_boundary": 0.95,
+        "feasible_probability": 0.24849473082170642,
+        "optimal_probability_diagnostic": 0.0011779534781684016,
+        "norm_squared": 1.0000000000000044
+      }
+    ]
+  },
+  "final_state_diagnostics": {
+    "norm_squared": 1.0000000000000044,
+    "feasible_probability": 0.24849473082170642,
+    "optimal_probability_diagnostic": 0.0011779534781684016,
+    "enumerated_optimum_diagnostic": 30,
+    "optimum_degeneracy_diagnostic": 1,
+    "uniform_optimal_probability_diagnostic": 7.233796296296296e-05,
+    "expected_cost_including_cycle_penalty": 65.90147915012608,
+    "conditional_feasible_mean_makespan": 50.48237842704167
+  },
+  "sampling": {
+    "shots": 1000,
+    "seed": 7,
+    "feasible_shots": 229,
+    "optimal_shots_diagnostic": 0,
+    "at_least_one_optimal_probability_diagnostic": 0.6923054813273211,
+    "best_measured_schedule": {
+      "basis_index": 12212,
+      "orders_zero_based": [
+        [
+          9,
+          3,
+          6,
+          2
+        ],
+        [
+          0,
+          11,
+          5,
+          7
+        ],
+        [
+          10,
+          4,
+          1,
+          8
+        ]
+      ],
+      "feasible": true,
+      "cost": 31,
+      "makespan": 31,
+      "starts": [
+        0,
+        18,
+        24,
+        3,
+        12,
+        18,
+        12,
+        25,
+        28,
+        0,
+        3,
+        9
+      ]
+    },
+    "sampling_note": "CPU reuses one simulated probability distribution; actual hardware must reprepare for each shot."
+  },
+  "timings_seconds": {
+    "basis_and_cost_table": 0.05444679000004271,
+    "unitary_evolution": 1.6567666259999214,
+    "sampling_and_decode": 0.0006555050000542906,
+    "total": 1.7118689210000184
+  },
+  "limitations": [
+    "Cost table enumerates every basis state; no large-instance quantum speedup is claimed.",
+    "tau is dimensionless evolution time, not seconds of hardware time.",
+    "Enumerated optimum is a diagnostic and never enters the state preparation or evolution.",
+    "Finite tau and layers do not guarantee global-optimum sampling."
+  ]
+}

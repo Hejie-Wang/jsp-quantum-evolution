@@ -1,0 +1,186 @@
+E:\BUAA\paper_composition\JSP_QSWAP\improvement\code\jsp_qiskit_hardware\qjsp_hardware.py:167: DeprecationWarning: The property ``qiskit.circuit.quantumcircuit.QuantumCircuit.duration`` is deprecated as of Qiskit 1.3.0. It will be removed in Qiskit 3.0.0.
+  if isa.duration is not None and backend.dt:
+E:\BUAA\paper_composition\JSP_QSWAP\improvement\code\jsp_qiskit_hardware\qjsp_hardware.py:168: DeprecationWarning: The property ``qiskit.circuit.quantumcircuit.QuantumCircuit.duration`` is deprecated as of Qiskit 1.3.0. It will be removed in Qiskit 3.0.0.
+  duration_s = isa.duration * backend.dt
+{
+  "backend": "ibm_fez",
+  "transpiled": {
+    "depth": 154,
+    "gate_counts": {
+      "delay": 184,
+      "rz": 114,
+      "sx": 62,
+      "cz": 20,
+      "barrier": 12,
+      "measure": 2
+    },
+    "two_qubit_gates": 20,
+    "scheduled_duration_seconds": 4.244e-06
+  }
+}
+E:\BUAA\paper_composition\JSP_QSWAP\improvement\code\jsp_qiskit_hardware\qjsp_hardware.py:176: DeprecationWarning: The SamplerV2 class is deprecated as of qiskit-ibm-runtime 0.50.0 and will be removed no sooner than 3 months after the release date. `qiskit_ibm_runtime.executor_sampler.Sampler` provides a new Sampler implementation that runs all the pre- and post-processing in the client side. The top-level `qiskit_ibm_runtime.Sampler` import will be updated to point to the client-side sampler in an upcoming release, with the legacy Sampler being available until the deprecation is completed.
+  sampler = Sampler(mode=backend)
+Job ID: dau6frjojkfs738rkb9g
+{
+  "instance": {
+    "name": "demo_2x2_seed7",
+    "durations": [
+      [
+        9,
+        6
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "machines_1_based": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "tau": 20.0,
+  "layers": 10,
+  "s_final": 0.95,
+  "shots": 1024,
+  "cost_offset_LB": 18,
+  "enumerated_optimum_diagnostic": 18,
+  "cost_table_numpy_index_order": [
+    31,
+    32,
+    18,
+    31
+  ],
+  "ideal_probabilities_numpy_index_order": [
+    0.0042396951486756655,
+    0.29813228407503733,
+    0.6933883256276113,
+    0.004239695148675651
+  ],
+  "ideal_p_optimal": 0.6933883256276113,
+  "ideal_p_feasible": 0.7018677159249626,
+  "circuit": {
+    "qubits": 2,
+    "depth": 31,
+    "gate_counts": {
+      "rz": 20,
+      "rx": 20,
+      "barrier": 11,
+      "rzz": 10,
+      "h": 2
+    }
+  },
+  "statevector_vs_numpy_max_prob_diff": 7.771561172376096e-16,
+  "backend": "ibm_fez",
+  "transpiled": {
+    "depth": 154,
+    "gate_counts": {
+      "delay": 184,
+      "rz": 114,
+      "sx": 62,
+      "cz": 20,
+      "barrier": 12,
+      "measure": 2
+    },
+    "two_qubit_gates": 20,
+    "scheduled_duration_seconds": 4.244e-06
+  },
+  "job_id": "dau6frjojkfs738rkb9g",
+  "hardware": {
+    "counts": {
+      "01": 637,
+      "10": 228,
+      "00": 97,
+      "11": 62
+    },
+    "tv_distance_vs_ideal": 0.14679404720264866,
+    "shots": 1024,
+    "outcomes": [
+      {
+        "bitstring": "00",
+        "shots": 97,
+        "frequency": 0.0947265625,
+        "numpy_basis_index": 0,
+        "orders_zero_based": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "cost": 31,
+        "feasible": true
+      },
+      {
+        "bitstring": "01",
+        "shots": 637,
+        "frequency": 0.6220703125,
+        "numpy_basis_index": 2,
+        "orders_zero_based": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "cost": 18,
+        "feasible": true
+      },
+      {
+        "bitstring": "10",
+        "shots": 228,
+        "frequency": 0.22265625,
+        "numpy_basis_index": 1,
+        "orders_zero_based": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "cost": 32,
+        "feasible": false
+      },
+      {
+        "bitstring": "11",
+        "shots": 62,
+        "frequency": 0.060546875,
+        "numpy_basis_index": 3,
+        "orders_zero_based": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "cost": 31,
+        "feasible": true
+      }
+    ],
+    "p_feasible": 0.77734375,
+    "p_optimal": 0.6220703125,
+    "best_measured_cost": 18
+  },
+  "limitations": [
+    "Few-layer circuit: validates the hardware implementation, does not reproduce the 2000-layer classical solution quality.",
+    "Every hardware shot reprepares and re-evolves the state; unlike the CPU sampler."
+  ]
+}

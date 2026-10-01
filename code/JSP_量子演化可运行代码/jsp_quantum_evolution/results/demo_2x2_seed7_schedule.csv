@@ -1,0 +1,5 @@
+job,operation,machine,start,finish,duration
+1,1,2,0,9,9
+1,2,1,9,15,6
+2,1,1,0,7,7
+2,2,2,9,18,9
