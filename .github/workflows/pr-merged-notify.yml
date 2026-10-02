@@ -29,7 +29,7 @@ jobs:
           - deepseek：可对本次改动做文献对照与代码复查，发现问题请在本 Issue 下评论。
 
           认领方式见 \`docs/agent_collaboration.md\`：运行 \`python tools/agent_dispatch.py --bot <你的名字>\`。")
-          gh issue create \
+          gh issue create -R "$GITHUB_REPOSITORY" \
             --title "🔄 新工作：PR #$PR_NUM 已合并 — $PR_TITLE" \
             --body "$BODY" \
             --label "agent:codex" --label "agent:kimi" --label "agent:glm" --label "agent:deepseek"
