@@ -1,0 +1,199 @@
+{
+  "environment": {
+    "python": "D:\\anaconda3\\envs\\qskit\\python.exe",
+    "python_version": "3.11.16 | packaged by conda-forge | (main, Sep  1 2026, 16:24:05) [MSC v.1944 64 bit (AMD64)]",
+    "packages": {
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1"
+    }
+  },
+  "small_demo": {
+    "mode": "local_aer_simulator",
+    "hardware_jobs_submitted": 0,
+    "shots": 256,
+    "witnesses": 6,
+    "fixed_t": 15,
+    "penalty": 23.0,
+    "uniform_legal_counts": {
+      "(1, 1, 0)|T=0": 36,
+      "(0, 1, 0)|T=0": 32,
+      "(1, 0, 0)|T=0": 36,
+      "(0, 0, 1)|T=0": 26,
+      "(0, 1, 1)|T=0": 28,
+      "(1, 1, 1)|T=0": 41,
+      "(0, 0, 0)|T=0": 27,
+      "(1, 0, 1)|T=0": 30
+    },
+    "phase_plus_mixer_counts": {
+      "(1, 1, 0)|T=0": 41,
+      "(0, 1, 0)|T=0": 18,
+      "(1, 0, 0)|T=0": 80,
+      "(0, 0, 1)|T=0": 15,
+      "(0, 1, 1)|T=0": 10,
+      "(1, 1, 1)|T=0": 29,
+      "(0, 0, 0)|T=0": 34,
+      "(1, 0, 1)|T=0": 29
+    },
+    "distributions_differ": true,
+    "illegal_fraction": {
+      "uniform": 0.0,
+      "phase_plus_mixer": 0.0
+    },
+    "resources": {
+      "phase_only": {
+        "num_qubits": 12,
+        "depth": 25,
+        "size": 33,
+        "count_ops": {
+          "cx": 20,
+          "ccx": 8,
+          "p": 5
+        },
+        "metadata": {
+          "execution_mode": "local_simulator_or_offline_resource_compile",
+          "hardware_jobs_submitted": 0,
+          "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1",
+          "data_qubits": 6,
+          "time_qubits": 0,
+          "work_qubits": 6,
+          "work_register_reused": true,
+          "witnesses": 6,
+          "witnesses_applied": 5,
+          "witnesses_skipped_constant_false": 1,
+          "fixed_t": 15
+        },
+        "hardware_jobs_submitted": 0
+      },
+      "ansatz": {
+        "num_qubits": 12,
+        "depth": 27,
+        "size": 39,
+        "count_ops": {
+          "cx": 20,
+          "ccx": 8,
+          "p": 5,
+          "initialize": 3,
+          "xx_plus_yy": 3
+        },
+        "metadata": {
+          "mode": "xy_joint",
+          "fixed_t": 15,
+          "penalty": 23.0,
+          "layers": 1,
+          "initial_state": "uniform_legal",
+          "witnesses": 6,
+          "transitions": 0,
+          "hardware_jobs_submitted": 0,
+          "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1"
+        },
+        "hardware_jobs_submitted": 0
+      }
+    }
+  },
+  "medium_resources": {
+    "mode": "offline_resource_compile",
+    "hardware_jobs_submitted": 0,
+    "source_result": "E:\\BUAA\\paper_composition\\JSP_QSWAP\\improvement\\code\\candidate_quantum_medium\\results\\corrected_20261001\\15x20_derived_seed11_kaiwu.json",
+    "source_sha256": "a864116ce28348e386c2b615586efe28a9e9cee83ad6b9a5eab91e0126a71224",
+    "candidate_data_qubits": 160,
+    "time_qubits": 0,
+    "witnesses_included": 44,
+    "witnesses_available": 44,
+    "witnesses_omitted": 0,
+    "joint_terms_included": 2,
+    "phase_logical": {
+      "num_qubits": 183,
+      "depth": 300,
+      "size": 856,
+      "count_ops": {
+        "cx": 724,
+        "mcx": 54,
+        "p": 44,
+        "ccx": 34
+      },
+      "metadata": {
+        "execution_mode": "local_simulator_or_offline_resource_compile",
+        "hardware_jobs_submitted": 0,
+        "pool_hash": "31323d4cc5284a626221e6f12ee00eee96e58a463c02985515587d6e729dd986",
+        "data_qubits": 160,
+        "time_qubits": 0,
+        "work_qubits": 23,
+        "work_register_reused": true,
+        "witnesses": 44,
+        "witnesses_applied": 44,
+        "witnesses_skipped_constant_false": 0,
+        "fixed_t": 1684
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "phase_transpiled": {
+      "num_qubits": 183,
+      "depth": 2732,
+      "size": 4628,
+      "count_ops": {
+        "u": 2572,
+        "cx": 2056
+      },
+      "metadata": {
+        "execution_mode": "local_simulator_or_offline_resource_compile",
+        "hardware_jobs_submitted": 0,
+        "pool_hash": "31323d4cc5284a626221e6f12ee00eee96e58a463c02985515587d6e729dd986",
+        "data_qubits": 160,
+        "time_qubits": 0,
+        "work_qubits": 23,
+        "work_register_reused": true,
+        "witnesses": 44,
+        "witnesses_applied": 44,
+        "witnesses_skipped_constant_false": 0,
+        "fixed_t": 1684
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "joint_logical": {
+      "num_qubits": 160,
+      "depth": 21,
+      "size": 30,
+      "count_ops": {
+        "cx": 20,
+        "x": 8,
+        "annotated": 2
+      },
+      "metadata": {
+        "mixer": "witness_joint_local_support",
+        "construction": "exact_cx_x_mcrx",
+        "transitions": 2,
+        "hardware_jobs_submitted": 0,
+        "support_matrix_qubits": [
+          8,
+          4
+        ]
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "joint_transpiled": {
+      "num_qubits": 160,
+      "depth": 237,
+      "size": 287,
+      "count_ops": {
+        "u": 167,
+        "cx": 120
+      },
+      "metadata": {
+        "mixer": "witness_joint_local_support",
+        "construction": "exact_cx_x_mcrx",
+        "transitions": 2,
+        "hardware_jobs_submitted": 0,
+        "support_matrix_qubits": [
+          8,
+          4
+        ]
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "compile_seconds": 0.13720050000029005,
+    "statevector_simulation": false,
+    "note": "One shared work register across all witnesses; joint gates use the exact CX/X/MC-Rx construction with zero ancillas; no medium solution claim."
+  }
+}

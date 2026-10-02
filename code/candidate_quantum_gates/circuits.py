@@ -4,6 +4,22 @@ The module deliberately has no provider, account, or backend imports.  It uses
 Qiskit circuit objects only; callers choose a local simulator or offline
 transpilation target.  Membership flags are exact on the legal one-hot
 subspace, which is the encoded search space used by the candidate model.
+
+Constraint and phase semantics (P0 of docs/candidate_quantum_improvements_
+20261002.md):
+
+* ``allowed_labels`` is the canonical intersection projection, matching
+  ``candidate_quantum_medium/medium_qjsp.py::witness_support``; a candidate
+  label is allowed only when it satisfies every same-machine relation.
+* Both cycle and path witnesses carry the penalty weight, implementing
+  ``H = T + penalty * (cycles + over-T paths)`` on the T-register form.
+* Constant-false witnesses (empty allowed set on a constrained machine, or a
+  path that cannot exceed the fixed threshold) emit no gates at all, so no
+  auxiliary qubit is ever left dirty by a skipped branch.
+
+Resource semantics (P1): every witness computes, phases, and uncomputes inside
+one shared work register, and joint transitions use an exact CX/X/
+multi-controlled-Rx construction instead of a dense ``UnitaryGate``.
 """
 from __future__ import annotations
 
@@ -17,6 +33,49 @@ from typing import Iterable, Mapping, Sequence
 def _hash_json(value) -> str:
     payload = json.dumps(value, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def allowed_labels(orders, relations):
+    """Canonical intersection projection of relations onto candidate labels.
+
+    A label is allowed only when its order satisfies *every* relation, so
+    several relations on one machine intersect; machines not mentioned by a
+    witness are unconstrained and allow all labels upstream.  Mirrors
+    ``medium_qjsp.witness_support`` so the gate layer and the classical cut
+    compiler share one semantics.
+    """
+    allowed = []
+    for label, order in enumerate(orders):
+        pos = {op: i for i, op in enumerate(order)}
+        if all(pos[u] < pos[v] for u, v in relations):
+            allowed.append(label)
+    return tuple(allowed)
+
+
+def derive_witness(pool: CandidatePool, raw: Mapping):
+    """Project one raw graph witness onto pool labels via ``allowed_labels``.
+
+    ``raw`` carries ``kind``, ``relations`` (machine, u, v), optional
+    ``length``/``nodes``; machines absent from the relations are unconstrained.
+    An empty per-machine intersection stays empty: the witness then never
+    triggers inside this pool and phase circuits skip it.  The spec is bound
+    to the pool content hash so a stale mask cannot silently follow a pool
+    change.
+    """
+    per_machine = {}
+    for machine, u, v in raw.get("relations", []):
+        per_machine.setdefault(int(machine), []).append((u, v))
+    allowed = []
+    for machine in range(pool.machines):
+        relations = tuple(per_machine.get(machine, ()))
+        if relations:
+            allowed.append(allowed_labels(pool.candidates[machine], relations))
+        else:
+            allowed.append(tuple(range(pool.sizes[machine])))
+    return WitnessSpec(raw["kind"], tuple(allowed),
+                       length=int(raw.get("length", 0)),
+                       pool_hash=pool.content_hash,
+                       nodes=tuple(raw.get("nodes", ())))
 
 
 @dataclass(frozen=True)
@@ -161,14 +220,20 @@ def build_phase_circuit(
     time_bits: int | None = None,
     include_objective: bool = False,
     penalty: float | None = None,
-    initialize_uniform: bool = False,
 ):
     """Build witness phase gates with reversible flag/comparator cleanup.
 
-    `fixed_t` selects the fixed-T feasibility form.  Otherwise `time_bits`
-    creates an explicit little-endian T register and path predicates use
-    `T < witness.length`.  The returned circuit has named registers so tests
-    and result writers can decode resource ownership without guessing.
+    Every witness runs compute -> phase -> uncompute inside one shared work
+    register of ``pool.machines + 3`` flag/predicate/compare/active qubits
+    (plus ``time_bits - 1`` comparator work qubits in T-register mode), so the
+    allocation no longer scales with the number of witnesses.  ``fixed_t``
+    selects the fixed-T feasibility form; ``time_bits`` creates an explicit
+    little-endian T register and path predicates use ``T < witness.length``.
+    Both witness kinds carry ``penalty`` so the encoded objective is
+    ``H = T + penalty * (cycles + over-T paths)`` when ``include_objective``
+    phases the T register.  Initial-state preparation is deliberately not part
+    of this builder; see ``prepare_legal_basis`` and
+    ``prepare_uniform_legal``.
     """
     QuantumCircuit, QuantumRegister = _require_qiskit()
     if fixed_t is not None and fixed_t < 0:
@@ -180,85 +245,81 @@ def build_phase_circuit(
         witness.validate(pool)
     if penalty is None:
         penalty = 1.0
+    if penalty <= 0:
+        raise ValueError("penalty must be positive")
     data = QuantumRegister(pool.data_qubits, "candidate")
     t_count = 0 if fixed_t is not None else int(time_bits or 0)
     if t_count < 0:
         raise ValueError("time_bits must be nonnegative")
     t_reg = QuantumRegister(t_count, "T") if t_count else None
-    # Predicate, comparator output, and their conjunction are separate.  The
-    # comparator's internal work register is reused between witnesses.
     comparator_work = max(0, t_count - 1)
-    witness_stride = pool.machines + 3
-    ancilla_count = max(1, witness_stride * len(witnesses) + comparator_work)
+    ancilla_count = pool.machines + 3 + comparator_work
     anc = QuantumRegister(ancilla_count, "work")
     circuit = QuantumCircuit(data, *(tuple([t_reg]) if t_reg else ()), anc)
-    if initialize_uniform:
-        for machine, size in enumerate(pool.sizes):
-            # H on one-hot basis is not a legal uniform state for K>2.  Prepare
-            # a deterministic legal basis and let XY mixers create support.
-            circuit.x(data[pool.offset(machine, 0)])
-    witness_flag = 0
-    comparator_offset = witness_stride * len(witnesses)
+    flags = [anc[machine] for machine in range(pool.machines)]
+    predicate = anc[pool.machines]
+    compare = anc[pool.machines + 1]
+    active = anc[pool.machines + 2]
+    comparator_anc = list(anc[pool.machines + 3:])
+    applied = 0
+    skipped_false = 0
     for witness in witnesses:
-        witness_base = witness_flag
-        supports = []
-        constants_true = True
-        for machine, allowed in enumerate(witness.allowed):
-            if not allowed:
-                constants_true = False
-                break
-            if len(allowed) < pool.sizes[machine]:
-                supports.append((machine, allowed, anc[witness_base + machine]))
-        if not constants_true:
+        # Empty allowed set on one machine: the predicate is constant false
+        # inside this pool.  Emit nothing so no auxiliary stays dirty.
+        if any(not labels for labels in witness.allowed):
+            skipped_false += 1
             continue
-        predicate = anc[witness_base + pool.machines]
-        compare = anc[witness_base + pool.machines + 1]
-        active = anc[witness_base + pool.machines + 2]
-        witness_flag += witness_stride
-        controls = []
+        if witness.kind == "path":
+            if fixed_t is not None:
+                if fixed_t >= witness.length:
+                    # L(P) > T is constant false at this threshold.
+                    skipped_false += 1
+                    continue
+                comparator_used = False
+            else:
+                if t_count == 0:
+                    raise ValueError("path witness needs fixed_t or time_bits")
+                comparator_used = True
+        else:
+            comparator_used = False
+        supports = [(machine, allowed, flags[machine])
+                    for machine, allowed in enumerate(witness.allowed)
+                    if len(allowed) < pool.sizes[machine]]
+        if not supports and not comparator_used:
+            # Constant-true predicate: the phase is global and observable in
+            # no measurement; record it as a global phase, no ancillas.
+            circuit.global_phase -= phase_angle * penalty
+            applied += 1
+            continue
         for machine, allowed, flag in supports:
             _apply_membership(circuit, data, pool, machine, allowed, flag)
-            controls.append(flag)
+        controls = [flag for _, _, flag in supports]
         if supports:
             _apply_predicate(circuit, controls, predicate)
+        if comparator_used:
+            _append_comparator(circuit, list(t_reg), compare, comparator_anc,
+                               witness.length)
+            if supports:
+                # active = membership predicate AND (T < length)
+                _apply_predicate(circuit, [predicate, compare], active)
+                phase_target = active
+            else:
+                # Membership is constant true: active reduces to the
+                # comparison itself, so phase the comparator output directly.
+                phase_target = compare
         else:
-            # Every machine allows every label: this witness is a constant
-            # predicate in the current pool, so materialize it briefly.
-            circuit.x(predicate)
-        comparator_used = False
-        if witness.kind == "path" and fixed_t is None:
-            if t_count == 0:
-                raise ValueError("path witness needs fixed_t or time_bits")
-            comparator_used = True
-            _append_comparator(
-                circuit, list(t_reg), compare,
-                list(anc[comparator_offset:comparator_offset + comparator_work]),
-                witness.length,
-            )
-            _apply_predicate(circuit, [predicate, compare], active)
-        elif witness.kind == "path" and fixed_t is not None:
-            if fixed_t >= witness.length:
-                # The path predicate is false at this fixed threshold.
-                _apply_predicate(circuit, controls, predicate)
-                for _, allowed, flag in reversed(supports):
-                    _apply_membership(circuit, data, pool, _, allowed, flag)
-                continue
-        phase_target = active if comparator_used else predicate
-        circuit.p(-phase_angle * (penalty if witness.kind == "cycle" else 1.0), phase_target)
+            phase_target = predicate
+        circuit.p(-phase_angle * penalty, phase_target)
         if comparator_used:
-            _apply_predicate(circuit, [predicate, compare], active)
-        if comparator_used:
-            _append_comparator(
-                circuit, list(t_reg), compare,
-                list(anc[comparator_offset:comparator_offset + comparator_work]),
-                witness.length,
-            )
+            if supports:
+                _apply_predicate(circuit, [predicate, compare], active)
+            _append_comparator(circuit, list(t_reg), compare, comparator_anc,
+                               witness.length)
         if supports:
             _apply_predicate(circuit, controls, predicate)
-        else:
-            circuit.x(predicate)
         for machine, allowed, flag in reversed(supports):
             _apply_membership(circuit, data, pool, machine, allowed, flag)
+        applied += 1
     if include_objective and t_reg is not None:
         for bit, qubit in enumerate(t_reg):
             circuit.p(-float(phase_angle) * (1 << bit), qubit)
@@ -269,9 +330,53 @@ def build_phase_circuit(
         "data_qubits": pool.data_qubits,
         "time_qubits": t_count,
         "work_qubits": ancilla_count,
+        "work_register_reused": True,
         "witnesses": len(witnesses),
+        "witnesses_applied": applied,
+        "witnesses_skipped_constant_false": skipped_false,
         "fixed_t": fixed_t,
     }
+    return circuit
+
+
+def prepare_legal_basis(pool: CandidatePool, label: int = 0):
+    """Deterministic legal one-hot basis state (same label on every machine).
+
+    This is the old ``initialize_uniform`` behaviour under its honest name: a
+    single legal encoding whose support XY/joint mixers must create.
+    """
+    QuantumCircuit, QuantumRegister = _require_qiskit()
+    if any(not 0 <= label < size for size in pool.sizes):
+        raise ValueError("label must be valid on every machine")
+    data = QuantumRegister(pool.data_qubits, "candidate")
+    circuit = QuantumCircuit(data)
+    for machine, _size in enumerate(pool.sizes):
+        circuit.x(data[pool.offset(machine, label)])
+    circuit.metadata = {"initial_state": "legal_basis", "label": label,
+                        "hardware_jobs_submitted": 0}
+    return circuit
+
+
+def prepare_uniform_legal(pool: CandidatePool):
+    """Exact uniform superposition over per-machine one-hot legal states.
+
+    Uses one exact state preparation per machine on that machine's candidate
+    register; measurement of this state alone reproduces uniform candidate
+    sampling.  Preparation cost is per-machine exponential in the candidate
+    count, so use it on small pools only.
+    """
+    QuantumCircuit, QuantumRegister = _require_qiskit()
+    import numpy as np
+    data = QuantumRegister(pool.data_qubits, "candidate")
+    circuit = QuantumCircuit(data)
+    for machine, size in enumerate(pool.sizes):
+        vector = np.zeros(1 << size)
+        for candidate in range(size):
+            vector[1 << candidate] = 1.0 / np.sqrt(size)
+        circuit.initialize(vector, [data[pool.offset(machine, candidate)]
+                                    for candidate in range(size)])
+    circuit.metadata = {"initial_state": "uniform_legal",
+                        "hardware_jobs_submitted": 0}
     return circuit
 
 
@@ -295,6 +400,7 @@ def build_xy_mixer(pool: CandidatePool, theta: float = 0.2, *, ring: bool = Fals
 
 
 def _local_transition_matrix(pool: CandidatePool, transition: JointTransition, theta: float):
+    """Dense 2r-qubit reference of the joint rotation; tests only (P1)."""
     import numpy as np
     support = transition.support
     local_qubits = 2 * len(support)
@@ -313,25 +419,51 @@ def _local_transition_matrix(pool: CandidatePool, transition: JointTransition, t
     return matrix
 
 
+def _append_joint_rotation(circuit, pair_qubits, theta: float):
+    """Exact exp[-i*theta*(|a><b| + |b><a|)] on interleaved pair qubits.
+
+    ``pair_qubits`` is ``[left_0, right_0, left_1, right_1, ...]`` for the
+    support machines; |a> sets every left bit, |b> every right bit.  The
+    construction conjugates a multi-controlled Rx(2*theta) with CX/X gates so
+    only the two one-hot endpoints rotate, no dense matrix and no ancillas:
+    CX from the target bit to every other bit, X on the non-target left bits,
+    MC-Rx controlled by the remaining 2r-1 qubits, then undo in reverse.
+    """
+    from qiskit.circuit.library import RXGate
+    if len(pair_qubits) < 4 or len(pair_qubits) % 2:
+        raise ValueError("joint rotation needs >=2 left/right qubit pairs")
+    target = pair_qubits[0]
+    others = list(pair_qubits[1:])
+    for qubit in others:
+        circuit.cx(target, qubit)
+    for j in range(2, len(pair_qubits), 2):
+        circuit.x(pair_qubits[j])
+    gate = RXGate(2 * theta).control(len(others), annotated=True)
+    circuit.append(gate, others + [target])
+    for j in reversed(range(2, len(pair_qubits), 2)):
+        circuit.x(pair_qubits[j])
+    for qubit in reversed(others):
+        circuit.cx(target, qubit)
+
+
 def build_joint_mixer(pool: CandidatePool, transitions: Iterable[JointTransition],
                       theta: float = 0.2):
-    """Compile support-local two-level rotations, never a full-space matrix."""
+    """Exact support-local two-level rotations, never a full-space matrix."""
     QuantumCircuit, QuantumRegister = _require_qiskit()
     data = QuantumRegister(pool.data_qubits, "candidate")
     circuit = QuantumCircuit(data)
-    from qiskit.circuit.library import UnitaryGate
     transitions = tuple(transitions)
     for transition in transitions:
         transition.validate(pool)
-        matrix = _local_transition_matrix(pool, transition, theta * transition.weight)
-        qargs = []
+        pair_qubits = []
         for machine, left, right in zip(transition.support,
                                         transition.left, transition.right):
-            qargs.extend((data[pool.offset(machine, left)],
-                          data[pool.offset(machine, right)]))
-        circuit.append(UnitaryGate(matrix, label="joint-local"), qargs)
+            pair_qubits.extend((data[pool.offset(machine, left)],
+                                data[pool.offset(machine, right)]))
+        _append_joint_rotation(circuit, pair_qubits, theta * transition.weight)
     circuit.metadata = {
         "mixer": "witness_joint_local_support",
+        "construction": "exact_cx_x_mcrx",
         "transitions": len(transitions),
         "hardware_jobs_submitted": 0,
         "support_matrix_qubits": [2 * len(t.support) for t in transitions],

@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "formulation": "one-hot x + continuous s + C, machine edges relaxed by U*(1-x_ma); minimize C",
+  "results": [
+    {
+      "source": "E:\\BUAA\\paper_composition\\JSP_QSWAP\\improvement\\code\\candidate_quantum_medium\\results\\corrected_20261001\\15x15_seed7_milp.json",
+      "source_sha256": "078e2e170c7a1af592f0976a747414c83468e2d0120157502deb1d9c21abe4ff",
+      "instance": "tai15_15_01_test",
+      "jobs": 15,
+      "machines": 15,
+      "pool_sizes": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "pool_sha256": "1957c37190c2fb342e2316a50fee83fe247556fc4e5e48db68430e520a354c09",
+      "saved_pool_sha256": "1957c37190c2fb342e2316a50fee83fe247556fc4e5e48db68430e520a354c09",
+      "pool_hash_matches": true,
+      "report_best_makespan": 1462,
+      "report_best_choice_verified": {
+        "feasible": true,
+        "makespan": 1462,
+        "independent_validation": true
+      },
+      "u_bound": 1462,
+      "milp": {
+        "status": "optimal",
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective": 1462.0,
+        "mip_dual_bound": 1462.0,
+        "choice": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "machine_edges": 1680,
+        "variables": 346,
+        "constraint_rows": 2130,
+        "seconds": 2.4942274000004545
+      },
+      "milp_choice_validation": {
+        "makespan": 1462,
+        "independent_check": true
+      },
+      "pool_optimum": 1462.0,
+      "notes": [
+        "This is a POOL-inner optimum, not a JSP global optimum.",
+        "Optimality proof = solver status 'optimal' plus matching dual bound; a feasible incumbent alone is not a proof.",
+        "Start times are continuous; with fixed durations the optimum C equals the integer one."
+      ]
+    },
+    {
+      "source": "E:\\BUAA\\paper_composition\\JSP_QSWAP\\improvement\\code\\candidate_quantum_medium\\results\\corrected_20261001\\20x15_seed7_milp.json",
+      "source_sha256": "b490d55d91fb8f164e77d1f70d0317e25caf49a37e84bc30c82bac7b1925f58d",
+      "instance": "tai20_15_01_test",
+      "jobs": 20,
+      "machines": 15,
+      "pool_sizes": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "pool_sha256": "ef1761443bb5ba9ee53fc8acfe7ab2ad13e34bbc09a31c07ffa9b596f7699f81",
+      "saved_pool_sha256": "ef1761443bb5ba9ee53fc8acfe7ab2ad13e34bbc09a31c07ffa9b596f7699f81",
+      "pool_hash_matches": true,
+      "report_best_makespan": 1865,
+      "report_best_choice_verified": {
+        "feasible": true,
+        "makespan": 1865,
+        "independent_validation": true
+      },
+      "u_bound": 1865,
+      "milp": {
+        "status": "optimal",
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective": 1835.0000000000064,
+        "mip_dual_bound": 1835.0000000000064,
+        "choice": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "machine_edges": 2280,
+        "variables": 421,
+        "constraint_rows": 2875,
+        "seconds": 22.791895499999555
+      },
+      "milp_choice_validation": {
+        "makespan": 1835,
+        "independent_check": true
+      },
+      "pool_optimum": 1835.0000000000064,
+      "notes": [
+        "This is a POOL-inner optimum, not a JSP global optimum.",
+        "Optimality proof = solver status 'optimal' plus matching dual bound; a feasible incumbent alone is not a proof.",
+        "Start times are continuous; with fixed durations the optimum C equals the integer one."
+      ]
+    },
+    {
+      "source": "E:\\BUAA\\paper_composition\\JSP_QSWAP\\improvement\\code\\candidate_quantum_medium\\results\\corrected_20261001\\15x20_derived_seed11_milp.json",
+      "source_sha256": "49ee9595f5071bf0aec8781920af72f0e8b454b76a3669b973e7dead6a088415",
+      "instance": "ta21_first15jobs_derived",
+      "jobs": 15,
+      "machines": 20,
+      "pool_sizes": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "pool_sha256": "8a2e17b0390c5861b65ab066a5ec7f17db308851ccb061772935b7857a61e255",
+      "saved_pool_sha256": "8a2e17b0390c5861b65ab066a5ec7f17db308851ccb061772935b7857a61e255",
+      "pool_hash_matches": true,
+      "report_best_makespan": 1675,
+      "report_best_choice_verified": {
+        "feasible": true,
+        "makespan": 1675,
+        "independent_validation": true
+      },
+      "u_bound": 1675,
+      "milp": {
+        "status": "optimal",
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective": 1675.0,
+        "mip_dual_bound": 1675.0,
+        "choice": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "machine_edges": 2240,
+        "variables": 461,
+        "constraint_rows": 2845,
+        "seconds": 4.7507116000006135
+      },
+      "milp_choice_validation": {
+        "makespan": 1675,
+        "independent_check": true
+      },
+      "pool_optimum": 1675.0,
+      "notes": [
+        "This is a POOL-inner optimum, not a JSP global optimum.",
+        "Optimality proof = solver status 'optimal' plus matching dual bound; a feasible incumbent alone is not a proof.",
+        "Start times are continuous; with fixed durations the optimum C equals the integer one."
+      ]
+    }
+  ]
+}

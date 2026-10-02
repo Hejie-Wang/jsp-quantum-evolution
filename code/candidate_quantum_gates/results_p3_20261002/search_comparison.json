@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "budget": {
+    "rounds": 4,
+    "shots": 256,
+    "per_round_evaluations": 8,
+    "training_evaluations_cap": 48
+  },
+  "notes": [
+    "Exact MILP reference is timed separately from the methods.",
+    "Success = verified best makespan reaches the pool-inner optimum.",
+    "Failures and degenerate runs are retained, never discarded."
+  ],
+  "aggregate_by_mode": {
+    "uniform": {
+      "cases": 3,
+      "target_success_rate": 1.0,
+      "improved_rate": 0.3333333333333333,
+      "mean_wall_seconds": 1.2663925000003171,
+      "mean_training_seconds": 0.0,
+      "mean_evaluations": 30.333333333333332
+    },
+    "xy": {
+      "cases": 3,
+      "target_success_rate": 1.0,
+      "improved_rate": 0.3333333333333333,
+      "mean_wall_seconds": 165.38069080000028,
+      "mean_training_seconds": 155.12453910000022,
+      "mean_evaluations": 30.333333333333332
+    },
+    "xy_joint": {
+      "cases": 3,
+      "target_success_rate": 1.0,
+      "improved_rate": 0.3333333333333333,
+      "mean_wall_seconds": 225.10985333333306,
+      "mean_training_seconds": 212.2992780333337,
+      "mean_evaluations": 30.0
+    },
+    "classical": {
+      "cases": 3,
+      "target_success_rate": 1.0,
+      "improved_rate": 0.3333333333333333,
+      "mean_wall_seconds": 0.03735173333310134,
+      "mean_training_seconds": 0.0,
+      "mean_evaluations": 12.666666666666666
+    }
+  },
+  "results": [
+    {
+      "case": "demo_3x3",
+      "seed": 7,
+      "pool_sizes": [
+        2,
+        2,
+        2
+      ],
+      "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1",
+      "data_qubits": 6,
+      "ansatz_qubits": 12,
+      "milp_reference": {
+        "status": "optimal",
+        "objective": 11.0,
+        "dual_bound": 11.0,
+        "seconds": 0.9981133000001137
+      },
+      "rows": [
+        {
+          "mode": "uniform",
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "improved": true,
+          "reached_target": true,
+          "feasible_rate": 0.625,
+          "evaluation_count": 25,
+          "training_evaluations": 0,
+          "training_seconds": 0.0,
+          "shots_total": 768,
+          "wall_seconds": 3.29149469999993,
+          "rounds": 3,
+          "witnesses": 6,
+          "independent_verification": true,
+          "circuit_qubits": 12,
+          "circuit_depth_max": 1
+        },
+        {
+          "mode": "xy",
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "improved": true,
+          "reached_target": true,
+          "feasible_rate": 0.625,
+          "evaluation_count": 25,
+          "training_evaluations": 87,
+          "training_seconds": 0.9996251000002303,
+          "shots_total": 768,
+          "wall_seconds": 1.2266006999998353,
+          "rounds": 3,
+          "witnesses": 6,
+          "independent_verification": true,
+          "circuit_qubits": 12,
+          "circuit_depth_max": 63
+        },
+        {
+          "mode": "xy_joint",
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "improved": true,
+          "reached_target": true,
+          "feasible_rate": 0.6086956521739131,
+          "evaluation_count": 24,
+          "training_evaluations": 87,
+          "training_seconds": 1.7623784000006708,
+          "shots_total": 768,
+          "wall_seconds": 2.1120276000001468,
+          "rounds": 3,
+          "witnesses": 6,
+          "independent_verification": true,
+          "circuit_qubits": 12,
+          "circuit_depth_max": 119
+        },
+        {
+          "mode": "classical",
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "improved": true,
+          "reached_target": true,
+          "feasible_rate": null,
+          "evaluation_count": 17,
+          "training_evaluations": 0,
+          "training_seconds": 0.0,
+          "shots_total": 0,
+          "wall_seconds": 0.05332109999926615,
+          "rounds": 4,
+          "witnesses": 6,
+          "independent_verification": true,
+          "circuit_qubits": null,
+          "circuit_depth_max": null
+        }
+      ]
+    },
+    {
+      "case": "5x5",
+      "seed": 11,
+      "pool_sizes": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "pool_hash": "c78b95277d6f70afc030249fbad755652beb8f3dfa2492d6efdb5f38abba1f6c",
+      "data_qubits": 10,
+      "ansatz_qubits": 18,
+      "milp_reference": {
+        "status": "optimal",
+        "objective": 89.0,
+        "dual_bound": 89.0,
+        "seconds": 0.02368390000083309
+      },
+      "rows": [
+        {
+          "mode": "uniform",
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": 1.0,
+          "evaluation_count": 33,
+          "training_evaluations": 0,
+          "training_seconds": 0.0,
+          "shots_total": 1024,
+          "wall_seconds": 0.3067618000004586,
+          "rounds": 4,
+          "witnesses": 8,
+          "independent_verification": true,
+          "circuit_qubits": 18,
+          "circuit_depth_max": 1
+        },
+        {
+          "mode": "xy",
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": 1.0,
+          "evaluation_count": 33,
+          "training_evaluations": 116,
+          "training_seconds": 263.39404549999927,
+          "shots_total": 1024,
+          "wall_seconds": 283.1263727000005,
+          "rounds": 4,
+          "witnesses": 12,
+          "independent_verification": true,
+          "circuit_qubits": 18,
+          "circuit_depth_max": 123
+        },
+        {
+          "mode": "xy_joint",
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": 1.0,
+          "evaluation_count": 33,
+          "training_evaluations": 116,
+          "training_seconds": 316.29583660000026,
+          "shots_total": 1024,
+          "wall_seconds": 335.82846189999964,
+          "rounds": 4,
+          "witnesses": 13,
+          "independent_verification": true,
+          "circuit_qubits": 18,
+          "circuit_depth_max": 240
+        },
+        {
+          "mode": "classical",
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": null,
+          "evaluation_count": 12,
+          "training_evaluations": 0,
+          "training_seconds": 0.0,
+          "shots_total": 0,
+          "wall_seconds": 0.030665100000078382,
+          "rounds": 2,
+          "witnesses": 5,
+          "independent_verification": true,
+          "circuit_qubits": null,
+          "circuit_depth_max": null
+        }
+      ]
+    },
+    {
+      "case": "5x5",
+      "seed": 13,
+      "pool_sizes": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "pool_hash": "dee740cdb8d3926a7a271c49965f9e54c8aadb978de1a56f2151ab04d113305d",
+      "data_qubits": 10,
+      "ansatz_qubits": 18,
+      "milp_reference": {
+        "status": "optimal",
+        "objective": 119.0,
+        "dual_bound": 119.0,
+        "seconds": 0.03599140000005718
+      },
+      "rows": [
+        {
+          "mode": "uniform",
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": 1.0,
+          "evaluation_count": 33,
+          "training_evaluations": 0,
+          "training_seconds": 0.0,
+          "shots_total": 1024,
+          "wall_seconds": 0.20092100000056234,
+          "rounds": 4,
+          "witnesses": 8,
+          "independent_verification": true,
+          "circuit_qubits": 18,
+          "circuit_depth_max": 1
+        },
+        {
+          "mode": "xy",
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": 1.0,
+          "evaluation_count": 33,
+          "training_evaluations": 116,
+          "training_seconds": 200.97994670000116,
+          "shots_total": 1024,
+          "wall_seconds": 211.78909900000053,
+          "rounds": 4,
+          "witnesses": 11,
+          "independent_verification": true,
+          "circuit_qubits": 18,
+          "circuit_depth_max": 109
+        },
+        {
+          "mode": "xy_joint",
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": 1.0,
+          "evaluation_count": 33,
+          "training_evaluations": 116,
+          "training_seconds": 318.83961910000016,
+          "shots_total": 1024,
+          "wall_seconds": 337.38907049999943,
+          "rounds": 4,
+          "witnesses": 13,
+          "independent_verification": true,
+          "circuit_qubits": 18,
+          "circuit_depth_max": 242
+        },
+        {
+          "mode": "classical",
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "improved": false,
+          "reached_target": true,
+          "feasible_rate": null,
+          "evaluation_count": 9,
+          "training_evaluations": 0,
+          "training_seconds": 0.0,
+          "shots_total": 0,
+          "wall_seconds": 0.028068999999959487,
+          "rounds": 2,
+          "witnesses": 6,
+          "independent_verification": true,
+          "circuit_qubits": null,
+          "circuit_depth_max": null
+        }
+      ]
+    }
+  ]
+}
