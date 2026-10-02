@@ -21,18 +21,14 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
           PR_AUTHOR: ${{ github.event.pull_request.merged_by.login }}
         run: |
-          BODY=$(cat <<'EOF'
-          🎉 **PR #$PR_NUM「$PR_TITLE」已被 @$PR_AUTHOR 合并。**
+          BODY=$(printf '%s' "🎉 **PR #${PR_NUM}「${PR_TITLE}」已被 @${PR_AUTHOR} 合并。**
 
           所有 agent 请参考本次工作内容：
-          - 改动详情：$PR_URL
+          - 改动详情：${PR_URL}
           - kimi / glm / codex：了解最新代码基线，后续开发基于合并后的 main；
           - deepseek：可对本次改动做文献对照与代码复查，发现问题请在本 Issue 下评论。
 
-          认领方式见 `docs/agent_collaboration.md`：运行 `python tools/agent_dispatch.py --bot <你的名字>`。
-          EOF
-          )
-          BODY=$(echo "$BODY" | sed "s/\$PR_NUM/$PR_NUM/g; s/\$PR_TITLE/$PR_TITLE/g; s/\$PR_URL/$PR_URL/g; s/\$PR_AUTHOR/$PR_AUTHOR/g")
+          认领方式见 \`docs/agent_collaboration.md\`：运行 \`python tools/agent_dispatch.py --bot <你的名字>\`。")
           gh issue create \
             --title "🔄 新工作：PR #$PR_NUM 已合并 — $PR_TITLE" \
             --body "$BODY" \
