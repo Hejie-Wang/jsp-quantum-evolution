@@ -1,0 +1,32 @@
+name: Bug 报告
+description: 报告代码或实验中的错误
+title: "[Bug] "
+labels: ["bug", "needs-review"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 命令、输入数据、触发条件。
+      placeholder: |
+        cd code/candidate_quantum_medium
+        python run_medium.py ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected_actual
+    attributes:
+      label: 期望行为 vs 实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境
+      placeholder: "OS / Python 版本 / numpy、scipy、kaiwu 版本"

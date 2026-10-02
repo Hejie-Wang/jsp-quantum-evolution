@@ -1,0 +1,30 @@
+name: 论文 / 文档提交
+description: 提交论文、技术报告或说明文档，走 PR 审查流程
+title: "[Paper] "
+labels: ["paper", "needs-review"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: 文件位置
+      description: 论文 PDF 放 papers/ 目录；说明文档放 docs/ 目录。定稿版本可同时挂到 Release 附件。
+      placeholder: papers/xxx.pdf
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 稿件阶段
+      options:
+        - 草稿（征求结构性意见）
+        - 修改稿（针对上一轮意见）
+        - 定稿（仅校对）
+    validations:
+      required: true
+  - type: textarea
+    id: review_focus
+    attributes:
+      label: 希望审查的重点
+      description: 例如：数学推导的正确性、实验结论的证据强度、与代码实现的一致性。
+    validations:
+      required: true
