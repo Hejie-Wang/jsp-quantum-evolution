@@ -7,6 +7,7 @@
 | 机器人 | App ID | 用途 |
 |---|---|---|
 | `jsp-agent-codex[bot]` | 5161309 | Codex 系列 agent |
+| `jsp-agent-deepseek[bot]` | 5161710 | DeepSeek 系列 agent |
 
 ## 工作方式
 
