@@ -1,0 +1,157 @@
+{
+  "environment": {
+    "python": "D:\\anaconda3\\envs\\qskit\\python.exe",
+    "python_version": "3.11.16 | packaged by conda-forge | (main, Sep  1 2026, 16:24:05) [MSC v.1944 64 bit (AMD64)]",
+    "packages": {
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1"
+    }
+  },
+  "small_demo": {
+    "mode": "local_aer_simulator",
+    "hardware_jobs_submitted": 0,
+    "shots": 256,
+    "counts": {
+      "011010": 31,
+      "011001": 32,
+      "100101": 33,
+      "101010": 29,
+      "101001": 33,
+      "010101": 38,
+      "100110": 31,
+      "010110": 29
+    },
+    "decoded": {
+      "legal": {
+        "(1, 1, 0)|T=0": 31,
+        "(0, 1, 0)|T=0": 32,
+        "(0, 0, 1)|T=0": 33,
+        "(1, 1, 1)|T=0": 29,
+        "(0, 1, 1)|T=0": 33,
+        "(0, 0, 0)|T=0": 38,
+        "(1, 0, 1)|T=0": 31,
+        "(1, 0, 0)|T=0": 29
+      },
+      "illegal_count": 0,
+      "total_count": 256,
+      "illegal_fraction": 0.0
+    },
+    "resources": {
+      "num_qubits": 12,
+      "depth": 5,
+      "size": 9,
+      "count_ops": {
+        "cx": 6,
+        "mcx": 2,
+        "p": 1
+      },
+      "metadata": {
+        "execution_mode": "local_simulator_or_offline_resource_compile",
+        "hardware_jobs_submitted": 0,
+        "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1",
+        "data_qubits": 6,
+        "time_qubits": 0,
+        "work_qubits": 6,
+        "witnesses": 1,
+        "fixed_t": 10
+      },
+      "hardware_jobs_submitted": 0
+    }
+  },
+  "medium_resources": {
+    "mode": "offline_resource_compile",
+    "hardware_jobs_submitted": 0,
+    "source_result": "E:\\BUAA\\paper_composition\\JSP_QSWAP\\improvement\\code\\candidate_quantum_medium\\results\\corrected_20261001\\15x20_derived_seed11_kaiwu.json",
+    "source_sha256": "a864116ce28348e386c2b615586efe28a9e9cee83ad6b9a5eab91e0126a71224",
+    "candidate_data_qubits": 160,
+    "time_qubits": 0,
+    "witnesses_included": 2,
+    "witnesses_available": 44,
+    "witnesses_omitted": 42,
+    "joint_terms_included": 2,
+    "phase_logical": {
+      "num_qubits": 206,
+      "depth": 25,
+      "size": 74,
+      "count_ops": {
+        "cx": 68,
+        "mcx": 2,
+        "p": 2,
+        "ccx": 2
+      },
+      "metadata": {
+        "execution_mode": "local_simulator_or_offline_resource_compile",
+        "hardware_jobs_submitted": 0,
+        "pool_hash": "31323d4cc5284a626221e6f12ee00eee96e58a463c02985515587d6e729dd986",
+        "data_qubits": 160,
+        "time_qubits": 0,
+        "work_qubits": 46,
+        "witnesses": 2,
+        "fixed_t": 1684
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "phase_transpiled": {
+      "num_qubits": 206,
+      "depth": 141,
+      "size": 246,
+      "count_ops": {
+        "cx": 128,
+        "u": 118
+      },
+      "metadata": {
+        "execution_mode": "local_simulator_or_offline_resource_compile",
+        "hardware_jobs_submitted": 0,
+        "pool_hash": "31323d4cc5284a626221e6f12ee00eee96e58a463c02985515587d6e729dd986",
+        "data_qubits": 160,
+        "time_qubits": 0,
+        "work_qubits": 46,
+        "witnesses": 2,
+        "fixed_t": 1684
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "joint_logical": {
+      "num_qubits": 160,
+      "depth": 2,
+      "size": 2,
+      "count_ops": {
+        "unitary": 2
+      },
+      "metadata": {
+        "mixer": "witness_joint_local_support",
+        "transitions": 2,
+        "hardware_jobs_submitted": 0,
+        "support_matrix_qubits": [
+          8,
+          4
+        ]
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "joint_transpiled": {
+      "num_qubits": 160,
+      "depth": 58746,
+      "size": 81359,
+      "count_ops": {
+        "u": 51610,
+        "cx": 29749
+      },
+      "metadata": {
+        "mixer": "witness_joint_local_support",
+        "transitions": 2,
+        "hardware_jobs_submitted": 0,
+        "support_matrix_qubits": [
+          8,
+          4
+        ]
+      },
+      "hardware_jobs_submitted": 0
+    },
+    "compile_seconds": 2.6050293000002966,
+    "statevector_simulation": false,
+    "note": "Derived 15x20 pool; partial witness layer, no medium solution claim."
+  }
+}

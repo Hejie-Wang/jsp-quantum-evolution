@@ -1,0 +1,229 @@
+{
+  "scope": "3x3 mathematical demo; exhaustive classical reference; no QPU/CUDA",
+  "environment": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "operations": 9,
+  "candidate_pool_sizes": [
+    2,
+    2,
+    2
+  ],
+  "candidate_combinations": 8,
+  "one_hot_data_qubits": 6,
+  "time_qubits": 5,
+  "simulated_legal_subspace_dimension": 256,
+  "feasible_combinations": 5,
+  "pool_optimum": 11,
+  "ground_energy": 11,
+  "penalty": 23,
+  "witness_count": 6,
+  "joint_transition_count": 4,
+  "ground_encoding_verified": true,
+  "cut_loop": [
+    {
+      "cuts": 0,
+      "pool_master_lower_bound": 0,
+      "choice": [
+        0,
+        0,
+        0
+      ],
+      "target": 0,
+      "feasible": true,
+      "makespan": 16
+    },
+    {
+      "cuts": 1,
+      "pool_master_lower_bound": 0,
+      "choice": [
+        0,
+        0,
+        1
+      ],
+      "target": 0,
+      "feasible": true,
+      "makespan": 16
+    },
+    {
+      "cuts": 2,
+      "pool_master_lower_bound": 0,
+      "choice": [
+        0,
+        1,
+        1
+      ],
+      "target": 0,
+      "feasible": true,
+      "makespan": 11
+    },
+    {
+      "cuts": 3,
+      "pool_master_lower_bound": 0,
+      "choice": [
+        1,
+        0,
+        0
+      ],
+      "target": 0,
+      "feasible": false,
+      "makespan": null
+    },
+    {
+      "cuts": 4,
+      "pool_master_lower_bound": 0,
+      "choice": [
+        1,
+        0,
+        1
+      ],
+      "target": 0,
+      "feasible": false,
+      "makespan": null
+    },
+    {
+      "cuts": 5,
+      "pool_master_lower_bound": 0,
+      "choice": [
+        1,
+        1,
+        1
+      ],
+      "target": 0,
+      "feasible": true,
+      "makespan": 21
+    },
+    {
+      "cuts": 6,
+      "pool_master_lower_bound": 11,
+      "choice": [
+        0,
+        1,
+        1
+      ],
+      "target": 11,
+      "feasible": true,
+      "makespan": 11
+    }
+  ],
+  "quantum_simulations": [
+    {
+      "joint_strength": 0.0,
+      "tau": 20.0,
+      "midpoint_steps": 80,
+      "ground_probability": 0.01908639983988349,
+      "norm_error": 4.440892098500626e-16,
+      "expected_problem_energy": 25.20201199695376,
+      "sampled_spectrum": [
+        {
+          "s": 0.0,
+          "e1_minus_e0": 0.24999999999999956
+        },
+        {
+          "s": 0.1,
+          "e1_minus_e0": 0.21511961147411052
+        },
+        {
+          "s": 0.2,
+          "e1_minus_e0": 0.18165598153078877
+        },
+        {
+          "s": 0.30000000000000004,
+          "e1_minus_e0": 0.14999053288466474
+        },
+        {
+          "s": 0.4,
+          "e1_minus_e0": 0.12038977688333741
+        },
+        {
+          "s": 0.5,
+          "e1_minus_e0": 0.09291804821566618
+        },
+        {
+          "s": 0.6000000000000001,
+          "e1_minus_e0": 0.06736114107995742
+        },
+        {
+          "s": 0.7000000000000001,
+          "e1_minus_e0": 0.04278896188206148
+        },
+        {
+          "s": 0.8,
+          "e1_minus_e0": 0.016434690604364748
+        },
+        {
+          "s": 0.9,
+          "e1_minus_e0": 0.006995667859863469
+        },
+        {
+          "s": 1.0,
+          "e1_minus_e0": 0.011235955056179775
+        }
+      ],
+      "note": "Classical ideal simulation; grid gaps are not continuous gap certificates."
+    },
+    {
+      "joint_strength": 0.5,
+      "tau": 20.0,
+      "midpoint_steps": 80,
+      "ground_probability": 0.011977694141775765,
+      "norm_error": 4.440892098500626e-16,
+      "expected_problem_energy": 31.443110652390732,
+      "sampled_spectrum": [
+        {
+          "s": 0.0,
+          "e1_minus_e0": 0.24999999999999956
+        },
+        {
+          "s": 0.1,
+          "e1_minus_e0": 0.19054456058891778
+        },
+        {
+          "s": 0.2,
+          "e1_minus_e0": 0.1510439316319261
+        },
+        {
+          "s": 0.30000000000000004,
+          "e1_minus_e0": 0.12203587238832436
+        },
+        {
+          "s": 0.4,
+          "e1_minus_e0": 0.09898149424465164
+        },
+        {
+          "s": 0.5,
+          "e1_minus_e0": 0.07930658033385529
+        },
+        {
+          "s": 0.6000000000000001,
+          "e1_minus_e0": 0.06147230134138548
+        },
+        {
+          "s": 0.7000000000000001,
+          "e1_minus_e0": 0.044728307522196975
+        },
+        {
+          "s": 0.8,
+          "e1_minus_e0": 0.02936835483930647
+        },
+        {
+          "s": 0.9,
+          "e1_minus_e0": 0.014622548014721588
+        },
+        {
+          "s": 1.0,
+          "e1_minus_e0": 0.011235955056179775
+        }
+      ],
+      "note": "Classical ideal simulation; grid gaps are not continuous gap certificates."
+    }
+  ],
+  "limitations": [
+    "Fixed hand-selected pool; no general candidate coverage proof.",
+    "Joint transitions are a proposal, not a speedup or gap guarantee.",
+    "Exhaustive tables and dense matrices are validation-only.",
+    "Actual gate compilation, noise and hardware runtime are not implemented."
+  ]
+}

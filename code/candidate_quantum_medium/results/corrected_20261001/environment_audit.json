@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-01",
+  "python_executable": "D:\\anaconda3\\envs\\Kaiwu\\python.exe",
+  "python_version": "3.10.20",
+  "numpy_version": "2.2.6",
+  "scipy_version": "1.15.3",
+  "kaiwu_distribution_version": "1.4.1",
+  "kaiwu_runtime_version": "1.0.7",
+  "kaiwu_module_path": "D:\\anaconda3\\envs\\Kaiwu\\lib\\site-packages\\kaiwu\\__init__.py",
+  "kaiwu_distribution_metadata_path": "D:\\anaconda3\\envs\\Kaiwu\\lib\\site-packages\\kaiwu-1.4.1.dist-info",
+  "solve_signature": "(self, ising_matrix=None, negtail_flip=True, sort_solutions=False)",
+  "notes": [
+    "The imported runtime version and installed distribution metadata disagree.",
+    "The benchmark snapshots report distribution versions in environment.packages.",
+    "This audit supplements the preserved snapshots with the runtime version and inspected signature.",
+    "No conda packages were installed, upgraded or replaced for these experiments."
+  ]
+}
