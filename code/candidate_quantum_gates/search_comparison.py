@@ -58,6 +58,7 @@ def run_case(case, seed, rounds, shots, milp_time_limit):
     milp["seconds"] = perf_counter() - milp_started
     target = milp.get("objective")
     rows = []
+    reports = {}
     for mode in MODES:
         if mode == "classical":
             report = classical_joint_search(inst, pool, initial, seed=seed,
@@ -67,6 +68,7 @@ def run_case(case, seed, rounds, shots, milp_time_limit):
                                      shots=shots, seed=seed, max_rounds=rounds,
                                      per_round_evaluations=8, train_budget=48,
                                      time_budget=900.0)
+        reports[mode] = report
         evaluated = sum(entry.get("evaluated", 0) for entry in report["trace"])
         feasible = sum(entry.get("graph_feasible", 0) for entry in report["trace"])
         rows.append({
@@ -100,8 +102,9 @@ def run_case(case, seed, rounds, shots, milp_time_limit):
         "ansatz_qubits": pool.data_qubits + pool.machines + 3,
         "milp_reference": {"status": milp["status"], "objective": target,
                            "dual_bound": milp.get("mip_dual_bound"),
-                           "seconds": milp["seconds"]},
+                           "seconds": milp["seconds"], "detail": milp},
         "rows": rows,
+        "reports": reports,
     }
 
 

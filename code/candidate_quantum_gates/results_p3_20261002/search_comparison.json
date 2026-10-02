@@ -16,7 +16,7 @@
       "cases": 3,
       "target_success_rate": 1.0,
       "improved_rate": 0.3333333333333333,
-      "mean_wall_seconds": 1.2663925000003171,
+      "mean_wall_seconds": 1.2823118333332484,
       "mean_training_seconds": 0.0,
       "mean_evaluations": 30.333333333333332
     },
@@ -24,23 +24,23 @@
       "cases": 3,
       "target_success_rate": 1.0,
       "improved_rate": 0.3333333333333333,
-      "mean_wall_seconds": 165.38069080000028,
-      "mean_training_seconds": 155.12453910000022,
+      "mean_wall_seconds": 159.01331916666672,
+      "mean_training_seconds": 152.4641409333335,
       "mean_evaluations": 30.333333333333332
     },
     "xy_joint": {
       "cases": 3,
       "target_success_rate": 1.0,
       "improved_rate": 0.3333333333333333,
-      "mean_wall_seconds": 225.10985333333306,
-      "mean_training_seconds": 212.2992780333337,
+      "mean_wall_seconds": 236.86130006666676,
+      "mean_training_seconds": 226.1965357333335,
       "mean_evaluations": 30.0
     },
     "classical": {
       "cases": 3,
       "target_success_rate": 1.0,
       "improved_rate": 0.3333333333333333,
-      "mean_wall_seconds": 0.03735173333310134,
+      "mean_wall_seconds": 0.038485133333476064,
       "mean_training_seconds": 0.0,
       "mean_evaluations": 12.666666666666666
     }
@@ -61,7 +61,22 @@
         "status": "optimal",
         "objective": 11.0,
         "dual_bound": 11.0,
-        "seconds": 0.9981133000001137
+        "seconds": 1.0139617000004364,
+        "detail": {
+          "status": "optimal",
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective": 11.0,
+          "mip_dual_bound": 11.0,
+          "choice": [
+            0,
+            1,
+            1
+          ],
+          "machine_edges": 12,
+          "variables": 16,
+          "constraint_rows": 30,
+          "seconds": 1.0139617000004364
+        }
       },
       "rows": [
         {
@@ -75,7 +90,7 @@
           "training_evaluations": 0,
           "training_seconds": 0.0,
           "shots_total": 768,
-          "wall_seconds": 3.29149469999993,
+          "wall_seconds": 3.4847200000003795,
           "rounds": 3,
           "witnesses": 6,
           "independent_verification": true,
@@ -91,9 +106,9 @@
           "feasible_rate": 0.625,
           "evaluation_count": 25,
           "training_evaluations": 87,
-          "training_seconds": 0.9996251000002303,
+          "training_seconds": 1.0741021000003457,
           "shots_total": 768,
-          "wall_seconds": 1.2266006999998353,
+          "wall_seconds": 1.2664334000000963,
           "rounds": 3,
           "witnesses": 6,
           "independent_verification": true,
@@ -109,9 +124,9 @@
           "feasible_rate": 0.6086956521739131,
           "evaluation_count": 24,
           "training_evaluations": 87,
-          "training_seconds": 1.7623784000006708,
+          "training_seconds": 1.8600155000003724,
           "shots_total": 768,
-          "wall_seconds": 2.1120276000001468,
+          "wall_seconds": 2.2299567000000025,
           "rounds": 3,
           "witnesses": 6,
           "independent_verification": true,
@@ -129,14 +144,1222 @@
           "training_evaluations": 0,
           "training_seconds": 0.0,
           "shots_total": 0,
-          "wall_seconds": 0.05332109999926615,
+          "wall_seconds": 0.05901819999962754,
           "rounds": 4,
           "witnesses": 6,
           "independent_verification": true,
           "circuit_qubits": null,
           "circuit_depth_max": null
         }
-      ]
+      ],
+      "reports": {
+        "uniform": {
+          "schema_version": 1,
+          "mode": "uniform",
+          "instance": "demo_3x3",
+          "jobs": 3,
+          "machines": 3,
+          "pool_sizes": [
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1",
+          "data_qubits": 6,
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "best_choice": [
+            0,
+            1,
+            1
+          ],
+          "improved": true,
+          "final_target_T": 10,
+          "independent_schedule_verification": true,
+          "witnesses": 6,
+          "rounds": 3,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "uniform",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.16015625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.140625
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.140625
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.1171875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": true,
+              "witnesses_added": 5,
+              "best_makespan": 11,
+              "sampling_seconds": 3.428028600000289,
+              "round_seconds": 3.4285563000003094,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 1,
+                "size": 3,
+                "count_ops": {
+                  "initialize": 3
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "uniform",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 6,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.16015625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.14453125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.140625
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.12109375
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.1171875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 11,
+              "sampling_seconds": 0.028868299999885494,
+              "round_seconds": 0.02932539999983419,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 1,
+                "size": 3,
+                "count_ops": {
+                  "initialize": 3
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "uniform",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 6,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.16015625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.14453125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.13671875
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.12109375
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.12109375
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 11,
+              "sampling_seconds": 0.026199300000371295,
+              "round_seconds": 0.02671310000005178,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 1,
+                "size": 3,
+                "count_ops": {
+                  "initialize": 3
+                }
+              }
+            }
+          ],
+          "evaluation_count": 25,
+          "training_seconds": 0.0,
+          "training_evaluations": 0,
+          "shots_total": 768,
+          "wall_seconds": 3.4847200000003795,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "xy": {
+          "schema_version": 1,
+          "mode": "xy",
+          "instance": "demo_3x3",
+          "jobs": 3,
+          "machines": 3,
+          "pool_sizes": [
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1",
+          "data_qubits": 6,
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "best_choice": [
+            0,
+            1,
+            1
+          ],
+          "improved": true,
+          "final_target_T": 10,
+          "independent_schedule_verification": true,
+          "witnesses": 6,
+          "rounds": 3,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "xy",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 0.6375402166982708,
+                "evaluations": 29,
+                "seconds": 0.20874389999971754,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.25,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 2.2824301411565986
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 0.6375402166982708
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.21875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.18359375
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.16015625
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.140625
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.1328125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": true,
+              "witnesses_added": 5,
+              "best_makespan": 11,
+              "sampling_seconds": 0.25722140000016225,
+              "round_seconds": 0.2577013000000079,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 13,
+                "size": 23,
+                "count_ops": {
+                  "cx": 8,
+                  "xx_plus_yy": 6,
+                  "ccx": 4,
+                  "initialize": 3,
+                  "p": 2
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "xy",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 6,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.25
+                ],
+                [
+                  0.05,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.25
+                  ],
+                  [
+                    0.05,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 34.481806117443185,
+                "evaluations": 29,
+                "seconds": 0.4202728999998726,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.25,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 36.842580382866544
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.25
+                      ],
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 34.481806117443185
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.3203125
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.23828125
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.1328125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.08984375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0859375
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 11,
+              "sampling_seconds": 0.48901740000019345,
+              "round_seconds": 0.48943920000056096,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 63,
+                "size": 85,
+                "count_ops": {
+                  "cx": 48,
+                  "ccx": 16,
+                  "p": 12,
+                  "xx_plus_yy": 6,
+                  "initialize": 3
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "xy",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 6,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.25
+                ],
+                [
+                  0.05,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.25
+                  ],
+                  [
+                    0.05,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 34.481806117443185,
+                "evaluations": 29,
+                "seconds": 0.4450853000007555,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.25,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 36.842580382866544
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.25
+                      ],
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 34.481806117443185
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.32421875
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.23828125
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.1328125
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0859375
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0859375
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 11,
+              "sampling_seconds": 0.5187142999993739,
+              "round_seconds": 0.5191906999998537,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 63,
+                "size": 85,
+                "count_ops": {
+                  "cx": 48,
+                  "ccx": 16,
+                  "p": 12,
+                  "xx_plus_yy": 6,
+                  "initialize": 3
+                }
+              }
+            }
+          ],
+          "evaluation_count": 25,
+          "training_seconds": 1.0741021000003457,
+          "training_evaluations": 87,
+          "shots_total": 768,
+          "wall_seconds": 1.2664334000000963,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "xy_joint": {
+          "schema_version": 1,
+          "mode": "xy_joint",
+          "instance": "demo_3x3",
+          "jobs": 3,
+          "machines": 3,
+          "pool_sizes": [
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1",
+          "data_qubits": 6,
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "best_choice": [
+            0,
+            1,
+            1
+          ],
+          "improved": true,
+          "final_target_T": 10,
+          "independent_schedule_verification": true,
+          "witnesses": 6,
+          "rounds": 3,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "xy_joint",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 1,
+              "joint_actions": 1,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 0.07748122614265966,
+                "evaluations": 29,
+                "seconds": 0.31186609999986104,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.25,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 1.9914454129021597
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 0.07748122614265966
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 7,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.21484375
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.171875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.16796875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.15625
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.14453125
+                }
+              ],
+              "evaluated": 7,
+              "graph_feasible": 4,
+              "improved": true,
+              "witnesses_added": 5,
+              "best_makespan": 11,
+              "sampling_seconds": 0.35970869999982824,
+              "round_seconds": 0.3601257999998779,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 27,
+                "size": 41,
+                "count_ops": {
+                  "cx": 20,
+                  "xx_plus_yy": 6,
+                  "ccx": 4,
+                  "x": 4,
+                  "initialize": 3,
+                  "p": 2,
+                  "annotated": 2
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "xy_joint",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 6,
+              "joint_actions": 4,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ],
+                [
+                  0.05,
+                  0.45,
+                  0.45
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ],
+                  [
+                    0.05,
+                    0.45,
+                    0.45
+                  ]
+                ],
+                "expected_energy": 29.406463212872875,
+                "evaluations": 29,
+                "seconds": 0.7762548999999126,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.25,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 34.47967996735016
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ],
+                      [
+                        0.05,
+                        0.45,
+                        0.45
+                      ]
+                    ],
+                    "expected_energy": 29.406463212872875
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.4296875
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.328125
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.0703125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.05859375
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.05859375
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 11,
+              "sampling_seconds": 0.9266660000002958,
+              "round_seconds": 0.9271059000002424,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 119,
+                "size": 157,
+                "count_ops": {
+                  "cx": 96,
+                  "ccx": 16,
+                  "x": 16,
+                  "p": 12,
+                  "annotated": 8,
+                  "xx_plus_yy": 6,
+                  "initialize": 3
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "xy_joint",
+              "target_T": 10,
+              "witnesses_frozen": 6,
+              "effective_witnesses": 6,
+              "joint_actions": 4,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ],
+                [
+                  0.05,
+                  0.45,
+                  0.45
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ],
+                  [
+                    0.05,
+                    0.45,
+                    0.45
+                  ]
+                ],
+                "expected_energy": 29.406463212872875,
+                "evaluations": 29,
+                "seconds": 0.7718945000005988,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.25,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 34.47967996735016
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ],
+                      [
+                        0.05,
+                        0.45,
+                        0.45
+                      ]
+                    ],
+                    "expected_energy": 29.406463212872875
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 8,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.4296875
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.328125
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.0703125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.05859375
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.05859375
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 5,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 11,
+              "sampling_seconds": 0.9421677000000273,
+              "round_seconds": 0.9426242999998067,
+              "circuit": {
+                "num_qubits": 12,
+                "depth": 119,
+                "size": 157,
+                "count_ops": {
+                  "cx": 96,
+                  "ccx": 16,
+                  "x": 16,
+                  "p": 12,
+                  "annotated": 8,
+                  "xx_plus_yy": 6,
+                  "initialize": 3
+                }
+              }
+            }
+          ],
+          "evaluation_count": 24,
+          "training_seconds": 1.8600155000003724,
+          "training_evaluations": 87,
+          "shots_total": 768,
+          "wall_seconds": 2.2299567000000025,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "classical": {
+          "schema_version": 1,
+          "mode": "classical_joint",
+          "instance": "demo_3x3",
+          "jobs": 3,
+          "machines": 3,
+          "pool_sizes": [
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "d56a9ba17149d5b0a0b4c735b368a74bb3381839b397c393a2aa863b81c5ffe1",
+          "initial_makespan": 16,
+          "best_makespan": 11,
+          "best_choice": [
+            0,
+            1,
+            1
+          ],
+          "improved": true,
+          "final_target_T": 10,
+          "independent_schedule_verification": true,
+          "witnesses": 6,
+          "rounds": 4,
+          "trace": [
+            {
+              "round": 0,
+              "steps": 10,
+              "witnesses": 4,
+              "joint_actions": 1,
+              "evaluations": 8,
+              "best_makespan": 16,
+              "round_seconds": 0.0009829999999055872
+            },
+            {
+              "round": 1,
+              "steps": 9,
+              "witnesses": 6,
+              "joint_actions": 4,
+              "evaluations": 8,
+              "best_makespan": 11,
+              "round_seconds": 0.0017327999994449783
+            },
+            {
+              "round": 2,
+              "steps": 200,
+              "witnesses": 6,
+              "joint_actions": 4,
+              "evaluations": 0,
+              "best_makespan": 11,
+              "round_seconds": 0.028507900000477093
+            },
+            {
+              "round": 3,
+              "steps": 200,
+              "witnesses": 6,
+              "joint_actions": 4,
+              "evaluations": 0,
+              "best_makespan": 11,
+              "round_seconds": 0.027677000000039698
+            }
+          ],
+          "evaluation_count": 17,
+          "training_seconds": 0.0,
+          "training_evaluations": 0,
+          "shots_total": 0,
+          "wall_seconds": 0.05901819999962754,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Classical hill climbing on the same frozen witness cuts and the same joint actions as the quantum loop."
+          ]
+        }
+      }
     },
     {
       "case": "5x5",
@@ -155,7 +1378,24 @@
         "status": "optimal",
         "objective": 89.0,
         "dual_bound": 89.0,
-        "seconds": 0.02368390000083309
+        "seconds": 0.024229100000411563,
+        "detail": {
+          "status": "optimal",
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective": 89.0,
+          "mip_dual_bound": 89.0,
+          "choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "machine_edges": 40,
+          "variables": 36,
+          "constraint_rows": 90,
+          "seconds": 0.024229100000411563
+        }
       },
       "rows": [
         {
@@ -169,7 +1409,7 @@
           "training_evaluations": 0,
           "training_seconds": 0.0,
           "shots_total": 1024,
-          "wall_seconds": 0.3067618000004586,
+          "wall_seconds": 0.18336399999952846,
           "rounds": 4,
           "witnesses": 8,
           "independent_verification": true,
@@ -185,9 +1425,9 @@
           "feasible_rate": 1.0,
           "evaluation_count": 33,
           "training_evaluations": 116,
-          "training_seconds": 263.39404549999927,
+          "training_seconds": 273.79570109999986,
           "shots_total": 1024,
-          "wall_seconds": 283.1263727000005,
+          "wall_seconds": 284.7082979000006,
           "rounds": 4,
           "witnesses": 12,
           "independent_verification": true,
@@ -203,9 +1443,9 @@
           "feasible_rate": 1.0,
           "evaluation_count": 33,
           "training_evaluations": 116,
-          "training_seconds": 316.29583660000026,
+          "training_seconds": 367.8890792000002,
           "shots_total": 1024,
-          "wall_seconds": 335.82846189999964,
+          "wall_seconds": 385.0133556999999,
           "rounds": 4,
           "witnesses": 13,
           "independent_verification": true,
@@ -223,14 +1463,1680 @@
           "training_evaluations": 0,
           "training_seconds": 0.0,
           "shots_total": 0,
-          "wall_seconds": 0.030665100000078382,
+          "wall_seconds": 0.018191500000284577,
           "rounds": 2,
           "witnesses": 5,
           "independent_verification": true,
           "circuit_qubits": null,
           "circuit_depth_max": null
         }
-      ]
+      ],
+      "reports": {
+        "uniform": {
+          "schema_version": 1,
+          "mode": "uniform",
+          "instance": "random_5x5_seed11",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "c78b95277d6f70afc030249fbad755652beb8f3dfa2492d6efdb5f38abba1f6c",
+          "data_qubits": 10,
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 88,
+          "independent_schedule_verification": true,
+          "witnesses": 8,
+          "rounds": 4,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "uniform",
+              "target_T": 88,
+              "witnesses_frozen": 7,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.0390625
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 6,
+              "best_makespan": 89,
+              "sampling_seconds": 0.04144639999958599,
+              "round_seconds": 0.04230439999992086,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "uniform",
+              "target_T": 88,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 7,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0390625
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 1,
+              "best_makespan": 89,
+              "sampling_seconds": 0.0474395999999615,
+              "round_seconds": 0.04815310000049067,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "uniform",
+              "target_T": 88,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 8,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 89,
+              "sampling_seconds": 0.04705699999976787,
+              "round_seconds": 0.047771300000022165,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 3,
+              "mode": "uniform",
+              "target_T": 88,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 8,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 89,
+              "sampling_seconds": 0.0442497000003641,
+              "round_seconds": 0.04498979999971198,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            }
+          ],
+          "evaluation_count": 33,
+          "training_seconds": 0.0,
+          "training_evaluations": 0,
+          "shots_total": 1024,
+          "wall_seconds": 0.18336399999952846,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "xy": {
+          "schema_version": 1,
+          "mode": "xy",
+          "instance": "random_5x5_seed11",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "c78b95277d6f70afc030249fbad755652beb8f3dfa2492d6efdb5f38abba1f6c",
+          "data_qubits": 10,
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 88,
+          "independent_schedule_verification": true,
+          "witnesses": 12,
+          "rounds": 4,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "xy",
+              "target_T": 88,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 57.51906696359035,
+                "evaluations": 29,
+                "seconds": 4.062440100000458,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 96.0606315013096
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 57.51906696359035
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.078125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.06640625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.05859375
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0546875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.05078125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 7,
+              "best_makespan": 89,
+              "sampling_seconds": 4.174120700000458,
+              "round_seconds": 4.1748765000002095,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 13,
+                "size": 25,
+                "count_ops": {
+                  "xx_plus_yy": 10,
+                  "cx": 8,
+                  "initialize": 5,
+                  "p": 2
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "xy",
+              "target_T": 88,
+              "witnesses_frozen": 11,
+              "effective_witnesses": 8,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.25,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.25,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 308.51433997488556,
+                "evaluations": 29,
+                "seconds": 69.86712069999976,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 356.98627245385563
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.25,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 308.51433997488556
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 27,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.12890625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.078125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.078125
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0703125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.06640625
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 3,
+              "best_makespan": 89,
+              "sampling_seconds": 72.9929333,
+              "round_seconds": 72.99354140000014,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 80,
+                "size": 139,
+                "count_ops": {
+                  "cx": 80,
+                  "p": 16,
+                  "ccx": 16,
+                  "mcx": 12,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "xy",
+              "target_T": 88,
+              "witnesses_frozen": 12,
+              "effective_witnesses": 11,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.25,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.25,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 341.13948938343145,
+                "evaluations": 29,
+                "seconds": 99.59553569999935,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 410.54370950917314
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.25,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 341.13948938343145
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 27,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0859375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.08203125
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.078125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 1,
+              "best_makespan": 89,
+              "sampling_seconds": 103.29224710000017,
+              "round_seconds": 103.29296950000025,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 113,
+                "size": 189,
+                "count_ops": {
+                  "cx": 112,
+                  "p": 22,
+                  "ccx": 20,
+                  "mcx": 20,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 3,
+              "mode": "xy",
+              "target_T": 88,
+              "witnesses_frozen": 12,
+              "effective_witnesses": 12,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.25,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.25,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 340.59714078760527,
+                "evaluations": 29,
+                "seconds": 100.2706046000003,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 423.880149184765
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.25,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 340.59714078760527
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 25,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.1328125
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.109375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.09765625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.08984375
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 89,
+              "sampling_seconds": 104.24616590000005,
+              "round_seconds": 104.24672569999984,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 123,
+                "size": 203,
+                "count_ops": {
+                  "cx": 120,
+                  "p": 24,
+                  "ccx": 24,
+                  "mcx": 20,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            }
+          ],
+          "evaluation_count": 33,
+          "training_seconds": 273.79570109999986,
+          "training_evaluations": 116,
+          "shots_total": 1024,
+          "wall_seconds": 284.7082979000006,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "xy_joint": {
+          "schema_version": 1,
+          "mode": "xy_joint",
+          "instance": "random_5x5_seed11",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "c78b95277d6f70afc030249fbad755652beb8f3dfa2492d6efdb5f38abba1f6c",
+          "data_qubits": 10,
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 88,
+          "independent_schedule_verification": true,
+          "witnesses": 13,
+          "rounds": 4,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "xy_joint",
+              "target_T": 88,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 57.51906696359035,
+                "evaluations": 29,
+                "seconds": 4.263413599999694,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 96.0606315013096
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 57.51906696359035
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.078125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.06640625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.05859375
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0546875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.05078125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 7,
+              "best_makespan": 89,
+              "sampling_seconds": 4.373579600000085,
+              "round_seconds": 4.374373399999968,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 13,
+                "size": 25,
+                "count_ops": {
+                  "xx_plus_yy": 10,
+                  "cx": 8,
+                  "initialize": 5,
+                  "p": 2
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "xy_joint",
+              "target_T": 88,
+              "witnesses_frozen": 11,
+              "effective_witnesses": 8,
+              "joint_actions": 7,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ],
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ],
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ]
+                ],
+                "expected_energy": 313.4903760608399,
+                "evaluations": 29,
+                "seconds": 106.76773219999995,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 355.28857237221274
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ],
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ]
+                    ],
+                    "expected_energy": 313.4903760608399
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 27,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.08984375
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.06640625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.05859375
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 3,
+              "best_makespan": 89,
+              "sampling_seconds": 111.86099119999926,
+              "round_seconds": 111.86164310000004,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 207,
+                "size": 313,
+                "count_ops": {
+                  "cx": 196,
+                  "x": 44,
+                  "p": 16,
+                  "ccx": 16,
+                  "annotated": 14,
+                  "mcx": 12,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "xy_joint",
+              "target_T": 88,
+              "witnesses_frozen": 13,
+              "effective_witnesses": 11,
+              "joint_actions": 8,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ],
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ],
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ]
+                ],
+                "expected_energy": 348.6467561754341,
+                "evaluations": 29,
+                "seconds": 131.91100860000006,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.25,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 401.9863477052878
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ],
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ]
+                    ],
+                    "expected_energy": 348.6467561754341
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 28,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.109375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.10546875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0703125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.06640625
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 2,
+              "best_makespan": 89,
+              "sampling_seconds": 137.352664,
+              "round_seconds": 137.35348650000014,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 240,
+                "size": 389,
+                "count_ops": {
+                  "cx": 244,
+                  "x": 52,
+                  "ccx": 24,
+                  "p": 22,
+                  "mcx": 16,
+                  "annotated": 16,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 3,
+              "mode": "xy_joint",
+              "target_T": 88,
+              "witnesses_frozen": 13,
+              "effective_witnesses": 13,
+              "joint_actions": 8,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ],
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ],
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ]
+                ],
+                "expected_energy": 411.14218400836165,
+                "evaluations": 29,
+                "seconds": 124.94692480000049,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 469.85373951831974
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ],
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ]
+                    ],
+                    "expected_energy": 411.14218400836165
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 25,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.109375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.0703125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 89,
+              "sampling_seconds": 131.42316000000028,
+              "round_seconds": 131.42373529999986,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 236,
+                "size": 409,
+                "count_ops": {
+                  "cx": 256,
+                  "x": 48,
+                  "ccx": 28,
+                  "p": 26,
+                  "mcx": 20,
+                  "annotated": 16,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            }
+          ],
+          "evaluation_count": 33,
+          "training_seconds": 367.8890792000002,
+          "training_evaluations": 116,
+          "shots_total": 1024,
+          "wall_seconds": 385.0133556999999,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "classical": {
+          "schema_version": 1,
+          "mode": "classical_joint",
+          "instance": "random_5x5_seed11",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "c78b95277d6f70afc030249fbad755652beb8f3dfa2492d6efdb5f38abba1f6c",
+          "initial_makespan": 89,
+          "best_makespan": 89,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 88,
+          "independent_schedule_verification": true,
+          "witnesses": 5,
+          "rounds": 2,
+          "trace": [
+            {
+              "round": 0,
+              "steps": 37,
+              "witnesses": 4,
+              "joint_actions": 0,
+              "evaluations": 8,
+              "best_makespan": 89,
+              "round_seconds": 0.0017484999998487183
+            },
+            {
+              "round": 1,
+              "steps": 200,
+              "witnesses": 5,
+              "joint_actions": 3,
+              "evaluations": 3,
+              "best_makespan": 89,
+              "round_seconds": 0.016213199999583594
+            }
+          ],
+          "evaluation_count": 12,
+          "training_seconds": 0.0,
+          "training_evaluations": 0,
+          "shots_total": 0,
+          "wall_seconds": 0.018191500000284577,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Classical hill climbing on the same frozen witness cuts and the same joint actions as the quantum loop."
+          ]
+        }
+      }
     },
     {
       "case": "5x5",
@@ -249,7 +3155,24 @@
         "status": "optimal",
         "objective": 119.0,
         "dual_bound": 119.0,
-        "seconds": 0.03599140000005718
+        "seconds": 0.022617900000113877,
+        "detail": {
+          "status": "optimal",
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective": 119.0,
+          "mip_dual_bound": 119.0,
+          "choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "machine_edges": 40,
+          "variables": 36,
+          "constraint_rows": 90,
+          "seconds": 0.022617900000113877
+        }
       },
       "rows": [
         {
@@ -263,7 +3186,7 @@
           "training_evaluations": 0,
           "training_seconds": 0.0,
           "shots_total": 1024,
-          "wall_seconds": 0.20092100000056234,
+          "wall_seconds": 0.17885149999983696,
           "rounds": 4,
           "witnesses": 8,
           "independent_verification": true,
@@ -279,9 +3202,9 @@
           "feasible_rate": 1.0,
           "evaluation_count": 33,
           "training_evaluations": 116,
-          "training_seconds": 200.97994670000116,
+          "training_seconds": 182.52261960000033,
           "shots_total": 1024,
-          "wall_seconds": 211.78909900000053,
+          "wall_seconds": 191.06522619999942,
           "rounds": 4,
           "witnesses": 11,
           "independent_verification": true,
@@ -297,9 +3220,9 @@
           "feasible_rate": 1.0,
           "evaluation_count": 33,
           "training_evaluations": 116,
-          "training_seconds": 318.83961910000016,
+          "training_seconds": 308.84051249999993,
           "shots_total": 1024,
-          "wall_seconds": 337.38907049999943,
+          "wall_seconds": 323.3405878000003,
           "rounds": 4,
           "witnesses": 13,
           "independent_verification": true,
@@ -317,14 +3240,1670 @@
           "training_evaluations": 0,
           "training_seconds": 0.0,
           "shots_total": 0,
-          "wall_seconds": 0.028068999999959487,
+          "wall_seconds": 0.03824570000051608,
           "rounds": 2,
           "witnesses": 6,
           "independent_verification": true,
           "circuit_qubits": null,
           "circuit_depth_max": null
         }
-      ]
+      ],
+      "reports": {
+        "uniform": {
+          "schema_version": 1,
+          "mode": "uniform",
+          "instance": "random_5x5_seed13",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "dee740cdb8d3926a7a271c49965f9e54c8aadb978de1a56f2151ab04d113305d",
+          "data_qubits": 10,
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 118,
+          "independent_schedule_verification": true,
+          "witnesses": 8,
+          "rounds": 4,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "uniform",
+              "target_T": 118,
+              "witnesses_frozen": 7,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 6,
+              "best_makespan": 119,
+              "sampling_seconds": 0.03808560000015859,
+              "round_seconds": 0.03881970000020374,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "uniform",
+              "target_T": 118,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 7,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 1,
+              "best_makespan": 119,
+              "sampling_seconds": 0.050009700000373414,
+              "round_seconds": 0.050715800000034506,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "uniform",
+              "target_T": 118,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 8,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 119,
+              "sampling_seconds": 0.04310619999978371,
+              "round_seconds": 0.04386739999972633,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 3,
+              "mode": "uniform",
+              "target_T": 118,
+              "witnesses_frozen": 8,
+              "effective_witnesses": 8,
+              "joint_actions": 0,
+              "layers": 0,
+              "trained_params": [],
+              "training": {
+                "evaluations": 0,
+                "seconds": 0.0
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 32,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.0703125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.046875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.04296875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 119,
+              "sampling_seconds": 0.04456620000019029,
+              "round_seconds": 0.04530150000027788,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 1,
+                "size": 5,
+                "count_ops": {
+                  "initialize": 5
+                }
+              }
+            }
+          ],
+          "evaluation_count": 33,
+          "training_seconds": 0.0,
+          "training_evaluations": 0,
+          "shots_total": 1024,
+          "wall_seconds": 0.17885149999983696,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "xy": {
+          "schema_version": 1,
+          "mode": "xy",
+          "instance": "random_5x5_seed13",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "dee740cdb8d3926a7a271c49965f9e54c8aadb978de1a56f2151ab04d113305d",
+          "data_qubits": 10,
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 118,
+          "independent_schedule_verification": true,
+          "witnesses": 11,
+          "rounds": 4,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "xy",
+              "target_T": 118,
+              "witnesses_frozen": 5,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.05,
+                  0.45,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.45,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 19.11751225129746,
+                "evaluations": 29,
+                "seconds": 4.039251300000615,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 82.02523377861232
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 19.11751225129746
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 22,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0859375
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.08203125
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.07421875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 4,
+              "best_makespan": 119,
+              "sampling_seconds": 4.192055900000014,
+              "round_seconds": 4.192846199999622,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 13,
+                "size": 25,
+                "count_ops": {
+                  "xx_plus_yy": 10,
+                  "cx": 8,
+                  "initialize": 5,
+                  "p": 2
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "xy",
+              "target_T": 118,
+              "witnesses_frozen": 11,
+              "effective_witnesses": 5,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.05,
+                  0.1,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.1,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 306.2720652979977,
+                "evaluations": 29,
+                "seconds": 35.81262120000065,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 363.86880299118013
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.05,
+                        0.1,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 306.2720652979977
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 28,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.08203125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.0703125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.06640625
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0546875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 6,
+              "best_makespan": 119,
+              "sampling_seconds": 37.15315539999938,
+              "round_seconds": 37.15403040000001,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 53,
+                "size": 89,
+                "count_ops": {
+                  "cx": 48,
+                  "p": 10,
+                  "xx_plus_yy": 10,
+                  "mcx": 8,
+                  "ccx": 8,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "xy",
+              "target_T": 118,
+              "witnesses_frozen": 11,
+              "effective_witnesses": 11,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.05,
+                  0.1,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.1,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 576.7692152319252,
+                "evaluations": 29,
+                "seconds": 73.37750689999939,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 785.9208554746772
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.05,
+                        0.1,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 576.7692152319252
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 29,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.125
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.125
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.09765625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0859375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.078125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 119,
+              "sampling_seconds": 76.93170680000003,
+              "round_seconds": 76.93231879999985,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 109,
+                "size": 181,
+                "count_ops": {
+                  "cx": 104,
+                  "ccx": 24,
+                  "p": 22,
+                  "mcx": 16,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 3,
+              "mode": "xy",
+              "target_T": 118,
+              "witnesses_frozen": 11,
+              "effective_witnesses": 11,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.05,
+                  0.1,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.1,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 576.7692152319252,
+                "evaluations": 29,
+                "seconds": 69.29324019999967,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 785.9208554746772
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.05,
+                        0.1,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 576.7692152319252
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 29,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.12890625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.12109375
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.09765625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0859375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.078125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 0,
+              "best_makespan": 119,
+              "sampling_seconds": 72.7850352000005,
+              "round_seconds": 72.78588020000007,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 109,
+                "size": 181,
+                "count_ops": {
+                  "cx": 104,
+                  "ccx": 24,
+                  "p": 22,
+                  "mcx": 16,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            }
+          ],
+          "evaluation_count": 33,
+          "training_seconds": 182.52261960000033,
+          "training_evaluations": 116,
+          "shots_total": 1024,
+          "wall_seconds": 191.06522619999942,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "xy_joint": {
+          "schema_version": 1,
+          "mode": "xy_joint",
+          "instance": "random_5x5_seed13",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "dee740cdb8d3926a7a271c49965f9e54c8aadb978de1a56f2151ab04d113305d",
+          "data_qubits": 10,
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 118,
+          "independent_schedule_verification": true,
+          "witnesses": 13,
+          "rounds": 4,
+          "trace": [
+            {
+              "round": 0,
+              "mode": "xy_joint",
+              "target_T": 118,
+              "witnesses_frozen": 5,
+              "effective_witnesses": 1,
+              "joint_actions": 0,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.05,
+                  0.45,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.45,
+                  0.25
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.45,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.45,
+                    0.25
+                  ]
+                ],
+                "expected_energy": 19.11751225129746,
+                "evaluations": 29,
+                "seconds": 4.144693899999766,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 82.02523377861232
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 19.11751225129746
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 22,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.1015625
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0859375
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0
+                  ],
+                  "probability": 0.08203125
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.07421875
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 4,
+              "best_makespan": 119,
+              "sampling_seconds": 4.255501799999365,
+              "round_seconds": 4.256275900000219,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 13,
+                "size": 25,
+                "count_ops": {
+                  "xx_plus_yy": 10,
+                  "cx": 8,
+                  "initialize": 5,
+                  "p": 2
+                }
+              }
+            },
+            {
+              "round": 1,
+              "mode": "xy_joint",
+              "target_T": 118,
+              "witnesses_frozen": 11,
+              "effective_witnesses": 5,
+              "joint_actions": 4,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.05,
+                  0.1,
+                  0.1
+                ],
+                [
+                  0.12,
+                  0.25,
+                  0.1
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.1,
+                    0.1
+                  ],
+                  [
+                    0.12,
+                    0.25,
+                    0.1
+                  ]
+                ],
+                "expected_energy": 289.1732465196096,
+                "evaluations": 29,
+                "seconds": 47.11277450000034,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.1,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 363.8725142367888
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.05,
+                        0.1,
+                        0.1
+                      ],
+                      [
+                        0.12,
+                        0.25,
+                        0.1
+                      ]
+                    ],
+                    "expected_energy": 289.1732465196096
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 26,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.07421875
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                  ],
+                  "probability": 0.06640625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.0625
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.0625
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 6,
+              "best_makespan": 119,
+              "sampling_seconds": 49.11672759999965,
+              "round_seconds": 49.11732440000014,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 117,
+                "size": 185,
+                "count_ops": {
+                  "cx": 112,
+                  "x": 24,
+                  "p": 10,
+                  "xx_plus_yy": 10,
+                  "mcx": 8,
+                  "ccx": 8,
+                  "annotated": 8,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 2,
+              "mode": "xy_joint",
+              "target_T": 118,
+              "witnesses_frozen": 12,
+              "effective_witnesses": 11,
+              "joint_actions": 8,
+              "layers": 2,
+              "trained_params": [
+                [
+                  0.05,
+                  0.45,
+                  0.25
+                ],
+                [
+                  0.12,
+                  0.1,
+                  0.1
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.45,
+                    0.25
+                  ],
+                  [
+                    0.12,
+                    0.1,
+                    0.1
+                  ]
+                ],
+                "expected_energy": 621.401045847334,
+                "evaluations": 29,
+                "seconds": 117.40471549999984,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.1
+                      ]
+                    ],
+                    "expected_energy": 682.9469220021714
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.25
+                      ],
+                      [
+                        0.12,
+                        0.1,
+                        0.1
+                      ]
+                    ],
+                    "expected_energy": 621.401045847334
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 29,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  "probability": 0.18359375
+                },
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.125
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.10546875
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.06640625
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.05078125
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 1,
+              "best_makespan": 119,
+              "sampling_seconds": 124.94961899999998,
+              "round_seconds": 124.95021400000041,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 242,
+                "size": 393,
+                "count_ops": {
+                  "cx": 248,
+                  "x": 52,
+                  "p": 22,
+                  "mcx": 20,
+                  "ccx": 20,
+                  "annotated": 16,
+                  "xx_plus_yy": 10,
+                  "initialize": 5
+                }
+              }
+            },
+            {
+              "round": 3,
+              "mode": "xy_joint",
+              "target_T": 118,
+              "witnesses_frozen": 13,
+              "effective_witnesses": 12,
+              "joint_actions": 8,
+              "layers": 1,
+              "trained_params": [
+                [
+                  0.05,
+                  0.45,
+                  0.1
+                ]
+              ],
+              "training": {
+                "params": [
+                  [
+                    0.05,
+                    0.45,
+                    0.1
+                  ]
+                ],
+                "expected_energy": 754.7852031679292,
+                "evaluations": 29,
+                "seconds": 140.1783286,
+                "log": [
+                  {
+                    "layers": 1,
+                    "params": [
+                      [
+                        0.05,
+                        0.45,
+                        0.1
+                      ]
+                    ],
+                    "expected_energy": 754.7852031679292
+                  },
+                  {
+                    "layers": 2,
+                    "params": [
+                      [
+                        0.12,
+                        0.45,
+                        0.45
+                      ],
+                      [
+                        0.12,
+                        0.45,
+                        0.25
+                      ]
+                    ],
+                    "expected_energy": 777.5551762287828
+                  }
+                ]
+              },
+              "shots": 256,
+              "illegal_fraction": 0.0,
+              "unique_sampled": 28,
+              "top_probabilities": [
+                {
+                  "choice": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "probability": 0.1796875
+                },
+                {
+                  "choice": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.09765625
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "probability": 0.0859375
+                },
+                {
+                  "choice": [
+                    1,
+                    1,
+                    1,
+                    0,
+                    1
+                  ],
+                  "probability": 0.06640625
+                },
+                {
+                  "choice": [
+                    0,
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "probability": 0.06640625
+                }
+              ],
+              "evaluated": 8,
+              "graph_feasible": 8,
+              "improved": false,
+              "witnesses_added": 1,
+              "best_makespan": 119,
+              "sampling_seconds": 145.0158706000002,
+              "round_seconds": 145.01661150000018,
+              "circuit": {
+                "num_qubits": 18,
+                "depth": 136,
+                "size": 206,
+                "count_ops": {
+                  "cx": 128,
+                  "x": 26,
+                  "p": 12,
+                  "ccx": 12,
+                  "mcx": 10,
+                  "annotated": 8,
+                  "initialize": 5,
+                  "xx_plus_yy": 5
+                }
+              }
+            }
+          ],
+          "evaluation_count": 33,
+          "training_seconds": 308.84051249999993,
+          "training_evaluations": 116,
+          "shots_total": 1024,
+          "wall_seconds": 323.3405878000003,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Zero energy on the frozen witness set only satisfies the known constraints; the full graph evaluation remains mandatory.",
+            "Sampling failures never prove infeasibility and quantum energies are not promised to decrease monotonically.",
+            "The outer best makespan can only improve; T follows verified feasible decodes only.",
+            "Statevector training is budget-guarded; large pools are offline compilation only."
+          ]
+        },
+        "classical": {
+          "schema_version": 1,
+          "mode": "classical_joint",
+          "instance": "random_5x5_seed13",
+          "jobs": 5,
+          "machines": 5,
+          "pool_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pool_hash": "dee740cdb8d3926a7a271c49965f9e54c8aadb978de1a56f2151ab04d113305d",
+          "initial_makespan": 119,
+          "best_makespan": 119,
+          "best_choice": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "improved": false,
+          "final_target_T": 118,
+          "independent_schedule_verification": true,
+          "witnesses": 6,
+          "rounds": 2,
+          "trace": [
+            {
+              "round": 0,
+              "steps": 95,
+              "witnesses": 6,
+              "joint_actions": 0,
+              "evaluations": 8,
+              "best_makespan": 119,
+              "round_seconds": 0.003297500000371656
+            },
+            {
+              "round": 1,
+              "steps": 200,
+              "witnesses": 6,
+              "joint_actions": 5,
+              "evaluations": 0,
+              "best_makespan": 119,
+              "round_seconds": 0.03480420000050799
+            }
+          ],
+          "evaluation_count": 9,
+          "training_seconds": 0.0,
+          "training_evaluations": 0,
+          "shots_total": 0,
+          "wall_seconds": 0.03824570000051608,
+          "hardware_jobs_submitted": 0,
+          "notes": [
+            "Classical hill climbing on the same frozen witness cuts and the same joint actions as the quantum loop."
+          ]
+        }
+      }
     }
   ]
 }
