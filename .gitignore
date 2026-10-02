@@ -6,3 +6,8 @@ __pycache__/
 *.zip
 # 原始基准数据集（未纳入远程仓库，如需可用 git add -f 手动添加）
 
+# GitHub App 私钥与本地 agent 配置（绝不入库）
+agent_keys/
+tools/agents.local.json
+# 调度器生成的任务提示词
+task_outbox/

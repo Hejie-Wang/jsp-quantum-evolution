@@ -1,0 +1,28 @@
+name: PR 打开 — 请求 codex 审核
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+  issues: write
+  contents: read
+
+jobs:
+  request-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 请求 codex agent 审核
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUM: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          gh pr comment "$PR_NUM" --body "🤖 **审核请求**：PR「$PR_TITLE」（作者 @$PR_AUTHOR）已打开。
+          请 \`codex\` agent 认领本 PR 的代码审核。流程见 \`docs/agent_collaboration.md\`：
+          1. 本地运行 \`python tools/agent_dispatch.py --bot codex\` 认领任务；
+          2. 审查代码正确性、测试与数据效果；
+          3. 以 bot 身份在本 PR 下发表审核意见（通过 / 修改建议）。"
+          gh pr edit "$PR_NUM" --add-label "agent:codex" || true
