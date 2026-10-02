@@ -1,6 +1,6 @@
 # JSP 排列空间量子演化：从经典模拟到 IBM 真机验证
 
-本仓库记录作业车间调度问题（JSP）排列空间量子演化模型的完整研究链路：数学建模 → 经典状态向量模拟 → Qiskit 电路迁移 → IBM Quantum 真机实验 → 交换网络并行化优化。
+本仓库记录作业车间调度问题（JSP）排列空间量子演化模型的研究链路：数学建模 → 经典状态向量模拟 → Qiskit 电路迁移 → IBM Quantum 真机实验 → 交换网络并行化 → 机器候选池求解与离线门级验证。
 
 ## 目录结构
 
@@ -15,6 +15,9 @@
 | `code/JSP_量子演化可运行代码/` | 排列空间量子演化的经典状态向量模拟器（`qjsp.py`，8 项单元测试） |
 | `code/JSP_受限量子资源优化代码/` | 受限量子资源下的优化代码与编译报告 |
 | `code/jsp_qiskit_hardware/` | **本仓库核心**：2×2 JSP 的 Qiskit 电路迁移、真机结果、交换网络并行化 |
+| `code/candidate_quantum_demo/` | 机器候选编码的 3×3 最小示例、理想演化和 6 项测试 |
+| `code/candidate_quantum_medium/` | 中等规模候选主问题、MILP/经典 Kaiwu 模拟退火后端、结果校验器和 22 项测试 |
+| `code/candidate_quantum_gates/` | 候选编码的离线 Qiskit 门级电路、Aer 入口、资源转译和 8 项测试 |
 
 ## 关键结果
 
@@ -48,6 +51,22 @@
 
 Intel Xeon 8370C、单线程、τ=20、2000 层、1000 次采样：2×2 总耗时 0.025 秒（最优概率 82.8%）；3×3 0.077 秒（14.8%）；4×3 2.17 秒（0.12%）。50×20 实例的完整振幅演化需要 ~10^1290 字节，由容量检查明确拦截。
 
+### 5. 机器候选池路线（`code/candidate_quantum_*`）
+
+这条路线用每台机器的一组候选工序顺序代替完整排列空间，并通过跨机器环和路径见证逐步排除不可行组合。当前仓库包含三个阶段：
+
+| 阶段 | 已完成内容 | 验证结果 |
+|---|---|---|
+| 最小 demo | 3×3 候选池、约束生成、普通与联合驱动的理想演化 | 候选池最优工期为 11；6 项测试通过 |
+| 中等规模候选主问题 | 固定工期可行性、图分离、SciPy/HiGHS MILP 和经典 Kaiwu 模拟退火 | 22 项测试通过；12 份结果通过独立校验 |
+| 离线门级电路 | one-hot 候选寄存器、环/路径相位、XY 与联合混合器、Aer 和离线转译 | 8 项测试通过；未提交硬件任务 |
+
+中等规模实验覆盖 15×15、20×15 和派生 15×20 实例，每种形状使用种子 7/11，并分别运行 MILP 与 Kaiwu 后端。MILP 在两次派生 15×20 运行中将 makespan 从 1685 降至 1675；其余运行保留原始可行排程。12 份保存结果均通过输入与候选池哈希、作业优先约束、机器不重叠、候选顺序和 makespan 校验，但没有证明候选池最优或 JSP 全局最优。
+
+门级阶段完成了小规模语义验证和中等规模资源转译。派生 15×20 电路使用 160 个候选数据比特；资源报告只编入 44 条见证中的 2 条以及 2 个联合项，没有运行中等规模状态向量，也没有访问云端后端。通用联合局部门转译后的双比特门数较高，仍是当前实现的主要资源瓶颈。
+
+详细数据和限制见[中等规模实验报告](docs/candidate_medium_results_20261001.md)与[离线门级验证报告](docs/candidate_quantum_gates_results_20261001.md)。数学定义及任务边界见[候选编码设计](docs/quantum_candidate_design.md)和[实现验收条件](docs/quantum_candidate_codex_tasks.md)。这些实验不构成量子优势证据；Kaiwu 后端在这里是经典模拟退火。
+
 ## 复现
 
 ```bash
@@ -64,17 +83,22 @@ python qjsp_hardware.py --layers 1 --submit     # 提交真机（需已保存 IB
 python qjsp_parallel.py                         # 并行化离线验证（不消耗 QPU）
 ```
 
+机器候选路线的命令从仓库根目录执行：
+
+```powershell
+# 最小 demo：6 项测试
+conda run --no-capture-output -n qskit python -m unittest discover -s code/candidate_quantum_demo -p test_demo.py -v
+
+# 中等规模候选主问题：22 项测试及已保存结果校验
+conda run --no-capture-output -n Kaiwu python -m unittest discover -s code/candidate_quantum_medium -p test_medium.py -v
+$files = (Get-ChildItem code/candidate_quantum_medium/results/corrected_20261001/*_seed*.json).FullName
+conda run --no-capture-output -n Kaiwu python code/candidate_quantum_medium/verify_result.py $files
+
+# 离线量子门：8 项测试，不访问 IBM Quantum
+conda run --no-capture-output -n qskit python -m unittest discover -s code/candidate_quantum_gates -p test_circuits.py -v
+```
+
 ## 安全说明
 
 IBM Quantum API 凭证文件（`import.py`）已按 `.gitignore` 排除，请勿上传含明文令牌。真机作业 ID 保留在结果 JSON 中，可在 IBM Quantum Platform 上核验。
-
-## 机器候选量子搜索设计（2026-10-01）
-
-基于机器候选编码、跨机器环/路径投影与联合混合器的新路线：
-
-- [数学设计与理论边界](docs/quantum_candidate_design.md)
-- [本地 Codex 实现任务与验收条件](docs/quantum_candidate_codex_tasks.md)
-- [最小可运行 demo 与验证结果](code/candidate_quantum_demo/README.md)
-
-Demo 验证候选池内基态能量与最优工期对应，并给出约束生成和理想演化示例；尚未实现 CUDA、门级编译或大规模量子求解，未声称量子优势。
 
