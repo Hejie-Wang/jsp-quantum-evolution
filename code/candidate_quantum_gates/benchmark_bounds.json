@@ -1,0 +1,88 @@
+{
+  "checked_date": "2026-10-02",
+  "bound_sources": [
+    "https://raw.githubusercontent.com/ScheduleOpt/benchmarks/main/jobshop/solutions/bks.json",
+    "https://optimizizer.com/TA.php"
+  ],
+  "gap_definition": "100 * (makespan / upper_bound - 1); not a generic optimality certificate",
+  "instances": {
+    "ta01": {
+      "path": "task_data/tai15_15_01_test.txt",
+      "canonical_instance": "ta01",
+      "shape": [
+        15,
+        15
+      ],
+      "instance_sha256": "fc831d2017fc5d1177585a225c8ea3ba41bcd49edddeb17d9f1b99c13c0697e7",
+      "identity_check": "all durations and machine routes equal",
+      "instance_source": "https://raw.githubusercontent.com/tamy0612/JSPLIB/master/instances/ta01",
+      "lower_bound": 1231,
+      "upper_bound": 1231
+    },
+    "ta11": {
+      "path": "task_data/tai20_15_01_test.txt",
+      "canonical_instance": "ta11",
+      "shape": [
+        20,
+        15
+      ],
+      "instance_sha256": "a31c55baa9d05da553702838179585cc18a287ba2e3e3a766c28ae04bd205f23",
+      "identity_check": "all durations and machine routes equal",
+      "instance_source": "https://raw.githubusercontent.com/tamy0612/JSPLIB/master/instances/ta11",
+      "lower_bound": 1357,
+      "upper_bound": 1357
+    },
+    "ta21": {
+      "path": "task_data/ta21.txt",
+      "canonical_instance": "ta21",
+      "shape": [
+        20,
+        20
+      ],
+      "instance_sha256": "8a93dfdec5c504e8f3d9d5e4c7ff523a652b995311ccf79e85d454ecd3d3863b",
+      "identity_check": "all durations and machine routes equal",
+      "instance_source": "https://raw.githubusercontent.com/tamy0612/JSPLIB/master/instances/ta21",
+      "lower_bound": 1642,
+      "upper_bound": 1642
+    },
+    "ta61": {
+      "path": "task_data/tai50_20_01.txt",
+      "canonical_instance": "ta61",
+      "shape": [
+        50,
+        20
+      ],
+      "instance_sha256": "1429a642f603cce68eacd0e72f41813434da50625fbfae67bef1f8218c3a4983",
+      "identity_check": "all durations and machine routes equal",
+      "instance_source": "https://raw.githubusercontent.com/tamy0612/JSPLIB/master/instances/ta61",
+      "lower_bound": 2868,
+      "upper_bound": 2868
+    },
+    "ta62": {
+      "path": "task_data/tai50_20_02.txt",
+      "canonical_instance": "ta62",
+      "shape": [
+        50,
+        20
+      ],
+      "instance_sha256": "1c4ef9e69d538d86fc3a98bfc028551c02c05fee7db680efc69f85d29fa39411",
+      "identity_check": "all durations and machine routes equal",
+      "instance_source": "https://raw.githubusercontent.com/tamy0612/JSPLIB/master/instances/ta62",
+      "lower_bound": 2869,
+      "upper_bound": 2869
+    },
+    "ta63": {
+      "path": "task_data/tai50_20_03.txt",
+      "canonical_instance": "ta63",
+      "shape": [
+        50,
+        20
+      ],
+      "instance_sha256": "8329e81ba83b63e02984518d1037cc9ee010f4fa05db32e194b929f04ed0e811",
+      "identity_check": "all durations and machine routes equal",
+      "instance_source": "https://raw.githubusercontent.com/tamy0612/JSPLIB/master/instances/ta63",
+      "lower_bound": 2755,
+      "upper_bound": 2755
+    }
+  }
+}

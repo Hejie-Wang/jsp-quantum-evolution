@@ -1,0 +1,46 @@
+test_adaptive_search_and_proposal_accounting (test_accelerated.AcceleratedTests.test_adaptive_search_and_proposal_accounting) ... ok
+test_batch_matches_independent_graph (test_accelerated.AcceleratedTests.test_batch_matches_independent_graph) ... ok
+test_compact_amplitudes_match_gates (test_accelerated.AcceleratedTests.test_compact_amplitudes_match_gates) ... ok
+test_compact_budget_and_pool_binding (test_accelerated.AcceleratedTests.test_compact_budget_and_pool_binding) ... ok
+test_cuda_kernel_body_on_host (test_accelerated.AcceleratedTests.test_cuda_kernel_body_on_host)
+Check the actual .cu indexing/logic without claiming device execution. ... ok
+test_cuda_parity_if_available (test_accelerated.AcceleratedTests.test_cuda_parity_if_available) ... skipped "No module named 'cupy'"
+test_head_tail_and_gt (test_accelerated.AcceleratedTests.test_head_tail_and_gt) ... ok
+test_input_validation (test_accelerated.AcceleratedTests.test_input_validation) ... ok
+test_training_matches_reference (test_accelerated.AcceleratedTests.test_training_matches_reference) ... ok
+test_unequal_pool_sizes_and_constant_witness (test_accelerated.AcceleratedTests.test_unequal_pool_sizes_and_constant_witness) ... ok
+test_exact_construction_matches_dense_reference (test_circuits.JointGateTests.test_exact_construction_matches_dense_reference) ... ok
+test_exact_construction_uses_no_ancilla_and_fewer_cx (test_circuits.JointGateTests.test_exact_construction_uses_no_ancilla_and_fewer_cx) ... ok
+test_legal_encoding_preserved_and_non_targets_untouched (test_circuits.JointGateTests.test_legal_encoding_preserved_and_non_targets_untouched) ... ok
+test_phase_circuit_metadata_reports_included_and_skipped (test_circuits.JointGateTests.test_phase_circuit_metadata_reports_included_and_skipped) ... ok
+test_t_register_objective_and_penalty_composition (test_circuits.ObjectiveRegisterTests.test_t_register_objective_and_penalty_composition) ... /root/.local/lib/python3.12/site-packages/qiskit/circuit/library/arithmetic/integer_comparator.py:54: DeprecationWarning: The class ``qiskit.circuit.library.blueprintcircuit.BlueprintCircuit`` is deprecated as of Qiskit 2.1. It will be removed in Qiskit 3.0. There is no direct replacement other than the QuantumCircuit class.
+  super().__init__(name=name)
+ok
+test_constant_false_witness_emits_nothing_and_stays_clean (test_circuits.PhaseSemanticsTests.test_constant_false_witness_emits_nothing_and_stays_clean) ... ok
+test_constant_true_witness_is_global_phase_only (test_circuits.PhaseSemanticsTests.test_constant_true_witness_is_global_phase_only) ... ok
+test_initial_state_preparation_is_separate (test_circuits.PhaseSemanticsTests.test_initial_state_preparation_is_separate) ... ok
+test_random_superposition_gets_exact_phases_and_clean_aux (test_circuits.PhaseSemanticsTests.test_random_superposition_gets_exact_phases_and_clean_aux) ... ok
+test_register_boundaries_t_equal_l_minus_one_l_l_plus_one (test_circuits.PhaseSemanticsTests.test_register_boundaries_t_equal_l_minus_one_l_l_plus_one) ... ok
+test_small_pool_enumeration_matches_classical_predicate (test_circuits.PhaseSemanticsTests.test_small_pool_enumeration_matches_classical_predicate) ... ok
+test_work_register_is_reused_across_witness_count (test_circuits.PhaseSemanticsTests.test_work_register_is_reused_across_witness_count) ... ok
+test_count_decoder_rejects_illegal_without_repair (test_circuits.ResourceGuardTests.test_count_decoder_rejects_illegal_without_repair) ... ok
+test_mixers_are_unitary_and_offline (test_circuits.ResourceGuardTests.test_mixers_are_unitary_and_offline) ... ok
+test_simulation_budget_rejects_medium_circuit (test_circuits.ResourceGuardTests.test_simulation_budget_rejects_medium_circuit) ... ok
+test_demo_witnesses_are_real_graph_evidence (test_circuits.WitnessProjectionTests.test_demo_witnesses_are_real_graph_evidence) ... ok
+test_derive_witness_intersects_and_binds_pool_hash (test_circuits.WitnessProjectionTests.test_derive_witness_intersects_and_binds_pool_hash) ... ok
+test_derive_witness_matches_medium_projection (test_circuits.WitnessProjectionTests.test_derive_witness_matches_medium_projection) ... ok
+test_empty_intersection_never_triggers (test_circuits.WitnessProjectionTests.test_empty_intersection_never_triggers) ... ok
+test_intersection_projection_doc_example (test_circuits.WitnessProjectionTests.test_intersection_projection_doc_example) ... ok
+test_classical_baseline_shares_information_and_actions (test_search_loop.ClosedLoopTests.test_classical_baseline_shares_information_and_actions) ... ok
+test_closed_loop_never_worsens_and_verifies_every_schedule (test_search_loop.ClosedLoopTests.test_closed_loop_never_worsens_and_verifies_every_schedule) ... ok
+test_large_pool_statevector_is_rejected (test_search_loop.ClosedLoopTests.test_large_pool_statevector_is_rejected) ... ok
+test_phase_plus_mixer_changes_sampling_distribution (test_search_loop.ClosedLoopTests.test_phase_plus_mixer_changes_sampling_distribution) ... ok
+test_sampling_failure_is_not_infeasibility (test_search_loop.ClosedLoopTests.test_sampling_failure_is_not_infeasibility) ... ok
+test_uniform_and_xy_modes_run_within_budget (test_search_loop.ClosedLoopTests.test_uniform_and_xy_modes_run_within_budget) ... ok
+test_actions_break_the_triggering_witness (test_search_loop.JointActionTests.test_actions_break_the_triggering_witness) ... ok
+test_actions_derived_from_witnesses_only (test_search_loop.JointActionTests.test_actions_derived_from_witnesses_only) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.681s
+
+OK (skipped=1)

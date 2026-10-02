@@ -14,8 +14,9 @@ fixed-T circuit ``legal initial state -> [witness phase -> single-machine XY
         infeasible or over T: extract, deduplicate and add effective witnesses
         record probabilities, evaluation counts, makespan and all timings
 
-Small pools only: statevector training goes through ``ensure_simulation_budget``
-and large pools are compiled offline by ``run_offline.compile_medium``.  Zero
+Small candidate spaces only: compact simulation caps legal states at 65,536;
+the full Qiskit reference goes through ``ensure_simulation_budget``. Larger
+spaces are compiled offline by ``run_offline.compile_medium``. Zero
 energy on the known witness set only means the known constraints hold; every
 accepted schedule still passes the independent full graph evaluation, and a
 failed sample never proves infeasibility.
@@ -224,18 +225,29 @@ def _expected_energy(per_choice, specs, t_target, penalty):
 
 def train_layer_params(pool, specs, transitions, fixed_t, penalty, *,
                        layer_counts=(1, 2), gammas=(0.05, 0.12, 0.25),
-                       betas=(0.1, 0.25, 0.45), max_evaluations=48):
+                       betas=(0.1, 0.25, 0.45), max_evaluations=48,
+                       simulation_backend="compact", mode="xy_joint", deadline=None):
     """Greedy coordinate search on the frozen witness energy landscape.
 
-    Every evaluation is one circuit construction plus one statevector
-    execution; both are counted and timed as training cost.  The objective is
+    The compact backend exactly simulates the legal candidate subspace;
+    ``qiskit`` retains the independent full-statevector reference. The objective is
     the expected H_T over the legal distribution, which uses only the frozen
     witness set, never optimal labels.
     """
     started = perf_counter()
+    if simulation_backend not in {"compact", "qiskit"}:
+        raise ValueError("unknown simulation backend")
+    if max_evaluations < 1 or not layer_counts or any(p < 1 for p in layer_counts):
+        raise ValueError("positive parameter budget and layers required")
+    simulator = None
+    if simulation_backend == "compact":
+        from compact_simulator import CompactSimulator
+        simulator = CompactSimulator(pool, specs, transitions, fixed_t, penalty)
     evaluations, log = 0, []
     best = None
     for layers in layer_counts:
+        if best is not None and deadline is not None and perf_counter() >= deadline:
+            break
         params = [(gammas[len(gammas) // 2], betas[len(betas) // 2],
                    betas[len(betas) // 2])] * layers
         if evaluations >= max_evaluations:
@@ -243,10 +255,12 @@ def train_layer_params(pool, specs, transitions, fixed_t, penalty, *,
 
         def score(parameters):
             nonlocal evaluations
-            circuit = build_fixed_t_ansatz(pool, specs, transitions, parameters,
-                                           fixed_t, penalty)
-            per_choice, _ = data_probabilities(circuit, pool)
             evaluations += 1
+            if simulator is not None:
+                return float(simulator.probabilities(parameters, mode) @ simulator.energy)
+            circuit = build_fixed_t_ansatz(pool, specs, transitions, parameters,
+                                           fixed_t, penalty, mode=mode)
+            per_choice, _ = data_probabilities(circuit, pool)
             return _expected_energy(per_choice, specs, fixed_t, penalty)
 
         current = score(params)
@@ -254,7 +268,7 @@ def train_layer_params(pool, specs, transitions, fixed_t, penalty, *,
             for axis in range(3):
                 grid = gammas if axis == 0 else betas
                 for value in grid:
-                    if evaluations >= max_evaluations:
+                    if evaluations >= max_evaluations or (deadline is not None and perf_counter() >= deadline):
                         break
                     candidate = [list(p) for p in params]
                     candidate[position][axis] = value
@@ -268,7 +282,7 @@ def train_layer_params(pool, specs, transitions, fixed_t, penalty, *,
             best = (params, current)
     return {"params": [list(p) for p in best[0]], "expected_energy": best[1],
             "evaluations": evaluations, "seconds": perf_counter() - started,
-            "log": log}
+            "log": log, "simulation_backend": simulation_backend}
 
 
 def sample_choices(circuit, pool: CandidatePool, shots, seed):
@@ -295,7 +309,7 @@ def run_search_loop(inst, pool: CandidatePool, initial_choice, *,
                     mode="xy_joint", shots=256, seed=7, max_rounds=6,
                     time_budget=120.0, per_round_evaluations=8,
                     layer_counts=(1, 2), train_budget=48,
-                    penalty=None, log=None):
+                    penalty=None, log=None, simulation_backend="compact"):
     """Outer fixed-T closed loop; every accepted schedule is verified twice.
 
     ``mode``: ``uniform`` (uniform legal sampling), ``xy`` (phase + XY) or
@@ -303,6 +317,10 @@ def run_search_loop(inst, pool: CandidatePool, initial_choice, *,
     """
     if mode not in {"uniform", "xy", "xy_joint"}:
         raise ValueError(f"unknown mode {mode!r}")
+    if simulation_backend not in {"compact", "qiskit"}:
+        raise ValueError("unknown simulation backend")
+    if shots < 1:
+        raise ValueError("positive shots required")
     started = perf_counter()
     if penalty is None:
         penalty = float(inst.total_duration + 1)
@@ -336,7 +354,9 @@ def run_search_loop(inst, pool: CandidatePool, initial_choice, *,
         if mode != "uniform":
             training = train_layer_params(
                 pool, effective, transitions, t_target, penalty,
-                layer_counts=layer_counts, max_evaluations=train_budget)
+                layer_counts=layer_counts, max_evaluations=train_budget,
+                simulation_backend=simulation_backend, mode=mode,
+                deadline=started + time_budget)
             training_evaluations += training["evaluations"]
             training_seconds += training["seconds"]
             layer_params = [tuple(p) for p in training["params"]]
@@ -344,8 +364,18 @@ def run_search_loop(inst, pool: CandidatePool, initial_choice, *,
                                       layer_params, t_target, penalty,
                                       mode=mode)
         resources = circuit_resources(ansatz)
-        sampled, illegal_fraction = sample_choices(ansatz, pool, shots,
-                                                   seed + round_index)
+        if simulation_backend == "compact":
+            from compact_simulator import CompactSimulator
+            simulator = CompactSimulator(pool, effective, transitions, t_target, penalty)
+            counts = np.random.default_rng(seed + round_index).multinomial(
+                shots, simulator.probabilities(layer_params, mode))
+            sampled = sorted([((tuple(simulator.labels[i]), None), int(count))
+                              for i, count in enumerate(counts) if count],
+                             key=lambda item: -item[1])
+            illegal_fraction = 0.0
+        else:
+            sampled, illegal_fraction = sample_choices(ansatz, pool, shots,
+                                                       seed + round_index)
         shots_total += shots
         round_elapsed_sampling = perf_counter() - tic
         evaluated, improved, added, feasible = 0, False, 0, 0
@@ -415,6 +445,7 @@ def run_search_loop(inst, pool: CandidatePool, initial_choice, *,
         "shots_total": shots_total,
         "wall_seconds": elapsed,
         "hardware_jobs_submitted": 0,
+        "simulation_backend": simulation_backend,
         "notes": [
             "Zero energy on the frozen witness set only satisfies the known "
             "constraints; the full graph evaluation remains mandatory.",
@@ -422,7 +453,7 @@ def run_search_loop(inst, pool: CandidatePool, initial_choice, *,
             "are not promised to decrease monotonically.",
             "The outer best makespan can only improve; T follows verified "
             "feasible decodes only.",
-            "Statevector training is budget-guarded; large pools are offline "
+            "Classical simulation is budget-guarded; large pools are offline "
             "compilation only.",
         ],
     }

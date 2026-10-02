@@ -1,0 +1,65 @@
+{
+  "instance": "tai50_20_01",
+  "batch_size": 256,
+  "feasible": 254,
+  "python_graph": {
+    "median_seconds": 0.2574377690000347,
+    "samples_seconds": [
+      0.2574377690000347,
+      0.2705454329999384,
+      0.23458156200001667
+    ]
+  },
+  "numba_batch": {
+    "median_seconds": 0.003591117000041777,
+    "samples_seconds": [
+      0.004105619999904775,
+      0.0034352059999491757,
+      0.003591117000041777
+    ]
+  },
+  "cpu_parity": true,
+  "cuda_requested": false,
+  "cuda_tested": false,
+  "hardware_jobs_submitted": 0,
+  "quantum_training": {
+    "qiskit": {
+      "timing": {
+        "median_seconds": 0.09383491100004449,
+        "samples_seconds": [
+          0.2825334670000075,
+          0.09383491100004449,
+          0.09344495199991343
+        ]
+      },
+      "expected_energy": 1.5148939921690487,
+      "params": [
+        [
+          0.05,
+          0.1,
+          0.25
+        ]
+      ],
+      "evaluations": 24
+    },
+    "compact": {
+      "timing": {
+        "median_seconds": 0.0012272699999584802,
+        "samples_seconds": [
+          0.001378915000032066,
+          0.0012272699999584802,
+          0.001166110000099252
+        ]
+      },
+      "expected_energy": 1.514893992169048,
+      "params": [
+        [
+          0.05,
+          0.1,
+          0.25
+        ]
+      ],
+      "evaluations": 24
+    }
+  }
+}

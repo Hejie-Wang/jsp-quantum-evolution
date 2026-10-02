@@ -61,3 +61,45 @@ The tests use tiny circuits only. The 15x20 compile creates a resource-only
 183-qubit circuit and never allocates a statevector. Earlier gate-level
 results are kept in `results_final_20261001.json` and
 `docs/candidate_quantum_gates_results_20261001.md`.
+
+## Dynamic candidates and accelerated evaluation
+
+`adaptive_search.py` refreshes whole-machine candidates around critical
+blocks, uses tabu memory/restarts, and periodically recombines candidates on
+up to six active machines. Frozen machines still participate in the full DAG
+evaluation and witness projection. `classical` is the default; `uniform` and
+`quantum` add controlled ablations of joint proposals. Quantum mode currently
+uses an **exact classical simulator**, never a QPU job.
+
+`compact_simulator.py` simulates the existing phase/complete-graph XY/joint
+ansatz in the legal candidate basis. It omits illegal one-hot states and clean
+ancillas, matches Qiskit amplitudes in regression tests, and caps the state
+count at 65,536. It builds witness predicates, not a schedule-cost lookup
+table. `search_loop.py` uses this backend by default; select
+`simulation_backend="qiskit"` in the Python API for the gate reference.
+
+```bash
+python -m pip install -r code/candidate_quantum_gates/requirements-speed.txt
+python code/candidate_quantum_gates/adaptive_search.py task_data/tai50_20_01.txt --seconds 10 --mode classical --output results/ta61.json
+python code/candidate_quantum_gates/adaptive_search.py task_data/tai50_20_01.txt --seconds 10 --mode quantum --output results/ta61_quantum.json
+python code/candidate_quantum_gates/benchmark_adaptive.py --seconds 10 --output results/adaptive_comparison
+```
+
+CPU evaluation uses Numba. CUDA evaluation is implemented in
+`evaluate_batch.cu`, loaded by CuPy, with chunked transfers and identical cycle
+semantics. On an NVIDIA machine install the CuPy wheel matching its CUDA
+runtime (for example `cupy-cuda12x`), then use `--backend cuda`. Explicit CUDA
+requests fail if unavailable; `--backend auto` records any CPU fallback.
+The included host execution of the CUDA kernel body checks its indexing and
+logic; it does **not** replace the optional on-device parity test or establish
+GPU speedup. Transfers, allocation, and synchronization count toward timing.
+
+Each result includes independently verified starts/orders, instance hash,
+training/evaluation counts, proposal contributions and setup/search/end-to-end
+times. `--seconds` bounds search after setup, with checks between iterations;
+an in-progress batch can overrun the deadline. The benchmark charges the same
+240-schedule initialization to each paired mode. Published bounds are only
+reporting metadata and never passed to search. See
+`benchmark_bounds.json` for identity checks and sources, and
+[the measured report](../../docs/candidate_adaptive_results_20261002.md)
+for results and limitations.

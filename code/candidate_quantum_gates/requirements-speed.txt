@@ -1,0 +1,7 @@
+# Optional accelerated local workflows; gate-reference tests also use Qiskit/Aer.
+numpy>=2.1
+scipy>=1.14
+numba>=0.61
+qiskit>=2.0
+qiskit-aer>=0.17
+# CUDA only: install the cupy-cuda12x/cupy-cuda13x wheel matching your runtime.

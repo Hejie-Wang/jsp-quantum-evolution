@@ -1,0 +1,23 @@
+{
+  "verified_schedule_reports": 42,
+  "gate_and_acceleration_tests": {
+    "run": 38,
+    "passed": 37,
+    "skipped": 1,
+    "reason": "No CuPy/NVIDIA GPU; on-device CUDA parity not run"
+  },
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "numba": "0.68.0",
+    "qiskit": "2.5.2",
+    "qiskit-aer": "0.17.2"
+  },
+  "nvcc": null,
+  "nvidia_smi": null,
+  "cuda_kernel_host_logic_verified": true,
+  "cuda_device_tested": false,
+  "hardware_jobs_submitted": 0
+}

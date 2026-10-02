@@ -1,0 +1,54 @@
+{
+  "base_commit": "10682e461f36e5c1a879858d249e3f2fd52ea252",
+  "comparison": "Historical quality references only; budgets and hardware differ from current benchmark.",
+  "rows": [
+    {
+      "path": "code/JSP_受限量子资源优化代码/jsp_bounded_quantum/results/tai50_20_01_exact_local.json",
+      "instance": "tai50_20_01",
+      "mode": "exact_local",
+      "initial": 3937,
+      "best": 3931,
+      "reported_seconds": 0.32355775099949824
+    },
+    {
+      "path": "code/JSP_受限量子资源优化代码/jsp_bounded_quantum/results/tai50_20_01_ideal_quantum.json",
+      "instance": "tai50_20_01",
+      "mode": "ideal_quantum",
+      "initial": 3937,
+      "best": 3903,
+      "reported_seconds": 0.48006432199963456
+    },
+    {
+      "path": "code/JSP_受限量子资源优化代码/jsp_bounded_quantum/results/tai50_20_02_exact_local.json",
+      "instance": "tai50_20_02",
+      "mode": "exact_local",
+      "initial": 4152,
+      "best": 4074,
+      "reported_seconds": 0.33008718700057216
+    },
+    {
+      "path": "code/JSP_受限量子资源优化代码/jsp_bounded_quantum/results/tai50_20_02_ideal_quantum.json",
+      "instance": "tai50_20_02",
+      "mode": "ideal_quantum",
+      "initial": 4152,
+      "best": 4048,
+      "reported_seconds": 0.4892256230004932
+    },
+    {
+      "path": "code/JSP_受限量子资源优化代码/jsp_bounded_quantum/results/tai50_20_03_exact_local.json",
+      "instance": "tai50_20_03",
+      "mode": "exact_local",
+      "initial": 4057,
+      "best": 4004,
+      "reported_seconds": 0.3181212539993794
+    },
+    {
+      "path": "code/JSP_受限量子资源优化代码/jsp_bounded_quantum/results/tai50_20_03_ideal_quantum.json",
+      "instance": "tai50_20_03",
+      "mode": "ideal_quantum",
+      "initial": 4057,
+      "best": 4015,
+      "reported_seconds": 0.4741620140002851
+    }
+  ]
+}
