@@ -1,0 +1,2377 @@
+{
+ "schema_version": 1,
+ "work_package": "T01 pilot (Issue #19, PR #18 docs TODO)",
+ "numpy_version": "2.4.6",
+ "windows": [
+  {
+   "scale": "2x2",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "4ef344dccbe144682208a11e91ede1f9ca6f9566e2a7d394f33c66711e25cae9",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 14,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "4ef344dccbe144682208a11e91ede1f9ca6f9566e2a7d394f33c66711e25cae9",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 14,
+   "pool_optimum": 14,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.65999985660892e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 14,
+    "pool_optimum": 14,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "4ef344dccbe144682208a11e91ede1f9ca6f9566e2a7d394f33c66711e25cae9",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 14,
+   "pool_optimum": 14,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.0100000003585592e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 14,
+    "pool_optimum": 14,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "b3cdc9b4019fd22621728793ac7450a24922cb19314c17e786ef6c614df43d28",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 16,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "b3cdc9b4019fd22621728793ac7450a24922cb19314c17e786ef6c614df43d28",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 16,
+   "pool_optimum": 16,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.4500001018168405e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 16,
+    "pool_optimum": 16,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "b3cdc9b4019fd22621728793ac7450a24922cb19314c17e786ef6c614df43d28",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 16,
+   "pool_optimum": 16,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.409999979136046e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 16,
+    "pool_optimum": 16,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "332fe0026e5b1da0b704597321be0cf2e9ef19b290f7d736cbbe8571b75dcee5",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 11,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "332fe0026e5b1da0b704597321be0cf2e9ef19b290f7d736cbbe8571b75dcee5",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 11,
+   "pool_optimum": 11,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.2500000341096893e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 11,
+    "pool_optimum": 11,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "332fe0026e5b1da0b704597321be0cf2e9ef19b290f7d736cbbe8571b75dcee5",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 11,
+   "pool_optimum": 11,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.28000008064555e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 11,
+    "pool_optimum": 11,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "a095eef53a3c47888fe85c63a85ae9c81bb879a483e01a7726b513133bc9379b",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 11,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "a095eef53a3c47888fe85c63a85ae9c81bb879a483e01a7726b513133bc9379b",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 11,
+   "pool_optimum": 11,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.390000008745119e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 11,
+    "pool_optimum": 11,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "a095eef53a3c47888fe85c63a85ae9c81bb879a483e01a7726b513133bc9379b",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 11,
+   "pool_optimum": 11,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.4000000848900527e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 11,
+    "pool_optimum": 11,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7f23c95fcad83b207736e97a12e00a186878d5ddec464c07353dc10652aba9e8",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 17,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7f23c95fcad83b207736e97a12e00a186878d5ddec464c07353dc10652aba9e8",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 17,
+   "pool_optimum": 17,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 5.599999894911889e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 17,
+    "pool_optimum": 17,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7f23c95fcad83b207736e97a12e00a186878d5ddec464c07353dc10652aba9e8",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 17,
+   "pool_optimum": 17,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.350000067963265e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 17,
+    "pool_optimum": 17,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "20597056ace565d55e989da1f5b6514e27ea14f7da802a7b559d0ab0be03d7be",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 15,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "20597056ace565d55e989da1f5b6514e27ea14f7da802a7b559d0ab0be03d7be",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 15,
+   "pool_optimum": 15,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.409999979136046e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 15,
+    "pool_optimum": 15,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "20597056ace565d55e989da1f5b6514e27ea14f7da802a7b559d0ab0be03d7be",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 15,
+   "pool_optimum": 15,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.350000067963265e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 15,
+    "pool_optimum": 15,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "aeb3caa41a17a2573df996f593a39b278851bfcac3e7e2965881607d652bfaae",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 10,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "aeb3caa41a17a2573df996f593a39b278851bfcac3e7e2965881607d652bfaae",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 10,
+   "pool_optimum": 10,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.3099999452824704e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 10,
+    "pool_optimum": 10,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "aeb3caa41a17a2573df996f593a39b278851bfcac3e7e2965881607d652bfaae",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 10,
+   "pool_optimum": 10,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.330000097572338e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 10,
+    "pool_optimum": 10,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c56acf223e18a40893335e8967a4f17830bd14f58f978d8b3e67a032cd4c0840",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 18,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c56acf223e18a40893335e8967a4f17830bd14f58f978d8b3e67a032cd4c0840",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 18,
+   "pool_optimum": 18,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.2599999283556826e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 18,
+    "pool_optimum": 18,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c56acf223e18a40893335e8967a4f17830bd14f58f978d8b3e67a032cd4c0840",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 18,
+   "pool_optimum": 18,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.3099999452824704e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 18,
+    "pool_optimum": 18,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7b79659bdc05f8491b646abfa5ba0d1b4bdd618794beaafd1315facba48ab59a",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 16,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7b79659bdc05f8491b646abfa5ba0d1b4bdd618794beaafd1315facba48ab59a",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 16,
+   "pool_optimum": 16,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.2500000341096893e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 16,
+    "pool_optimum": 16,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7b79659bdc05f8491b646abfa5ba0d1b4bdd618794beaafd1315facba48ab59a",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 16,
+   "pool_optimum": 16,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.2799998987466097e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 16,
+    "pool_optimum": 16,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "5ff6bc5e7edcd3d7195c2cb576ced52ed1347861d4fa02785f94b2a55f686fe2",
+   "window": "full_permutations",
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "instance_optimum": 17,
+   "feasible_rate": 0.75,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "2x2",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "5ff6bc5e7edcd3d7195c2cb576ced52ed1347861d4fa02785f94b2a55f686fe2",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 17,
+   "pool_optimum": 17,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.3099999452824704e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 17,
+    "pool_optimum": 17,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "2x2",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "5ff6bc5e7edcd3d7195c2cb576ced52ed1347861d4fa02785f94b2a55f686fe2",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    2,
+    2
+   ],
+   "total_combinations": 4,
+   "u0": 17,
+   "pool_optimum": 17,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.2700000045006163e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 17,
+    "pool_optimum": 17,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "2e994086e67c8868f20d8eb3473f9ac389993125558e206446e415f87ba41119",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 19,
+   "feasible_rate": 0.3055555555555556,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "2e994086e67c8868f20d8eb3473f9ac389993125558e206446e415f87ba41119",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 24,
+   "pool_optimum": 23,
+   "rho": 0.25,
+   "improving_combinations": 2,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 24,
+    "relative_excess": 0.0,
+    "seconds": 2.5699999241624027e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 19,
+    "pool_optimum": 23,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "2e994086e67c8868f20d8eb3473f9ac389993125558e206446e415f87ba41119",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 24,
+   "pool_optimum": 19,
+   "rho": 0.2962962962962963,
+   "improving_combinations": 8,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 24,
+    "relative_excess": 0.0,
+    "seconds": 3.769999966607429e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 19,
+    "pool_optimum": 19,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "bc9ef26c9024cf08d2b202489e0877c595f267d19dcf2ad972d382cb867c3575",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 25,
+   "feasible_rate": 0.2916666666666667,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "bc9ef26c9024cf08d2b202489e0877c595f267d19dcf2ad972d382cb867c3575",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 28,
+   "pool_optimum": 25,
+   "rho": 0.125,
+   "improving_combinations": 1,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 28,
+    "relative_excess": 0.0,
+    "seconds": 2.2199999875738285e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 25,
+    "pool_optimum": 25,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "bc9ef26c9024cf08d2b202489e0877c595f267d19dcf2ad972d382cb867c3575",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 28,
+   "pool_optimum": 25,
+   "rho": 0.037037037037037035,
+   "improving_combinations": 1,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 28,
+    "relative_excess": 0.0,
+    "seconds": 3.1600000511389226e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 25,
+    "pool_optimum": 25,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "bace2a65381cdccdec6125ed72ab131aed9620d236b729bd9295994225b8de5c",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 19,
+   "feasible_rate": 0.4074074074074074,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "bace2a65381cdccdec6125ed72ab131aed9620d236b729bd9295994225b8de5c",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 25,
+   "pool_optimum": 21,
+   "rho": 0.125,
+   "improving_combinations": 1,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 25,
+    "relative_excess": 0.0,
+    "seconds": 2.0900000890833326e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 19,
+    "pool_optimum": 21,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "bace2a65381cdccdec6125ed72ab131aed9620d236b729bd9295994225b8de5c",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 25,
+   "pool_optimum": 21,
+   "rho": 0.07407407407407407,
+   "improving_combinations": 2,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 25,
+    "relative_excess": 0.0,
+    "seconds": 3.80000001314329e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 19,
+    "pool_optimum": 21,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "d91cbf093584c1f17d2e2ecb74d8454fdc5f3dabe2dd33e05ddd81f507730f7a",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 24,
+   "feasible_rate": 0.2916666666666667,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "d91cbf093584c1f17d2e2ecb74d8454fdc5f3dabe2dd33e05ddd81f507730f7a",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 24,
+   "pool_optimum": 24,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.4800001230905764e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 24,
+    "pool_optimum": 24,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "d91cbf093584c1f17d2e2ecb74d8454fdc5f3dabe2dd33e05ddd81f507730f7a",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 24,
+   "pool_optimum": 24,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 6.860000030428637e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 24,
+    "pool_optimum": 24,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "cc796597393b4c7352ac418b756e7ed0cbfca0c3a0639204678a8e477e99068e",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 38,
+   "feasible_rate": 0.6111111111111112,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "cc796597393b4c7352ac418b756e7ed0cbfca0c3a0639204678a8e477e99068e",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 38,
+   "pool_optimum": 38,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.170000127283856e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 38,
+    "pool_optimum": 38,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "cc796597393b4c7352ac418b756e7ed0cbfca0c3a0639204678a8e477e99068e",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 38,
+   "pool_optimum": 38,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 0.00013380000018514693
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 38,
+    "pool_optimum": 38,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "82a67d0aa580bb99b30dabf2785dca0225ccd141537708c4fbca26161eaa1d3c",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 20,
+   "feasible_rate": 0.2916666666666667,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "82a67d0aa580bb99b30dabf2785dca0225ccd141537708c4fbca26161eaa1d3c",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 20,
+   "pool_optimum": 20,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 4.019999869342428e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 20,
+    "pool_optimum": 20,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "82a67d0aa580bb99b30dabf2785dca0225ccd141537708c4fbca26161eaa1d3c",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 20,
+   "pool_optimum": 20,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 9.919999865815043e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 20,
+    "pool_optimum": 20,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "0f117e7a4d4fad20394666fdd6b70c41d3243ed93c4ebc80cb9192f3e9f8b295",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 23,
+   "feasible_rate": 0.4074074074074074,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "0f117e7a4d4fad20394666fdd6b70c41d3243ed93c4ebc80cb9192f3e9f8b295",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 23,
+   "pool_optimum": 23,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.9399999877787195e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 23,
+    "pool_optimum": 23,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "0f117e7a4d4fad20394666fdd6b70c41d3243ed93c4ebc80cb9192f3e9f8b295",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 23,
+   "pool_optimum": 23,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 0.00012659999993047677
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 23,
+    "pool_optimum": 23,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c95d325774d163e2f9e52abaa52175f9c8dd1c7c602601d387152949bd7ba63a",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 23,
+   "feasible_rate": 0.2916666666666667,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c95d325774d163e2f9e52abaa52175f9c8dd1c7c602601d387152949bd7ba63a",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.5499999537714757e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 23,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c95d325774d163e2f9e52abaa52175f9c8dd1c7c602601d387152949bd7ba63a",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 7.359999835898634e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 23,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "f2fb32cb36709fe8b474f98619ef9e2be7affea734cdf5c9d60ac3ed6326676a",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 29,
+   "feasible_rate": 0.4074074074074074,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "f2fb32cb36709fe8b474f98619ef9e2be7affea734cdf5c9d60ac3ed6326676a",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.219999962311704e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 29,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "f2fb32cb36709fe8b474f98619ef9e2be7affea734cdf5c9d60ac3ed6326676a",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 6.970000140427146e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 29,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "4ac2800bfe33f238460cdaad5ba7f4fe69ad67a035cbca74973dd0c6278b6901",
+   "window": "full_permutations",
+   "pool_sizes": [
+    6,
+    6,
+    6
+   ],
+   "instance_optimum": 30,
+   "feasible_rate": 0.6111111111111112,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "3x3",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "4ac2800bfe33f238460cdaad5ba7f4fe69ad67a035cbca74973dd0c6278b6901",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 33,
+   "pool_optimum": 33,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 4.040000021632295e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 30,
+    "pool_optimum": 33,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "3x3",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "4ac2800bfe33f238460cdaad5ba7f4fe69ad67a035cbca74973dd0c6278b6901",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 33,
+   "pool_optimum": 33,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 0.00013500000022759195
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 30,
+    "pool_optimum": 33,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "788136c69aa72f102e0876493cb05f721157a41b9e5071ca0e28a9943c6de003",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 25,
+   "feasible_rate": 0.14293981481481483,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "788136c69aa72f102e0876493cb05f721157a41b9e5071ca0e28a9943c6de003",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.5999999706982635e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 25,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 0,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "788136c69aa72f102e0876493cb05f721157a41b9e5071ca0e28a9943c6de003",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.3299998904112726e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 25,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "2e12d0ca2871abe2f710c895c89e9f6701a4b13687ba4bf5d1ac3a8dadf4008b",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 30,
+   "feasible_rate": 0.3402777777777778,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "2e12d0ca2871abe2f710c895c89e9f6701a4b13687ba4bf5d1ac3a8dadf4008b",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 35,
+   "pool_optimum": 35,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 4.439999975147657e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 30,
+    "pool_optimum": 35,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 1,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "2e12d0ca2871abe2f710c895c89e9f6701a4b13687ba4bf5d1ac3a8dadf4008b",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 35,
+   "pool_optimum": 35,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 8.720000005268957e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 30,
+    "pool_optimum": 35,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "557c06ea8a31554a0e83fa6148f728299b4a0d9334ad45509182e98c29d4df11",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 26,
+   "feasible_rate": 0.14293981481481483,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "557c06ea8a31554a0e83fa6148f728299b4a0d9334ad45509182e98c29d4df11",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.5100000129896216e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 26,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 2,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "557c06ea8a31554a0e83fa6148f728299b4a0d9334ad45509182e98c29d4df11",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 6.679999933112413e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 26,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7df9b0b04f6f6e0250a2f5957a297466395a3793f2b72b239e0a9e6c5b2b665c",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 25,
+   "feasible_rate": 0.11791087962962964,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7df9b0b04f6f6e0250a2f5957a297466395a3793f2b72b239e0a9e6c5b2b665c",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 29,
+   "pool_optimum": 29,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 2.7099998987978324e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 25,
+    "pool_optimum": 29,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 3,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "7df9b0b04f6f6e0250a2f5957a297466395a3793f2b72b239e0a9e6c5b2b665c",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 29,
+   "pool_optimum": 29,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 5.0099999498343095e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 25,
+    "pool_optimum": 29,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c21d1214fbaa0b4887dd2aaae40d967adc6282b422ffaa13d52e78f7de91fd18",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 37,
+   "feasible_rate": 0.2554976851851852,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c21d1214fbaa0b4887dd2aaae40d967adc6282b422ffaa13d52e78f7de91fd18",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 39,
+   "pool_optimum": 39,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 4.380000063974876e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 37,
+    "pool_optimum": 39,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 4,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c21d1214fbaa0b4887dd2aaae40d967adc6282b422ffaa13d52e78f7de91fd18",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 39,
+   "pool_optimum": 39,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 0.00010340000153519213
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 37,
+    "pool_optimum": 39,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "3f6956d4b00c2756f3fc7cebc954e347f3cc01305a1cc1c5f6c3d684ba969dba",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 24,
+   "feasible_rate": 0.16319444444444445,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "3f6956d4b00c2756f3fc7cebc954e347f3cc01305a1cc1c5f6c3d684ba969dba",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 24,
+   "pool_optimum": 24,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 4.830000034417026e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 24,
+    "pool_optimum": 24,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 5,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "3f6956d4b00c2756f3fc7cebc954e347f3cc01305a1cc1c5f6c3d684ba969dba",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 24,
+   "pool_optimum": 24,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 0.00012109999988751952
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 24,
+    "pool_optimum": 24,
+    "pool_bound_is_not_global": false
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "b11558125ff255cf2ec187538e4ccc9765180fea61569bd2b6b158458641c3db",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 26,
+   "feasible_rate": 0.14293981481481483,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "b11558125ff255cf2ec187538e4ccc9765180fea61569bd2b6b158458641c3db",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 36,
+   "pool_optimum": 35,
+   "rho": 0.125,
+   "improving_combinations": 1,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 36,
+    "relative_excess": 0.0,
+    "seconds": 3.380000089237001e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 26,
+    "pool_optimum": 35,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 6,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "b11558125ff255cf2ec187538e4ccc9765180fea61569bd2b6b158458641c3db",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 36,
+   "pool_optimum": 34,
+   "rho": 0.07407407407407407,
+   "improving_combinations": 2,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 36,
+    "relative_excess": 0.0,
+    "seconds": 3.509999987727497e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 26,
+    "pool_optimum": 34,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "ba6eacee0ed036bc92ba791129985d1991736817a765f4a59f48c4699bbc739b",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 30,
+   "feasible_rate": 0.16319444444444445,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "ba6eacee0ed036bc92ba791129985d1991736817a765f4a59f48c4699bbc739b",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 43,
+   "pool_optimum": 43,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 3.8800000766059384e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 30,
+    "pool_optimum": 43,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 7,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "ba6eacee0ed036bc92ba791129985d1991736817a765f4a59f48c4699bbc739b",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 43,
+   "pool_optimum": 43,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 7.130000085453503e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 30,
+    "pool_optimum": 43,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "8c0218ed8ddd85ee39b4cbf411a7148786c86ba205750a642245570f74487063",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 28,
+   "feasible_rate": 0.19068287037037038,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "8c0218ed8ddd85ee39b4cbf411a7148786c86ba205750a642245570f74487063",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 4.9899999794433825e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 28,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 8,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "8c0218ed8ddd85ee39b4cbf411a7148786c86ba205750a642245570f74487063",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 30,
+   "pool_optimum": 30,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 0.00010920000022451859
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 28,
+    "pool_optimum": 30,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c3228dc357c0aefccfc629d25b501b73903ee629122a54dfa39cbd8151fb2510",
+   "window": "full_permutations",
+   "pool_sizes": [
+    24,
+    24,
+    24
+   ],
+   "instance_optimum": 37,
+   "feasible_rate": 0.4236111111111111,
+   "note": "full-permutation pool optimum equals the instance optimum by construction"
+  },
+  {
+   "scale": "4x3",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c3228dc357c0aefccfc629d25b501b73903ee629122a54dfa39cbd8151fb2510",
+   "window": "restricted_k2",
+   "k": 2,
+   "pool_sizes": [
+    2,
+    2,
+    2
+   ],
+   "total_combinations": 8,
+   "u0": 51,
+   "pool_optimum": 51,
+   "rho": 0.0,
+   "improving_combinations": 0,
+   "d_imp_from_incumbent": null,
+   "swap_graph": {
+    "improvement_reachable": false,
+    "bottleneck_makespan": null,
+    "relative_excess": null,
+    "seconds": 6.229999962670263e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 37,
+    "pool_optimum": 51,
+    "pool_bound_is_not_global": true
+   }
+  },
+  {
+   "scale": "4x3",
+   "seed": 9,
+   "generator": "numpy default_rng(seed); durations uniform 1..9; per-job random machine permutation",
+   "numpy_version": "2.4.6",
+   "instance_sha256": "c3228dc357c0aefccfc629d25b501b73903ee629122a54dfa39cbd8151fb2510",
+   "window": "restricted_k3",
+   "k": 3,
+   "pool_sizes": [
+    3,
+    3,
+    3
+   ],
+   "total_combinations": 27,
+   "u0": 51,
+   "pool_optimum": 47,
+   "rho": 0.037037037037037035,
+   "improving_combinations": 1,
+   "d_imp_from_incumbent": 1,
+   "swap_graph": {
+    "improvement_reachable": true,
+    "bottleneck_makespan": 51,
+    "relative_excess": 0.0,
+    "seconds": 5.400000009103678e-05
+   },
+   "milp_matches_enumeration": true,
+   "global_vs_pool_bound": {
+    "instance_optimum": 37,
+    "pool_optimum": 47,
+    "pool_bound_is_not_global": true
+   }
+  }
+ ]
+}
