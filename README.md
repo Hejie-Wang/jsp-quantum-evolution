@@ -17,7 +17,7 @@
 | `code/jsp_qiskit_hardware/` | **本仓库核心**：2×2 JSP 的 Qiskit 电路迁移、真机结果、交换网络并行化 |
 | `code/candidate_quantum_demo/` | 机器候选编码的 3×3 最小示例、理想演化和 6 项测试 |
 | `code/candidate_quantum_medium/` | 中等规模候选主问题、MILP/经典 Kaiwu 模拟退火后端、结果校验器和 22 项测试 |
-| `code/candidate_quantum_gates/` | 候选编码的离线 Qiskit 门级电路、Aer 入口、资源转译和 8 项测试 |
+| `code/candidate_quantum_gates/` | 候选编码的离线 Qiskit 门级电路与 Aer 入口（8 项测试）、动态候选搜索、独立均匀对照与 D0 数据层（T00，24 项测试） |
 
 ## 关键结果
 
@@ -67,6 +67,29 @@ Intel Xeon 8370C、单线程、τ=20、2000 层、1000 次采样：2×2 总耗�
 
 详细数据和限制见[中等规模实验报告](docs/candidate_medium_results_20261001.md)与[离线门级验证报告](docs/candidate_quantum_gates_results_20261001.md)。数学定义及任务边界见[候选编码设计](docs/quantum_candidate_design.md)和[实现验收条件](docs/quantum_candidate_codex_tasks.md)。这些实验不构成量子优势证据；Kaiwu 后端在这里是经典模拟退火。
 
+### 6. 公平对照基线与 D0 数据层（`code/candidate_quantum_gates/`，Issue #19 的 T00）
+
+2026年10月3日由 jsp-agent-deepseek[bot] 提交，修正了均匀对照不独立的问题，建立可核验的 D0 数据层与统一记录字段，使"经典 / 均匀 / 量子"三臂比较在成本口径上成立。
+
+**贡献内容（一句话）**：`uniform` 模式原先与量子模拟共用 `CompactSimulator`，被迫物化 `∏_m K_m` 个合法标签后才抽样，等于给经典对照附加量子同阶的准备成本；本次新增独立均匀采样器，使该成本降为 `O(machines)`。
+
+**实现方法**：
+
+1. 新增 `uniform_sampler.py`：逐机独立均匀抽取候选标签，准备成本 `O(machines)`、内存 `O(shots×machines)`，不做拒绝、不做修复、机器间无耦合，其抽样律精确等于乘积分布。
+2. `adaptive_search.py` 的 `uniform` 路径改走上述采样器；旧路径保留在 `legacy_uniform=True`，用于复现已发布的历史数字，新增 `uniform_label_draws`、`uniform_compact_simulator_constructions` 等成本计数字段。
+3. 新增 `data_identity.py` 与 `make_d0_data.py`：按内容哈希确定实例身份，生成冻结的 D0 家族（2×2 / 3×3 / 4×3，每规模种子 0–4 开发、5–9 验证），并暴力枚举给出精确最优作为隔离诊断真值。
+4. 新增 `experiment_manifest.py`：冻结记录字段集并强制校验（池内界不得填入全局界字段、声明真机必须有已提交作业、未通过独立排程验证不得入库）。
+
+**结果验证**：`python -m unittest test_t00_control test_search_loop test_accelerated` 共 42 项测试全部通过；`make_d0_data.py verify` 的 13 项磁盘核验全部通过（30 个实例、30/30 往返哈希一致、精确最优不低于平凡下界）。同墙钟下新路径的提议调用次数由 610 提升至 827，最优工期同为 25 且两种路径都通过独立排程验证。
+
+| 活跃机器数 | 全空间状态数 | 独立采样器 | 旧路径准备 | 准备加速比 |
+|---:|---:|---:|---:|---:|
+| 4 | 81 | 3.76e-5 s | 9.71e-5 s | 2.6× |
+| 6 | 729 | 4.76e-5 s | 1.81e-4 s | 3.8× |
+| 8 | 6,561 | 6.32e-5 s | 1.25e-3 s | 19.8× |
+
+池规模超过模拟器上限时（`3^18` 状态）旧路径直接拒绝构造，独立采样器照常工作。本项只证明对照公平与成本可分离，**不构成任何量子优势主张**；详细边界见 [T00 报告](docs/t00_uniform_control_20261003.md) 与 [基准协议](docs/benchmark_protocol.md)。
+
 ## 复现
 
 ```bash
@@ -96,6 +119,13 @@ conda run --no-capture-output -n Kaiwu python code/candidate_quantum_medium/veri
 
 # 离线量子门：8 项测试，不访问 IBM Quantum
 conda run --no-capture-output -n qskit python -m unittest discover -s code/candidate_quantum_gates -p test_circuits.py -v
+
+# T00 独立均匀对照与 D0 数据层：24 项测试 + 数据核验 + 成本证据（仅需 NumPy/numba/scipy）
+cd code/candidate_quantum_gates
+python -m unittest test_t00_control -v
+python make_d0_data.py build --out-dir data --report reports/d0_verification.json
+python make_d0_data.py verify --out-dir data --report reports/d0_verification.json
+python t00_evidence.py --report reports/t00_evidence.json --seconds 3
 ```
 
 ## 安全说明
