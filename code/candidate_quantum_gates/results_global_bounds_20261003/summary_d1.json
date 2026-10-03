@@ -1,0 +1,94 @@
+{
+ "d1": [
+  {
+   "instance": "ta01",
+   "jobs": 15,
+   "machines": 15,
+   "known_optimum_lb_eq_ub": 1231,
+   "l0": 977,
+   "l_single_machine_relaxation_best": 1168,
+   "threshold_probe": {
+    "threshold": 1230,
+    "verdict": "infeasible",
+    "status": "INFEASIBLE"
+   },
+   "certified_l": 1231,
+   "no_new_lb_claimed": true
+  },
+  {
+   "instance": "ta11",
+   "jobs": 20,
+   "machines": 15,
+   "known_optimum_lb_eq_ub": 1357,
+   "l0": 1139,
+   "l_single_machine_relaxation_best": 1187,
+   "threshold_probe": {
+    "threshold": 1356,
+    "verdict": "unproven",
+    "status": "UNKNOWN"
+   },
+   "certified_l": 1187,
+   "no_new_lb_claimed": true
+  },
+  {
+   "instance": "ta21",
+   "jobs": 20,
+   "machines": 20,
+   "known_optimum_lb_eq_ub": 1642,
+   "l0": 1217,
+   "l_single_machine_relaxation_best": 1439,
+   "threshold_probe": {
+    "threshold": 1641,
+    "verdict": "unproven",
+    "status": "UNKNOWN"
+   },
+   "certified_l": 1439,
+   "no_new_lb_claimed": true
+  },
+  {
+   "instance": "ta61",
+   "jobs": 50,
+   "machines": 20,
+   "known_optimum_lb_eq_ub": 2868,
+   "l0": 2868,
+   "l_single_machine_relaxation_best": 1558,
+   "threshold_probe": {
+    "threshold": 2867,
+    "verdict": "unproven",
+    "status": "UNKNOWN"
+   },
+   "certified_l": 2868,
+   "no_new_lb_claimed": true
+  },
+  {
+   "instance": "ta62",
+   "jobs": 50,
+   "machines": 20,
+   "known_optimum_lb_eq_ub": 2869,
+   "l0": 2848,
+   "l_single_machine_relaxation_best": 1607,
+   "threshold_probe": {
+    "threshold": 2868,
+    "verdict": "unproven",
+    "status": "UNKNOWN"
+   },
+   "certified_l": 2848,
+   "no_new_lb_claimed": true
+  },
+  {
+   "instance": "ta63",
+   "jobs": 50,
+   "machines": 20,
+   "known_optimum_lb_eq_ub": 2755,
+   "l0": 2755,
+   "l_single_machine_relaxation_best": 1579,
+   "threshold_probe": {
+    "threshold": 2754,
+    "verdict": "unproven",
+    "status": "UNKNOWN"
+   },
+   "certified_l": 2755,
+   "no_new_lb_claimed": true
+  }
+ ]
+}
