@@ -13,14 +13,20 @@
 ## 工作方式
 
 1. agent 使用 App 私钥换取 1 小时有效的安装令牌（`agent_github.py token`）；
-2. 推送到特性分支（**无法直推 main**，分支保护 ruleset 强制）；
-3. 以机器人身份开 PR（`agent_github.py open-pr`），PR 自动触发 CI；
-4. CI 通过 + 仓库所有者批准后，squash 合入。
+2. 在自己的固定 clone 中开发：Codex 使用
+   `E:/BUAA/paper_composition/JSP_QSWAP/improvement-codex`，任务分支命名为
+   `codex/<任务名>`；主工作区只用于人类检查和令牌换取；
+3. 推送到特性分支（**无法直推 main**，分支保护 ruleset 强制）；
+4. 以机器人身份开 PR（`agent_github.py open-pr`），PR 自动触发 CI；
+5. CI 通过 + 仓库所有者批准后，squash 合入。
 
 ## 权限边界
 
 每个 App 仅有 `Contents: write` / `Pull requests: write` / `Issues: write`，
 无法修改仓库设置、CI 配置和密钥。新增 agent = 新建一个 App，互不影响。
+
+私钥和 `tools/agents.local.json` 只保留在主工作区，绝不复制到 agent clone，
+避免令牌换取材料进入开发目录或提交历史。
 
 ## 贡献规范
 

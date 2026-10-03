@@ -12,6 +12,18 @@ Issue、PR 评论和标签传递，天然留痕、可回溯。
 | codex/ glm | 编写程序、测试数据效果 | CLI/GUI （提示词投递） |
 | deepseek | 查 OA 文献、审查代码 | GUI 客户端（提示词投递） |
 
+## 固定工作区（v2）
+
+每个 agent 使用仓库同级的固定 clone，禁止在主工作区或其他 agent 的目录中开发，
+也不再新建 `git worktree`。Codex 的工作区为
+`E:/BUAA/paper_composition/JSP_QSWAP/improvement-codex`，任务分支使用
+`codex/<任务名>`（例如 `codex/issue-28-agent-workspace-role`）。开始任务前，
+在该 clone 中执行 `git fetch origin`，再从最新的 `origin/main` 创建任务分支。
+
+主工作区 `improvement/` 仅作为人类检查点和令牌换取点；私钥目录
+`agent_keys/`、本地配置文件不复制到任何 agent clone。需要推送或创建 PR 时，
+仍在主工作区换取短期安装令牌，再将令牌用于对应 clone 的 GitHub 操作。
+
 ## 事件链路
 
 1. **PR 打开** → GitHub Actions（`.github/workflows/pr-opened-request-review.yml`）
