@@ -19,6 +19,8 @@ Issue、PR 评论和标签传递，天然留痕、可回溯。
 2. **本地调度器认领** → `python tools/agent_dispatch.py --bot codex`
    发现带标签的未认领任务 → 以 bot 身份发 `[CLAIMED codex]` 评论 → 生成提示词 →
    CLI 型 agent 直接无头执行，GUI 型 agent 生成 `task_outbox/<bot>/task-<编号>.md` 由人粘贴。
+   定时任务使用 `python tools/github_issue_agent.py claim --bot codex --json`，每次最多认领一个
+   Issue；完成后用 `publish` 子命令创建 Draft PR 并回链原 Issue。
 3. **PR 合并** → GitHub Actions（`.github/workflows/pr-merged-notify.yml`）
    按改动内容分类开"🔄 新工作"Issue，只给相关 agent 打标签：
    - 代码/实验类（`code/`、`qskit/`、`task_data/`）→ `agent:codex` + `agent:glm` + `agent:deepseek`；
@@ -43,10 +45,19 @@ python tools/agent_dispatch.py --bot codex
 python tools/agent_dispatch.py --bot deepseek --prepare-only
 ```
 
+定时任务入口示例：
+
+```bash
+python tools/github_issue_agent.py claim --bot codex --json
+python tools/github_issue_agent.py publish --bot codex --issue 12 \
+  --branch codex/issue-12-short-name \
+  --title "修复 Issue #12" --body-file /tmp/pr-summary.md
+```
+
 ## 定时自动化（可选，两选一）
 
 - **Windows 任务计划程序**：新建基本任务，每 15–30 分钟运行一次
-  `python tools\agent_dispatch.py --bot codex`（"起始于"填仓库根目录）。
+  `python tools\github_issue_agent.py claim --bot codex --json`（"起始于"填仓库根目录）。
 - **agent 客户端自带的定时任务**：如 ZCode(GLM) 支持定时自动化，
   可让 agent 自己轮询自己的标签，无需任务计划程序。
 
