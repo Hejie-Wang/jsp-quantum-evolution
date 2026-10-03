@@ -196,6 +196,61 @@ def run_cp_sat(inst, budget, target, log=None):
     }
 
 
+def run_adaptive_mainline(inst, budget, target, seed=7):
+    """Old classical main line: `adaptive_search.solve` in classical mode.
+
+    Arrival time is the wall clock of the whole call, i.e. an *upper bound* on
+    the first-hit time: that entry point exposes only its final best value plus
+    an iteration trace, so this arm is deliberately reported with the coarser
+    (and worse for it) timestamp instead of an invented one.
+    """
+    try:
+        from adaptive_search import solve as adaptive_solve
+    except Exception as exc:  # pragma: no cover - reported honestly
+        return {"arm": "adaptive_mainline", "wall_seconds": 0.0, "upper_bound": None,
+                "lower_bound": None, "solver_status": f"unavailable: {exc}",
+                "hit": False, "arrival_seconds": None, "graph_evaluations": None,
+                "certificate_calls": 0, "cost_breakdown": {}}
+    started = time.perf_counter()
+    result = adaptive_solve(inst, seconds=budget, seed=seed, mode="classical")
+    seconds = time.perf_counter() - started
+    upper = int(result["best_makespan"]) if result.get("best_makespan") else None
+    hit = upper is not None and upper <= target
+    return {"arm": "adaptive_mainline", "wall_seconds": seconds,
+            "upper_bound": upper, "lower_bound": int(inst.lower_bound),
+            "solver_status": "complete", "hit": bool(hit),
+            "arrival_seconds": seconds if hit else None,
+            "graph_evaluations": result.get("graph_evaluations"),
+            "certificate_calls": 0,
+            "cost_breakdown": {"wall_seconds": seconds,
+                               "graph_evaluations": result.get("graph_evaluations"),
+                               "arrival_is_upper_bound": True}}
+
+
+def run_joint_mainline(inst, pool, incumbent, budget, target, seed=7):
+    """Classical joint search on the same frozen witness cuts and joint actions."""
+    pool_obj = circuits.CandidatePool(
+        tuple(tuple(tuple(int(v) for v in order) for order in machine)
+              for machine in pool))
+    started = time.perf_counter()
+    result = sl.classical_joint_search(inst, pool_obj, list(incumbent), seed=seed,
+                                       time_budget=budget, max_rounds=40,
+                                       steps_per_round=200,
+                                       per_round_evaluations=8)
+    seconds = time.perf_counter() - started
+    upper = int(result["best_makespan"])
+    hit = upper <= target
+    return {"arm": "classical_joint", "wall_seconds": seconds,
+            "upper_bound": upper, "lower_bound": int(inst.low_bound) if hasattr(inst, "low_bound") else int(inst.lower_bound),
+            "solver_status": "complete", "hit": bool(hit),
+            "arrival_seconds": seconds if hit else None,
+            "graph_evaluations": result.get("evaluation_count"),
+            "certificate_calls": 0,
+            "cost_breakdown": {"wall_seconds": seconds,
+                               "graph_evaluations": result.get("evaluation_count"),
+                               "arrival_is_upper_bound": True}}
+
+
 def run_dual_arm(inst, pool, *, arm, budget, target, proposer_factory, incumbent,
                  seed=0, cert_every=10, cert_time_limit=0.3):
     """T08 loop with a pluggable proposer under the same budget."""
@@ -303,7 +358,8 @@ def evaluate_gate(rows, *, baseline="uniform_dual", budget=None):
             continue  # negative control: no reachable target
         base = next(r for r in row["arms"] if r["arm"] == baseline)
         for arm in row["arms"]:
-            if arm["arm"] in (baseline, "cp_sat"):
+            if arm["arm"] in (baseline, "cp_sat", "adaptive_mainline",
+                              "classical_joint"):
                 continue
             base_cost = base["arrival_seconds"] if base["hit"] else budget
             arm_cost = arm["arrival_seconds"] if arm["hit"] else budget
@@ -364,7 +420,10 @@ def run(seeds, *, scales=("3x3", "4x3"), budget=10.0, arms=tuple(ARMS),
                 continue
             # pre-registered pilot target: pool optimum (D1/BKS targets need the confirmation set)
             target = int(reference)
-            arm_rows = [run_cp_sat(inst, budget, target)]
+            arm_rows = [run_cp_sat(inst, budget, target),
+                        run_adaptive_mainline(inst, budget, target, seed=seed),
+                        run_joint_mainline(inst, pool, incumbent, budget, target,
+                                           seed=seed)]
             for name in arms:
                 arm_rows.append(run_dual_arm(inst, pool, arm=name, budget=budget,
                                              target=target,

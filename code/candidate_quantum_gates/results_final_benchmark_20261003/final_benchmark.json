@@ -45,26 +45,58 @@
    "arms": [
     {
      "arm": "cp_sat",
-     "wall_seconds": 0.0503868999999213,
+     "wall_seconds": 0.0358341000001019,
      "upper_bound": 19,
      "lower_bound": 19,
      "solver_status": "OPTIMAL",
      "hit": true,
-     "arrival_seconds": 0.0503868999999213,
+     "arrival_seconds": 0.0358341000001019,
      "graph_evaluations": 0,
      "certificate_calls": 1,
      "cost_breakdown": {
-      "model_seconds": 0.0503868999999213
+      "model_seconds": 0.0358341000001019
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 8.152700599999662,
+     "upper_bound": 19,
+     "lower_bound": 16,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 8.152700599999662,
+     "graph_evaluations": 316171,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 8.152700599999662,
+      "graph_evaluations": 316171,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.018773400000100082,
+     "upper_bound": 19,
+     "lower_bound": 16,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 0.018773400000100082,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.018773400000100082,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
      }
     },
     {
      "arm": "uniform_dual",
-     "wall_seconds": 0.010666500000297674,
+     "wall_seconds": 0.01682769999933953,
      "upper_bound": 19,
      "lower_bound": 16,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.01066609999998036,
+     "arrival_seconds": 0.01682729999993171,
      "graph_evaluations": 14,
      "certificate_calls": 1,
      "rounds": 13,
@@ -88,12 +120,12 @@
     },
     {
      "arm": "sa_dual",
-     "wall_seconds": 0.0012176999998700921,
+     "wall_seconds": 0.0021612000000459375,
      "upper_bound": 19,
      "lower_bound": 16,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.0012173000000075263,
+     "arrival_seconds": 0.0021604999992632656,
      "graph_evaluations": 3,
      "certificate_calls": 0,
      "rounds": 2,
@@ -118,24 +150,24 @@
     },
     {
      "arm": "quantum_dual",
-     "wall_seconds": 2.143771000000015,
+     "wall_seconds": 3.1087806999994427,
      "upper_bound": 19,
      "lower_bound": 16,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 2.1437707000000046,
-     "graph_evaluations": 7,
+     "arrival_seconds": 3.108780300000035,
+     "graph_evaluations": 11,
      "certificate_calls": 0,
-     "rounds": 6,
+     "rounds": 10,
      "lower_bound_scope": "global",
      "cost_breakdown": {
-      "training_seconds": 0.04072940000014569,
-      "sampling_seconds": 1.2765088999999534,
-      "graph_evaluations": 7,
+      "training_seconds": 0.06623769999987417,
+      "sampling_seconds": 2.0631399000012607,
+      "graph_evaluations": 11,
       "proposer": {
        "graph_evaluations": 1,
-       "training_seconds": 0.04072940000014569,
-       "sampling_seconds": 1.2765088999999534,
+       "training_seconds": 0.06623769999987417,
+       "sampling_seconds": 2.0631399000012607,
        "shots": 64
       }
      },
@@ -207,26 +239,58 @@
    "arms": [
     {
      "arm": "cp_sat",
-     "wall_seconds": 0.03304359999992812,
+     "wall_seconds": 0.03437260000009701,
      "upper_bound": 23,
      "lower_bound": 23,
      "solver_status": "OPTIMAL",
      "hit": true,
-     "arrival_seconds": 0.03304359999992812,
+     "arrival_seconds": 0.03437260000009701,
      "graph_evaluations": 0,
      "certificate_calls": 1,
      "cost_breakdown": {
-      "model_seconds": 0.03304359999992812
+      "model_seconds": 0.03437260000009701
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 7.66568129999996,
+     "upper_bound": 23,
+     "lower_bound": 22,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 7.66568129999996,
+     "graph_evaluations": 280001,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 7.66568129999996,
+      "graph_evaluations": 280001,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.0620891999997184,
+     "upper_bound": 23,
+     "lower_bound": 22,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 0.0620891999997184,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.0620891999997184,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
      }
     },
     {
      "arm": "uniform_dual",
-     "wall_seconds": 0.0002951999999822874,
+     "wall_seconds": 0.00028190000011818483,
      "upper_bound": 23,
      "lower_bound": 22,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.00029489999997167615,
+     "arrival_seconds": 0.00028159999965282623,
      "graph_evaluations": 4,
      "certificate_calls": 0,
      "rounds": 3,
@@ -250,12 +314,12 @@
     },
     {
      "arm": "sa_dual",
-     "wall_seconds": 0.0044436000002860965,
+     "wall_seconds": 0.004761000000144122,
      "upper_bound": 23,
      "lower_bound": 22,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.004443300000275485,
+     "arrival_seconds": 0.0047606999996787636,
      "graph_evaluations": 6,
      "certificate_calls": 0,
      "rounds": 5,
@@ -280,30 +344,30 @@
     },
     {
      "arm": "quantum_dual",
-     "wall_seconds": 0.5232811999999285,
+     "wall_seconds": 0.4983492999999726,
      "upper_bound": 23,
      "lower_bound": 22,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.5232809999997698,
+     "arrival_seconds": 0.4983489999995072,
      "graph_evaluations": 4,
      "certificate_calls": 0,
      "rounds": 3,
      "lower_bound_scope": "global",
      "cost_breakdown": {
-      "training_seconds": 0.01912019999963377,
-      "sampling_seconds": 0.4862652999995589,
+      "training_seconds": 0.018641600000592007,
+      "sampling_seconds": 0.4631682000008368,
       "graph_evaluations": 4,
       "proposer": {
        "graph_evaluations": 1,
-       "training_seconds": 0.01912019999963377,
-       "sampling_seconds": 0.4862652999995589,
+       "training_seconds": 0.018641600000592007,
+       "sampling_seconds": 0.4631682000008368,
        "shots": 64
       }
      },
      "failures": {
       "empty_proposal": 0,
-      "sampling_failure": 0,
+      "sampling_failure": 2,
       "certificate_unproven": 0,
       "certificate_error": 0
      }
@@ -345,26 +409,58 @@
    "arms": [
     {
      "arm": "cp_sat",
-     "wall_seconds": 0.038429400000040914,
+     "wall_seconds": 0.023923300000205927,
      "upper_bound": 25,
      "lower_bound": 25,
      "solver_status": "OPTIMAL",
      "hit": true,
-     "arrival_seconds": 0.038429400000040914,
+     "arrival_seconds": 0.023923300000205927,
      "graph_evaluations": 0,
      "certificate_calls": 1,
      "cost_breakdown": {
-      "model_seconds": 0.038429400000040914
+      "model_seconds": 0.023923300000205927
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 8.231769700000768,
+     "upper_bound": 25,
+     "lower_bound": 23,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 8.231769700000768,
+     "graph_evaluations": 226334,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 8.231769700000768,
+      "graph_evaluations": 226334,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.00966329999937443,
+     "upper_bound": 30,
+     "lower_bound": 23,
+     "solver_status": "complete",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.00966329999937443,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
      }
     },
     {
      "arm": "uniform_dual",
-     "wall_seconds": 0.0011153000000376778,
+     "wall_seconds": 0.0011524999999892316,
      "upper_bound": 27,
      "lower_bound": 23,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.0011150000000270666,
+     "arrival_seconds": 0.0011522000004333677,
      "graph_evaluations": 10,
      "certificate_calls": 0,
      "rounds": 9,
@@ -388,20 +484,20 @@
     },
     {
      "arm": "sa_dual",
-     "wall_seconds": 10.000843899999836,
+     "wall_seconds": 10.000267299999905,
      "upper_bound": 30,
      "lower_bound": 23,
      "solver_status": "n/a",
      "hit": false,
      "arrival_seconds": null,
-     "graph_evaluations": 3271,
-     "certificate_calls": 299,
-     "rounds": 3270,
+     "graph_evaluations": 3207,
+     "certificate_calls": 295,
+     "rounds": 3206,
      "lower_bound_scope": "global",
      "cost_breakdown": {
       "training_seconds": 0.0,
       "sampling_seconds": 0.0,
-      "graph_evaluations": 3271,
+      "graph_evaluations": 3207,
       "proposer": {
        "graph_evaluations": 1,
        "witness_evaluations": 25,
@@ -412,36 +508,36 @@
      "failures": {
       "empty_proposal": 0,
       "sampling_failure": 0,
-      "certificate_unproven": 299,
+      "certificate_unproven": 295,
       "certificate_error": 0
      }
     },
     {
      "arm": "quantum_dual",
-     "wall_seconds": 3.503000400000019,
+     "wall_seconds": 2.673638399999618,
      "upper_bound": 27,
      "lower_bound": 23,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 3.5030000000001564,
-     "graph_evaluations": 10,
+     "arrival_seconds": 2.67363800000021,
+     "graph_evaluations": 8,
      "certificate_calls": 0,
-     "rounds": 9,
+     "rounds": 7,
      "lower_bound_scope": "global",
      "cost_breakdown": {
-      "training_seconds": 0.060218999999506195,
-      "sampling_seconds": 3.3692259000004015,
-      "graph_evaluations": 10,
+      "training_seconds": 0.04994669999996404,
+      "sampling_seconds": 2.5640309999998863,
+      "graph_evaluations": 8,
       "proposer": {
        "graph_evaluations": 1,
-       "training_seconds": 0.060218999999506195,
-       "sampling_seconds": 3.3692259000004015,
+       "training_seconds": 0.04994669999996404,
+       "sampling_seconds": 2.5640309999998863,
        "shots": 64
       }
      },
      "failures": {
       "empty_proposal": 0,
-      "sampling_failure": 2,
+      "sampling_failure": 1,
       "certificate_unproven": 0,
       "certificate_error": 0
      }
@@ -483,26 +579,58 @@
    "arms": [
     {
      "arm": "cp_sat",
-     "wall_seconds": 0.03151860000025408,
+     "wall_seconds": 0.029924700000265148,
      "upper_bound": 25,
      "lower_bound": 25,
      "solver_status": "OPTIMAL",
      "hit": true,
-     "arrival_seconds": 0.03151860000025408,
+     "arrival_seconds": 0.029924700000265148,
      "graph_evaluations": 0,
      "certificate_calls": 1,
      "cost_breakdown": {
-      "model_seconds": 0.03151860000025408
+      "model_seconds": 0.029924700000265148
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 9.126893399999972,
+     "upper_bound": 25,
+     "lower_bound": 25,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 9.126893399999972,
+     "graph_evaluations": 314731,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 9.126893399999972,
+      "graph_evaluations": 314731,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.01905689999966853,
+     "upper_bound": 26,
+     "lower_bound": 25,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 0.01905689999966853,
+     "graph_evaluations": 25,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.01905689999966853,
+      "graph_evaluations": 25,
+      "arrival_is_upper_bound": true
      }
     },
     {
      "arm": "uniform_dual",
-     "wall_seconds": 0.21789699999999357,
+     "wall_seconds": 0.2219174000001658,
      "upper_bound": 26,
      "lower_bound": 25,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.21789669999998296,
+     "arrival_seconds": 0.2219171999995524,
      "graph_evaluations": 76,
      "certificate_calls": 7,
      "rounds": 75,
@@ -526,12 +654,12 @@
     },
     {
      "arm": "sa_dual",
-     "wall_seconds": 0.0003612000000430271,
+     "wall_seconds": 0.0003535999994710437,
      "upper_bound": 26,
      "lower_bound": 25,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.00036090000003241585,
+     "arrival_seconds": 0.0003532999999151798,
      "graph_evaluations": 2,
      "certificate_calls": 0,
      "rounds": 1,
@@ -556,24 +684,24 @@
     },
     {
      "arm": "quantum_dual",
-     "wall_seconds": 0.28391140000030646,
+     "wall_seconds": 0.6394202000001314,
      "upper_bound": 26,
      "lower_bound": 25,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.2839109000001372,
-     "graph_evaluations": 2,
+     "arrival_seconds": 0.6394196999999622,
+     "graph_evaluations": 3,
      "certificate_calls": 0,
-     "rounds": 1,
+     "rounds": 2,
      "lower_bound_scope": "global",
      "cost_breakdown": {
-      "training_seconds": 0.0068759000000682136,
-      "sampling_seconds": 0.27007510000021284,
-      "graph_evaluations": 2,
+      "training_seconds": 0.013542700000471086,
+      "sampling_seconds": 0.6124743000000308,
+      "graph_evaluations": 3,
       "proposer": {
        "graph_evaluations": 1,
-       "training_seconds": 0.0068759000000682136,
-       "sampling_seconds": 0.27007510000021284,
+       "training_seconds": 0.013542700000471086,
+       "sampling_seconds": 0.6124743000000308,
        "shots": 64
       }
      },
@@ -633,26 +761,58 @@
    "arms": [
     {
      "arm": "cp_sat",
-     "wall_seconds": 0.02475460000005114,
+     "wall_seconds": 0.035901600000215694,
      "upper_bound": 30,
      "lower_bound": 30,
      "solver_status": "OPTIMAL",
      "hit": true,
-     "arrival_seconds": 0.02475460000005114,
+     "arrival_seconds": 0.035901600000215694,
      "graph_evaluations": 0,
      "certificate_calls": 1,
      "cost_breakdown": {
-      "model_seconds": 0.02475460000005114
+      "model_seconds": 0.035901600000215694
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 9.204664500000035,
+     "upper_bound": 30,
+     "lower_bound": 27,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 9.204664500000035,
+     "graph_evaluations": 353153,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 9.204664500000035,
+      "graph_evaluations": 353153,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.030251199999838718,
+     "upper_bound": 33,
+     "lower_bound": 27,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 0.030251199999838718,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.030251199999838718,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
      }
     },
     {
      "arm": "uniform_dual",
-     "wall_seconds": 0.0011547999997674196,
+     "wall_seconds": 0.0010030000003098394,
      "upper_bound": 33,
      "lower_bound": 27,
      "solver_status": "n/a",
      "hit": true,
-     "arrival_seconds": 0.0011544999997568084,
+     "arrival_seconds": 0.0010026999998444808,
      "graph_evaluations": 9,
      "certificate_calls": 0,
      "rounds": 8,
@@ -676,20 +836,20 @@
     },
     {
      "arm": "sa_dual",
-     "wall_seconds": 10.000169699999788,
+     "wall_seconds": 10.000056199999563,
      "upper_bound": 43,
      "lower_bound": 27,
      "solver_status": "n/a",
      "hit": false,
      "arrival_seconds": null,
-     "graph_evaluations": 4783,
-     "certificate_calls": 332,
-     "rounds": 4782,
+     "graph_evaluations": 4657,
+     "certificate_calls": 308,
+     "rounds": 4656,
      "lower_bound_scope": "global",
      "cost_breakdown": {
       "training_seconds": 0.0,
       "sampling_seconds": 0.0,
-      "graph_evaluations": 4783,
+      "graph_evaluations": 4657,
       "proposer": {
        "graph_evaluations": 1,
        "witness_evaluations": 25,
@@ -700,13 +860,13 @@
      "failures": {
       "empty_proposal": 0,
       "sampling_failure": 0,
-      "certificate_unproven": 332,
+      "certificate_unproven": 308,
       "certificate_error": 0
      }
     },
     {
      "arm": "quantum_dual",
-     "wall_seconds": 10.028407699999661,
+     "wall_seconds": 10.228539400000045,
      "upper_bound": 43,
      "lower_bound": 27,
      "solver_status": "n/a",
@@ -717,13 +877,13 @@
      "rounds": 33,
      "lower_bound_scope": "global",
      "cost_breakdown": {
-      "training_seconds": 0.2085346000003483,
-      "sampling_seconds": 9.520112699998663,
+      "training_seconds": 0.2117134999944028,
+      "sampling_seconds": 9.7293097999991,
       "graph_evaluations": 34,
       "proposer": {
        "graph_evaluations": 1,
-       "training_seconds": 0.2085346000003483,
-       "sampling_seconds": 9.520112699998663,
+       "training_seconds": 0.2117134999944028,
+       "sampling_seconds": 9.7293097999991,
        "shots": 64
       }
      },
@@ -765,10 +925,10 @@
   {
    "arm": "quantum_dual",
    "cost_ratio_vs_baseline": {
-    "mean": 2756.037983646377,
+    "mean": 2850.1738001644744,
     "ci95": [
-     435.8039370664852,
-     5865.593646554962
+     428.99208252501677,
+     6484.885561974394
     ]
    },
    "success_difference": {
@@ -784,10 +944,10 @@
   {
    "arm": "sa_dual",
    "cost_ratio_vs_baseline": {
-    "mean": 3529.1102259307663,
+    "mean": 3733.8314715460815,
     "ci95": [
-     3.0597419722386,
-     7113.540412492887
+     3.433172816317967,
+     7719.679056256557
     ]
    },
    "success_difference": {
