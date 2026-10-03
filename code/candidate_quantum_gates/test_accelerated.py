@@ -131,10 +131,10 @@ class AcceleratedTests(unittest.TestCase):
         shim += '''
 extern "C" void run_host(const int* o, const int* p, int* w, int* out, int B,int J,int M){
   blockDim.x=128;
-  for(int b=0;b<B+7;++b){blockIdx.x=b/128;threadIdx.x=b%128;evaluate_batch(o,p,w,out,B,J,M);}
+  for(int b=0;b<B+7;++b){blockIdx.x=b/128;threadIdx.x=b%128;evaluate_batch(o,p,w,out,B,J,M,0,B);}
 }
 '''
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as directory:
             source, library = Path(directory)/'kernel.cpp', Path(directory)/'kernel.so'
             source.write_text(shim)
             subprocess.run([compiler, '-shared', '-fPIC', '-O2', str(source), '-o', str(library)], check=True)
