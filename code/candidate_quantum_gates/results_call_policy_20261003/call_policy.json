@@ -1,0 +1,524 @@
+{
+ "schema_version": 1,
+ "work_package": "T07 (Issue #19, PR #18 docs TODO)",
+ "measured_from": "code\\candidate_quantum_gates\\results_sampling_ablation_20261003\\sampling_ablation.json",
+ "windows": [
+  {
+   "scale": "3x3",
+   "seed": 2,
+   "u0": 25,
+   "p_classical": 0.14814814814814814,
+   "p_quantum": 0.1301257854906554,
+   "classical_seconds_per_trial": 2.7703333333496024e-05,
+   "quantum_seconds_per_call": 0.35345849999991213,
+   "quantum_call_cost_breakdown": {
+    "training_seconds": 0.005517300000065006,
+    "sampling_seconds": 0.34794119999984713,
+    "graph_checks_per_call": 64
+   },
+   "policies": [
+    {
+     "policy": "fixed_frequency",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.00018311903333440873,
+     "truncated_arrival_seconds": 0.00018311903333440873,
+     "mean_quantum_share": 0.0,
+     "cumulative_quantum_share": 0.0,
+     "mean_quantum_seconds": 0.0,
+     "mean_total_seconds": 0.018084736000106454,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 0.0,
+     "mean_classical_trials": 652.8
+    },
+    {
+     "policy": "stagnation",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 1.207164942033034,
+     "truncated_arrival_seconds": 1.207164942033034,
+     "mean_quantum_share": 0.4699419982917372,
+     "cumulative_quantum_share": 0.9999137114327074,
+     "mean_quantum_seconds": 125.44595623496842,
+     "mean_total_seconds": 125.45658738913512,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 354.91,
+     "mean_classical_trials": 383.75
+    },
+    {
+     "policy": "adaptive",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.03375904471665939,
+     "truncated_arrival_seconds": 0.03375904471665939,
+     "mean_quantum_share": 0.06997010173036845,
+     "cumulative_quantum_share": 0.9946536633905798,
+     "mean_quantum_seconds": 6.132504974998478,
+     "mean_total_seconds": 6.1501090581652464,
+     "disabled": true,
+     "disabled_at_trial": 34,
+     "quantum_share_after_disable": 0.0,
+     "mean_quantum_calls": 17.35,
+     "mean_classical_trials": 635.45
+    },
+    {
+     "policy": "disabled",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.00018311903333440873,
+     "truncated_arrival_seconds": 0.00018311903333440873,
+     "mean_quantum_share": 0.0,
+     "cumulative_quantum_share": 0.0,
+     "mean_quantum_seconds": 0.0,
+     "mean_total_seconds": 0.018084736000106454,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 0.0,
+     "mean_classical_trials": 652.8
+    }
+   ]
+  },
+  {
+   "scale": "3x3",
+   "seed": 7,
+   "u0": 30,
+   "p_classical": 0.037037037037037035,
+   "p_quantum": 0.020670298845926475,
+   "classical_seconds_per_trial": 2.8760000000147556e-05,
+   "quantum_seconds_per_call": 0.24240859999963504,
+   "quantum_call_cost_breakdown": {
+    "training_seconds": 0.007129799999802344,
+    "sampling_seconds": 0.2352787999998327,
+    "graph_checks_per_call": 64
+   },
+   "policies": [
+    {
+     "policy": "fixed_frequency",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.08930598899987106,
+     "truncated_arrival_seconds": 0.08930598899987106,
+     "mean_quantum_share": 0.27330488376581813,
+     "cumulative_quantum_share": 0.9907413824171922,
+     "mean_quantum_seconds": 8.5012696019872,
+     "mean_total_seconds": 8.581958370387612,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 35.07,
+     "mean_classical_trials": 2805.59
+    },
+    {
+     "policy": "stagnation",
+     "repetitions": 200,
+     "success_rate": 0.99,
+     "mean_arrival_seconds": 10.03438125554045,
+     "truncated_arrival_seconds": 10.534037442985046,
+     "mean_quantum_share": 0.8599543445216259,
+     "cumulative_quantum_share": 0.9999872377511403,
+     "mean_quantum_seconds": 1090.2084376383586,
+     "mean_total_seconds": 1090.2219974031586,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 4497.4,
+     "mean_classical_trials": 471.48
+    },
+    {
+     "policy": "adaptive",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.023852215799969562,
+     "truncated_arrival_seconds": 0.023852215799969562,
+     "mean_quantum_share": 0.034967481807625767,
+     "cumulative_quantum_share": 0.9654791484820764,
+     "mean_quantum_seconds": 4.522132432993192,
+     "mean_total_seconds": 4.6023107113936,
+     "disabled": true,
+     "disabled_at_trial": 7,
+     "quantum_share_after_disable": 0.0,
+     "mean_quantum_calls": 18.655,
+     "mean_classical_trials": 2787.84
+    },
+    {
+     "policy": "disabled",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.0008261310000042381,
+     "truncated_arrival_seconds": 0.0008261310000042381,
+     "mean_quantum_share": 0.0,
+     "cumulative_quantum_share": 0.0,
+     "mean_quantum_seconds": 0.0,
+     "mean_total_seconds": 0.08071479620041103,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 0.0,
+     "mean_classical_trials": 2806.495
+    }
+   ]
+  },
+  {
+   "scale": "4x3",
+   "seed": 0,
+   "u0": 30,
+   "p_classical": 0.037037037037037035,
+   "p_quantum": 0.023798654761657236,
+   "classical_seconds_per_trial": 3.088466666667955e-05,
+   "quantum_seconds_per_call": 0.5947764666664929,
+   "quantum_call_cost_breakdown": {
+    "training_seconds": 0.004654999999729625,
+    "sampling_seconds": 0.5901214666667632,
+    "graph_checks_per_call": 64
+   },
+   "policies": [
+    {
+     "policy": "fixed_frequency",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.22394053649326875,
+     "truncated_arrival_seconds": 0.22394053649326875,
+     "mean_quantum_share": 0.27924671664085465,
+     "cumulative_quantum_share": 0.9959839272182833,
+     "mean_quantum_seconds": 21.11159068432716,
+     "mean_total_seconds": 21.199726257593863,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 35.495,
+     "mean_classical_trials": 2853.7
+    },
+    {
+     "policy": "stagnation",
+     "repetitions": 200,
+     "success_rate": 0.88,
+     "mean_arrival_seconds": 14.916866623601699,
+     "truncated_arrival_seconds": 20.326842628769494,
+     "mean_quantum_share": 0.8649765951698519,
+     "cumulative_quantum_share": 0.9999928922391456,
+     "mean_quantum_seconds": 1939.4976585058373,
+     "mean_total_seconds": 1939.512259386427,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 3260.885,
+     "mean_classical_trials": 472.755
+    },
+    {
+     "policy": "adaptive",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.05740204486331728,
+     "truncated_arrival_seconds": 0.05740204486331728,
+     "mean_quantum_share": 0.01999042177984867,
+     "cumulative_quantum_share": 0.9843510709045429,
+     "mean_quantum_seconds": 11.13421545599675,
+     "mean_total_seconds": 11.222109047900112,
+     "disabled": true,
+     "disabled_at_trial": 4,
+     "quantum_share_after_disable": 0.0,
+     "mean_quantum_calls": 18.72,
+     "mean_classical_trials": 2845.865
+    },
+    {
+     "policy": "disabled",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.0009012145733337082,
+     "truncated_arrival_seconds": 0.0009012145733337082,
+     "mean_quantum_share": 0.0,
+     "cumulative_quantum_share": 0.0,
+     "mean_quantum_seconds": 0.0,
+     "mean_total_seconds": 0.08847175286336637,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 0.0,
+     "mean_classical_trials": 2864.585
+    }
+   ]
+  },
+  {
+   "scale": "4x3",
+   "seed": 3,
+   "u0": 29,
+   "p_classical": 0.037037037037037035,
+   "p_quantum": 0.030224599872442533,
+   "classical_seconds_per_trial": 2.6865666667011584e-05,
+   "quantum_seconds_per_call": 0.5868879333334007,
+   "quantum_call_cost_breakdown": {
+    "training_seconds": 0.006932799999958661,
+    "sampling_seconds": 0.5799551333334421,
+    "graph_checks_per_call": 64
+   },
+   "policies": [
+    {
+     "policy": "fixed_frequency",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.21498325970336787,
+     "truncated_arrival_seconds": 0.21498325970336787,
+     "mean_quantum_share": 0.27435540697031263,
+     "cumulative_quantum_share": 0.9964222142796705,
+     "mean_quantum_seconds": 20.629110856669037,
+     "mean_total_seconds": 20.70535024553669,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 35.15,
+     "mean_classical_trials": 2837.8
+    },
+    {
+     "policy": "stagnation",
+     "repetitions": 200,
+     "success_rate": 0.93,
+     "mean_arrival_seconds": 13.154618456282872,
+     "truncated_arrival_seconds": 16.43379516434307,
+     "mean_quantum_share": 0.864974784242571,
+     "cumulative_quantum_share": 0.9999923720037475,
+     "mean_quantum_seconds": 1628.2413411625205,
+     "mean_total_seconds": 1628.2540427124072,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 2774.365,
+     "mean_classical_trials": 472.78
+    },
+    {
+     "policy": "adaptive",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.056530771433349794,
+     "truncated_arrival_seconds": 0.056530771433349794,
+     "mean_quantum_share": 0.024987172078475325,
+     "cumulative_quantum_share": 0.986265572767,
+     "mean_quantum_seconds": 11.059903103667937,
+     "mean_total_seconds": 11.136580537230593,
+     "disabled": true,
+     "disabled_at_trial": 5,
+     "quantum_share_after_disable": 0.0,
+     "mean_quantum_calls": 18.845,
+     "mean_classical_trials": 2854.105
+    },
+    {
+     "policy": "disabled",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.0007789700050100008,
+     "truncated_arrival_seconds": 0.0007789700050100008,
+     "mean_quantum_share": 0.0,
+     "cumulative_quantum_share": 0.0,
+     "mean_quantum_seconds": 0.0,
+     "mean_total_seconds": 0.07718371705099546,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 0.0,
+     "mean_classical_trials": 2872.95
+    }
+   ]
+  },
+  {
+   "scale": "4x3",
+   "seed": 7,
+   "u0": 43,
+   "p_classical": 0.037037037037037035,
+   "p_quantum": 0.031964697921705074,
+   "classical_seconds_per_trial": 3.3583999999488394e-05,
+   "quantum_seconds_per_call": 0.4914786666665047,
+   "quantum_call_cost_breakdown": {
+    "training_seconds": 0.0066570999997566105,
+    "sampling_seconds": 0.4848215666667481,
+    "graph_checks_per_call": 64
+   },
+   "policies": [
+    {
+     "policy": "fixed_frequency",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.17788493015992718,
+     "truncated_arrival_seconds": 0.17788493015992718,
+     "mean_quantum_share": 0.2740336966945693,
+     "cumulative_quantum_share": 0.9946447956039394,
+     "mean_quantum_seconds": 16.997789686661072,
+     "mean_total_seconds": 17.09088151209965,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 34.585,
+     "mean_classical_trials": 2771.91
+    },
+    {
+     "policy": "stagnation",
+     "repetitions": 200,
+     "success_rate": 0.975,
+     "mean_arrival_seconds": 11.760359077466209,
+     "truncated_arrival_seconds": 12.966350100529553,
+     "mean_quantum_share": 0.8599615798432257,
+     "cumulative_quantum_share": 0.9999879018785761,
+     "mean_quantum_seconds": 1259.409168546277,
+     "mean_total_seconds": 1259.4250027305968,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 2562.49,
+     "mean_classical_trials": 471.48
+    },
+    {
+     "policy": "adaptive",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.047651983253303325,
+     "truncated_arrival_seconds": 0.047651983253303325,
+     "mean_quantum_share": 0.03498126266355569,
+     "cumulative_quantum_share": 0.9798222475888536,
+     "mean_quantum_seconds": 9.168534526663647,
+     "mean_total_seconds": 9.262161345222216,
+     "disabled": true,
+     "disabled_at_trial": 7,
+     "quantum_share_after_disable": 0.0,
+     "mean_quantum_calls": 18.655,
+     "mean_classical_trials": 2787.84
+    },
+    {
+     "policy": "disabled",
+     "repetitions": 200,
+     "success_rate": 1.0,
+     "mean_arrival_seconds": 0.0009647003999853043,
+     "truncated_arrival_seconds": 0.0009647003999853043,
+     "mean_quantum_share": 0.0,
+     "cumulative_quantum_share": 0.0,
+     "mean_quantum_seconds": 0.0,
+     "mean_total_seconds": 0.09425332807856199,
+     "disabled": false,
+     "disabled_at_trial": null,
+     "quantum_share_after_disable": null,
+     "mean_quantum_calls": 0.0,
+     "mean_classical_trials": 2806.495
+    }
+   ]
+  }
+ ],
+ "summary": [
+  {
+   "policy": "adaptive",
+   "mean_quantum_share": 0.03697928801197478,
+   "paired_ratio_vs_classical": {
+    "mean": 79.77776710023953,
+    "ci95": [
+     41.71667892382025,
+     135.00680498515197
+    ]
+   },
+   "success_rate_difference": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "quantum_seconds_reduction_vs_fixed_frequency": 0.466284771917414,
+   "passes_benefit_gate": false,
+   "non_inferiority": {
+    "time_reduction_required": 0.5,
+    "success_margin": -0.05,
+    "measured_time_reduction": 0.466284771917414,
+    "passed": false
+   }
+  },
+  {
+   "policy": "disabled",
+   "mean_quantum_share": 0.0,
+   "paired_ratio_vs_classical": {
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "success_rate_difference": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "quantum_seconds_reduction_vs_fixed_frequency": 1.0,
+   "passes_benefit_gate": false,
+   "non_inferiority": {
+    "time_reduction_required": 0.5,
+    "success_margin": -0.05,
+    "measured_time_reduction": 1.0,
+    "passed": true
+   }
+  },
+  {
+   "policy": "fixed_frequency",
+   "mean_quantum_share": 0.22018814081431098,
+   "paired_ratio_vs_classical": {
+    "mean": 163.59338600601077,
+    "ci95": [
+     74.35758532395633,
+     246.66738481992024
+    ]
+   },
+   "success_rate_difference": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "quantum_seconds_reduction_vs_fixed_frequency": 0.0,
+   "passes_benefit_gate": false,
+   "non_inferiority": {
+    "time_reduction_required": 0.5,
+    "success_margin": -0.05,
+    "measured_time_reduction": 0.0,
+    "passed": false
+   }
+  },
+  {
+   "policy": "stagnation",
+   "mean_quantum_share": 0.7839618604138023,
+   "paired_ratio_vs_classical": {
+    "mean": 15287.173100406977,
+    "ci95": [
+     10425.477622274979,
+     20148.86857853898
+    ]
+   },
+   "success_rate_difference": {
+    "mean": -0.045,
+    "ci95": [
+     -0.086,
+     -0.009000000000000008
+    ]
+   },
+   "quantum_seconds_reduction_vs_fixed_frequency": -92.2828362377421,
+   "passes_benefit_gate": false,
+   "non_inferiority": {
+    "time_reduction_required": 0.5,
+    "success_margin": -0.05,
+    "measured_time_reduction": -92.2828362377421,
+    "passed": false
+   }
+  }
+ ],
+ "protocol": {
+  "fixed_period": 40,
+  "stagnation_k": 5,
+  "epsilon": 0.1,
+  "shots_per_call": 64,
+  "repetitions": 200,
+  "budget_seconds": 60.0,
+  "quantum_arm": "xy_joint",
+  "training": "exact",
+  "benefit_ratio": 0.9
+ }
+}
