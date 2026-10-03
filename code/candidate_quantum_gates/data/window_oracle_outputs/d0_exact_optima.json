@@ -1,0 +1,897 @@
+{
+  "schema_version": 1,
+  "purpose": "Exact optimal machine orders for the D0 family. Diagnostic ground truth: no sampler, no search arm and no online component may read this file.",
+  "enumeration_limit": 200000,
+  "instances": [
+    {
+      "name": "d0_2x2_seed0",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 0,
+      "split": "development",
+      "path": "2x2/seed0.txt",
+      "instance_sha256": "dd4153996ac8c120e768d571ce62bc33d702ce14e9ab730efd0fd6ca184c8217",
+      "lower_bound": 14,
+      "exact_optimum": 14,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed1",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 1,
+      "split": "development",
+      "path": "2x2/seed1.txt",
+      "instance_sha256": "b2eb2b2b599a829173cd004ba92d70d8060806c67472dd5313c638306b566b53",
+      "lower_bound": 16,
+      "exact_optimum": 16,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed2",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 2,
+      "split": "development",
+      "path": "2x2/seed2.txt",
+      "instance_sha256": "8a29b8df13f7d14c01064ea71663d7a044fff1a358063ef3e46c7a3a616adaac",
+      "lower_bound": 11,
+      "exact_optimum": 11,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed3",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 3,
+      "split": "development",
+      "path": "2x2/seed3.txt",
+      "instance_sha256": "a5c977b34392efe5dfa7dc718e7246f40f0287880087263009a8fdc72043aede",
+      "lower_bound": 11,
+      "exact_optimum": 11,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed4",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 4,
+      "split": "development",
+      "path": "2x2/seed4.txt",
+      "instance_sha256": "7113fe239beab4c85ddee2b26cd43a7d56250e4be9efe9a453a24478859dc65c",
+      "lower_bound": 17,
+      "exact_optimum": 17,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed5",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 5,
+      "split": "validation",
+      "path": "2x2/seed5.txt",
+      "instance_sha256": "beb9c6a3aa09a5d48934d36482f798cf3a36b7ff190f2a9518570cafd72ca611",
+      "lower_bound": 15,
+      "exact_optimum": 15,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed6",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 6,
+      "split": "validation",
+      "path": "2x2/seed6.txt",
+      "instance_sha256": "8bd2404ed6e6a1540af665e0b6649634013292fc8b9167199260788540a0f249",
+      "lower_bound": 10,
+      "exact_optimum": 10,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed7",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 7,
+      "split": "validation",
+      "path": "2x2/seed7.txt",
+      "instance_sha256": "3f842de66cff511897af8f48e20b52c0cf4d690418eb4c8f7f97778d35dc3199",
+      "lower_bound": 18,
+      "exact_optimum": 18,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed8",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 8,
+      "split": "validation",
+      "path": "2x2/seed8.txt",
+      "instance_sha256": "7d192c3cb47ef9dbff16538dedd3903dd14964d9486c29b792e615e60a19e630",
+      "lower_bound": 16,
+      "exact_optimum": 16,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_2x2_seed9",
+      "jobs": 2,
+      "machines": 2,
+      "seed": 9,
+      "split": "validation",
+      "path": "2x2/seed9.txt",
+      "instance_sha256": "e395933c054974aa7b0c48f06b810abeb53110c12225a1f58aad3656cc837213",
+      "lower_bound": 17,
+      "exact_optimum": 17,
+      "combinations": 4,
+      "feasible_combinations": 3,
+      "orders": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed0",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 0,
+      "split": "development",
+      "path": "3x3/seed0.txt",
+      "instance_sha256": "2938d8cfdaf6892c35b36e33255a7194ae782689d83555e407246fe47b840f80",
+      "lower_bound": 19,
+      "exact_optimum": 19,
+      "combinations": 216,
+      "feasible_combinations": 66,
+      "orders": [
+        [
+          3,
+          6,
+          2
+        ],
+        [
+          0,
+          5,
+          8
+        ],
+        [
+          4,
+          1,
+          7
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed1",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 1,
+      "split": "development",
+      "path": "3x3/seed1.txt",
+      "instance_sha256": "b8ecdc570a724214d8081f72cacc9e9619881ee26be2898aed7180ac8a553ed8",
+      "lower_bound": 20,
+      "exact_optimum": 25,
+      "combinations": 216,
+      "feasible_combinations": 63,
+      "orders": [
+        [
+          7,
+          4,
+          2
+        ],
+        [
+          6,
+          0,
+          5
+        ],
+        [
+          3,
+          1,
+          8
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed2",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 2,
+      "split": "development",
+      "path": "3x3/seed2.txt",
+      "instance_sha256": "5e62ca0dae4c5a50395449d072dbcba4d7f02e7661d4c58a3e94fe0ef78964d8",
+      "lower_bound": 16,
+      "exact_optimum": 19,
+      "combinations": 216,
+      "feasible_combinations": 88,
+      "orders": [
+        [
+          4,
+          0,
+          8
+        ],
+        [
+          7,
+          5,
+          2
+        ],
+        [
+          3,
+          6,
+          1
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed3",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 3,
+      "split": "development",
+      "path": "3x3/seed3.txt",
+      "instance_sha256": "bfd8dad208b5389e707ed424b7879b3c0027987eb9962a0015e419d884ffd68e",
+      "lower_bound": 24,
+      "exact_optimum": 24,
+      "combinations": 216,
+      "feasible_combinations": 63,
+      "orders": [
+        [
+          2,
+          4,
+          7
+        ],
+        [
+          1,
+          3,
+          8
+        ],
+        [
+          0,
+          6,
+          5
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed4",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 4,
+      "split": "development",
+      "path": "3x3/seed4.txt",
+      "instance_sha256": "8d80405ffe191aedbdc27a7f6d834714c99c8ec67a72cdc37a15bcf1c795b99e",
+      "lower_bound": 25,
+      "exact_optimum": 38,
+      "combinations": 216,
+      "feasible_combinations": 132,
+      "orders": [
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          3,
+          1,
+          7
+        ],
+        [
+          2,
+          5,
+          8
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed5",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 5,
+      "split": "validation",
+      "path": "3x3/seed5.txt",
+      "instance_sha256": "bd6dc022ba432522b24d35313a65f76ec0dc7f4b43d92c055863f69eb0b91499",
+      "lower_bound": 19,
+      "exact_optimum": 20,
+      "combinations": 216,
+      "feasible_combinations": 63,
+      "orders": [
+        [
+          0,
+          7,
+          4
+        ],
+        [
+          6,
+          1,
+          5
+        ],
+        [
+          3,
+          8,
+          2
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed6",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 6,
+      "split": "validation",
+      "path": "3x3/seed6.txt",
+      "instance_sha256": "51058f9244be88566bae79b4a7dce32212310112110fa389913d0e39788b0b5a",
+      "lower_bound": 19,
+      "exact_optimum": 23,
+      "combinations": 216,
+      "feasible_combinations": 88,
+      "orders": [
+        [
+          6,
+          1,
+          5
+        ],
+        [
+          4,
+          8,
+          2
+        ],
+        [
+          3,
+          0,
+          7
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed7",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 7,
+      "split": "validation",
+      "path": "3x3/seed7.txt",
+      "instance_sha256": "ebc589e268fb39fb18647fcf869b0fbc8a458f1d528d1c8bf2acd820720fa289",
+      "lower_bound": 22,
+      "exact_optimum": 23,
+      "combinations": 216,
+      "feasible_combinations": 63,
+      "orders": [
+        [
+          6,
+          1,
+          5
+        ],
+        [
+          3,
+          2,
+          8
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed8",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 8,
+      "split": "validation",
+      "path": "3x3/seed8.txt",
+      "instance_sha256": "80ee06b9637866f76aaaa8c2f6767f0c7f97fda2ab952c1ba04d9fa48c24e5bf",
+      "lower_bound": 24,
+      "exact_optimum": 29,
+      "combinations": 216,
+      "feasible_combinations": 88,
+      "orders": [
+        [
+          2,
+          8,
+          4
+        ],
+        [
+          0,
+          7,
+          3
+        ],
+        [
+          6,
+          1,
+          5
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_3x3_seed9",
+      "jobs": 3,
+      "machines": 3,
+      "seed": 9,
+      "split": "validation",
+      "path": "3x3/seed9.txt",
+      "instance_sha256": "3faf3bdd5d7ed13692c582a95f588bc682d7e0c2f37fa9ea10632f61dc83acba",
+      "lower_bound": 22,
+      "exact_optimum": 30,
+      "combinations": 216,
+      "feasible_combinations": 132,
+      "orders": [
+        [
+          5,
+          7,
+          2
+        ],
+        [
+          3,
+          0,
+          6
+        ],
+        [
+          4,
+          1,
+          8
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed0",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 0,
+      "split": "development",
+      "path": "4x3/seed0.txt",
+      "instance_sha256": "4d65fb118e671373d926251bbe026e7286c3a514ea65b7c95c1726101a665a29",
+      "lower_bound": 23,
+      "exact_optimum": 25,
+      "combinations": 13824,
+      "feasible_combinations": 1976,
+      "orders": [
+        [
+          3,
+          0,
+          8,
+          11
+        ],
+        [
+          9,
+          5,
+          7,
+          2
+        ],
+        [
+          4,
+          6,
+          10,
+          1
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed1",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 1,
+      "split": "development",
+      "path": "4x3/seed1.txt",
+      "instance_sha256": "36876ccb78009d1e4152085b16ad09a0f11ab9ef22d5c020765347271d605a7e",
+      "lower_bound": 25,
+      "exact_optimum": 30,
+      "combinations": 13824,
+      "feasible_combinations": 4704,
+      "orders": [
+        [
+          10,
+          7,
+          2,
+          4
+        ],
+        [
+          9,
+          6,
+          1,
+          3
+        ],
+        [
+          0,
+          8,
+          11,
+          5
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed2",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 2,
+      "split": "development",
+      "path": "4x3/seed2.txt",
+      "instance_sha256": "0c9bc0d08cb4950ec82a61d1d13aebe4fedeb327432f6778e8b59aa4f3bb5a08",
+      "lower_bound": 22,
+      "exact_optimum": 26,
+      "combinations": 13824,
+      "feasible_combinations": 1976,
+      "orders": [
+        [
+          6,
+          9,
+          1,
+          5
+        ],
+        [
+          4,
+          7,
+          10,
+          2
+        ],
+        [
+          3,
+          0,
+          8,
+          11
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed3",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 3,
+      "split": "development",
+      "path": "4x3/seed3.txt",
+      "instance_sha256": "e80f5669ac52d76f2142d3ef2cb289c7ed5ed24e2807d2523cf8043ca2302dbe",
+      "lower_bound": 25,
+      "exact_optimum": 25,
+      "combinations": 13824,
+      "feasible_combinations": 1630,
+      "orders": [
+        [
+          6,
+          1,
+          4,
+          11
+        ],
+        [
+          0,
+          7,
+          10,
+          5
+        ],
+        [
+          2,
+          9,
+          3,
+          8
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed4",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 4,
+      "split": "development",
+      "path": "4x3/seed4.txt",
+      "instance_sha256": "208aa682c3b4f5e2ba30c8091fe4a56a0756554549c897bdb2c76cd2d56ebccc",
+      "lower_bound": 28,
+      "exact_optimum": 37,
+      "combinations": 13824,
+      "feasible_combinations": 3532,
+      "orders": [
+        [
+          9,
+          3,
+          1,
+          8
+        ],
+        [
+          0,
+          10,
+          6,
+          4
+        ],
+        [
+          11,
+          7,
+          2,
+          5
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed5",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 5,
+      "split": "validation",
+      "path": "4x3/seed5.txt",
+      "instance_sha256": "55ed5bdb9df625b291fc238c9b69d9e67dce04675402bac55f0ebb5e07afc39a",
+      "lower_bound": 22,
+      "exact_optimum": 24,
+      "combinations": 13824,
+      "feasible_combinations": 2256,
+      "orders": [
+        [
+          3,
+          8,
+          2,
+          11
+        ],
+        [
+          0,
+          7,
+          4,
+          10
+        ],
+        [
+          6,
+          1,
+          9,
+          5
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed6",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 6,
+      "split": "validation",
+      "path": "4x3/seed6.txt",
+      "instance_sha256": "a907c0819813b90ebe8aae60b4d44b72f1ba59d37b3f6ead0e667d5125ccaaea",
+      "lower_bound": 26,
+      "exact_optimum": 26,
+      "combinations": 13824,
+      "feasible_combinations": 1976,
+      "orders": [
+        [
+          3,
+          1,
+          7,
+          10
+        ],
+        [
+          0,
+          9,
+          5,
+          8
+        ],
+        [
+          6,
+          4,
+          2,
+          11
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed7",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 7,
+      "split": "validation",
+      "path": "4x3/seed7.txt",
+      "instance_sha256": "b0b046e23a46037936fe132bea690c40769c14fe01a371861b127ce0329bd2fc",
+      "lower_bound": 27,
+      "exact_optimum": 30,
+      "combinations": 13824,
+      "feasible_combinations": 2256,
+      "orders": [
+        [
+          9,
+          3,
+          6,
+          2
+        ],
+        [
+          0,
+          11,
+          7,
+          5
+        ],
+        [
+          10,
+          1,
+          4,
+          8
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed8",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 8,
+      "split": "validation",
+      "path": "4x3/seed8.txt",
+      "instance_sha256": "61c2f7c94c4157fb68b5fa2860b96b42df929f87b1dcdc1601d61f6ec6b1670f",
+      "lower_bound": 26,
+      "exact_optimum": 28,
+      "combinations": 13824,
+      "feasible_combinations": 2636,
+      "orders": [
+        [
+          1,
+          4,
+          8,
+          11
+        ],
+        [
+          0,
+          7,
+          5,
+          10
+        ],
+        [
+          6,
+          3,
+          9,
+          2
+        ]
+      ],
+      "independent_verification": true
+    },
+    {
+      "name": "d0_4x3_seed9",
+      "jobs": 4,
+      "machines": 3,
+      "seed": 9,
+      "split": "validation",
+      "path": "4x3/seed9.txt",
+      "instance_sha256": "1fc902693385daae9d5231b77f1279dc0ac78268dfcd7b057e600d73294a4d41",
+      "lower_bound": 29,
+      "exact_optimum": 37,
+      "combinations": 13824,
+      "feasible_combinations": 5856,
+      "orders": [
+        [
+          4,
+          2,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          9,
+          6
+        ],
+        [
+          1,
+          5,
+          10,
+          8
+        ]
+      ],
+      "independent_verification": true
+    }
+  ]
+}
