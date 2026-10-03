@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "dataset": "D0",
+  "data_version": "d0-v1",
+  "verified_by": "make_d0_data.py verify",
+  "checks": [
+    {
+      "check": "manifest exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "data version",
+      "passed": true,
+      "detail": "d0-v1"
+    },
+    {
+      "check": "instance count",
+      "passed": true,
+      "detail": 30
+    },
+    {
+      "check": "sizes covered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "splits valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all files present",
+      "passed": true,
+      "detail": "30/30"
+    },
+    {
+      "check": "file hashes match manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "instances regenerate identically from the frozen seed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "durations and routes match manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exact-optimum diagnostic exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "diagnostic covers the family",
+      "passed": true,
+      "detail": 30
+    },
+    {
+      "check": "diagnostic is independently verified",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "optima respect the trivial lower bound",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "failures": [],
+  "passed": true,
+  "correctness_gate": "100% required by the T00 acceptance rules"
+}

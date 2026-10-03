@@ -1,0 +1,477 @@
+{
+ "schema_version": 1,
+ "work_package": "T01 pilot (Issue #19, PR #18 docs TODO)",
+ "numpy_version": "2.4.6",
+ "windows": [
+  {
+   "source": "15x15_seed7_milp.json",
+   "source_sha256": "078e2e170c7a1af592f0976a747414c83468e2d0120157502deb1d9c21abe4ff",
+   "instance": "tai15_15_01_test",
+   "instance_sha256_report": "b7a09321c2b1183837b5340307b9995a01482943aecf5707ae89f81dcad1fb58",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "total_combinations": 35184372088832,
+   "full_enumeration_feasible": false,
+   "incumbent": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "u0_reported": 1462,
+   "u0_independent_check": {
+    "feasible": true,
+    "makespan": 1462
+   },
+   "u0_production_decoder_makespan": 1462,
+   "checkers_agree": true,
+   "incumbent_neighbourhood": {
+    "1": {
+     "neighbourhood": "1-machine swap",
+     "explored": 105,
+     "feasible": 23,
+     "improving": 0,
+     "best_found": 1722,
+     "best_relative_improvement": -0.17783857729138167,
+     "seconds": 0.03193760000067414
+    },
+    "2": {
+     "neighbourhood": "2-machine swap",
+     "explored": 5145,
+     "feasible": 196,
+     "improving": 0,
+     "best_found": 1818,
+     "best_relative_improvement": -0.24350205198358413,
+     "seconds": 1.451527300001544
+    }
+   },
+   "milp_pool_optimum": {
+    "status": "optimal",
+    "objective": 1462.0,
+    "dual_bound": 1462.0,
+    "seconds": 4.677455200000622
+   }
+  },
+  {
+   "source": "15x15_seed11_milp.json",
+   "source_sha256": "502adfcdbc20afa7ea5154a275ea8e041e5d4ad948a91aecab4c109665defca7",
+   "instance": "tai15_15_01_test",
+   "instance_sha256_report": "b7a09321c2b1183837b5340307b9995a01482943aecf5707ae89f81dcad1fb58",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "total_combinations": 35184372088832,
+   "full_enumeration_feasible": false,
+   "incumbent": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "u0_reported": 1462,
+   "u0_independent_check": {
+    "feasible": true,
+    "makespan": 1462
+   },
+   "u0_production_decoder_makespan": 1462,
+   "checkers_agree": true,
+   "incumbent_neighbourhood": {
+    "1": {
+     "neighbourhood": "1-machine swap",
+     "explored": 105,
+     "feasible": 15,
+     "improving": 0,
+     "best_found": 1694,
+     "best_relative_improvement": -0.15868673050615595,
+     "seconds": 0.03528890000052343
+    },
+    "2": {
+     "neighbourhood": "2-machine swap",
+     "explored": 5145,
+     "feasible": 86,
+     "improving": 0,
+     "best_found": 1822,
+     "best_relative_improvement": -0.24623803009575923,
+     "seconds": 1.6371727999994619
+    }
+   },
+   "milp_pool_optimum": {
+    "status": "optimal",
+    "objective": 1462.0,
+    "dual_bound": 1462.0,
+    "seconds": 3.4577503000000434
+   }
+  },
+  {
+   "source": "15x20_derived_seed7_milp.json",
+   "source_sha256": "5a60c5cde0b53246db16e8e1d536b50ff20e845c120d00190811d88a8620f94b",
+   "instance": "ta21_first15jobs_derived",
+   "instance_sha256_report": "10cfc31c80514d54e073f06e29eb4084bfd811342f7842cf43e34a04dccbc363",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "total_combinations": 1152921504606846976,
+   "full_enumeration_feasible": false,
+   "incumbent": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "u0_reported": 1675,
+   "u0_independent_check": {
+    "feasible": true,
+    "makespan": 1675
+   },
+   "u0_production_decoder_makespan": 1675,
+   "checkers_agree": true,
+   "incumbent_neighbourhood": {
+    "1": {
+     "neighbourhood": "1-machine swap",
+     "explored": 140,
+     "feasible": 21,
+     "improving": 0,
+     "best_found": 1685,
+     "best_relative_improvement": -0.005970149253731343,
+     "seconds": 0.0627332000003662
+    },
+    "2": {
+     "neighbourhood": "2-machine swap",
+     "explored": 9310,
+     "feasible": 201,
+     "improving": 0,
+     "best_found": 1725,
+     "best_relative_improvement": -0.029850746268656716,
+     "seconds": 4.086430100000143
+    }
+   },
+   "milp_pool_optimum": {
+    "status": "optimal",
+    "objective": 1675.0,
+    "dual_bound": 1675.0,
+    "seconds": 7.086775499999931
+   }
+  },
+  {
+   "source": "15x20_derived_seed11_milp.json",
+   "source_sha256": "49ee9595f5071bf0aec8781920af72f0e8b454b76a3669b973e7dead6a088415",
+   "instance": "ta21_first15jobs_derived",
+   "instance_sha256_report": "10cfc31c80514d54e073f06e29eb4084bfd811342f7842cf43e34a04dccbc363",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "total_combinations": 1152921504606846976,
+   "full_enumeration_feasible": false,
+   "incumbent": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "u0_reported": 1675,
+   "u0_independent_check": {
+    "feasible": true,
+    "makespan": 1675
+   },
+   "u0_production_decoder_makespan": 1675,
+   "checkers_agree": true,
+   "incumbent_neighbourhood": {
+    "1": {
+     "neighbourhood": "1-machine swap",
+     "explored": 140,
+     "feasible": 25,
+     "improving": 0,
+     "best_found": 1685,
+     "best_relative_improvement": -0.005970149253731343,
+     "seconds": 0.06052780000027269
+    },
+    "2": {
+     "neighbourhood": "2-machine swap",
+     "explored": 9310,
+     "feasible": 271,
+     "improving": 0,
+     "best_found": 1725,
+     "best_relative_improvement": -0.029850746268656716,
+     "seconds": 4.177375600000232
+    }
+   },
+   "milp_pool_optimum": {
+    "status": "optimal",
+    "objective": 1675.0,
+    "dual_bound": 1675.0,
+    "seconds": 6.363827400000446
+   }
+  },
+  {
+   "source": "20x15_seed7_milp.json",
+   "source_sha256": "b490d55d91fb8f164e77d1f70d0317e25caf49a37e84bc30c82bac7b1925f58d",
+   "instance": "tai20_15_01_test",
+   "instance_sha256_report": "54550d0f685870a2e3f0cc4eb11872410d014d1e64d1f6e25883f269609705cb",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "total_combinations": 35184372088832,
+   "full_enumeration_feasible": false,
+   "incumbent": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "u0_reported": 1865,
+   "u0_independent_check": {
+    "feasible": true,
+    "makespan": 1865
+   },
+   "u0_production_decoder_makespan": 1865,
+   "checkers_agree": true,
+   "incumbent_neighbourhood": {
+    "1": {
+     "neighbourhood": "1-machine swap",
+     "explored": 105,
+     "feasible": 18,
+     "improving": 0,
+     "best_found": 1865,
+     "best_relative_improvement": 0.0,
+     "seconds": 0.0498117999995884
+    },
+    "2": {
+     "neighbourhood": "2-machine swap",
+     "explored": 5145,
+     "feasible": 149,
+     "improving": 0,
+     "best_found": 1865,
+     "best_relative_improvement": 0.0,
+     "seconds": 2.2574843000002147
+    }
+   },
+   "milp_pool_optimum": {
+    "status": "optimal",
+    "objective": 1835.0000000000064,
+    "dual_bound": 1835.0000000000064,
+    "seconds": 23.942023800000243
+   }
+  },
+  {
+   "source": "20x15_seed11_milp.json",
+   "source_sha256": "7484366981e6dc775fd44fb819ad6526a6f8be4873a3828738f78305e78b13ad",
+   "instance": "tai20_15_01_test",
+   "instance_sha256_report": "54550d0f685870a2e3f0cc4eb11872410d014d1e64d1f6e25883f269609705cb",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "total_combinations": 35184372088832,
+   "full_enumeration_feasible": false,
+   "incumbent": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "u0_reported": 1865,
+   "u0_independent_check": {
+    "feasible": true,
+    "makespan": 1865
+   },
+   "u0_production_decoder_makespan": 1865,
+   "checkers_agree": true,
+   "incumbent_neighbourhood": {
+    "1": {
+     "neighbourhood": "1-machine swap",
+     "explored": 105,
+     "feasible": 18,
+     "improving": 0,
+     "best_found": 1865,
+     "best_relative_improvement": 0.0,
+     "seconds": 0.020483999998759828
+    },
+    "2": {
+     "neighbourhood": "2-machine swap",
+     "explored": 5145,
+     "feasible": 149,
+     "improving": 0,
+     "best_found": 1865,
+     "best_relative_improvement": 0.0,
+     "seconds": 0.9602703000000474
+    }
+   },
+   "milp_pool_optimum": {
+    "status": "optimal",
+    "objective": 1835.0,
+    "dual_bound": 1835.0,
+    "seconds": 15.796588299999712
+   }
+  }
+ ]
+}
