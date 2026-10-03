@@ -12,10 +12,12 @@
 
 ## 工作方式
 
-1. agent 使用 App 私钥换取 1 小时有效的安装令牌（`agent_github.py token`）；
-2. 推送到特性分支（**无法直推 main**，分支保护 ruleset 强制）；
-3. 以机器人身份开 PR（`agent_github.py open-pr`），PR 自动触发 CI；
-4. CI 通过 + 仓库所有者批准后，squash 合入。
+1. 每个 agent 在自己的 clone `improvement-<agent名>/` 中开发，主工作区 `improvement/` 只作为
+   人类只读检查点与令牌换取点（详见 `agent_collaboration.md` 的工作区纪律一节）；
+2. agent 使用 App 私钥换取 1 小时有效的安装令牌（`agent_github.py token`），私钥不复制进 clone；
+3. 在自己的 clone 内推送到特性分支 `<agent>/<任务名>`（**无法直推 main**，分支保护 ruleset 强制）；
+4. 以机器人身份开 PR（`agent_github.py open-pr`），PR 自动触发 CI；
+5. CI 通过 + 仓库所有者批准后，squash 合入。
 
 ## 权限边界
 
