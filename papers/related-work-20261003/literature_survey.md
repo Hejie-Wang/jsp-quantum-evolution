@@ -3,7 +3,7 @@
 日期：2026-10-03
 作者：`jsp-agent-deepseek[bot]`
 起因：Issue #13《论文查询》
-配套材料：同目录 [papers_index.md](papers_index.md)（25 篇 OA 论文索引与获取状态）、`pdf/`（已获取的 PDF）
+配套材料：同目录 [papers_index.md](papers_index.md)（24 份已获取 OA PDF 的索引、4 篇未获取文献、4 篇仅引用未下载）、`pdf/`（已获取的 PDF）
 
 ---
 

@@ -1,17 +1,19 @@
 # OA 论文索引（Issue #13 文献调研，2026-10-03）
 
-本目录收录本次调研中**可合法获取的开放获取（OA）版本**。共 **25 篇**，合计约 **31.7 MB**。
+本目录收录本次调研中**可合法获取的开放获取（OA）版本**。已获取 **24 份 PDF**（`pdf/` 下 24 个文件），合计约 **31.7 MB**；另有 **4 篇未能获取**（见 §2）与 **4 篇仅引用未下载**（见 §3）。
 
 - 全部 PDF 的 **`%PDF` 魔数已校验**（HTML 错误页不会被存成 PDF）；
 - 全部 PDF 的**首页标题已与引用逐条比对**（过程见文末"校验方法"）；
 - 获取来源、许可依据、获取状态见下表；
-- **未获取的条目列在文末**，标注原因，而不是留一个可能失效的链接。
+- **未获取的条目单独列出**，标注原因，而不是留一个可能失效的链接。
+
+> 计数口径：`pdf/` 下 PDF 文件数 = 24，且 §1 各表中以 `` `pdf/...` `` 开头的行数 = 24，两者一一对应，可用 `Get-ChildItem papers/related-work-20261003/pdf` 复核。
 
 配套分析见 [literature_survey.md](literature_survey.md)。
 
 ---
 
-## 1. 已获取（25 篇）
+## 1. 已获取（24 份 PDF）
 
 ### 1.1 与本仓库建模直接相关
 
@@ -23,9 +25,9 @@
 | `pdf/doucet2026thermodynamic.pdf` | Doucet, Mzaouali, Robertson, Gardas, Deffner & Domino, *Thermodynamic significance of QUBO encoding on quantum annealers* | [arXiv:2601.04402](https://arxiv.org/abs/2601.04402)；*New J. Phys.* **28**, 054512 (2026)，**CC BY** | 摘要+期刊页已核 | **罚项设计的核心证据**：罚项太弱 → 低能不可行流形；太强 → 压低有效能标、加剧不可逆耗散。**不存在安全罚项区间** |
 | `pdf/palackal2023graph.pdf` | Palackal, Richter & Hess, *Graph-controlled Permutation Mixers in QAOA for the Flexible Job-Shop Problem* | [arXiv:2311.04100](https://arxiv.org/abs/2311.04100) | 摘要页已核 | **把约束放进 ansatz 而非罚项**，保可行性且遍历可行子空间——本仓库"见证罚项"路线的直接替代 |
 | `pdf/ayodele2022penalty.pdf` | Ayodele, *Penalty Weights in QUBO Formulations: Permutation Problems* | [arXiv:2206.11040](https://arxiv.org/abs/2206.11040)；EvoCOP 2022 | 摘要页已核 | 与 Doucet 独立同向：排列类 QUBO 罚权太小→不可行，太大→收敛慢 |
-| `pdf/friedl2026succinct.pdf` | Friedl, Gegő, Kabódi & Nemkin, *Succinct QUBO formulations for permutation problems by sorting networks* | [arXiv:2603.07579](https://arxiv.org/abs/2603.07579) | 摘要页已核 | 用 compare-exchange 网络做排列 QUBO，仅 $O(n\log^2 n)$ 变量；**摘要不涉及调度，也无下界定理** |
-| `pdf/nakano2023dual.pdf` | Nakano et al., *Dual-Matrix Domain-Wall: Generating Permutations by QUBO/Ising with Quadratic Sizes* | [arXiv:2308.01024](https://arxiv.org/abs/2308.01024)；*Technologies* **11**, 143 | 摘要页已核 | 把排列 one-hot 的最大绝对系数从 $2n-4$ 压到 **2**——若 $\Lambda>U$ 导致系数动态范围过大，可借用 |
 | `pdf/coupvent2025updating.pdf` | Coupvent des Graviers, Kobrosly, Guettier & Cazenave, *Updating Lower and Upper Bounds for the JSP Test Instances* | [arXiv:2504.16106](https://arxiv.org/abs/2504.16106)，**CC BY-NC-SA** | 摘要页已核 | 2025 年仍用 OR-Tools 收紧 Taillard 上下界并关闭 ta33——**"经典已停滞"这一前提不成立** |
+| `pdf/friedl2026succinct.pdf` | Friedl, Gegő, Kabódi & Nemkin, *Succinct QUBO formulations for permutation problems by sorting networks* | [arXiv:2603.07579](https://arxiv.org/abs/2603.07579) | 摘要页已核 | 用 compare-exchange 网络做排列 QUBO，仅 $O(n\log^2 n)$ 变量；**摘要不涉及调度，也无下界定理** |
+| `pdf/nakano2023dual.pdf` | Nakano, Tsukiyama, Ito, Yazane, Yano, Kato, Ozaki, Mori & Katsuki, *Dual-Matrix Domain-Wall: Generating Permutations by QUBO and Ising Models with Quadratic Sizes* | [arXiv:2308.01024](https://arxiv.org/abs/2308.01024)；*Technologies* **11**, 143 | 摘要页已核 | 把排列 one-hot 的最大绝对系数从 $2n-4$ 压到 **2**——若 $\Lambda>U$ 导致系数动态范围过大，可借用 |
 
 ### 1.2 量子硬件/退火实现与评估
 
@@ -39,7 +41,7 @@
 | `pdf/schworm2024quantumannealing.pdf` | Schworm, Wu, Klar, Glatt & Aurich, *Multi-objective Quantum Annealing approach for solving flexible job shop scheduling in manufacturing* | [arXiv:2311.09637](https://arxiv.org/abs/2311.09637)；*J. Manufacturing Systems* **72** | 摘要页已核 | QASA（tabu+SA+QA）；大实例按瓶颈因子分解 |
 | `pdf/dalal2024digitized.pdf` | Dalal et al., *Digitized Counterdiabatic Quantum Algorithms for Logistics Scheduling* | [arXiv:2405.15707](https://arxiv.org/abs/2405.15707)；*Phys. Rev. Applied* **22**, 064068 | 摘要页已核 | DCQO：同双比特门数下成功率较 QAOA 提升数个量级；云超导/离子阱实测 |
 | `pdf/sawamura2025decomposition.pdf` | Sawamura, Araki, Maruyama, Haba & Ohzeki, *Quantum-classical hybrid algorithm using quantum annealing for multi-objective job shop scheduling* | [arXiv:2511.03257](https://arxiv.org/abs/2511.03257)；*J. Phys. Soc. Japan* | 摘要页已核 | **按决策层次分解**：资源分配 → QUBO/退火，任务排程 → MILP 经典求解 |
-| `pdf/benammar2025survey.pdf` | Osaba, Perez Delgado, Mata Ali, Miranda-Rodríguez, Moreno Fdez de Leceta et al., *Quantum Computing in Industrial Environments: where do we stand and where are we headed?* | [arXiv:2505.00891](https://arxiv.org/abs/2505.00891) | 摘要页已核 | 工业量子计算综述。（**注**：另有 Ben Ammar, Marzouki & Driss, *Quantum Computing for Scheduling Problems: A Survey*, AMCAI 2025, DOI 10.1109/AMCAI66110.2025.11474388——**该篇未获取 OA 版本**） |
+| `pdf/benammar2025survey.pdf` | Osaba, Perez Delgado, Mata Ali, Miranda-Rodríguez, Moreno Fdez de Leceta et al., *Quantum Computing in Industrial Environments: where do we stand and where are we headed?* | [arXiv:2505.00891](https://arxiv.org/abs/2505.00891) | 摘要页已核 | 工业量子计算综述 |
 
 ### 1.3 方法背景与理论边界
 
@@ -69,13 +71,26 @@
 
 ---
 
-## 3. 校验方法（可复核）
+## 3. 仅引用未下载（4 篇）
+
+以下 4 篇在 [literature_survey.md](literature_survey.md) 中被引用并讨论，但**本次未下载 PDF**——它们要么是无下界定理的纯方法论文献、要么与本题只沾边缘。此处只给出出处，**不主张已通读全文**。
+
+| 文献 | 出处 | 为何未下载 / 在何处被引用 |
+|---|---|---|
+| Ben Ammar, Marzouki & Driss, *Quantum Computing for Scheduling Problems: A Survey* | AMCAI 2025, DOI [10.1109/AMCAI66110.2025.11474388](https://doi.org/10.1109/AMCAI66110.2025.11474388) | **无 OA 版本**；仅元数据经 INSPIRE 摘要核对。其"hardware constraints 与 model scalability 是关键限制"的表述被 §5 引用 |
+| Amaro, Rosenkranz, Fitzpatrick, Hirano & Fiorentini, *Filtering variational quantum algorithms for combinatorial optimization*（即 F-VQE 方法论文，**与本目录 `pdf/amaro2022filtering.pdf` 不是同一篇**） | *Quantum Sci. Technol.* **7**, 015021 (2022)；[arXiv:2106.10055](https://arxiv.org/abs/2106.10055) | 仅用于区分"F-VQE 方法论文"与"JSP 案例研究"；后者已下载 |
+| Slysz, Kurowski & Waligóra, *Photonics for solving the job shop scheduling problem* | [arXiv:2409.13781](https://arxiv.org/abs/2409.13781) | 仅用于说明规模天花板（8 qumode），见 §5 |
+| Permin, Borgard, Castillo Velasquez & Pyschny, *A Simple Approach for Complexity Reduction in Job Shop Scheduling Using Quantum Computers* | Machining Innovations Conference for Aerospace Industry 2022, TH Köln；URN `urn:nbn:de:101:1-2023040421053236057106` | 标题/作者/URN 已核（d-nb MARC21），**内容未读**；与"复杂度削减"高度相关，见报告 §8 第 6 项 |
+
+---
+
+## 4. 校验方法（可复核）
 
 1. **魔数校验**：每个响应前 4 字节必须是 `%PDF`，否则丢弃并记录为失败——因此不会把 HTML 错误页当成 PDF 提交。
 2. **标题比对**：用 `PyMuPDF`（`fitz`）抽取每个 PDF 首页文本，与预期标题逐条比对。**本次该步骤实际拦下一个错误**：`carugno2022evaluating` 最初使用了一个臆测的 arXiv 编号，下载到的是宇宙学论文 *Reconstructing teleparallel gravity with cosmic structure growth*；已改用 Scientific Reports 的 **CC BY 4.0** 出版方 PDF 重新获取并复核。
 3. **体量与许可**：优先选择 arXiv 预印本（arXiv 非独占许可）或明确 CC BY / CC BY-NC-SA 的出版方版本；`papers/` 目录的用途见 [../README.md](../README.md)。
 
-## 4. 关于"可信度标记"的重要说明
+## 5. 关于"可信度标记"的重要说明
 
 [literature_survey.md](literature_survey.md) 中使用三级标记：**【已核】/【二手】/【未核】**。
 
