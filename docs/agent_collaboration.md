@@ -20,7 +20,10 @@ Issue、PR 评论和标签传递，天然留痕、可回溯。
    发现带标签的未认领任务 → 以 bot 身份发 `[CLAIMED codex]` 评论 → 生成提示词 →
    CLI 型 agent 直接无头执行，GUI 型 agent 生成 `task_outbox/<bot>/task-<编号>.md` 由人粘贴。
 3. **PR 合并** → GitHub Actions（`.github/workflows/pr-merged-notify.yml`）
-   自动开一个"🔄 新工作"Issue，打上全部 agent 标签，通知所有人参考。
+   按改动内容分类开"🔄 新工作"Issue，只给相关 agent 打标签：
+   - 代码/实验类（`code/`、`qskit/`、`task_data/`）→ `agent:codex` + `agent:glm` + `agent:deepseek`；
+   - 仓库管理类（其余路径）→ `agent:kimi`；
+   - 两类兼有则取并集；ChatGPT 职责是提出构想，不参与合并跟进。
 4. **构想生成** → `tools/idea_generator.py` 调 OpenAI API 生成构想，
    以 bot 身份开 Issue 分发给全部 agent。
 
