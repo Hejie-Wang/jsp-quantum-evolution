@@ -110,13 +110,22 @@ class QuantumProposer:
     name = "quantum_xy"
 
     def __init__(self, inst, pool, specs, transitions, target_t, *,
-                 shots=64, train_evaluations=12, seed=7):
+                 shots=64, train_evaluations=12, seed=7, sampling="aer",
+                 compact_max_states=1 << 22):
         self.specs = specs
         self.transitions = transitions
         self.target_t = int(target_t)
         self.shots = int(shots)
         self.train_evaluations = int(train_evaluations)
         self.seed = seed
+        # "aer" needs a full statevector (small pools only); "compact" draws the
+        # pre-registered 64 shots from the exact candidate-subspace distribution
+        # instead, which is what makes the D2 scale reachable (45+ data qubits
+        # cannot be sampled with a statevector simulator here).
+        self.sampling = sampling
+        self.compact_max_states = int(compact_max_states)
+        self.rng = np.random.default_rng(seed)
+        self.sampling_backend_detail = sampling
         self.pool_obj = circuits.CandidatePool(
             tuple(tuple(tuple(int(v) for v in order) for order in machine)
                   for machine in pool))
@@ -152,18 +161,28 @@ class QuantumProposer:
         started = time.perf_counter()
         self._cached_params = self._train()
         self.training_seconds += time.perf_counter() - started
-        circuit = sl.build_fixed_t_ansatz(self.pool_obj, self.specs,
-                                          self.transitions, self._cached_params,
-                                          self.target_t, 1.0, mode="xy")
         started = time.perf_counter()
-        legal, _illegal = sl.sample_choices(circuit, self.pool_obj, self.shots,
-                                            self.seed + int(self.training_seconds * 1e6))
+        if self.sampling == "compact":
+            from compact_simulator import CompactSimulator
+            simulator = CompactSimulator(self.pool_obj, self.specs, self.transitions,
+                                         self.target_t, 1.0,
+                                         max_states=self.compact_max_states)
+            probabilities = simulator.probabilities(self._cached_params, "xy")
+            draws = self.rng.choice(simulator.dimension, size=self.shots, p=probabilities)
+            candidates = [tuple(int(v) for v in simulator.labels[i]) for i in draws]
+        else:
+            circuit = sl.build_fixed_t_ansatz(self.pool_obj, self.specs,
+                                              self.transitions, self._cached_params,
+                                              self.target_t, 1.0, mode="xy")
+            legal, _illegal = sl.sample_choices(
+                circuit, self.pool_obj, self.shots,
+                self.seed + int(self.training_seconds * 1e6))
+            candidates = [key[0] if isinstance(key, tuple) else key for key, _ in legal]
         self.sampling_seconds += time.perf_counter() - started
-        if not legal:
+        if not candidates:
             return None
         best_choice, best_energy = None, None
-        for key, _frequency in legal:
-            choice = key[0] if isinstance(key, tuple) else key
+        for choice in candidates:
             energy = sl.witness_energy(self.specs, choice, self.target_t, 1.0)
             if best_energy is None or energy < best_energy:
                 best_choice, best_energy = choice, energy
@@ -171,7 +190,8 @@ class QuantumProposer:
 
     def cost(self):
         return {"graph_evaluations": 1, "training_seconds": self.training_seconds,
-                "sampling_seconds": self.sampling_seconds, "shots": self.shots}
+                "sampling_seconds": self.sampling_seconds, "shots": self.shots,
+                "sampling_backend": self.sampling}
 
 
 # ---------------------------------------------------------------------------
@@ -331,7 +351,15 @@ def _sa_factory(inst, pool, specs, transitions, target_t, seed):
 
 
 def _quantum_factory(inst, pool, specs, transitions, target_t, seed):
-    return QuantumProposer(inst, pool, specs, transitions, target_t, seed=seed)
+    """Variational arm; D2-scale pools need the compact sampling backend because a
+    45+ data-qubit ansatz cannot be sampled with a statevector simulator here."""
+    dimension = 1
+    for machine in pool:
+        dimension *= len(machine)
+    sampling = "aer" if dimension <= (1 << 16) and len(pool) * max(
+        len(machine) for machine in pool) <= 20 else "compact"
+    return QuantumProposer(inst, pool, specs, transitions, target_t, seed=seed,
+                           sampling=sampling, compact_max_states=1 << 22)
 
 
 ARMS = {
@@ -449,6 +477,75 @@ def run(seeds, *, scales=("3x3", "4x3"), budget=10.0, arms=tuple(ARMS),
     return rows
 
 
+def run_d2(dataset_path, *, budget=5.0, improving=3, negatives=2,
+           include_quantum=True, seed_offset=0):
+    """Exploratory T10 battery on T04's D2 developer snapshots.
+
+    This is *not* the confirmation set: it uses the developer seeds and a short
+    budget, and it exists to show the integration (T04 output -> T06/T10 arms)
+    and the D2-scale resource picture.  Positive controls are windows whose pool
+    provably contains an improvement; negative controls are windows whose pool
+    has none, kept to report the invalid-call cost.
+    """
+    import d2_adapter
+    positives = list(d2_adapter.iter_windows(dataset_path, only_improving=True,
+                                             limit=improving))
+    all_windows = list(d2_adapter.iter_windows(dataset_path, only_improving=False))
+    negatives = [row for row in all_windows
+                 if row["pool_optimum"] is not None and row["target"] >= row["u0"]][:negatives]
+    rows = []
+    for row in positives + negatives:
+        inst, pool, incumbent = row["inst"], row["pool"], row["incumbent"]
+        # A negative control is a window whose pool provably contains no
+        # improvement: its target is set BELOW the incumbent so that every arm
+        # must miss and only the invalid-call cost is measured.  Such rows are
+        # excluded from the gate (``no_target``).
+        negative = row["target"] >= row["u0"]
+        target = int(row["u0"]) - 1 if negative else int(row["target"])
+        arms = []
+        for name, runner in (("cp_sat", lambda: run_cp_sat(inst, budget, target)),
+                             ("classical_joint",
+                              lambda: run_joint_mainline(inst, pool, incumbent, budget,
+                                                         target, seed=seed_offset))):
+            try:
+                arms.append(runner())
+            except Exception as exc:  # noqa: BLE001
+                arms.append({"arm": name, "hit": False, "arrival_seconds": None,
+                             "upper_bound": None, "lower_bound": None,
+                             "solver_status": f"error: {type(exc).__name__}: {exc}",
+                             "graph_evaluations": None, "certificate_calls": 0,
+                             "cost_breakdown": {}})
+        for name in ("uniform_dual", "sa_dual") + (("quantum_dual",) if include_quantum else ()):
+            try:
+                arms.append(run_dual_arm(inst, pool, arm=name, budget=budget,
+                                         target=target,
+                                         proposer_factory=ARMS[name],
+                                         incumbent=incumbent, seed=seed_offset))
+            except Exception as exc:  # noqa: BLE001
+                arms.append({"arm": name, "hit": False, "arrival_seconds": None,
+                             "upper_bound": None, "lower_bound": None,
+                             "solver_status": f"error: {type(exc).__name__}: {exc}",
+                             "graph_evaluations": None, "certificate_calls": 0,
+                             "cost_breakdown": {}})
+        rows.append({"dataset": "D2-dev (exploratory)", "instance": row["instance"],
+                     "seed": row["seed"], "strategy": row["strategy"],
+                     "trajectory_iteration": row["trajectory_iteration"],
+                     "pool_sizes": row["pool_sizes"], "u0": row["u0"],
+                     "target": target, "pool_optimum": row["pool_optimum"],
+                     "rho": row["rho"], "d_imp": row["d_imp_from_incumbent"],
+                     "witnesses": len(row["witnesses"]),
+                     "witnesses_dropped_constant_false": row["witnesses_dropped_constant_false"],
+                     "production_hint": pool,
+                     "control": "negative" if negative else "positive",
+                     "no_target": bool(negative),
+                     "budget_seconds": budget, "arms": arms})
+        print(f"  D2 {row['instance']} s{row['seed']} {row['strategy']} "
+              f"it{row['trajectory_iteration']} ({'neg' if negative else 'pos'}): "
+              + " ".join(f"{a['arm']}:{'hit' if a['hit'] else 'miss'}" for a in arms),
+              flush=True)
+    return rows
+
+
 def load_d1_pool(path):
     """Read one old fixed pool report (D1 layer): instance, pool, incumbent."""
     report = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -555,6 +652,13 @@ def main(argv=None):
     ap.add_argument("--pool-k", type=int, default=3)
     ap.add_argument("--arms", default="uniform_dual,sa_dual,quantum_dual")
     ap.add_argument("--max-d1", type=int, default=None)
+    ap.add_argument("--d2-dataset", default=None,
+                    help="T04 D2 dataset; runs the exploratory D2 battery and exits")
+    ap.add_argument("--d2-budget", type=float, default=5.0)
+    ap.add_argument("--d2-improving", type=int, default=3)
+    ap.add_argument("--d2-negatives", type=int, default=2)
+    ap.add_argument("--d2-no-quantum", action="store_true")
+    ap.add_argument("--d2-out", default=None)
     ap.add_argument("--d1", action="store_true",
                     help="also run the D1 layer (six old fixed pools, strict-improvement target)")
     ap.add_argument("--d1-only", action="store_true",
@@ -566,6 +670,33 @@ def main(argv=None):
     args = ap.parse_args(argv)
     lo, hi = args.seeds.split("-")
     seeds = list(range(int(lo), int(hi) + 1))
+    if args.d2_dataset:
+        rows = run_d2(args.d2_dataset, budget=args.d2_budget,
+                      improving=args.d2_improving, negatives=args.d2_negatives,
+                      include_quantum=not args.d2_no_quantum)
+        payload = {"schema_version": SCHEMA_VERSION,
+                   "work_package": "T10 exploratory D2 battery (T04 snapshots)",
+                   "dataset": args.d2_dataset,
+                   "preregistration": {"budget_seconds": args.d2_budget,
+                                       "benefit_ratio": BENEFIT_RATIO,
+                                       "success_margin": SUCCESS_MARGIN,
+                                       "main_baseline": "uniform_dual"},
+                   "windows": rows,
+                   "gate": evaluate_gate(rows, budget=args.d2_budget)}
+        target_path = Path(args.d2_out or (GATES_DIR
+                                           / "results_final_benchmark_20261003"
+                                           / "d2_exploratory.json"))
+        target_path.parent.mkdir(parents=True, exist_ok=True)
+        target_path.write_text(json.dumps(payload, ensure_ascii=False, indent=1,
+                                          default=_json_default), encoding="utf-8")
+        print(f"wrote {target_path}")
+        for row in payload["gate"]:
+            ratio = row["cost_ratio_vs_baseline"]
+            print(f"  {row['arm']}: ratio "
+                  f"{None if not ratio else round(ratio['mean'], 3)} "
+                  f"benefit={row['passes_benefit_gate']} "
+                  f"noninferior={row['passes_non_inferiority']}")
+        return 0
     out_path = Path(args.out)
     if args.d1_only:
         if not out_path.exists():
