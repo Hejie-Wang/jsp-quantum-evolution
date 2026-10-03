@@ -1,11 +1,17 @@
 // One logical DAG per CUDA thread; structure-of-arrays workspace across batch.
 // Positive durations and int32 total-duration bound are checked by Python.
 // Cycles return the same sentinel as the independent CPU evaluator.
+//
+// Candidates live in a device buffer laid out (M, J, stride): candidate
+// `base + b` is read at orders[(m*J+k)*stride + base + b]. A single upload of
+// a large block can therefore feed many chunked launches of this kernel,
+// each processing candidates [base, base + B) of the block.
 extern "C" __global__ void evaluate_batch(
     const int* orders, const int* p, int* work, int* out,
-    int B, int J, int M) {
+    int B, int J, int M, int base, int stride) {
     int b = blockIdx.x * blockDim.x + threadIdx.x;
     if (b >= B) return;
+    int g = base + b;
     int N = J * M;
     int* successor = work;
     int* degree = work + N * B;
@@ -17,7 +23,7 @@ extern "C" __global__ void evaluate_batch(
         head[v*B+b] = 0;
     }
     for (int m = 0; m < M; ++m) for (int k = 1; k < J; ++k) {
-        int u = orders[(m*J+k-1)*B+b], v = orders[(m*J+k)*B+b];
+        int u = orders[(m*J+k-1)*stride+g], v = orders[(m*J+k)*stride+g];
         successor[u*B+b] = v;
         ++degree[v*B+b];
     }
