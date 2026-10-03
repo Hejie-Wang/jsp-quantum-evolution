@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "task": "T00",
+  "purpose": "Independent uniform control: cost separation from the legacy compact-simulator path, and end-to-end reproducibility",
+  "claim_scope": "Preparation cost and reproducibility only. No search-quality or quantum-advantage claim.",
+  "environment": {
+    "python": "3.12.8",
+    "numpy": "2.5.3"
+  },
+  "pool_preparation": [
+    {
+      "machines": 4,
+      "candidates_per_machine": 3,
+      "product_space_states": 81,
+      "shots": 64,
+      "uniform_seconds": 3.7584999972750666e-05,
+      "legacy_preparation_seconds": 9.712999999464956e-05,
+      "legacy_preparation_and_draw_seconds": 0.0007452050000210875,
+      "preparation_speedup": 2.584275643609667
+    },
+    {
+      "machines": 5,
+      "candidates_per_machine": 3,
+      "product_space_states": 243,
+      "shots": 64,
+      "uniform_seconds": 4.165000000284635e-05,
+      "legacy_preparation_seconds": 0.00011882999997396837,
+      "legacy_preparation_and_draw_seconds": 0.00018178999998781365,
+      "preparation_speedup": 2.853061223669809
+    },
+    {
+      "machines": 6,
+      "candidates_per_machine": 3,
+      "product_space_states": 729,
+      "shots": 64,
+      "uniform_seconds": 4.758999994010082e-05,
+      "legacy_preparation_seconds": 0.0001808750000236614,
+      "legacy_preparation_and_draw_seconds": 0.0002569799999946554,
+      "preparation_speedup": 3.80069342826896
+    },
+    {
+      "machines": 7,
+      "candidates_per_machine": 3,
+      "product_space_states": 2187,
+      "shots": 64,
+      "uniform_seconds": 5.4325000019161965e-05,
+      "legacy_preparation_seconds": 0.0003196650000063528,
+      "legacy_preparation_and_draw_seconds": 0.000429214999985561,
+      "preparation_speedup": 5.884307407153206
+    },
+    {
+      "machines": 8,
+      "candidates_per_machine": 3,
+      "product_space_states": 6561,
+      "shots": 64,
+      "uniform_seconds": 6.317999996099388e-05,
+      "legacy_preparation_seconds": 0.0012500449999606645,
+      "legacy_preparation_and_draw_seconds": 0.0014624149999690418,
+      "preparation_speedup": 19.785454269269046
+    }
+  ],
+  "instance_runs": [
+    {
+      "instance": "seed0",
+      "instance_sha256": "4d65fb118e671373d926251bbe026e7286c3a514ea65b7c95c1726101a665a29",
+      "seed": 7,
+      "search_budget_seconds": 3.0,
+      "uniform": {
+        "backend": "independent_uniform_sampler",
+        "compact_simulator_constructions": 0,
+        "sampler_seconds": 0.04996030002257612,
+        "proposal_calls": 827,
+        "iterations": 33107,
+        "best_makespan": 25,
+        "wall_seconds": 3.649570700001277,
+        "end_to_end_seconds": 3.6496365000002697,
+        "independent_schedule_verification": true
+      },
+      "legacy_uniform": {
+        "backend": "compact_simulator_uniform_legacy",
+        "compact_simulator_constructions": 610,
+        "proposal_seconds": 1.0331449999684992,
+        "proposal_calls": 610,
+        "iterations": 24433,
+        "best_makespan": 25,
+        "wall_seconds": 3.0334223999998358,
+        "end_to_end_seconds": 3.0335278999991715,
+        "independent_schedule_verification": true
+      }
+    }
+  ],
+  "zero_statevector_probe": {
+    "legacy_path": "rejected",
+    "error": "candidate subspace exceeds simulation budget",
+    "product_space_states": 387420489,
+    "independent_sampler_samples": 8,
+    "independent_sampler_rejected": false
+  }
+}
