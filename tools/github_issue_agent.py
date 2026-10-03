@@ -138,10 +138,12 @@ def main(argv: list[str] | None = None) -> int:
             result = publish_pr(args.bot, args.issue, args.branch, args.title, args.body_file)
     except Exception as exc:  # keep the scheduled command's failure machine-readable
         result = {"status": "error", "error": str(exc)}
-        print(json.dumps(result, ensure_ascii=False), file=sys.stderr)
+        print(json.dumps(result, ensure_ascii=True), file=sys.stderr)
         return 1
 
-    print(json.dumps(result, ensure_ascii=False))
+    # ASCII escapes keep machine-readable output safe on Windows consoles
+    # whose legacy code page cannot represent arbitrary Issue titles.
+    print(json.dumps(result, ensure_ascii=True))
     return 0
 
 
