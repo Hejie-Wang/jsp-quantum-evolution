@@ -4225,5 +4225,2008 @@
   "Every arm sees the same instance, pool, target and wall-clock budget.",
   "Costs are separated: graph evaluations, model/certificate, training, sampling.",
   "Failures and zero-success arms are kept; no hyperparameter is selected after seeing results."
+ ],
+ "d1": [
+  {
+   "instance": "tai15_15_01_test",
+   "source": "15x15_seed11_milp.json",
+   "instance_sha256": "fc831d2017fc5d1177585a225c8ea3ba41bcd49edddeb17d9f1b99c13c0697e7",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "candidate_subspace": 35184372088832,
+   "incumbent_makespan": 1462,
+   "target": 1461,
+   "budget_seconds": 10.0,
+   "arms": [
+    {
+     "arm": "cp_sat",
+     "wall_seconds": 10.376500100000158,
+     "upper_bound": 1231,
+     "lower_bound": 1172,
+     "solver_status": "FEASIBLE",
+     "hit": true,
+     "arrival_seconds": 10.376500100000158,
+     "graph_evaluations": 0,
+     "certificate_calls": 1,
+     "cost_breakdown": {
+      "model_seconds": 10.376500100000158
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 12.36629719999928,
+     "upper_bound": 1272,
+     "lower_bound": 977,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 12.36629719999928,
+     "graph_evaluations": 157175,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 12.36629719999928,
+      "graph_evaluations": 157175,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.0243981999992684,
+     "upper_bound": 1462,
+     "lower_bound": 977,
+     "solver_status": "complete",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.0243981999992684,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "uniform_dual",
+     "wall_seconds": 10.108054100000118,
+     "upper_bound": 1462,
+     "lower_bound": 977,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 191,
+     "certificate_calls": 19,
+     "rounds": 190,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.3317373461012312,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1462,
+       977
+      ],
+      [
+       0.536258,
+       1462,
+       977
+      ],
+      [
+       1.065981,
+       1462,
+       977
+      ],
+      [
+       1.595965,
+       1462,
+       977
+      ],
+      [
+       2.124867,
+       1462,
+       977
+      ],
+      [
+       2.652642,
+       1462,
+       977
+      ],
+      [
+       3.179943,
+       1462,
+       977
+      ],
+      [
+       3.756658,
+       1462,
+       977
+      ],
+      [
+       4.284954,
+       1462,
+       977
+      ],
+      [
+       4.814439,
+       1462,
+       977
+      ],
+      [
+       5.34368,
+       1462,
+       977
+      ],
+      [
+       5.873366,
+       1462,
+       977
+      ],
+      [
+       6.402796,
+       1462,
+       977
+      ],
+      [
+       6.932457,
+       1462,
+       977
+      ],
+      [
+       7.462824,
+       1462,
+       977
+      ],
+      [
+       7.990715,
+       1462,
+       977
+      ],
+      [
+       8.520906,
+       1462,
+       977
+      ],
+      [
+       9.049919,
+       1462,
+       977
+      ],
+      [
+       9.579527,
+       1462,
+       977
+      ],
+      [
+       10.109911,
+       1462,
+       977
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 191,
+      "proposer": {
+       "graph_evaluations": 1,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 190,
+      "certificate_unproven": 19,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "sa_dual",
+     "wall_seconds": 10.102063799999996,
+     "upper_bound": 1462,
+     "lower_bound": 977,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 191,
+     "certificate_calls": 19,
+     "rounds": 190,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.33173734610123123,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1462,
+       977
+      ],
+      [
+       0.532416,
+       1462,
+       977
+      ],
+      [
+       1.060157,
+       1462,
+       977
+      ],
+      [
+       1.590477,
+       1462,
+       977
+      ],
+      [
+       2.121321,
+       1462,
+       977
+      ],
+      [
+       2.648731,
+       1462,
+       977
+      ],
+      [
+       3.176703,
+       1462,
+       977
+      ],
+      [
+       3.706929,
+       1462,
+       977
+      ],
+      [
+       4.236863,
+       1462,
+       977
+      ],
+      [
+       4.764695,
+       1462,
+       977
+      ],
+      [
+       5.342354,
+       1462,
+       977
+      ],
+      [
+       5.87259,
+       1462,
+       977
+      ],
+      [
+       6.401821,
+       1462,
+       977
+      ],
+      [
+       6.931762,
+       1462,
+       977
+      ],
+      [
+       7.461701,
+       1462,
+       977
+      ],
+      [
+       7.990374,
+       1462,
+       977
+      ],
+      [
+       8.517544,
+       1462,
+       977
+      ],
+      [
+       9.04547,
+       1462,
+       977
+      ],
+      [
+       9.574136,
+       1462,
+       977
+      ],
+      [
+       10.103838,
+       1462,
+       977
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 191,
+      "proposer": {
+       "graph_evaluations": 1,
+       "witness_evaluations": 25,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 190,
+      "certificate_unproven": 19,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "quantum_dual",
+     "hit": false,
+     "arrival_seconds": null,
+     "upper_bound": null,
+     "lower_bound": null,
+     "solver_status": "skipped_resource_limit",
+     "graph_evaluations": null,
+     "certificate_calls": 0,
+     "cost_breakdown": {},
+     "reason": "prod(K_m) = 35,184,372,088,832 exceeds the compact candidate-subspace cap (65536): the T06 variational arm cannot be instantiated at D1 scale"
+    }
+   ]
+  },
+  {
+   "instance": "tai15_15_01_test",
+   "source": "15x15_seed7_milp.json",
+   "instance_sha256": "fc831d2017fc5d1177585a225c8ea3ba41bcd49edddeb17d9f1b99c13c0697e7",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "candidate_subspace": 35184372088832,
+   "incumbent_makespan": 1462,
+   "target": 1461,
+   "budget_seconds": 10.0,
+   "arms": [
+    {
+     "arm": "cp_sat",
+     "wall_seconds": 10.414751700000124,
+     "upper_bound": 1231,
+     "lower_bound": 1174,
+     "solver_status": "FEASIBLE",
+     "hit": true,
+     "arrival_seconds": 10.414751700000124,
+     "graph_evaluations": 0,
+     "certificate_calls": 1,
+     "cost_breakdown": {
+      "model_seconds": 10.414751700000124
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 11.541955200000302,
+     "upper_bound": 1272,
+     "lower_bound": 977,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 11.541955200000302,
+     "graph_evaluations": 167705,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 11.541955200000302,
+      "graph_evaluations": 167705,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.02887620000001334,
+     "upper_bound": 1462,
+     "lower_bound": 977,
+     "solver_status": "complete",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.02887620000001334,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "uniform_dual",
+     "wall_seconds": 10.036477599999671,
+     "upper_bound": 1462,
+     "lower_bound": 977,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 191,
+     "certificate_calls": 19,
+     "rounds": 190,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.3317373461012311,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1462,
+       977
+      ],
+      [
+       0.525956,
+       1462,
+       977
+      ],
+      [
+       1.049613,
+       1462,
+       977
+      ],
+      [
+       1.574197,
+       1462,
+       977
+      ],
+      [
+       2.098086,
+       1462,
+       977
+      ],
+      [
+       2.622202,
+       1462,
+       977
+      ],
+      [
+       3.146605,
+       1462,
+       977
+      ],
+      [
+       3.673465,
+       1462,
+       977
+      ],
+      [
+       4.197258,
+       1462,
+       977
+      ],
+      [
+       4.723156,
+       1462,
+       977
+      ],
+      [
+       5.247332,
+       1462,
+       977
+      ],
+      [
+       5.772601,
+       1462,
+       977
+      ],
+      [
+       6.297664,
+       1462,
+       977
+      ],
+      [
+       6.878861,
+       1462,
+       977
+      ],
+      [
+       7.402636,
+       1462,
+       977
+      ],
+      [
+       7.927717,
+       1462,
+       977
+      ],
+      [
+       8.45256,
+       1462,
+       977
+      ],
+      [
+       8.97698,
+       1462,
+       977
+      ],
+      [
+       9.507506,
+       1462,
+       977
+      ],
+      [
+       10.038117,
+       1462,
+       977
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 191,
+      "proposer": {
+       "graph_evaluations": 1,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 190,
+      "certificate_unproven": 19,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "sa_dual",
+     "wall_seconds": 10.126985400000194,
+     "upper_bound": 1462,
+     "lower_bound": 977,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 191,
+     "certificate_calls": 19,
+     "rounds": 190,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.3317373461012311,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1462,
+       977
+      ],
+      [
+       0.533647,
+       1462,
+       977
+      ],
+      [
+       1.064521,
+       1462,
+       977
+      ],
+      [
+       1.595807,
+       1462,
+       977
+      ],
+      [
+       2.127269,
+       1462,
+       977
+      ],
+      [
+       2.657834,
+       1462,
+       977
+      ],
+      [
+       3.186516,
+       1462,
+       977
+      ],
+      [
+       3.717457,
+       1462,
+       977
+      ],
+      [
+       4.249475,
+       1462,
+       977
+      ],
+      [
+       4.780143,
+       1462,
+       977
+      ],
+      [
+       5.310843,
+       1462,
+       977
+      ],
+      [
+       5.841973,
+       1462,
+       977
+      ],
+      [
+       6.373717,
+       1462,
+       977
+      ],
+      [
+       6.90388,
+       1462,
+       977
+      ],
+      [
+       7.424917,
+       1462,
+       977
+      ],
+      [
+       7.953709,
+       1462,
+       977
+      ],
+      [
+       8.485941,
+       1462,
+       977
+      ],
+      [
+       9.017379,
+       1462,
+       977
+      ],
+      [
+       9.547198,
+       1462,
+       977
+      ],
+      [
+       10.128684,
+       1462,
+       977
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 191,
+      "proposer": {
+       "graph_evaluations": 1,
+       "witness_evaluations": 25,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 190,
+      "certificate_unproven": 19,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "quantum_dual",
+     "hit": false,
+     "arrival_seconds": null,
+     "upper_bound": null,
+     "lower_bound": null,
+     "solver_status": "skipped_resource_limit",
+     "graph_evaluations": null,
+     "certificate_calls": 0,
+     "cost_breakdown": {},
+     "reason": "prod(K_m) = 35,184,372,088,832 exceeds the compact candidate-subspace cap (65536): the T06 variational arm cannot be instantiated at D1 scale"
+    }
+   ]
+  },
+  {
+   "instance": "ta21_first15jobs_derived",
+   "source": "15x20_derived_seed11_milp.json",
+   "instance_sha256": "b5b4a23ac736887bd5b09cb48899426bc31844d2969d8763148af675067df75f",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "candidate_subspace": 1152921504606846976,
+   "incumbent_makespan": 1675,
+   "target": 1674,
+   "budget_seconds": 10.0,
+   "arms": [
+    {
+     "arm": "cp_sat",
+     "wall_seconds": 10.585679699999673,
+     "upper_bound": 1506,
+     "lower_bound": 1450,
+     "solver_status": "FEASIBLE",
+     "hit": true,
+     "arrival_seconds": 10.585679699999673,
+     "graph_evaluations": 0,
+     "certificate_calls": 1,
+     "cost_breakdown": {
+      "model_seconds": 10.585679699999673
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 12.168230899999799,
+     "upper_bound": 1556,
+     "lower_bound": 1217,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 12.168230899999799,
+     "graph_evaluations": 126716,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 12.168230899999799,
+      "graph_evaluations": 126716,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.022714499999892723,
+     "upper_bound": 1675,
+     "lower_bound": 1217,
+     "solver_status": "complete",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.022714499999892723,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "uniform_dual",
+     "wall_seconds": 10.000357900000381,
+     "upper_bound": 1675,
+     "lower_bound": 1217,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 477,
+     "certificate_calls": 16,
+     "rounds": 476,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.266441758413633,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1675,
+       1217
+      ],
+      [
+       0.610918,
+       1675,
+       1217
+      ],
+      [
+       1.216344,
+       1675,
+       1217
+      ],
+      [
+       1.822681,
+       1675,
+       1217
+      ],
+      [
+       2.428412,
+       1675,
+       1217
+      ],
+      [
+       3.034638,
+       1675,
+       1217
+      ],
+      [
+       3.640978,
+       1675,
+       1217
+      ],
+      [
+       4.246947,
+       1675,
+       1217
+      ],
+      [
+       4.852597,
+       1675,
+       1217
+      ],
+      [
+       5.457885,
+       1675,
+       1217
+      ],
+      [
+       6.063889,
+       1675,
+       1217
+      ],
+      [
+       6.669025,
+       1675,
+       1217
+      ],
+      [
+       7.274157,
+       1675,
+       1217
+      ],
+      [
+       7.878926,
+       1675,
+       1217
+      ],
+      [
+       8.532105,
+       1675,
+       1217
+      ],
+      [
+       9.137825,
+       1675,
+       1217
+      ],
+      [
+       9.744671,
+       1675,
+       1217
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 477,
+      "proposer": {
+       "graph_evaluations": 1,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 476,
+      "certificate_unproven": 16,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "sa_dual",
+     "wall_seconds": 10.000216399999772,
+     "upper_bound": 1675,
+     "lower_bound": 1217,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 436,
+     "certificate_calls": 16,
+     "rounds": 435,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.2670297461091368,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1675,
+       1217
+      ],
+      [
+       0.61125,
+       1675,
+       1217
+      ],
+      [
+       1.21667,
+       1675,
+       1217
+      ],
+      [
+       1.823179,
+       1675,
+       1217
+      ],
+      [
+       2.430238,
+       1675,
+       1217
+      ],
+      [
+       3.037069,
+       1675,
+       1217
+      ],
+      [
+       3.644185,
+       1675,
+       1217
+      ],
+      [
+       4.257731,
+       1675,
+       1217
+      ],
+      [
+       4.865353,
+       1675,
+       1217
+      ],
+      [
+       5.471827,
+       1675,
+       1217
+      ],
+      [
+       6.12871,
+       1675,
+       1217
+      ],
+      [
+       6.73369,
+       1675,
+       1217
+      ],
+      [
+       7.340794,
+       1675,
+       1217
+      ],
+      [
+       7.946161,
+       1675,
+       1217
+      ],
+      [
+       8.552797,
+       1675,
+       1217
+      ],
+      [
+       9.15988,
+       1675,
+       1217
+      ],
+      [
+       9.766037,
+       1675,
+       1217
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 436,
+      "proposer": {
+       "graph_evaluations": 1,
+       "witness_evaluations": 25,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 435,
+      "certificate_unproven": 16,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "quantum_dual",
+     "hit": false,
+     "arrival_seconds": null,
+     "upper_bound": null,
+     "lower_bound": null,
+     "solver_status": "skipped_resource_limit",
+     "graph_evaluations": null,
+     "certificate_calls": 0,
+     "cost_breakdown": {},
+     "reason": "prod(K_m) = 1,152,921,504,606,846,976 exceeds the compact candidate-subspace cap (65536): the T06 variational arm cannot be instantiated at D1 scale"
+    }
+   ]
+  },
+  {
+   "instance": "ta21_first15jobs_derived",
+   "source": "15x20_derived_seed7_milp.json",
+   "instance_sha256": "b5b4a23ac736887bd5b09cb48899426bc31844d2969d8763148af675067df75f",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "candidate_subspace": 1152921504606846976,
+   "incumbent_makespan": 1675,
+   "target": 1674,
+   "budget_seconds": 10.0,
+   "arms": [
+    {
+     "arm": "cp_sat",
+     "wall_seconds": 10.577431600000637,
+     "upper_bound": 1514,
+     "lower_bound": 1452,
+     "solver_status": "FEASIBLE",
+     "hit": true,
+     "arrival_seconds": 10.577431600000637,
+     "graph_evaluations": 0,
+     "certificate_calls": 1,
+     "cost_breakdown": {
+      "model_seconds": 10.577431600000637
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 12.119963999999527,
+     "upper_bound": 1556,
+     "lower_bound": 1217,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 12.119963999999527,
+     "graph_evaluations": 171540,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 12.119963999999527,
+      "graph_evaluations": 171540,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.013343499999791675,
+     "upper_bound": 1675,
+     "lower_bound": 1217,
+     "solver_status": "complete",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.013343499999791675,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "uniform_dual",
+     "wall_seconds": 10.091774100000293,
+     "upper_bound": 1675,
+     "lower_bound": 1217,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 191,
+     "certificate_calls": 19,
+     "rounds": 190,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.27343283582089556,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1675,
+       1217
+      ],
+      [
+       0.532741,
+       1675,
+       1217
+      ],
+      [
+       1.037345,
+       1675,
+       1217
+      ],
+      [
+       1.551025,
+       1675,
+       1217
+      ],
+      [
+       2.112905,
+       1675,
+       1217
+      ],
+      [
+       2.662019,
+       1675,
+       1217
+      ],
+      [
+       3.167018,
+       1675,
+       1217
+      ],
+      [
+       3.693654,
+       1675,
+       1217
+      ],
+      [
+       4.264583,
+       1675,
+       1217
+      ],
+      [
+       4.768579,
+       1675,
+       1217
+      ],
+      [
+       5.296754,
+       1675,
+       1217
+      ],
+      [
+       5.823053,
+       1675,
+       1217
+      ],
+      [
+       6.326735,
+       1675,
+       1217
+      ],
+      [
+       6.82929,
+       1675,
+       1217
+      ],
+      [
+       7.337342,
+       1675,
+       1217
+      ],
+      [
+       7.89244,
+       1675,
+       1217
+      ],
+      [
+       8.450191,
+       1675,
+       1217
+      ],
+      [
+       9.023641,
+       1675,
+       1217
+      ],
+      [
+       9.579738,
+       1675,
+       1217
+      ],
+      [
+       10.093396,
+       1675,
+       1217
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 191,
+      "proposer": {
+       "graph_evaluations": 1,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 190,
+      "certificate_unproven": 19,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "sa_dual",
+     "wall_seconds": 10.000496100000419,
+     "upper_bound": 1675,
+     "lower_bound": 1217,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 516,
+     "certificate_calls": 17,
+     "rounds": 515,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.2650972063902501,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1675,
+       1217
+      ],
+      [
+       0.511614,
+       1675,
+       1217
+      ],
+      [
+       1.013582,
+       1675,
+       1217
+      ],
+      [
+       1.520634,
+       1675,
+       1217
+      ],
+      [
+       2.061838,
+       1675,
+       1217
+      ],
+      [
+       2.662096,
+       1675,
+       1217
+      ],
+      [
+       3.243243,
+       1675,
+       1217
+      ],
+      [
+       3.837516,
+       1675,
+       1217
+      ],
+      [
+       4.376611,
+       1675,
+       1217
+      ],
+      [
+       4.972553,
+       1675,
+       1217
+      ],
+      [
+       5.555585,
+       1675,
+       1217
+      ],
+      [
+       6.111786,
+       1675,
+       1217
+      ],
+      [
+       6.76631,
+       1675,
+       1217
+      ],
+      [
+       7.331808,
+       1675,
+       1217
+      ],
+      [
+       7.95409,
+       1675,
+       1217
+      ],
+      [
+       8.51482,
+       1675,
+       1217
+      ],
+      [
+       9.113047,
+       1675,
+       1217
+      ],
+      [
+       9.69563,
+       1675,
+       1217
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 516,
+      "proposer": {
+       "graph_evaluations": 1,
+       "witness_evaluations": 25,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 515,
+      "certificate_unproven": 17,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "quantum_dual",
+     "hit": false,
+     "arrival_seconds": null,
+     "upper_bound": null,
+     "lower_bound": null,
+     "solver_status": "skipped_resource_limit",
+     "graph_evaluations": null,
+     "certificate_calls": 0,
+     "cost_breakdown": {},
+     "reason": "prod(K_m) = 1,152,921,504,606,846,976 exceeds the compact candidate-subspace cap (65536): the T06 variational arm cannot be instantiated at D1 scale"
+    }
+   ]
+  },
+  {
+   "instance": "tai20_15_01_test",
+   "source": "20x15_seed11_milp.json",
+   "instance_sha256": "a31c55baa9d05da553702838179585cc18a287ba2e3e3a766c28ae04bd205f23",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "candidate_subspace": 35184372088832,
+   "incumbent_makespan": 1865,
+   "target": 1864,
+   "budget_seconds": 10.0,
+   "arms": [
+    {
+     "arm": "cp_sat",
+     "wall_seconds": 10.733200199999374,
+     "upper_bound": 1437,
+     "lower_bound": 1155,
+     "solver_status": "FEASIBLE",
+     "hit": true,
+     "arrival_seconds": 10.733200199999374,
+     "graph_evaluations": 0,
+     "certificate_calls": 1,
+     "cost_breakdown": {
+      "model_seconds": 10.733200199999374
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 12.56947350000064,
+     "upper_bound": 1433,
+     "lower_bound": 1139,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 12.56947350000064,
+     "graph_evaluations": 154544,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 12.56947350000064,
+      "graph_evaluations": 154544,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.026913800000329502,
+     "upper_bound": 1865,
+     "lower_bound": 1139,
+     "solver_status": "complete",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.026913800000329502,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "uniform_dual",
+     "wall_seconds": 10.20788999999968,
+     "upper_bound": 1865,
+     "lower_bound": 1139,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 151,
+     "certificate_calls": 15,
+     "rounds": 150,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.3892761394101877,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1865,
+       1139
+      ],
+      [
+       0.681105,
+       1865,
+       1139
+      ],
+      [
+       1.357055,
+       1865,
+       1139
+      ],
+      [
+       2.047444,
+       1865,
+       1139
+      ],
+      [
+       2.719555,
+       1865,
+       1139
+      ],
+      [
+       3.373794,
+       1865,
+       1139
+      ],
+      [
+       4.053801,
+       1865,
+       1139
+      ],
+      [
+       4.771185,
+       1865,
+       1139
+      ],
+      [
+       5.415359,
+       1865,
+       1139
+      ],
+      [
+       6.111801,
+       1865,
+       1139
+      ],
+      [
+       6.808476,
+       1865,
+       1139
+      ],
+      [
+       7.428196,
+       1865,
+       1139
+      ],
+      [
+       8.117199,
+       1865,
+       1139
+      ],
+      [
+       8.740063,
+       1865,
+       1139
+      ],
+      [
+       9.49794,
+       1865,
+       1139
+      ],
+      [
+       10.210344,
+       1865,
+       1139
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 151,
+      "proposer": {
+       "graph_evaluations": 1,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 150,
+      "certificate_unproven": 15,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "sa_dual",
+     "wall_seconds": 10.04228409999996,
+     "upper_bound": 1865,
+     "lower_bound": 1139,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 161,
+     "certificate_calls": 16,
+     "rounds": 160,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.3892761394101877,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1865,
+       1139
+      ],
+      [
+       0.68997,
+       1865,
+       1139
+      ],
+      [
+       1.395988,
+       1865,
+       1139
+      ],
+      [
+       2.021831,
+       1865,
+       1139
+      ],
+      [
+       2.706064,
+       1865,
+       1139
+      ],
+      [
+       3.280639,
+       1865,
+       1139
+      ],
+      [
+       3.942883,
+       1865,
+       1139
+      ],
+      [
+       4.539946,
+       1865,
+       1139
+      ],
+      [
+       5.185149,
+       1865,
+       1139
+      ],
+      [
+       5.793027,
+       1865,
+       1139
+      ],
+      [
+       6.364864,
+       1865,
+       1139
+      ],
+      [
+       6.964808,
+       1865,
+       1139
+      ],
+      [
+       7.651538,
+       1865,
+       1139
+      ],
+      [
+       8.335104,
+       1865,
+       1139
+      ],
+      [
+       8.902816,
+       1865,
+       1139
+      ],
+      [
+       9.477672,
+       1865,
+       1139
+      ],
+      [
+       10.04484,
+       1865,
+       1139
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 161,
+      "proposer": {
+       "graph_evaluations": 1,
+       "witness_evaluations": 25,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 160,
+      "certificate_unproven": 16,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "quantum_dual",
+     "hit": false,
+     "arrival_seconds": null,
+     "upper_bound": null,
+     "lower_bound": null,
+     "solver_status": "skipped_resource_limit",
+     "graph_evaluations": null,
+     "certificate_calls": 0,
+     "cost_breakdown": {},
+     "reason": "prod(K_m) = 35,184,372,088,832 exceeds the compact candidate-subspace cap (65536): the T06 variational arm cannot be instantiated at D1 scale"
+    }
+   ]
+  },
+  {
+   "instance": "tai20_15_01_test",
+   "source": "20x15_seed7_milp.json",
+   "instance_sha256": "a31c55baa9d05da553702838179585cc18a287ba2e3e3a766c28ae04bd205f23",
+   "pool_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "candidate_subspace": 35184372088832,
+   "incumbent_makespan": 1865,
+   "target": 1864,
+   "budget_seconds": 10.0,
+   "arms": [
+    {
+     "arm": "cp_sat",
+     "wall_seconds": 10.583854299999985,
+     "upper_bound": 1447,
+     "lower_bound": 1173,
+     "solver_status": "FEASIBLE",
+     "hit": true,
+     "arrival_seconds": 10.583854299999985,
+     "graph_evaluations": 0,
+     "certificate_calls": 1,
+     "cost_breakdown": {
+      "model_seconds": 10.583854299999985
+     }
+    },
+    {
+     "arm": "adaptive_mainline",
+     "wall_seconds": 12.283946700000342,
+     "upper_bound": 1433,
+     "lower_bound": 1139,
+     "solver_status": "complete",
+     "hit": true,
+     "arrival_seconds": 12.283946700000342,
+     "graph_evaluations": 172646,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 12.283946700000342,
+      "graph_evaluations": 172646,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "classical_joint",
+     "wall_seconds": 0.027757900000324298,
+     "upper_bound": 1865,
+     "lower_bound": 1139,
+     "solver_status": "complete",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 17,
+     "certificate_calls": 0,
+     "cost_breakdown": {
+      "wall_seconds": 0.027757900000324298,
+      "graph_evaluations": 17,
+      "arrival_is_upper_bound": true
+     }
+    },
+    {
+     "arm": "uniform_dual",
+     "wall_seconds": 10.276374699999906,
+     "upper_bound": 1865,
+     "lower_bound": 1139,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 151,
+     "certificate_calls": 15,
+     "rounds": 150,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.3892761394101877,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1865,
+       1139
+      ],
+      [
+       0.743052,
+       1865,
+       1139
+      ],
+      [
+       1.39534,
+       1865,
+       1139
+      ],
+      [
+       2.087099,
+       1865,
+       1139
+      ],
+      [
+       2.759203,
+       1865,
+       1139
+      ],
+      [
+       3.457122,
+       1865,
+       1139
+      ],
+      [
+       4.11192,
+       1865,
+       1139
+      ],
+      [
+       4.769794,
+       1865,
+       1139
+      ],
+      [
+       5.450582,
+       1865,
+       1139
+      ],
+      [
+       6.15306,
+       1865,
+       1139
+      ],
+      [
+       6.824275,
+       1865,
+       1139
+      ],
+      [
+       7.579663,
+       1865,
+       1139
+      ],
+      [
+       8.19771,
+       1865,
+       1139
+      ],
+      [
+       8.907267,
+       1865,
+       1139
+      ],
+      [
+       9.601919,
+       1865,
+       1139
+      ],
+      [
+       10.278456,
+       1865,
+       1139
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 151,
+      "proposer": {
+       "graph_evaluations": 1,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 150,
+      "certificate_unproven": 15,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "sa_dual",
+     "wall_seconds": 10.312530700000025,
+     "upper_bound": 1865,
+     "lower_bound": 1139,
+     "solver_status": "n/a",
+     "hit": false,
+     "arrival_seconds": null,
+     "graph_evaluations": 151,
+     "certificate_calls": 15,
+     "rounds": 150,
+     "lower_bound_scope": "global",
+     "gap_integral": 0.38927613941018774,
+     "trajectory_seconds_bounds": [
+      [
+       0.0,
+       1865,
+       1139
+      ],
+      [
+       0.666876,
+       1865,
+       1139
+      ],
+      [
+       1.35443,
+       1865,
+       1139
+      ],
+      [
+       2.078583,
+       1865,
+       1139
+      ],
+      [
+       2.736815,
+       1865,
+       1139
+      ],
+      [
+       3.402793,
+       1865,
+       1139
+      ],
+      [
+       4.166653,
+       1865,
+       1139
+      ],
+      [
+       4.810029,
+       1865,
+       1139
+      ],
+      [
+       5.5305,
+       1865,
+       1139
+      ],
+      [
+       6.240912,
+       1865,
+       1139
+      ],
+      [
+       6.949416,
+       1865,
+       1139
+      ],
+      [
+       7.645675,
+       1865,
+       1139
+      ],
+      [
+       8.241524,
+       1865,
+       1139
+      ],
+      [
+       8.94553,
+       1865,
+       1139
+      ],
+      [
+       9.637464,
+       1865,
+       1139
+      ],
+      [
+       10.314374,
+       1865,
+       1139
+      ]
+     ],
+     "cost_breakdown": {
+      "training_seconds": 0.0,
+      "sampling_seconds": 0.0,
+      "graph_evaluations": 151,
+      "proposer": {
+       "graph_evaluations": 1,
+       "witness_evaluations": 25,
+       "training_seconds": 0.0,
+       "shots": 0
+      }
+     },
+     "failures": {
+      "empty_proposal": 0,
+      "sampling_failure": 150,
+      "certificate_unproven": 15,
+      "certificate_error": 0
+     }
+    },
+    {
+     "arm": "quantum_dual",
+     "hit": false,
+     "arrival_seconds": null,
+     "upper_bound": null,
+     "lower_bound": null,
+     "solver_status": "skipped_resource_limit",
+     "graph_evaluations": null,
+     "certificate_calls": 0,
+     "cost_breakdown": {},
+     "reason": "prod(K_m) = 35,184,372,088,832 exceeds the compact candidate-subspace cap (65536): the T06 variational arm cannot be instantiated at D1 scale"
+    }
+   ]
+  }
  ]
 }

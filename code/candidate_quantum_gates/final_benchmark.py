@@ -449,6 +449,104 @@ def run(seeds, *, scales=("3x3", "4x3"), budget=10.0, arms=tuple(ARMS),
     return rows
 
 
+def load_d1_pool(path):
+    """Read one old fixed pool report (D1 layer): instance, pool, incumbent."""
+    report = json.loads(Path(path).read_text(encoding="utf-8"))
+    inst = mq.Instance(report["instance_data"]["durations"],
+                       report["instance_data"]["routes_zero_based"],
+                       name=str(report.get("instance", Path(path).stem)))
+    pool = tuple(tuple(tuple(int(v) for v in order) for order in machine)
+                 for machine in report["pool_data"])
+    mq.validate_pool(inst, pool)
+    return inst, pool, tuple(int(a) for a in report["best_choice"]), int(report["best_makespan"])
+
+
+def run_d1(*, budget=10.0, max_instances=6, include_quantum=False, seed_offset=0):
+    """D1 layer (the six repo instances with their old fixed pools).
+
+    Target: one unit better than the old pool incumbent, i.e. a *strict*
+    improvement, because the pool optimum is not known for these pools and
+    computing it is T01's offline diagnostic, not an arm input.  The variant
+    arms that need an exact candidate-subspace simulator are skipped with their
+    reason recorded: prod(K_m) at D1 scale is far above the compact-simulator
+    cap, which is itself a resource boundary of the variational approach.
+    """
+    reports = sorted((ROOT / "code" / "candidate_quantum_medium" / "results"
+                      / "corrected_20261001").glob("*_milp.json"))[:max_instances]
+    rows = []
+    for path in reports:
+        inst, pool, incumbent, u0 = load_d1_pool(path)
+        target = u0 - 1
+        dimension = 1
+        for machine in pool:
+            dimension *= len(machine)
+        arm_rows = []
+        for name, runner in (("cp_sat", lambda: run_cp_sat(inst, budget, target)),
+                             ("adaptive_mainline",
+                              lambda: run_adaptive_mainline(inst, budget, target,
+                                                            seed=seed_offset)),
+                             ("classical_joint",
+                              lambda: run_joint_mainline(inst, pool, incumbent,
+                                                         budget, target,
+                                                         seed=seed_offset))):
+            try:
+                arm_rows.append(runner())
+            except Exception as exc:  # noqa: BLE001 - recorded, never fatal
+                arm_rows.append({"arm": name, "hit": False, "arrival_seconds": None,
+                                 "upper_bound": None, "lower_bound": None,
+                                 "solver_status": f"error: {type(exc).__name__}: {exc}",
+                                 "graph_evaluations": None, "certificate_calls": 0,
+                                 "cost_breakdown": {}})
+        for name in ("uniform_dual", "sa_dual"):
+            try:
+                arm_rows.append(run_dual_arm(inst, pool, arm=name, budget=budget,
+                                             target=target,
+                                             proposer_factory=ARMS[name],
+                                             incumbent=incumbent, seed=seed_offset))
+            except Exception as exc:  # noqa: BLE001
+                arm_rows.append({"arm": name, "hit": False, "arrival_seconds": None,
+                                 "upper_bound": None, "lower_bound": None,
+                                 "solver_status": f"error: {type(exc).__name__}: {exc}",
+                                 "graph_evaluations": None, "certificate_calls": 0,
+                                 "cost_breakdown": {}})
+        if include_quantum:
+            try:
+                arm_rows.append(run_dual_arm(inst, pool, arm="quantum_dual", budget=budget,
+                                             target=target,
+                                             proposer_factory=ARMS["quantum_dual"],
+                                             incumbent=incumbent, seed=seed_offset))
+            except Exception as exc:  # noqa: BLE001
+                arm_rows.append({"arm": "quantum_dual", "hit": False,
+                                 "arrival_seconds": None, "upper_bound": None,
+                                 "lower_bound": None,
+                                 "solver_status": f"error: {type(exc).__name__}: {exc}",
+                                 "graph_evaluations": None, "certificate_calls": 0,
+                                 "cost_breakdown": {}})
+        else:
+            arm_rows.append({"arm": "quantum_dual", "hit": False, "arrival_seconds": None,
+                             "upper_bound": None, "lower_bound": None,
+                             "solver_status": "skipped_resource_limit",
+                             "graph_evaluations": None, "certificate_calls": 0,
+                             "cost_breakdown": {},
+                             "reason": f"prod(K_m) = {dimension:,} exceeds the compact "
+                                       f"candidate-subspace cap (65536): the T06 variational "
+                                       f"arm cannot be instantiated at D1 scale"})
+        rows.append({
+            "instance": inst.name, "source": Path(path).name,
+            "instance_sha256": mq.content_hash(
+                {"durations": inst.durations.tolist(), "routes": inst.routes.tolist()}),
+            "pool_sizes": [len(machine) for machine in pool],
+            "candidate_subspace": dimension,
+            "incumbent_makespan": u0, "target": target, "budget_seconds": budget,
+            "arms": arm_rows,
+        })
+        summary = " ".join(f"{a['arm']}:{'hit' if a['hit'] else 'miss'}"
+                           for a in arm_rows)
+        print(f"  D1 {inst.name}: U0={u0} target={target} subspace={dimension:,} {summary}",
+              flush=True)
+    return rows
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="T10 end-to-end benchmark (pilot)")
     ap.add_argument("--seeds", default="0-2")
@@ -456,11 +554,29 @@ def main(argv=None):
     ap.add_argument("--budget", type=float, default=10.0)
     ap.add_argument("--pool-k", type=int, default=3)
     ap.add_argument("--arms", default="uniform_dual,sa_dual,quantum_dual")
+    ap.add_argument("--max-d1", type=int, default=None)
+    ap.add_argument("--d1", action="store_true",
+                    help="also run the D1 layer (six old fixed pools, strict-improvement target)")
+    ap.add_argument("--d1-only", action="store_true",
+                    help="load the existing --out file and only add/refresh the D1 block")
+    ap.add_argument("--include-quantum-d1", action="store_true",
+                    help="attempt the variational arm at D1 scale (fails on the simulator cap)")
     ap.add_argument("--out", default=str(GATES_DIR / "results_final_benchmark_20261003"
                                          / "final_benchmark.json"))
     args = ap.parse_args(argv)
     lo, hi = args.seeds.split("-")
     seeds = list(range(int(lo), int(hi) + 1))
+    out_path = Path(args.out)
+    if args.d1_only:
+        if not out_path.exists():
+            raise SystemExit(f"--d1-only needs an existing result file at {out_path}")
+        result = json.loads(out_path.read_text(encoding="utf-8"))
+        result["d1"] = run_d1(budget=args.budget, max_instances=len(args.scales.split(",")) * 3,
+                              include_quantum=args.include_quantum_d1)
+        out_path.write_text(json.dumps(result, ensure_ascii=False, indent=1,
+                                       default=_json_default), encoding="utf-8")
+        print(f"wrote d1 block to {out_path}")
+        return 0
     rows = run(seeds, scales=tuple(args.scales.split(",")), budget=args.budget,
                arms=tuple(args.arms.split(",")), pool_k=args.pool_k)
     gate = evaluate_gate(rows, budget=args.budget)
@@ -481,7 +597,11 @@ def main(argv=None):
             "Failures and zero-success arms are kept; no hyperparameter is selected after seeing results.",
         ],
     }
-    out = Path(args.out)
+    if args.d1:
+        result["d1"] = run_d1(budget=args.budget,
+                              max_instances=max(1, args.max_d1 or 6),
+                              include_quantum=args.include_quantum_d1)
+    out = out_path
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=1, default=_json_default),
                    encoding="utf-8")
