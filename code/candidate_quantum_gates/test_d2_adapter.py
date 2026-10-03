@@ -64,9 +64,10 @@ class AdapterTests(unittest.TestCase):
         key = f"{row['instance']}|s{row['seed']}|it{row['trajectory_iteration']}"
         snapshot = next(s for s in payload["d2"]["snapshots"]
                         if s["snapshot_key"] == key)
+        tables = d2_adapter._load_witness_tables(D2_DATASET, payload["d2"])
         self.assertEqual(len(row["witnesses"])
                          + row["witnesses_dropped_constant_false"],
-                         len(snapshot["witnesses"]))
+                         len(d2_adapter._snapshot_witnesses(snapshot, tables)))
 
     def test_rejects_a_non_d2_dataset(self):
         with self.assertRaises(ValueError):

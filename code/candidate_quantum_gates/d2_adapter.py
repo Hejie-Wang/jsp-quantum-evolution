@@ -78,6 +78,42 @@ def project_witnesses(pool, raw_witnesses):
     return kept, dropped
 
 
+def _load_witness_tables(path, d2):
+    """Witness dedup table (T04 compact freeze); legacy sidecar supported."""
+    tables = {t["trajectory_key"]: t["witnesses"]
+              for t in d2.get("witness_table", [])}
+    if tables:
+        return tables
+    sidecar = Path(path).with_name(Path(path).stem + "_witnesses.json.gz")
+    if sidecar.exists():
+        import gzip
+        with gzip.open(sidecar, "rt", encoding="utf-8") as fh:
+            return {t["trajectory_key"]: t["witnesses"] for t in json.load(fh)}
+    return {}
+
+
+def _snapshot_witnesses(snapshot, tables):
+    """Resolve a snapshot's raw witnesses in either freeze format.
+
+    Legacy format: witnesses embedded per snapshot.  Compact format (T04
+    PR #40): per-trajectory dedup table + per-snapshot ``witness_indices``
+    with flattened relations.
+    """
+    if snapshot is None:
+        return []
+    if "witnesses" in snapshot:
+        return snapshot["witnesses"]
+    table = tables.get(snapshot.get("trajectory_key"), [])
+    out = []
+    for index in snapshot.get("witness_indices", []):
+        w = table[index]
+        flat = w["relations_flat"]
+        out.append({"kind": w["kind"], "length": w["length"],
+                    "relations": [flat[i:i + 3]
+                                  for i in range(0, len(flat), 3)]})
+    return out
+
+
 def iter_windows(dataset_path, *, only_improving=True, limit=None,
                  task_data_dir=None, instance_cache=None):
     """Yield dicts consumed by the T06/T10 arms.
@@ -91,6 +127,7 @@ def iter_windows(dataset_path, *, only_improving=True, limit=None,
     evaluations = {(e["instance"], e["seed"], e["strategy"],
                     e["trajectory_iteration"]): e for e in d2["evaluations"]}
     snapshots = {s["snapshot_key"]: s for s in d2["snapshots"]}
+    witness_tables = _load_witness_tables(Path(dataset_path), d2)
     cache = instance_cache if instance_cache is not None else {}
     produced = 0
     for window in d2["windows"]:
@@ -115,7 +152,7 @@ def iter_windows(dataset_path, *, only_improving=True, limit=None,
         snapshot = snapshots.get(_snapshot_key(instance_name, window["seed"],
                                                window["trajectory_iteration"]))
         witnesses, dropped = project_witnesses(
-            pool, (snapshot or {}).get("witnesses", []))
+            pool, _snapshot_witnesses(snapshot, witness_tables))
         target = evaluation.get("pool_optimum")
         produced += 1
         yield {
