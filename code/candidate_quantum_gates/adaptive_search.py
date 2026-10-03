@@ -2,10 +2,14 @@
 """Dynamic machine candidates + critical-block tabu + optional quantum proposals.
 
 Classical local search supplies new machine orders. Periodically a small pool
-of entire machine candidates is recombined using uniform samples or the exact
-classical simulation of the existing witness-phase/XY/joint quantum ansatz.
-The full JSP graph (including frozen machines) evaluates every proposal.
-This executable does not submit QPU jobs or claim quantum advantage.
+of entire machine candidates is recombined.  The ``uniform`` arm is an
+*independent* control: it draws one label per machine directly through
+``uniform_sampler.UniformSampler``, so its preparation cost does not depend on
+the size of the legal subspace.  The ``quantum`` arm is the exact classical
+simulation of the existing witness-phase/XY/joint quantum ansatz.  Both arms see
+the same pool, witnesses and actions; only the proposal module differs.  The
+full JSP graph (including frozen machines) evaluates every proposal.  This
+executable does not submit QPU jobs or claim quantum advantage.
 """
 from pathlib import Path
 import argparse
@@ -21,6 +25,7 @@ from batch_evaluator import BatchEvaluator, INVALID, evaluate_one
 from circuits import CandidatePool
 from compact_simulator import CompactSimulator
 from search_loop import graph_witness_specs, propose_joint_actions
+from uniform_sampler import UniformSampler
 
 
 @njit(cache=True)
@@ -116,7 +121,8 @@ def refreshed_pool(current, moves, batch, values, rng, active_machines=6, candid
 
 def solve(inst, *, seconds=10.0, seed=7, mode="classical", backend="cpu",
           max_iterations=100000, proposal_every=40, shots=64, train_budget=12,
-          initial_orders=None, initial_schedules=240, neighborhood="mixed"):
+          initial_orders=None, initial_schedules=240, neighborhood="mixed",
+          legacy_uniform=False):
     if mode not in {"classical", "uniform", "quantum"}:
         raise ValueError("mode must be classical, uniform or quantum")
     if neighborhood not in {"adjacent", "insertion", "mixed"}:
@@ -151,6 +157,12 @@ def solve(inst, *, seconds=10.0, seed=7, mode="classical", backend="cpu",
     proposal_feasible = 0
     proposal_seconds = 0.0
     maximum_subspace, maximum_data_qubits = 1, 0
+    uniform_draws = uniform_unique = uniform_product_states = 0
+    compact_simulator_constructions = 0
+    uniform_sampler_seconds = 0.0
+    # None until a proposal module actually runs, so a classical-only run
+    # reports "no sampler used" instead of a stale default.
+    sampler_backend = None
 
     def remember(result):
         w = mq.separate(inst, result)
@@ -193,17 +205,37 @@ def solve(inst, *, seconds=10.0, seed=7, mode="classical", backend="cpu",
             specs = tuple(s for s in specs if all(s.allowed)
                           and (s.kind == "cycle" or s.length > best_value - 1))
             actions = propose_joint_actions(pool, specs, [0] * inst.machines, max_actions=6)
-            simulator = CompactSimulator(pool, specs, actions, best_value - 1)
-            maximum_subspace = max(maximum_subspace, simulator.dimension)
             maximum_data_qubits = max(maximum_data_qubits, pool.data_qubits)
-            parameters = []
-            if mode == "quantum":
-                trained = simulator.train(budget=train_budget,
-                    seed=seed + iteration, deadline=deadline)
-                parameters = trained["params"]
-                training_evaluations += trained["evaluations"]
-            choices = simulator.sample(parameters, shots, proposal_rng,
-                                        "xy_joint" if mode == "quantum" else "uniform")
+            if mode == "quantum" or legacy_uniform:
+                # Quantum arm, and the historical uniform arm kept behind
+                # legacy_uniform for reproducing already published numbers.
+                simulator = CompactSimulator(pool, specs, actions, best_value - 1)
+                maximum_subspace = max(maximum_subspace, simulator.dimension)
+                compact_simulator_constructions += 1
+                parameters = []
+                if mode == "quantum":
+                    trained = simulator.train(budget=train_budget,
+                        seed=seed + iteration, deadline=deadline)
+                    parameters = trained["params"]
+                    training_evaluations += trained["evaluations"]
+                choices = simulator.sample(parameters, shots, proposal_rng,
+                                            "xy_joint" if mode == "quantum" else "uniform")
+                if mode != "quantum":
+                    sampler_backend = "compact_simulator_uniform_legacy"
+            else:
+                # T00: the uniform control samples each machine independently
+                # and never materialises the prod_m K_m legal subspace, so the
+                # classical control carries no preparation cost of that order.
+                sampler = UniformSampler(pool)
+                sampler_tic = perf_counter()
+                choices, sampler_stats = sampler.sample_with_stats(
+                    shots, proposal_rng, deduplicate=False)
+                uniform_sampler_seconds += perf_counter() - sampler_tic
+                uniform_draws += sampler_stats.draws
+                uniform_unique += sampler_stats.unique
+                uniform_product_states = max(uniform_product_states,
+                                             sampler_stats.product_space)
+                sampler_backend = sampler_stats.as_dict()["backend"]
             # Sampling duplicates and the incumbent need no graph reevaluation.
             choices = choices[np.any(choices != 0, axis=1)]
             combined = np.array([[pool.candidates[m][a] for m, a in enumerate(c)]
@@ -276,9 +308,20 @@ def solve(inst, *, seconds=10.0, seed=7, mode="classical", backend="cpu",
             "proposal_improvements": proposal_improvements, "proposal_seconds": proposal_seconds,
             "training_evaluations": training_evaluations, "maximum_subspace_states": maximum_subspace,
             "maximum_candidate_data_qubits": maximum_data_qubits, "hardware_jobs_submitted": 0,
+            "uniform_sampler_backend": sampler_backend,
+            "uniform_label_draws": uniform_draws, "uniform_unique_labels": uniform_unique,
+            "maximum_uniform_product_states": uniform_product_states,
+            # Constant zero by construction: the independent sampler has no
+            # statevector to prepare.  Recorded explicitly so a reader cannot
+            # mistake the uniform arm for a cheap quantum simulation.
+            "uniform_preparation_statevector": 0,
+            "compact_simulator_constructions": compact_simulator_constructions,
+            "uniform_sampler_construction_seconds": uniform_sampler_seconds,
             "quantum_backend": "exact_classical_candidate_subspace" if mode == "quantum" else None,
             "notes": ["Dynamic candidate pools; global optimality is not certified.",
                       "Quantum mode is classical simulation of witness/XY/joint evolution.",
+                      "Uniform mode is an independent per-machine sampler (T00); "
+                      "legacy_uniform=True restores the previous compact-simulator path.",
                       "Wall time includes setup/JIT; search budget starts after setup."]}
 
 
