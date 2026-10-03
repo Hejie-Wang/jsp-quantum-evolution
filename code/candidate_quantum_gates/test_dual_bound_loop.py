@@ -28,6 +28,15 @@ def window(seed=0, jobs=3, machines=3, k=3):
 
 
 class InitTests(unittest.TestCase):
+    def test_explicit_initial_choice_is_verified_and_logged(self):
+        inst, pool = window(seed=7, jobs=4, machines=3)
+        incumbent = tuple(0 for _ in pool)
+        loop = dbl.DualBoundLoop(inst, pool, time_budget=1.0, seed=3,
+                                 initial_choice=incumbent)
+        self.assertEqual(loop.U_choice, incumbent)
+        self.assertEqual(loop.events[1]["source"], "caller_supplied_verified_choice")
+        self.assertEqual(loop.U, check_choice(inst, pool, incumbent)["makespan"])
+
     def test_initial_bounds_are_verified_and_logged(self):
         inst, pool = window()
         loop = dbl.DualBoundLoop(inst, pool, time_budget=1.0, seed=0)

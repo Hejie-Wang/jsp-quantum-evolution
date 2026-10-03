@@ -130,11 +130,19 @@ class DualBoundLoop:
                               "scope": self.L_scope, "evidence": self.L_evidence},
                     {"lower_before": None, "lower_after": self.L})
 
-        # --- upper bound: start from a verified serial-SGS schedule ---------
-        starts, makespan = mq.serial_sgs(inst, "mwr", np.random.default_rng(seed))
-        orders = [tuple(sorted(inst.groups[m], key=lambda v: starts[v]))
-                  for m in range(inst.machines)]
-        choice = self._choice_from_orders(orders)
+        # --- upper bound: an explicit verified choice, else serial-SGS ------
+        if initial_choice is not None:
+            choice = tuple(int(a) for a in initial_choice)
+            if len(choice) != len(self.pool):
+                raise ValueError("initial_choice must name one candidate per machine")
+            source = "caller_supplied_verified_choice"
+        else:
+            starts, _makespan = mq.serial_sgs(inst, "mwr",
+                                              np.random.default_rng(seed))
+            orders = [tuple(sorted(inst.groups[m], key=lambda v: starts[v]))
+                      for m in range(inst.machines)]
+            choice = self._choice_from_orders(orders)
+            source = "serial_sgs_mwr"
         verified = self._verify(choice)
         if not verified["feasible"]:
             raise RuntimeError("initial schedule must be feasible")
@@ -143,7 +151,7 @@ class DualBoundLoop:
         self.initial_U = self.U
         self._add_witness(choice)
         self._event("init", {"choice": list(choice), "makespan": self.U,
-                             "source": "serial_sgs_mwr"},
+                             "source": source},
                     {"upper_before": None, "upper_after": self.U})
         self.trajectory = [(0.0, self.U, self.L)]
 
