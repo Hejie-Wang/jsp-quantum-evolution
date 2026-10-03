@@ -1,0 +1,21 @@
+{
+  "name": "github-agent-events",
+  "version": "0.1.0",
+  "description": "Poll GitHub repository events and turn new issues, pull requests, and pushes into local agent tasks.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GitHub Agent Events",
+    "shortDescription": "Turn GitHub events into local agent reminders.",
+    "longDescription": "Polls the GitHub Events API with an existing GitHub App token, deduplicates deliveries locally, and writes safe task prompts for configured agents.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": ["GitHub API", "Local task queue"],
+    "defaultPrompt": [
+      "Watch my GitHub repository for new agent work.",
+      "Show me the latest GitHub events for my agents."
+    ]
+  }
+}

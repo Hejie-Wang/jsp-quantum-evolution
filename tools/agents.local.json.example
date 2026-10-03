@@ -1,11 +1,21 @@
 {
   "_说明": "复制本文件为同目录的 agents.local.json 后填写。该文件含本地路径，不入库（已在 .gitignore）。key_path 相对仓库根目录。command 为 CLI 型 agent 的无头启动命令（支持 {prompt_file} 占位符）；GUI 型客户端（kimi/glm/deepseek 目前是桌面客户端）不填 command，调度器只生成提示词文件。",
   "repo": "Hejie-Wang/jsp-quantum-evolution",
+  "default_bot": "codex",
+  "event_watcher": {
+    "branch": "main",
+    "bots": {
+      "issues": "codex",
+      "pull_requests": "codex",
+      "pushes": "codex"
+    },
+    "state_file": ".github-event-state.json"
+  },
   "bots": {
     "codex": {
       "app_id": "5161309",
       "key_path": "agent_keys/jsp-agent-codex.2026-10-02.private-key.pem",
-      "command": ["codex", "exec", "--full-auto", "请阅读并完成 {prompt_file} 中描述的任务"]
+      "command": ["codex", "exec", "--approve-for-me", "请阅读并完成 {prompt_file} 中描述的任务"]
     },
     "kimi": {
       "app_id": "5161612",

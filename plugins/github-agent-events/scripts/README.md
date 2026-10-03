@@ -1,0 +1,1 @@
+The repository-level implementation is `tools/github_api_watcher.py`. This plugin directory contains the Codex skill and manifest; keeping the executable beside the existing GitHub helpers avoids duplicating authentication and task queue conventions.

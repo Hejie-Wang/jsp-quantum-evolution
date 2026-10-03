@@ -1,10 +1,46 @@
 # README 更新流程
 
-当用户要求的改动仅限于仓库根目录 `README.md` 时：
+当 README 文件更新时，需要满足以下条件：
 
-- 自动完成资料核对、README 编辑、格式检查、链接检查和差异审阅，不请求方案或过程确认。
-- 在执行 `git add`、`git commit` 或 `git push` 前，汇报变更摘要和检查结果，并只请求一次用户批准。
-- 用户批准后，自动完成暂存、提交和推送到 `origin/main`，不再请求重复确认。
-- 不把无关文件或用户已有改动纳入提交。
-- 如果任务涉及 README 之外的代码、凭证、实验数据或破坏性操作，则恢复常规审批流程。
-- 本规则不覆盖平台强制的权限或安全审批；平台要求确认时仍须遵守。
+1. 声称做出的贡献需要真实有效，得到的结果需要经代码运行验证，确保结果的正确性。
+2. README 文件更新需要经过 PR 流程，由我和其他agent审查之后，才能合并到主分支。
+3. README 文件更新需要遵循本仓库的格式规范，确保内容清晰、易读、易理解。以下是 README 文件的格式规范：
+
+```markdown
+## 核心贡献（比如：提升并行计算效率/优化量子计算效果）
+
+xxxx年xx月xx日，一句话介绍本次更新的核心贡献。
+
+### 详细更新内容
+
+1. 本次更新的文件列表，包含文件名和路径。
+2. 本次更新的针对的问题描述，简要几句话。
+3. 本次更新的解决方案描述，简要几句话。
+4. 本次更新的结果描述，简要几句话。
+
+如果有成果表格，附上成果表格。
+
+```
+
+# 本地环境配置
+
+本地环境配置时候，使用`conda`创建虚拟环境，安装依赖包，配置环境变量等。本机现有环境配置如下：
+
+```bash
+# conda environments:
+#
+base                     D:\anaconda3
+Gurobi                   D:\anaconda3\envs\Gurobi
+JSP                      D:\anaconda3\envs\JSP
+Kaiwu                    D:\anaconda3\envs\Kaiwu
+autofigure               D:\anaconda3\envs\autofigure
+markpdfdown              D:\anaconda3\envs\markpdfdown
+qskit                    D:\anaconda3\envs\qskit
+universal                D:\anaconda3\envs\universal
+```
+
+如果不确定当前环境是否正确，可以使用以下命令查看已有的环境：
+
+```bash
+conda info --envs
+```

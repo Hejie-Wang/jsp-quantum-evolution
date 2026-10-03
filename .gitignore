@@ -11,3 +11,5 @@ agent_keys/
 tools/agents.local.json
 # 调度器生成的任务提示词
 task_outbox/
+.github-event-state.json
+.github-event-state.json.tmp

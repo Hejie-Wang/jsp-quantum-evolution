@@ -7,9 +7,9 @@ Issue、PR 评论和标签传递，天然留痕、可回溯。
 
 | Agent | 职责 | 本机形态 |
 |---|---|---|
-| ChatGPT（API 版） | 提出构想 | `tools/idea_generator.py` 定时运行 |
-| codex | PR 代码审核 | CLI（`codex exec`），全自动 |
-| kimi / glm | 编写程序、测试数据效果 | GUI 客户端（提示词投递） |
+| ChatGPT（API 版） | 提出构想 | 从网页端自动提交到仓库 |
+| kimi | 仓库管理 | GUI客户端 |
+| codex/ glm | 编写程序、测试数据效果 | CLI/GUI （提示词投递） |
 | deepseek | 查 OA 文献、审查代码 | GUI 客户端（提示词投递） |
 
 ## 事件链路
