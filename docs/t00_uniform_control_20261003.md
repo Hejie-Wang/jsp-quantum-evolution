@@ -99,7 +99,7 @@ python t00_evidence.py --report reports/t00_evidence.json --seconds 3
 2. **统计协议未实现**（bootstrap、确认集 100–119、预注册主指标），已在 `benchmark_protocol.md` §5 标注为待实现。
 3. **`pool_sha256` 仍为 `None`**：动态池尚未逐 run 内容寻址，需在 T01 的冻结窗口设计确定后补齐。
 4. **CUDA 计时口径**：`bench_cuda_baseline.py` 的累计计时与独立墙钟对照尚未在本机复跑（需 GPU 环境）；本次只在 CPU 后端验证，该子项仍待完成。
-5. **`candidate_quantum_gates` 不在 CI 覆盖范围内**（现有 workflow 只跑 demo 与 medium 两个目录），本次测试为本地运行结果；是否扩 CI 需所有者决定。
+5. **`candidate_quantum_gates` 现已纳入 CI 覆盖**（应所有者要求，单列一个独立提交）：新增 `pip install numba` 与三步测试步骤，只跑不依赖 qiskit 的 `test_t00_control`、`test_search_loop`、`test_accelerated`；`test_circuits.py` 仍需 qiskit，暂不纳入。
 6. **D1 历史口径未重跑**：`candidate_adaptive_results_20261002` 的均匀列基于旧路径，**不得与新路径数字直接比较**；需要重跑时用 `legacy_uniform=True` 复现旧口径。
 
 ## 6. 对下游任务的影响

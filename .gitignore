@@ -1,4 +1,4 @@
-# 敏感凭证
+﻿# 敏感凭证
 import.py
 # 缓存与冗余归档
 __pycache__/
@@ -13,3 +13,7 @@ tools/agents.local.json
 task_outbox/
 .github-event-state.json
 .github-event-state.json.tmp
+
+# 本会话创建的辅助目录：独立 git worktree 与文件权限诊断报告（不应入库）
+.worktrees/
+.acl-report/

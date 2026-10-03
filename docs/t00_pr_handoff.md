@@ -60,6 +60,7 @@ python t00_evidence.py --report reports/t00_evidence.json --seconds 3
 4. **`pool_sha256` 仍为 `None`**：动态池尚未逐 run 内容寻址，待 T01 冻结窗口设计确定后补齐。
 5. **CI 未覆盖 `candidate_quantum_gates`**：现有 workflow 只跑 `candidate_quantum_demo` 与 `candidate_quantum_medium`；本次测试为本地运行结果，是否扩 CI 请所有者决定（未擅改 workflow）。
 6. **`uniform` 语义已变更**：复现 `candidate_adaptive_results_20261002` 等历史数字必须显式传 `legacy_uniform=True`。
+7. **CI 改动单列为一个独立提交**（`.github/workflows/ci.yml`），不属于 T00 本体，是应所有者要求单独加的：新增 `pip install numba` 与 `candidate_quantum_gates` 测试步骤（只跑不依赖 qiskit 的 `test_t00_control`、`test_search_loop`、`test_accelerated`）。若审查者认为应拆成独立 PR，可直接 revert 该提交而不影响 T00 其余内容。
 
 ## 6. 请审查者重点看
 
