@@ -73,6 +73,25 @@ class AdapterTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             d2_adapter.load_dataset(GATES_DIR / "test_d2_adapter.py")
 
+    def test_out_of_range_witness_index_fails_loudly(self):
+        tables = {"inst|s0": [{"kind": "path", "length": 3,
+                               "relations_flat": [0, 1, 2]}]}
+        snapshot = {"snapshot_key": "inst|s0|it0", "trajectory_key": "inst|s0",
+                    "witness_indices": [0]}
+        self.assertEqual(len(d2_adapter._snapshot_witnesses(snapshot, tables)), 1)
+        with self.assertRaises(ValueError):
+            d2_adapter._snapshot_witnesses(dict(snapshot, witness_indices=[1]), tables)
+
+    def test_missing_trajectory_table_fails_loudly(self):
+        snapshot = {"snapshot_key": "inst|s0|it0", "trajectory_key": "other|s9",
+                    "witness_indices": [0]}
+        with self.assertRaises(ValueError):
+            d2_adapter._snapshot_witnesses(snapshot, {"inst|s0": []})
+        # the legacy embedded format is unaffected by the guard
+        legacy = {"snapshot_key": "inst|s0|it0", "witnesses": [{"kind": "path"}]}
+        self.assertEqual(d2_adapter._snapshot_witnesses(legacy, {}),
+                         [{"kind": "path"}])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

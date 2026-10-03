@@ -103,9 +103,21 @@ def _snapshot_witnesses(snapshot, tables):
         return []
     if "witnesses" in snapshot:
         return snapshot["witnesses"]
-    table = tables.get(snapshot.get("trajectory_key"), [])
+    table = tables.get(snapshot.get("trajectory_key"))
+    if table is None:
+        # A compact freeze whose trajectory table is missing (wrong sidecar or a
+        # truncated dataset) must fail loudly instead of silently yielding an
+        # empty witness set: an empty set would change the arms' information.
+        raise ValueError(
+            "compact D2 freeze has no witness table for trajectory "
+            f"{snapshot.get('trajectory_key')!r} (available: "
+            f"{len(tables)} trajectories)")
     out = []
     for index in snapshot.get("witness_indices", []):
+        if not 0 <= index < len(table):
+            raise ValueError(
+                f"witness index {index} out of range for trajectory "
+                f"{snapshot.get('trajectory_key')!r} (table size {len(table)})")
         w = table[index]
         flat = w["relations_flat"]
         out.append({"kind": w["kind"], "length": w["length"],
