@@ -292,6 +292,12 @@ def run_dual_arm(inst, pool, *, arm, budget, target, proposer_factory, incumbent
         "certificate_calls": loop.certificate_calls,
         "rounds": rounds,
         "lower_bound_scope": loop.L_scope,
+        # T10 requires A_cert per instance: B^-1 * integral (U-L)/U dt on the
+        # loop's own trajectory (the main-line arms cannot expose one, so their
+        # A_cert stays null instead of being invented).
+        "gap_integral": loop.gap_integral(budget=seconds),
+        "trajectory_seconds_bounds": [[round(t, 6), int(u), int(l)]
+                                      for t, u, l in loop.trajectory],
         "cost_breakdown": {
             "training_seconds": getattr(proposer, "training_seconds", 0.0),
             "sampling_seconds": getattr(proposer, "sampling_seconds", 0.0),
