@@ -478,7 +478,7 @@ def run(seeds, *, scales=("3x3", "4x3"), budget=10.0, arms=tuple(ARMS),
 
 
 def run_d2(dataset_path, *, budget=5.0, improving=3, negatives=2,
-           include_quantum=True, seed_offset=0):
+           include_quantum=True, seed_offset=0, high_rho=0, low_rho=0):
     """Exploratory T10 battery on T04's D2 developer snapshots.
 
     This is *not* the confirmation set: it uses the developer seeds and a short
@@ -488,8 +488,19 @@ def run_d2(dataset_path, *, budget=5.0, improving=3, negatives=2,
     has none, kept to report the invalid-call cost.
     """
     import d2_adapter
-    positives = list(d2_adapter.iter_windows(dataset_path, only_improving=True,
-                                             limit=improving))
+    # rho-stratified positives: the T06 (D0, high rho) and T10 (D2, low rho)
+    # results disagree in sign, so the confirmation-shaped question is whether
+    # the sign follows the coverage density.  Split the improving windows at the
+    # median rho and take the requested number from each tail.
+    all_positives = list(d2_adapter.iter_windows(dataset_path, only_improving=True))
+    ranked = sorted(all_positives, key=lambda row: row.get("rho") or 0.0)
+    if high_rho or low_rho:
+        middle = len(ranked) // 2
+        low_tail = ranked[:middle][:max(low_rho, 0)]
+        high_tail = ranked[middle:][::-1][:max(high_rho, 0)]
+        positives = low_tail + high_tail
+    else:
+        positives = ranked[:improving]
     all_windows = list(d2_adapter.iter_windows(dataset_path, only_improving=False))
     negatives = [row for row in all_windows
                  if row["pool_optimum"] is not None and row["target"] >= row["u0"]][:negatives]
@@ -533,6 +544,9 @@ def run_d2(dataset_path, *, budget=5.0, improving=3, negatives=2,
                      "pool_sizes": row["pool_sizes"], "u0": row["u0"],
                      "target": target, "pool_optimum": row["pool_optimum"],
                      "rho": row["rho"], "d_imp": row["d_imp_from_incumbent"],
+                     "rho_stratum": ("low" if (row.get("rho") or 0.0) <= (
+                         ranked[len(ranked) // 2].get("rho") or 0.0) else "high"
+                         if high_rho or low_rho else None),
                      "witnesses": len(row["witnesses"]),
                      "witnesses_dropped_constant_false": row["witnesses_dropped_constant_false"],
                      "production_hint": pool,
@@ -656,6 +670,10 @@ def main(argv=None):
                     help="T04 D2 dataset; runs the exploratory D2 battery and exits")
     ap.add_argument("--d2-budget", type=float, default=5.0)
     ap.add_argument("--d2-improving", type=int, default=3)
+    ap.add_argument("--d2-high-rho", type=int, default=0,
+                    help="take this many positives from the high-rho tail (stratified mode)")
+    ap.add_argument("--d2-low-rho", type=int, default=0,
+                    help="take this many positives from the low-rho tail")
     ap.add_argument("--d2-negatives", type=int, default=2)
     ap.add_argument("--d2-no-quantum", action="store_true")
     ap.add_argument("--d2-out", default=None)
@@ -673,7 +691,8 @@ def main(argv=None):
     if args.d2_dataset:
         rows = run_d2(args.d2_dataset, budget=args.d2_budget,
                       improving=args.d2_improving, negatives=args.d2_negatives,
-                      include_quantum=not args.d2_no_quantum)
+                      include_quantum=not args.d2_no_quantum,
+                      high_rho=args.d2_high_rho, low_rho=args.d2_low_rho)
         payload = {"schema_version": SCHEMA_VERSION,
                    "work_package": "T10 exploratory D2 battery (T04 snapshots)",
                    "dataset": args.d2_dataset,
