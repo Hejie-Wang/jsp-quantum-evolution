@@ -10,6 +10,7 @@ laptops skews repeated in-process loops) and report best-of-3. Host-side
 validation cost is reported separately from device evaluation.
 """
 import sys
+from time import perf_counter
 
 import numpy as np
 
@@ -38,10 +39,16 @@ def make_batch(inst, size, seed=11):
 
 
 def best_of(ev, batch, runs=3, validate=False):
+    """Return the best wall-clock duration of one isolated evaluation.
+
+    ``BatchEvaluator.seconds`` is cumulative by design, so reading it after a
+    CUDA warmup would include earlier calls in the benchmark result.
+    """
     times = []
     for _ in range(runs):
+        started = perf_counter()
         ev.evaluate(batch, validate=validate)
-        times.append(ev.seconds)
+        times.append(perf_counter() - started)
     return min(times)
 
 
