@@ -34,6 +34,18 @@ git clone https://github.com/Hejie-Wang/jsp-quantum-evolution.git improvement-ki
 5. **各 agent 客户端的默认工作目录永久指向自己的 clone**，不要打开主工作区。
 6. **不使用 `git worktree`**；已有的 `.worktrees/t00` 是过渡遗留，对应任务（`feat/t00-uniform-control`）完成后由负责人清理，此后不再新建。
 
+## 固定工作区（v2）
+
+每个 agent 使用仓库同级的固定 clone，禁止在主工作区或其他 agent 的目录中开发，
+也不再新建 `git worktree`。Codex 的工作区为
+`E:/BUAA/paper_composition/JSP_QSWAP/improvement-codex`，任务分支使用
+`codex/<任务名>`（例如 `codex/issue-28-agent-workspace-role`）。开始任务前，
+在该 clone 中执行 `git fetch origin`，再从最新的 `origin/main` 创建任务分支。
+
+主工作区 `improvement/` 仅作为人类检查点和令牌换取点；私钥目录
+`agent_keys/`、本地配置文件不复制到任何 agent clone。需要推送或创建 PR 时，
+仍在主工作区换取短期安装令牌，再将令牌用于对应 clone 的 GitHub 操作。
+
 ## 事件链路
 
 1. **PR 打开** → GitHub Actions（`.github/workflows/pr-opened-request-review.yml`）
