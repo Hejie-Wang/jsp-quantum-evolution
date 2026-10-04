@@ -1,0 +1,193 @@
+{
+ "schema_version": 1,
+ "work_package": "D3/D4 baseline bounds (T02/T08 certification channel)",
+ "note": "TRIVIAL bounds and reproduced public bounds only; no new lower bound is claimed. UNKNOWN/timeouts certify nothing.",
+ "instances": [
+  {
+   "instance": "ta30",
+   "jobs": 20,
+   "machines": 20,
+   "trivial_lower_bound": 1212,
+   "known_optimum": 1562,
+   "instance_sha256": "9371107cf86c0aad52afcd0554b6ea7b741295b7df84ce0a79921023e3ce839d",
+   "full_model": {
+    "seconds": 300.87405549999994,
+    "status": "FEASIBLE",
+    "wall_seconds": 300.5577591,
+    "solver_version": null,
+    "objective": 1642,
+    "dual_bound": 1450,
+    "kind": "full_model_dual"
+   },
+   "threshold_probe": {
+    "threshold": 1561,
+    "seconds": 60.7654336999999,
+    "status": "UNKNOWN",
+    "wall_seconds": 60.43742780000002,
+    "solver_version": null,
+    "objective": null,
+    "dual_bound": 0,
+    "kind": "threshold_infeasibility",
+    "verdict": "unproven",
+    "raises_lower_bound_to": null
+   },
+   "reproduces_public_bound": false,
+   "lower_bound_after": 1212
+  },
+  {
+   "instance": "ta40",
+   "jobs": 30,
+   "machines": 15,
+   "trivial_lower_bound": 1602,
+   "known_optimum": 1658,
+   "instance_sha256": "4229162eb3e4330fb2ba965bc5b64e7f5c3e5a2f1d28d5bcb35a8eafdcc25dcd",
+   "full_model": {
+    "seconds": 301.39466789999994,
+    "status": "FEASIBLE",
+    "wall_seconds": 300.80633639999996,
+    "solver_version": null,
+    "objective": 1818,
+    "dual_bound": 1220,
+    "kind": "full_model_dual"
+   },
+   "threshold_probe": {
+    "threshold": 1657,
+    "seconds": 61.13540259999991,
+    "status": "UNKNOWN",
+    "wall_seconds": 60.550682999999935,
+    "solver_version": null,
+    "objective": null,
+    "dual_bound": 0,
+    "kind": "threshold_infeasibility",
+    "verdict": "unproven",
+    "raises_lower_bound_to": null
+   },
+   "reproduces_public_bound": false,
+   "lower_bound_after": 1602
+  },
+  {
+   "instance": "ta01",
+   "jobs": 15,
+   "machines": 15,
+   "trivial_lower_bound": 977,
+   "known_optimum": 1231,
+   "instance_sha256": "fc831d2017fc5d1177585a225c8ea3ba41bcd49edddeb17d9f1b99c13c0697e7",
+   "full_model": {
+    "seconds": 42.738264699999945,
+    "status": "OPTIMAL",
+    "wall_seconds": 42.60924950000003,
+    "solver_version": null,
+    "objective": 1231,
+    "dual_bound": 1231,
+    "kind": "full_model_dual"
+   },
+   "threshold_probe": {
+    "threshold": 1230,
+    "seconds": 21.215502499999957,
+    "status": "INFEASIBLE",
+    "wall_seconds": 21.092906800000037,
+    "solver_version": null,
+    "objective": null,
+    "dual_bound": null,
+    "kind": "threshold_infeasibility",
+    "verdict": "infeasible",
+    "raises_lower_bound_to": 1231
+   },
+   "reproduces_public_bound": true,
+   "lower_bound_after": 1231
+  },
+  {
+   "instance": "ta11",
+   "jobs": 20,
+   "machines": 15,
+   "trivial_lower_bound": 1139,
+   "known_optimum": 1359,
+   "instance_sha256": "a31c55baa9d05da553702838179585cc18a287ba2e3e3a766c28ae04bd205f23",
+   "full_model": {
+    "seconds": 60.68604340000002,
+    "status": "FEASIBLE",
+    "wall_seconds": 60.42483930000003,
+    "solver_version": null,
+    "objective": 1399,
+    "dual_bound": 1189,
+    "kind": "full_model_dual"
+   },
+   "threshold_probe": {
+    "threshold": 1358,
+    "seconds": 60.65825329999984,
+    "status": "UNKNOWN",
+    "wall_seconds": 60.39634879999994,
+    "solver_version": null,
+    "objective": null,
+    "dual_bound": 0,
+    "kind": "threshold_infeasibility",
+    "verdict": "unproven",
+    "raises_lower_bound_to": null
+   },
+   "reproduces_public_bound": false,
+   "lower_bound_after": 1139
+  },
+  {
+   "instance": "ta21",
+   "jobs": 20,
+   "machines": 20,
+   "trivial_lower_bound": 1217,
+   "known_optimum": 1642,
+   "instance_sha256": "8a93dfdec5c504e8f3d9d5e4c7ff523a652b995311ccf79e85d454ecd3d3863b",
+   "full_model": {
+    "seconds": 60.98007669999993,
+    "status": "FEASIBLE",
+    "wall_seconds": 60.63679689999981,
+    "solver_version": null,
+    "objective": 1674,
+    "dual_bound": 1528,
+    "kind": "full_model_dual"
+   },
+   "threshold_probe": {
+    "threshold": 1641,
+    "seconds": 60.77056720000019,
+    "status": "UNKNOWN",
+    "wall_seconds": 60.50305469999989,
+    "solver_version": null,
+    "objective": null,
+    "dual_bound": 0,
+    "kind": "threshold_infeasibility",
+    "verdict": "unproven",
+    "raises_lower_bound_to": null
+   },
+   "reproduces_public_bound": false,
+   "lower_bound_after": 1217
+  },
+  {
+   "instance": "ta61",
+   "jobs": 50,
+   "machines": 20,
+   "trivial_lower_bound": 2868,
+   "known_optimum": 2868,
+   "instance_sha256": "1429a642f603cce68eacd0e72f41813434da50625fbfae67bef1f8218c3a4983",
+   "full_model": {
+    "seconds": 63.1994016000001,
+    "status": "FEASIBLE",
+    "wall_seconds": 61.18628569999987,
+    "solver_version": null,
+    "objective": 7816,
+    "dual_bound": 1450,
+    "kind": "full_model_dual"
+   },
+   "threshold_probe": {
+    "threshold": 2867,
+    "seconds": 63.13972150000018,
+    "status": "UNKNOWN",
+    "wall_seconds": 61.07341930000007,
+    "solver_version": null,
+    "objective": null,
+    "dual_bound": 0,
+    "kind": "threshold_infeasibility",
+    "verdict": "unproven",
+    "raises_lower_bound_to": null
+   },
+   "reproduces_public_bound": false,
+   "lower_bound_after": 2868
+  }
+ ]
+}
