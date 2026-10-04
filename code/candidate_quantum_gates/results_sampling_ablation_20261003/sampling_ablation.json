@@ -1,0 +1,1663 @@
+{
+ "schema_version": 1,
+ "work_package": "T06 (Issue #19, PR #18 docs TODO)",
+ "protocol": {
+  "main_shots": 64,
+  "secondary_shots": 256,
+  "train_evaluations": 12,
+  "penalty": 1.0,
+  "layer_counts": [
+   1,
+   2
+  ],
+  "gamma_grid": [
+   0.05,
+   0.12,
+   0.25
+  ],
+  "beta_grid": [
+   0.1,
+   0.25,
+   0.45
+  ],
+  "sa": {
+   "runs": 20,
+   "steps": 200
+  }
+ },
+ "windows": [
+  {
+   "target_t": 24,
+   "arms": [
+    {
+     "arm": "uniform",
+     "p_hit": 0.14814814814814814,
+     "feasible_rate": 0.5555555555555556,
+     "unique_choices": 27,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "graph_evaluations_per_hit": 6.75,
+     "evaluations_to_first_hit": 6.75,
+     "sample_source": "exact_uniform_marginals"
+    },
+    {
+     "arm": "sa_witness",
+     "p_hit": 1.0,
+     "feasible_rate": null,
+     "unique_choices": null,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "witness_evaluations_per_run": 201.0,
+     "graph_evaluations_per_hit": 197.0,
+     "mean_steps_to_first_hit": 3.6,
+     "runs": 20,
+     "steps_per_run": 200,
+     "seconds": 0.13246190000018032,
+     "sample_source": "simulated_annealing_on_witness_energy"
+    },
+    {
+     "arm": "xy",
+     "training": "exact",
+     "p_hit": 0.13770088655073168,
+     "sampled_p_hit": 0.109375,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.109375,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.1328125,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.5723146287540075,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.0026336999999330146,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.5867639535395526,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 7.262117369386584,
+     "shots": 64,
+     "sample_source": "variational_xy_exact_training"
+    },
+    {
+     "arm": "xy",
+     "training": "shots",
+     "p_hit": 0.1159606266545933,
+     "sampled_p_hit": 0.0625,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0625,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.1171875,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.5266122840979476,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 2.1664803000003303,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.12,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.7441734995646412,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 8.623616729656481,
+     "shots": 64,
+     "sample_source": "variational_xy_shots_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "exact",
+     "p_hit": 0.1301257854906554,
+     "sampled_p_hit": 0.125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.1328125,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.4722211538486296,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.005517300000065006,
+     "trained_params": [
+      [
+       0.05,
+       0.25,
+       0.1
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.7745049140181703,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 7.684871958539009,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_exact_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "shots",
+     "p_hit": 0.1301257854906554,
+     "sampled_p_hit": 0.125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.1328125,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.4722211538486296,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 3.800054299999829,
+     "trained_params": [
+      [
+       0.05,
+       0.25,
+       0.1
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.7745049140181703,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 7.684871958539009,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_shots_training"
+    }
+   ],
+   "reference": {
+    "arm": "exact",
+    "pool_optimum": 19,
+    "improving_combinations": 4,
+    "target_reaching_combinations": 4,
+    "improving_with_zero_witness_energy": 4,
+    "zero_witness_energy_combinations": 7,
+    "p_hit_ceiling_on_zero_energy_set": 0.5714285714285714,
+    "graph_evaluations": 27,
+    "p_hit": 0.14814814814814814
+   },
+   "witness_stats": {
+    "raw": 11,
+    "constant_false_dropped": 0,
+    "constant_true": 0,
+    "kept": 11
+   },
+   "transitions": 7,
+   "window": {
+    "scale": "3x3",
+    "seed": 2,
+    "u0": 25,
+    "instance_sha256": "5e62ca0dae4c5a50395449d072dbcba4d7f02e7661d4c58a3e94fe0ef78964d8",
+    "pool_sha256": "e7576ca24bdcf0362f361d91fba4a83eda3d8fafceafafca1a165fe8d978637a"
+   }
+  },
+  {
+   "target_t": 29,
+   "arms": [
+    {
+     "arm": "uniform",
+     "p_hit": 0.037037037037037035,
+     "feasible_rate": 0.37037037037037035,
+     "unique_choices": 27,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "graph_evaluations_per_hit": 27.0,
+     "evaluations_to_first_hit": 27.0,
+     "sample_source": "exact_uniform_marginals"
+    },
+    {
+     "arm": "sa_witness",
+     "p_hit": 1.0,
+     "feasible_rate": null,
+     "unique_choices": null,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "witness_evaluations_per_run": 201.0,
+     "graph_evaluations_per_hit": 186.35,
+     "mean_steps_to_first_hit": 12.05,
+     "runs": 20,
+     "steps_per_run": 200,
+     "seconds": 0.18812620000016977,
+     "sample_source": "simulated_annealing_on_witness_energy"
+    },
+    {
+     "arm": "xy",
+     "training": "exact",
+     "p_hit": 0.03164131929213322,
+     "sampled_p_hit": 0.0625,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0625,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0546875,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.3684329430385733,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.00438350000013088,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.8386506995404623,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 31.604244777765118,
+     "shots": 64,
+     "sample_source": "variational_xy_exact_training"
+    },
+    {
+     "arm": "xy",
+     "training": "shots",
+     "p_hit": 0.03164131929213322,
+     "sampled_p_hit": 0.0625,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0625,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0546875,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.3684329430385733,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 2.0037804999997206,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.1
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.8386506995404623,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 31.604244777765118,
+     "shots": 64,
+     "sample_source": "variational_xy_shots_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "exact",
+     "p_hit": 0.020670298845926475,
+     "sampled_p_hit": 0.015625,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.015625,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.03515625,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.3099000474412096,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.007129799999802344,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.1
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.972492206638834,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 48.378594206782424,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_exact_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "shots",
+     "p_hit": 0.021844246645796966,
+     "sampled_p_hit": 0.046875,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.046875,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0390625,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.302880227835704,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 3.3747278999999253,
+     "trained_params": [
+      [
+       0.05,
+       0.1,
+       0.1
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 3.0804768793012633,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 45.778644428207336,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_shots_training"
+    }
+   ],
+   "reference": {
+    "arm": "exact",
+    "pool_optimum": 23,
+    "improving_combinations": 1,
+    "target_reaching_combinations": 1,
+    "improving_with_zero_witness_energy": 1,
+    "zero_witness_energy_combinations": 2,
+    "p_hit_ceiling_on_zero_energy_set": 0.5,
+    "graph_evaluations": 27,
+    "p_hit": 0.037037037037037035
+   },
+   "witness_stats": {
+    "raw": 10,
+    "constant_false_dropped": 0,
+    "constant_true": 0,
+    "kept": 10
+   },
+   "transitions": 6,
+   "window": {
+    "scale": "3x3",
+    "seed": 7,
+    "u0": 30,
+    "instance_sha256": "ebc589e268fb39fb18647fcf869b0fbc8a458f1d528d1c8bf2acd820720fa289",
+    "pool_sha256": "220d707db6b89f299dbfcc1d22889b69731c3212938e2e99f2c96c13efe2af00"
+   }
+  },
+  {
+   "target_t": 23,
+   "arms": [
+    {
+     "arm": "uniform",
+     "p_hit": 0.0,
+     "feasible_rate": 0.14814814814814814,
+     "unique_choices": 27,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "graph_evaluations_per_hit": null,
+     "evaluations_to_first_hit": null,
+     "sample_source": "exact_uniform_marginals"
+    },
+    {
+     "arm": "sa_witness",
+     "p_hit": 0.0,
+     "feasible_rate": null,
+     "unique_choices": null,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "witness_evaluations_per_run": 201.0,
+     "graph_evaluations_per_hit": null,
+     "mean_steps_to_first_hit": null,
+     "runs": 20,
+     "steps_per_run": 200,
+     "seconds": 0.17002820000016072,
+     "sample_source": "simulated_annealing_on_witness_energy"
+    },
+    {
+     "arm": "xy",
+     "training": "exact",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.16689880462344447,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.004281900000023597,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.3569049414403414,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_exact_training"
+    },
+    {
+     "arm": "xy",
+     "training": "shots",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.16689880462344447,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 3.827502099999947,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.3569049414403414,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_shots_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "exact",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.11487408445710975,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.006499799999801326,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.1512612432682796,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_exact_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "shots",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.11487408445710975,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 6.92847219999976,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.1512612432682796,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_shots_training"
+    }
+   ],
+   "reference": {
+    "arm": "exact",
+    "pool_optimum": 24,
+    "improving_combinations": 0,
+    "target_reaching_combinations": 0,
+    "improving_with_zero_witness_energy": 0,
+    "zero_witness_energy_combinations": 4,
+    "p_hit_ceiling_on_zero_energy_set": 0.0,
+    "graph_evaluations": 27,
+    "p_hit": 0.0
+   },
+   "witness_stats": {
+    "raw": 7,
+    "constant_false_dropped": 0,
+    "constant_true": 0,
+    "kept": 7
+   },
+   "transitions": 7,
+   "window": {
+    "scale": "3x3",
+    "seed": 0,
+    "u0": 24,
+    "instance_sha256": "2938d8cfdaf6892c35b36e33255a7194ae782689d83555e407246fe47b840f80",
+    "pool_sha256": "211c4a7e0ccd0febb29f21a0687a590f30d533a4540c4c7756ec900ee6770483"
+   }
+  },
+  {
+   "target_t": 29,
+   "arms": [
+    {
+     "arm": "uniform",
+     "p_hit": 0.037037037037037035,
+     "feasible_rate": 0.4074074074074074,
+     "unique_choices": 27,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "graph_evaluations_per_hit": 27.0,
+     "evaluations_to_first_hit": 27.0,
+     "sample_source": "exact_uniform_marginals"
+    },
+    {
+     "arm": "sa_witness",
+     "p_hit": 1.0,
+     "feasible_rate": null,
+     "unique_choices": null,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "witness_evaluations_per_run": 201.0,
+     "graph_evaluations_per_hit": 191.65,
+     "mean_steps_to_first_hit": 15.9,
+     "runs": 20,
+     "steps_per_run": 200,
+     "seconds": 0.2183775999997124,
+     "sample_source": "simulated_annealing_on_witness_energy"
+    },
+    {
+     "arm": "xy",
+     "training": "exact",
+     "p_hit": 0.01949298962296337,
+     "sampled_p_hit": 0.015625,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.015625,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.015625,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.409658525194825,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.003972499999690626,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.781515894254349,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 51.30049414390329,
+     "shots": 64,
+     "sample_source": "variational_xy_exact_training"
+    },
+    {
+     "arm": "xy",
+     "training": "shots",
+     "p_hit": 0.01949298962296337,
+     "sampled_p_hit": 0.015625,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.015625,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.015625,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.409658525194825,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 4.487979799999721,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.781515894254349,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 51.30049414390329,
+     "shots": 64,
+     "sample_source": "variational_xy_shots_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "exact",
+     "p_hit": 0.023798654761657236,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0234375,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.4868240237336312,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.004654999999729625,
+     "trained_params": [
+      [
+       0.25,
+       0.45,
+       0.45
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.4935834599566535,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 42.019181756908864,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_exact_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "shots",
+     "p_hit": 0.023798654761657236,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0234375,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.4868240237336312,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 7.37483949999978,
+     "trained_params": [
+      [
+       0.25,
+       0.45,
+       0.45
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.4935834599566535,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 42.019181756908864,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_shots_training"
+    }
+   ],
+   "reference": {
+    "arm": "exact",
+    "pool_optimum": 27,
+    "improving_combinations": 1,
+    "target_reaching_combinations": 1,
+    "improving_with_zero_witness_energy": 1,
+    "zero_witness_energy_combinations": 3,
+    "p_hit_ceiling_on_zero_energy_set": 0.3333333333333333,
+    "graph_evaluations": 27,
+    "p_hit": 0.037037037037037035
+   },
+   "witness_stats": {
+    "raw": 12,
+    "constant_false_dropped": 0,
+    "constant_true": 0,
+    "kept": 12
+   },
+   "transitions": 7,
+   "window": {
+    "scale": "4x3",
+    "seed": 0,
+    "u0": 30,
+    "instance_sha256": "4d65fb118e671373d926251bbe026e7286c3a514ea65b7c95c1726101a665a29",
+    "pool_sha256": "deeb0fe14fba69b855293c696835230cf06335ea22a4026c4a1336ad98fd6f2d"
+   }
+  },
+  {
+   "target_t": 28,
+   "arms": [
+    {
+     "arm": "uniform",
+     "p_hit": 0.037037037037037035,
+     "feasible_rate": 0.2962962962962963,
+     "unique_choices": 27,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "graph_evaluations_per_hit": 27.0,
+     "evaluations_to_first_hit": 27.0,
+     "sample_source": "exact_uniform_marginals"
+    },
+    {
+     "arm": "sa_witness",
+     "p_hit": 0.4,
+     "feasible_rate": null,
+     "unique_choices": null,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "witness_evaluations_per_run": 201.0,
+     "graph_evaluations_per_hit": 478.25,
+     "mean_steps_to_first_hit": 11.25,
+     "runs": 20,
+     "steps_per_run": 200,
+     "seconds": 0.16109629999982644,
+     "sample_source": "simulated_annealing_on_witness_energy"
+    },
+    {
+     "arm": "xy",
+     "training": "exact",
+     "p_hit": 0.033409461173623194,
+     "sampled_p_hit": 0.03125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.03515625,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.2819814947917113,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.0044424000002436514,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.693435029527058,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 29.931641064283344,
+     "shots": 64,
+     "sample_source": "variational_xy_exact_training"
+    },
+    {
+     "arm": "xy",
+     "training": "shots",
+     "p_hit": 0.03366763473365178,
+     "sampled_p_hit": 0.03125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0390625,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.2645164264407606,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 3.9236957000002803,
+     "trained_params": [
+      [
+       0.05,
+       0.25,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.7100216954454224,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 29.702116228571022,
+     "shots": 64,
+     "sample_source": "variational_xy_shots_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "exact",
+     "p_hit": 0.030224599872442533,
+     "sampled_p_hit": 0.03125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.05078125,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.23335586914947717,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.006932799999958661,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.45
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.6609293367961864,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 33.08563237297828,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_exact_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "shots",
+     "p_hit": 0.029843354183373937,
+     "sampled_p_hit": 0.03125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0390625,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.25556062133480556,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 6.782911499999955,
+     "trained_params": [
+      [
+       0.05,
+       0.25,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.713656924659423,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 33.508297822538694,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_shots_training"
+    }
+   ],
+   "reference": {
+    "arm": "exact",
+    "pool_optimum": 26,
+    "improving_combinations": 1,
+    "target_reaching_combinations": 1,
+    "improving_with_zero_witness_energy": 1,
+    "zero_witness_energy_combinations": 3,
+    "p_hit_ceiling_on_zero_energy_set": 0.3333333333333333,
+    "graph_evaluations": 27,
+    "p_hit": 0.037037037037037035
+   },
+   "witness_stats": {
+    "raw": 10,
+    "constant_false_dropped": 0,
+    "constant_true": 0,
+    "kept": 10
+   },
+   "transitions": 8,
+   "window": {
+    "scale": "4x3",
+    "seed": 3,
+    "u0": 29,
+    "instance_sha256": "e80f5669ac52d76f2142d3ef2cb289c7ed5ed24e2807d2523cf8043ca2302dbe",
+    "pool_sha256": "59b697354ca23cc86727491bd8dc1a3a8b39525b115cda4ed64257ddf11a68a5"
+   }
+  },
+  {
+   "target_t": 42,
+   "arms": [
+    {
+     "arm": "uniform",
+     "p_hit": 0.037037037037037035,
+     "feasible_rate": 0.6666666666666666,
+     "unique_choices": 27,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "graph_evaluations_per_hit": 27.0,
+     "evaluations_to_first_hit": 27.0,
+     "sample_source": "exact_uniform_marginals"
+    },
+    {
+     "arm": "sa_witness",
+     "p_hit": 1.0,
+     "feasible_rate": null,
+     "unique_choices": null,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "witness_evaluations_per_run": 201.0,
+     "graph_evaluations_per_hit": 198.2,
+     "mean_steps_to_first_hit": 20.7,
+     "runs": 20,
+     "steps_per_run": 200,
+     "seconds": 0.18403529999977764,
+     "sample_source": "simulated_annealing_on_witness_energy"
+    },
+    {
+     "arm": "xy",
+     "training": "exact",
+     "p_hit": 0.03585010159645021,
+     "sampled_p_hit": 0.03125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.5766500471833477,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.00253679999968881,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.314115858013321,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 27.893923739926514,
+     "shots": 64,
+     "sample_source": "variational_xy_exact_training"
+    },
+    {
+     "arm": "xy",
+     "training": "shots",
+     "p_hit": 0.03585010159645021,
+     "sampled_p_hit": 0.03125,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.03125,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.5766500471833477,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 3.6871707000000242,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.314115858013321,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 27.893923739926514,
+     "shots": 64,
+     "sample_source": "variational_xy_shots_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "exact",
+     "p_hit": 0.031964697921705074,
+     "sampled_p_hit": 0.015625,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.015625,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.046875,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.6304193508616086,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.0066570999997566105,
+     "trained_params": [
+      [
+       0.25,
+       0.45,
+       0.45
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.0609144177045424,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 31.284512759964716,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_exact_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "shots",
+     "p_hit": 0.03955486662657978,
+     "sampled_p_hit": 0.046875,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.046875,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.04296875,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.5454766513789224,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 6.539818500000365,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.1
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.5429252587709876,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": 25.281339195011405,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_shots_training"
+    }
+   ],
+   "reference": {
+    "arm": "exact",
+    "pool_optimum": 33,
+    "improving_combinations": 1,
+    "target_reaching_combinations": 1,
+    "improving_with_zero_witness_energy": 1,
+    "zero_witness_energy_combinations": 10,
+    "p_hit_ceiling_on_zero_energy_set": 0.1,
+    "graph_evaluations": 27,
+    "p_hit": 0.037037037037037035
+   },
+   "witness_stats": {
+    "raw": 10,
+    "constant_false_dropped": 0,
+    "constant_true": 0,
+    "kept": 10
+   },
+   "transitions": 8,
+   "window": {
+    "scale": "4x3",
+    "seed": 7,
+    "u0": 43,
+    "instance_sha256": "b0b046e23a46037936fe132bea690c40769c14fe01a371861b127ce0329bd2fc",
+    "pool_sha256": "1c1f403ba9137d4e446d0f6eac00a3f091e347fd28ca126afa019dcfeadd01fb"
+   }
+  },
+  {
+   "target_t": 34,
+   "arms": [
+    {
+     "arm": "uniform",
+     "p_hit": 0.0,
+     "feasible_rate": 0.5555555555555556,
+     "unique_choices": 27,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "graph_evaluations_per_hit": null,
+     "evaluations_to_first_hit": null,
+     "sample_source": "exact_uniform_marginals"
+    },
+    {
+     "arm": "sa_witness",
+     "p_hit": 0.0,
+     "feasible_rate": null,
+     "unique_choices": null,
+     "parameter_evaluations": 0,
+     "training_shots": 0,
+     "training_seconds": 0.0,
+     "witness_evaluations_per_run": 201.0,
+     "graph_evaluations_per_hit": null,
+     "mean_steps_to_first_hit": null,
+     "runs": 20,
+     "steps_per_run": 200,
+     "seconds": 0.23494919999984631,
+     "sample_source": "simulated_annealing_on_witness_energy"
+    },
+    {
+     "arm": "xy",
+     "training": "exact",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.5023665042310022,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.004670299999816052,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.25
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.918329631291233,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_exact_training"
+    },
+    {
+     "arm": "xy",
+     "training": "shots",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.5023665042310022,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 5.139055300000109,
+     "trained_params": [
+      [
+       0.05,
+       0.45,
+       0.1
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 2.918329631291233,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_shots_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "exact",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.7246325491630915,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 0,
+     "training_seconds": 0.004973999999947409,
+     "trained_params": [
+      [
+       0.25,
+       0.45,
+       0.45
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.9410556274417918,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_exact_training"
+    },
+    {
+     "arm": "xy_joint",
+     "training": "shots",
+     "p_hit": 0.0,
+     "sampled_p_hit": 0.0,
+     "shot_estimates": {
+      "main": {
+       "shots": 64,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      },
+      "secondary": {
+       "shots": 256,
+       "sampled_p_hit": 0.0,
+       "illegal_fraction": 0.0
+      }
+     },
+     "feasible_rate": 0.7246325491630915,
+     "unique_choices": 27,
+     "parameter_evaluations": 12,
+     "training_shots": 768,
+     "training_seconds": 8.072165899999618,
+     "trained_params": [
+      [
+       0.25,
+       0.45,
+       0.45
+      ],
+      [
+       0.05,
+       0.25,
+       0.25
+      ]
+     ],
+     "expected_witness_energy": 1.9410556274417918,
+     "illegal_fraction_shots": 0.0,
+     "graph_evaluations_per_hit": null,
+     "shots": 64,
+     "sample_source": "variational_xy_joint_shots_training"
+    }
+   ],
+   "reference": {
+    "arm": "exact",
+    "pool_optimum": 35,
+    "improving_combinations": 0,
+    "target_reaching_combinations": 0,
+    "improving_with_zero_witness_energy": 0,
+    "zero_witness_energy_combinations": 6,
+    "p_hit_ceiling_on_zero_energy_set": 0.0,
+    "graph_evaluations": 27,
+    "p_hit": 0.0
+   },
+   "witness_stats": {
+    "raw": 11,
+    "constant_false_dropped": 0,
+    "constant_true": 0,
+    "kept": 11
+   },
+   "transitions": 8,
+   "window": {
+    "scale": "4x3",
+    "seed": 1,
+    "u0": 35,
+    "instance_sha256": "36876ccb78009d1e4152085b16ad09a0f11ab9ef22d5c020765347271d605a7e",
+    "pool_sha256": "49f175aa913fdeae327e96021c6b55a1b178fff5fd64304ae6a8d303720c4cba"
+   }
+  }
+ ],
+ "summary": [
+  {
+   "arm": "sa_witness",
+   "training": "n/a",
+   "windows": 7,
+   "mean_p_hit": 0.6285714285714287,
+   "median_p_hit": 1.0,
+   "windows_with_hit": 5,
+   "paired_ratio_vs_uniform": {
+    "mean": 19.71,
+    "n_windows_ratio_defined": 5,
+    "ci95": [
+     11.61,
+     27.0
+    ],
+    "exploratory": true,
+    "note": "window resampling over a handful of pilot windows; not a confirmation-set result (T06 requires D2 windows)"
+   }
+  },
+  {
+   "arm": "uniform",
+   "training": "n/a",
+   "windows": 7,
+   "mean_p_hit": 0.042328042328042326,
+   "median_p_hit": 0.037037037037037035,
+   "windows_with_hit": 5,
+   "paired_ratio_vs_uniform": null
+  },
+  {
+   "arm": "xy",
+   "training": "exact",
+   "windows": 7,
+   "mean_p_hit": 0.036870679747985954,
+   "median_p_hit": 0.03164131929213322,
+   "windows_with_hit": 5,
+   "paired_ratio_vs_uniform": {
+    "mean": 0.8360231039434058,
+    "n_windows_ratio_defined": 5,
+    "ci95": [
+     0.6766086125671371,
+     0.9393845812662031
+    ],
+    "exploratory": true,
+    "note": "window resampling over a handful of pilot windows; not a confirmation-set result (T06 requires D2 windows)"
+   }
+  },
+  {
+   "arm": "xy",
+   "training": "shots",
+   "windows": 7,
+   "mean_p_hit": 0.03380181027139884,
+   "median_p_hit": 0.03164131929213322,
+   "windows_with_hit": 5,
+   "paired_ratio_vs_uniform": {
+    "mean": 0.8080678903077733,
+    "n_windows_ratio_defined": 5,
+    "ci95": [
+     0.6575126802470456,
+     0.9216546765426209
+    ],
+    "exploratory": true,
+    "note": "window resampling over a handful of pilot windows; not a confirmation-set result (T06 requires D2 windows)"
+   }
+  },
+  {
+   "arm": "xy_joint",
+   "training": "exact",
+   "windows": 7,
+   "mean_p_hit": 0.033826290984626674,
+   "median_p_hit": 0.023798654761657236,
+   "windows_with_hit": 5,
+   "paired_ratio_vs_uniform": {
+    "mean": 0.7516243679817339,
+    "n_windows_ratio_defined": 5,
+    "ci95": [
+     0.6359809457941654,
+     0.859771197690374
+    ],
+    "exploratory": true,
+    "note": "window resampling over a handful of pilot windows; not a confirmation-set result (T06 requires D2 windows)"
+   }
+  },
+  {
+   "arm": "xy_joint",
+   "training": "shots",
+   "windows": 7,
+   "mean_p_hit": 0.03502384395829476,
+   "median_p_hit": 0.023798654761657236,
+   "windows_with_hit": 5,
+   "paired_ratio_vs_uniform": {
+    "mean": 0.7968918703863876,
+    "n_windows_ratio_defined": 5,
+    "ci95": [
+     0.6540974477907247,
+     0.9449713854759263
+    ],
+    "exploratory": true,
+    "note": "window resampling over a handful of pilot windows; not a confirmation-set result (T06 requires D2 windows)"
+   }
+  }
+ ],
+ "notes": [
+  "Every arm shares the same pool, witness set, fixed T and initial information.",
+  "No arm reads the exact enumeration result; it is an offline reference only.",
+  "Training is reported twice: exact compact-simulator expectation and finite-shot estimate.",
+  "The objective is the frozen witness energy, never the true makespan table."
+ ]
+}
